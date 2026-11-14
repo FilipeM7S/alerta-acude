@@ -23,12 +23,16 @@ MONTHS = {"jan": 1, "fev": 2, "mar": 3, "abr": 4, "mai": 5, "jun": 6,
 
 DATE_RE = re.compile(r"^(\d{2})/(\d{2})/(\d{2}|\d{4})$")
 DECIMAL_RE = re.compile(r"^\d+(,\d+)?$")
-CELLS_RE = re.compile(r"^\d{1,3}(\.\d{3})*$")
-PERCENT_RE = re.compile(r"^(\d+(,\d+)?)%$")
+# Cell counts use '.' for thousands; 2022+ reports add a decimal part ("375.191,0").
+# At most two decimals, so an ambiguous "56,680" (Cocó, Nov/2020) is rejected, not read as 56.68.
+CELLS_RE = re.compile(r"^\d{1,3}(\.\d{3})*(,\d{1,2})?$")
+PERCENT_RE = re.compile(r"^(\d+(,\d+)?)%?$")  # 2022+ reports drop the '%'
 CLASS_RE = re.compile(r"^(ultraoligo|oligo|meso|eu|supereu|hipereu)tr[oó]fica$", re.I)
-CAMPAIGN_RE = re.compile(r"Campanha\s+([A-Za-z]{3})/(\d{4})")
+# "Campanha Nov/2020" (2016-2021) or "(camp. fev/2022)" / "(campanha ago/2024)" (2022+)
+CAMPAIGN_RE = re.compile(r"(?:[Cc]ampanha|camp\.)\s+([A-Za-z]{3})/(\d{4})")
 
 COL_TOL = 20  # max distance (pt) between a value's centre and its column centre
+VALUE_COLS = ["n_total", "p_total", "chla", "cyano", "transparency"]
 
 
 @dataclass
@@ -63,7 +67,7 @@ def line_text(ws):
 
 def name_column_right(lines, header_idx):
     """Right edge of the 'Reservatório' column header; a table row must start left of it."""
-    for ln in lines[max(0, header_idx - 3):header_idx + 1]:
+    for ln in lines[max(0, header_idx - 3):header_idx + 3]:
         for w in ln:
             if w["text"] == "Reservatório":
                 return w["x1"]
@@ -90,7 +94,7 @@ def parse_decimal(tok):
 
 
 def parse_cells(tok):
-    return int(tok.replace(".", "")) if CELLS_RE.match(tok) else None
+    return float(tok.replace(".", "").replace(",", ".")) if CELLS_RE.match(tok) else None
 
 
 def parse_date(tok):
@@ -121,25 +125,26 @@ def table3_columns(lines):
     """Return (header_index, column centres) if this page holds a Table 3 header."""
     for i, ln in enumerate(lines):
         texts = [w["text"] for w in ln]
-        if "Clorofila-a" in texts and "Cianobactérias" in texts and "Transparência" in texts:
-            n_words = [w for w in ln if w["text"] in ("N", "P", "total")]
-            n_col = centre([w for w in n_words if w["x0"] < next(x["x0"] for x in ln if x["text"] == "P")])
-            p_idx = texts.index("P")
-            p_col = centre(ln[p_idx:p_idx + 2])
+        cyano_word = next((t for t in texts if t.startswith("Cianobact")), None)  # singular in 2022+
+        if "Clorofila-a" in texts and cyano_word and "Transparência" in texts:
+            n_idx, p_idx = texts.index("N"), texts.index("P")
             cols = {
-                "n_total": n_col,
-                "p_total": p_col,
+                "n_total": centre(ln[n_idx:n_idx + 2]),  # "N total" / "N Total"
+                "p_total": centre(ln[p_idx:p_idx + 2]),
                 "chla": centre([ln[texts.index("Clorofila-a")]]),
-                "cyano": centre([ln[texts.index("Cianobactérias")]]),
+                "cyano": centre([ln[texts.index(cyano_word)]]),
                 "transparency": centre([ln[texts.index("Transparência")]]),
             }
+            # "Data" sits on the header line (2020), below it (2016-2021) or beside "Reservatório" (2022+).
             date_col, units_idx = None, i
-            for j in range(i + 1, min(i + 4, len(lines))):
+            for j in range(i, min(i + 4, len(lines))):
                 tj = [w["text"] for w in lines[j]]
                 if "Data" in tj:
                     date_col = centre([lines[j][tj.index("Data")]])
-                if any(t.startswith("(") for t in tj):
+                if j > i and any(t.startswith("(") for t in tj):
                     units_idx = j
+            if date_col is None:
+                raise ValueError("Table 3 header found but no 'Data' column")
             cols["date"] = date_col
             cols["campaign"] = campaign_above(lines, i)
             return units_idx, cols
@@ -147,17 +152,16 @@ def table3_columns(lines):
 
 
 def parse_table3(path: Path, log: ParseLog):
-    rows, campaigns = [], set()
+    rows, campaigns = [], []
     with pdfplumber.open(path) as pdf:
         for pno, page in enumerate(pdf.pages, start=1):
             lines = group_lines(page.extract_words())
             start, cols = table3_columns(lines)
             if cols is None:
                 continue
-            campaigns.add(cols["campaign"])
+            campaigns.append((pno, cols["campaign"]))
             name_limit = cols["date"] - 15
             row_left = name_column_right(lines, start)
-            value_cols = ["n_total", "p_total", "chla", "cyano", "transparency"]
             for ln in lines[start + 1:]:
                 if ln[0]["x0"] > row_left:  # not a table row (page number, centred note)
                     continue
@@ -180,7 +184,7 @@ def parse_table3(path: Path, log: ParseLog):
                 tokens = merge_less_than(rest[1:])
                 for w in tokens:
                     c = centre([w])
-                    col = min(value_cols, key=lambda k: abs(cols[k] - c))
+                    col = min(VALUE_COLS, key=lambda k: abs(cols[k] - c))
                     if abs(cols[col] - c) > COL_TOL:
                         log.add(path.name, 3, pno, text, f"token '{w['text']}' not under any column")
                         ok = False
@@ -202,14 +206,21 @@ def parse_table3(path: Path, log: ParseLog):
                     rec[col] = val
                 if not ok:
                     continue
-                missing = [k for k in value_cols if k not in rec]
+                missing = [k for k in VALUE_COLS if k not in rec]
                 if missing:
                     log.add(path.name, 3, pno, text, "empty cells: " + ",".join(missing))
                 rows.append(rec)
-    if len(campaigns) != 1 or None in campaigns:
-        raise ValueError(f"{path.name}: Table 3 pages disagree on the campaign: {campaigns}")
-    df = pd.DataFrame(rows)
-    df["campaign"] = campaigns.pop()
+    # The campaign comes from the first Table 3 page. Continuation pages can carry a stale
+    # header (May/2019 pages 15-16 say "Nov/2018" while their dates are Apr-May 2019); we log
+    # those, and the date check in parse_report flags any row that really belongs elsewhere.
+    if not campaigns or campaigns[0][1] is None:
+        raise ValueError(f"{path.name}: no campaign found above the Table 3 header")
+    campaign = campaigns[0][1]
+    for pno, c in campaigns[1:]:
+        if c != campaign:
+            log.add(path.name, 3, pno, f"page header says {c}", f"campaign header differs from first page ({campaign})")
+    df = pd.DataFrame(rows).reindex(columns=["reservoir_raw", "date", "page", "censored", *VALUE_COLS])
+    df["campaign"] = campaign
     df["file"] = path.name
     return df
 
@@ -272,13 +283,23 @@ def parse_report(path: Path, log: ParseLog) -> pd.DataFrame:
     df = t3.merge(t2[["reservoir", "volume_pct", "trophic_class"]], on="reservoir", how="left")
     for _, r in df[df["volume_pct"].isna()].iterrows():
         log.add(path.name, 2, None, r["reservoir_raw"], "no volume in Table 2 for this sample")
-    # A count repeated exactly in two reservoirs of the same campaign may be a copy error in
-    # the report. We keep the printed value but flag it so it can be checked or excluded.
+    # A count repeated exactly in another reservoir of the same campaign could be a copy error
+    # or an artefact of how the lab counts; we cannot tell which. We keep the printed value,
+    # flag it, and check later that results hold without these rows.
     big = df["cyano"] > 1000
     repeated = big & df.duplicated("cyano", keep=False)
     df["qc_flag"] = ""
-    df.loc[repeated, "qc_flag"] = "cyano value repeated in another reservoir"
+    df.loc[repeated, "qc_flag"] = "cyano_repeated"
     for _, r in df[repeated].iterrows():
         log.add(path.name, 3, r["page"], f"{r['reservoir_raw']} cyano={r['cyano']:.0f}",
-                "cyano value repeated in another reservoir (possible copy error)")
+                "cyano value repeated in another reservoir of the same campaign")
+    # A sample date far from the campaign month is likely a date copied forward in the report
+    # (e.g. Pedras Brancas keeps 04/02/2016 in seven campaigns with different values).
+    # Satellite matching needs the true date, so these rows are flagged and not matched.
+    mid = pd.Period(df["campaign"].iloc[0], "M").to_timestamp() + pd.Timedelta(days=14)
+    far = (df["date"] - mid).dt.days.abs() > 75
+    df.loc[far, "qc_flag"] = (df.loc[far, "qc_flag"] + " date_far_from_campaign").str.strip()
+    for _, r in df[far].iterrows():
+        log.add(path.name, 3, r["page"], f"{r['reservoir_raw']} date={r['date'].date()}",
+                "sample date more than 75 days from campaign month")
     return df
