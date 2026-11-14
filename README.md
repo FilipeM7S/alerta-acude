@@ -69,7 +69,7 @@ There is no location or reservoir ID, so the model cannot memorise reservoirs.
 
 ![Model B coefficients](outputs/lr_coefficients_modelB.png)
 
-*Model B, used in the map: each bar is how much one standard deviation of an input changes the log-odds of a bloom. NDCI dominates (+1.39); more open water near the sampling point (+0.29) and lower turbidity (NDTI −0.31) also raise the risk. The SHAP summary in `outputs/lgbm_shap_summary.png` is for the small LightGBM, for comparison only (not used in the map).*
+*Model B, used in the map: each bar is how much one standard deviation of an input changes the log-odds of a bloom. NDCI dominates (+1.39); more open water near the sampling point (+0.29) and lower turbidity (NDTI −0.31) also raise the risk. Lower turbidity raising the risk is consistent with the colour coming from algae rather than from sediment; that is our interpretation, not something we tested. The map's reasons say whether each value is above or below the training average ("greener than usual", "less turbid than usual"); the arrow says whether it raised or lowered the risk. The SHAP summary in `outputs/lgbm_shap_summary.png` is for the small LightGBM, for comparison only (not used in the map).*
 
 **Testing:** time split by campaign, never shuffled.
 

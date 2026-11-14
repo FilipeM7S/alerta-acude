@@ -6,33 +6,33 @@ so the biggest contributions are the reasons. For LightGBM we use SHAP values th
 
 Inputs that measure almost the same thing (the two temperature windows, the two rain windows, the
 month and the rainy-season flag) are added together first, because a model can split one effect
-between correlated inputs with opposite signs. The phrase depends on whether the value is above or
-below the training average; the arrow is the sign of the contribution (up raises risk, down lowers it).
+between correlated inputs with opposite signs. The phrase says whether the value is above or below the
+training average ("than usual"); the arrow is the sign of the contribution (up raises risk, down lowers it).
 """
 from __future__ import annotations
 
 import pandas as pd
 
 PHRASES = {
-    "NDCI": ("green water (chlorophyll index {v:.3f})", "little chlorophyll seen (index {v:.3f})"),
-    "NDTI": ("turbid water (turbidity index {v:.2f})", "clear water (turbidity index {v:.2f})"),
-    "MNDWI": ("strong water signal (MNDWI {v:.2f})", "weak water signal (MNDWI {v:.2f})"),
-    "water_frac": ("{v:.0%} of the area near the sampling point is water",
-                   "only {v:.0%} of the area near the sampling point is water"),
+    "NDCI": ("greener than usual (chlorophyll index {v:.3f})", "less green than usual (chlorophyll index {v:.3f})"),
+    "NDTI": ("more turbid than usual (turbidity index {v:.2f})", "less turbid than usual (turbidity index {v:.2f})"),
+    "MNDWI": ("stronger water signal than usual (MNDWI {v:.2f})", "weaker water signal than usual (MNDWI {v:.2f})"),
+    "water_frac": ("more open water near the sampling point than usual ({v:.0%})",
+                   "less open water near the sampling point than usual ({v:.0%})"),
     "wind_7d": ("windy week ({v:.1f} m/s)", "calm week ({v:.1f} m/s)"),
     "sw_7d": ("strong sunlight ({v:.1f} MJ/m²/day)", "weak sunlight ({v:.1f} MJ/m²/day)"),
-    "volume_pct": ("reservoir {v:.0f}% full", "low volume ({v:.0f}% of capacity)"),
+    "volume_pct": ("fuller than usual ({v:.0f}% of capacity)", "emptier than usual ({v:.0f}% of capacity)"),
     "volume_change": ("volume changed {v:+.0f} points in 3 months", "volume changed {v:+.0f} points in 3 months"),
 }
 
 # group name -> (features added together, feature that picks the phrase, (phrase if high, phrase if low))
 GROUPS = {
     "heat": (["tmax_7d", "tmax_30d"], "tmax_30d",
-             ("hot last 30 days (max {tmax_30d:.1f} °C; last week {tmax_7d:.1f} °C)",
-              "mild last 30 days (max {tmax_30d:.1f} °C; last week {tmax_7d:.1f} °C)")),
+             ("hotter than usual in the last 30 days (max {tmax_30d:.1f} °C; last week {tmax_7d:.1f} °C)",
+              "milder than usual in the last 30 days (max {tmax_30d:.1f} °C; last week {tmax_7d:.1f} °C)")),
     "rain": (["rain_30d", "rain_90d"], "rain_90d",
-             ("wet last 90 days ({rain_90d:.0f} mm; {rain_30d:.0f} mm in the last 30)",
-              "dry last 90 days ({rain_90d:.0f} mm; {rain_30d:.0f} mm in the last 30)")),
+             ("wetter than usual in the last 90 days ({rain_90d:.0f} mm; {rain_30d:.0f} mm in the last 30)",
+              "drier than usual in the last 90 days ({rain_90d:.0f} mm; {rain_30d:.0f} mm in the last 30)")),
     "season": (["month_sin", "month_cos", "rainy_season"], "rainy_season",
                ("time of year: rainy season", "time of year: dry season")),
 }
