@@ -96,7 +96,7 @@ A weekly risk map (`outputs/risk_map.html`, notebook 05). For each reservoir of 
 
 **Why not just use NDCI?** In both tests the single-index rule NDCI > t has the highest PR-AUC (Test 1: 0.962; Test 2: 0.980). The chlorophyll seen from space is the core signal: one index alone already ties the last lab result. The model adds stored volume, a calibrated probability, a ranking and plain-language reasons, and raises fewer false alarms (Test 2: B 10 vs NDCI 17), at the cost of more missed blooms (29 vs 15). In Test 1 the NDCI rule missed fewer blooms than the model (1 vs 17) with about the same false alarms (19 vs 18).
 
-**Live map (14 Nov 2026, model B):** 49 of the 65 Jaguaribe-system reservoirs had a clear image between 24 Oct and 13 Nov. **38 are on Alert and 11 are Lower risk**; Castanhão is on Alert, at 0.50. Several "Lower risk" reservoirs had counts well above 20,000 at their last lab visit (Aug 2026), so the band means "can wait if capacity is short", not "safe", and the map says this is the season where the model under-warns.
+**Live map (14 Nov 2026, model B):** 49 of the 65 Jaguaribe-system reservoirs had a clear image between 24 Oct and 13 Nov. **38 are on Alert and 11 are Lower risk**; Castanhão is on Alert, at 0.50. Several "Lower risk" reservoirs had counts well above 20,000 at their last lab visit (the Aug/2026 campaign, sampled 9 Jul to 26 Aug), so the band means "can wait if capacity is short", not "safe", and the map says this is the season where the model under-warns.
 
 ## What we'd do next
 
