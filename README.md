@@ -108,6 +108,7 @@ The decision threshold is chosen on validation to catch at least 80% of blooms, 
   - Atalho (16,046 cells/mL) and Bengue (10,422) were close to the limit; both are above 10,000, where the same Portaria (Annex 12) already asks for weekly cyanobacteria counts.
   - Poço da Pedra was green from other algae: 13.90 µg/L chlorophyll-a but only 4,130 cyanobacteria cells/mL.
   - Cachoeira's image was hazy.
+- **The water-share input partly measures geometry, not water.** `water_frac` (share of the area near the sampling point that is water) raises the risk, but it also depends on the sampling area's shape and the reservoir's size. It is tiny when the area fell back to a plain disc or the reservoir is nearly dry, which pushes those reservoirs toward "Lower risk" for reasons unrelated to water quality. On the live map, 6 of the 49 imaged reservoirs are flagged **low confidence** (disc fallback, water share < 5%, or volume < 5%). São José II (1% water) and Santo Antônio (2%) are "Lower risk" although their last lab counts were 206,178 and 69,021 cells/mL; Cedro (0.44% volume) and Pirabibu (0.63%) are nearly empty. The flag only changes the display (dashed outline, a popup note), not the risk or the band.
 
 **Test 2 (pre-registered, six campaigns nobody had seen):**
 
@@ -141,6 +142,7 @@ We wrote down a hypothesis and a rule before extracting anything (commit `50b694
 
 - Retrain on all campaigns up to Aug/2026 (we kept the newest ones for testing), and keep re-checking each new campaign as COGERH publishes it.
 - Extract the other basins of Ceará (≈ 2,000 more lab samples), which our connection did not allow in 48 hours.
+- Replace `water_frac` with a geometry-independent feature (for example, water area relative to the reservoir's full-capacity outline).
 - Add red-edge bands B06/B07 for a three-band chlorophyll index, and a phycocyanin proxy to separate cyanobacteria from other algae.
 - Ask COGERH technicians whether a ranked list helps them plan sampling, and which mistakes cost them more.
 - The same pipeline needs only Sentinel-2, NASA POWER and a lab table, so it could run on semi-arid reservoirs elsewhere (Northeast Brazil, Spain, the Sahel, Australia). We have not tested that.
