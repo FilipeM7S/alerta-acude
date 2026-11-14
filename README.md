@@ -1,6 +1,6 @@
 # Alerta Açude
 **Track:** Climate
-**Team:** *(names, emails and schools to be confirmed)*
+**Team:** Filipe Moura da Silva (solo), EEEP Avelino Magalhães, Tabuleiro do Norte, Ceará, Brazil
 
 > This project is a prototype. It does not replace laboratory testing of drinking water.
 
