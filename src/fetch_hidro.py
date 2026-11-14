@@ -114,3 +114,26 @@ def load_db_records(root: Path):
     db = db.rename(columns={"cianobacterias": "cyano_db", "clorofila": "chla_db"})
     db = db[~db.duplicated(["reservoir", "campaign"], keep=False)]
     return db[["reservoir", "campaign", "date_db", "cyano_db", "chla_db", "ponto"]]
+
+
+def fetch_volumes(root: Path, date):
+    """Stored volume (% of capacity) of every monitored reservoir on one date, from the portal's
+    daily-level page (https://www.hidro.ce.gov.br/quantidade-nivel-diario?data=dd/mm/yyyy).
+    The embedded data is saved to data/raw/hidro/volumes/YYYY-MM-DD.json."""
+    import pandas as pd
+    from common import normalize_name
+
+    d = pd.Timestamp(date)
+    out = root / "data" / "raw" / "hidro" / "volumes"
+    out.mkdir(parents=True, exist_ok=True)
+    f = out / f"{d.date()}.json"
+    if not f.exists():
+        r = requests.get(f"{BASE}/quantidade-nivel-diario", params={"data": d.strftime("%d/%m/%Y")},
+                         headers={"User-Agent": "alerta-acude-research/0.1 (student hackathon project)"}, timeout=120)
+        r.raise_for_status()
+        key = "var dados_reservatorios = "
+        data, _ = json.JSONDecoder().raw_decode(r.text[r.text.index(key) + len(key):])
+        f.write_text(json.dumps(data["data"]["list"], ensure_ascii=False), encoding="utf-8")
+    rows = [{"reservoir": normalize_name(x["reservatorio"]["nome"]), "volume_pct": x["volume"]["perc"],
+             "volume_date": x["volume"]["data"]} for x in json.loads(f.read_text(encoding="utf-8"))]
+    return pd.DataFrame(rows)

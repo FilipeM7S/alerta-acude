@@ -1,5 +1,5 @@
-"""Extract Sentinel-2 water features for every usable lab sample (resumable: results are cached
-per sample in data/processed/s2_cache/). Newest campaigns first.
+"""Extract Sentinel-2 water features for every usable lab sample in the Jaguaribe system (resumable: cached
+per sample in data/processed/s2_cache/). Samples run in random order.
 
 Usage: python run_s2.py <repo_root> [workers]
 """
@@ -19,8 +19,10 @@ workers = int(sys.argv[2]) if len(sys.argv) > 2 else 16
 res = gpd.read_file(root / "data/processed/reservoirs.geojson").set_index("reservoir")
 aoi_utm = res.to_crs(CRS).geometry
 s = pd.read_csv(root / "data/processed/samples.csv", parse_dates=["date"])
-todo = s[s["usable"] & s["reservoir"].isin(res.index)][["reservoir", "date", "campaign"]].drop_duplicates(["reservoir", "date"])
-todo = todo.sort_values(["campaign", "reservoir"], ascending=[False, True])
+# Jaguaribe system only: our connection downloads ~0.3-1 MB/s and each image costs ~3.3 MB.
+jag = res.index[res["jaguaribe_system"]]
+todo = s[s["usable"] & s["reservoir"].isin(jag)][["reservoir", "date", "campaign"]].drop_duplicates(["reservoir", "date"])
+todo = todo.sample(frac=1, random_state=42)  # random order: a partial cache is a fair subset
 cache = root / "data/processed/s2_cache"
 cache.mkdir(parents=True, exist_ok=True)
 print(f"{len(todo)} samples, {workers} workers", flush=True)
