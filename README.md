@@ -82,13 +82,15 @@ The decision threshold is chosen on validation to catch at least 80% of blooms, 
 
 **Test 1** (184 samples, 160 above 20,000 cells/mL; every method scored on the same samples):
 
-| Method | Recall | Precision | Missed blooms | False alarms | PR-AUC | PR-AUC for *clean* water |
-|---|---|---|---|---|---|---|
-| Persistence (last lab result) | 0.90 | 0.89 | 16 | 18 | 0.931 | 0.281 |
-| Always "bloom" | 1.00 | 0.87 | 0 | 24 | 0.870 | 0.130 |
-| NDCI > t (one satellite index) | 0.99 | 0.89 | 1 | 19 | 0.962 | 0.455 |
-| **Logistic regression (chosen)** | 0.89 | 0.89 | 17 | 18 | 0.944 | 0.225 |
-| LightGBM (small) | 0.88 | 0.93 | 19 | 11 | 0.943 | 0.425 |
+| Method | Recall | Precision | Missed blooms | False alarms | PR-AUC | PR-AUC for *clean* water | Balanced accuracy¹ |
+|---|---|---|---|---|---|---|---|
+| Persistence (last lab result) | 0.90 | 0.89 | 16 | 18 | 0.931 | 0.281 | 0.575 |
+| Always "bloom" | 1.00 | 0.87 | 0 | 24 | 0.870 | 0.130 | 0.500 |
+| NDCI > t (one satellite index) | 0.99 | 0.89 | 1 | 19 | 0.962 | 0.455 | 0.601 |
+| **Logistic regression (chosen)** | 0.89 | 0.89 | 17 | 18 | 0.944 | 0.225 | 0.572 |
+| LightGBM (small) | 0.88 | 0.93 | 19 | 11 | 0.943 | 0.425 | 0.711 |
+
+¹ Balanced accuracy is a secondary metric, not pre-registered; the pre-registered metric is PR-AUC.
 
 - **The model ties persistence; it does not beat it.** The bootstrap 95% interval for the PR-AUC difference (model − persistence) is −0.030 to +0.056. The satellite gives the technician about what a three-month-old lab result gives, with no lab visit.
 - **The PR-AUC values above 0.95 are not leakage.** 87% of test samples are blooms, so a random guess already scores 0.87. A model trained on shuffled labels scores 0.868, and no lab value is among the inputs.
@@ -111,12 +113,14 @@ The decision threshold is chosen on validation to catch at least 80% of blooms, 
 
 We wrote down a hypothesis and a rule before extracting anything (commit `50b694b`). The hypothesis: a model without the season and weather inputs ("B": satellite + stored water, 6 inputs) misses fewer dry-season blooms than the chosen model ("A"). The rule: the map uses B if its PR-AUC is within 0.02 of A's. The test covers 238 samples (89% blooms), with counts from COGERH's database only, because no PDF report exists for these campaigns yet.
 
-| Method | Recall | Precision | Missed blooms | False alarms | PR-AUC | PR-AUC for *clean* water |
-|---|---|---|---|---|---|---|
-| Persistence (last lab result) | 0.93 | 0.94 | 16 | 13 | 0.975 | 0.435 |
-| NDCI > t | 0.93 | 0.92 | 15 | 17 | 0.980 | 0.371 |
-| A: logistic regression, 15 inputs | 0.83 | 0.94 | 37 | 11 | 0.958 | 0.269 |
-| **B: satellite + stored water, 6 inputs** | 0.86 | 0.95 | 29 | 10 | 0.972 | 0.380 |
+| Method | Recall | Precision | Missed blooms | False alarms | PR-AUC | PR-AUC for *clean* water | Balanced accuracy¹ |
+|---|---|---|---|---|---|---|---|
+| Persistence (last lab result) | 0.93 | 0.94 | 16 | 13 | 0.975 | 0.435 | 0.702 |
+| NDCI > t | 0.93 | 0.92 | 15 | 17 | 0.980 | 0.371 | 0.625 |
+| A: logistic regression, 15 inputs | 0.83 | 0.94 | 37 | 11 | 0.958 | 0.269 | 0.693 |
+| **B: satellite + stored water, 6 inputs** | 0.86 | 0.95 | 29 | 10 | 0.972 | 0.380 | 0.732 |
+
+¹ Not pre-registered (the pre-registered metric was PR-AUC). On it, model B is highest: 0.732, vs persistence 0.702 and NDCI 0.625.
 
 - **The hypothesis held.** In the dry-season campaigns, B missed 22 blooms and A missed 30. B also scored higher overall, so **the map uses B**.
 - **The last lab result is still not beaten.** The bootstrap 95% intervals for the difference with persistence include zero:
@@ -124,6 +128,8 @@ We wrote down a hypothesis and a rule before extracting anything (commit `50b694
   - NDCI: −0.012 to +0.025.
 
   In the dry season, persistence missed only 10 blooms.
+
+**Why not just use NDCI?** In both tests the single-index rule NDCI > t has the highest PR-AUC (Test 1: 0.962; Test 2: 0.980). The chlorophyll seen from space is the core signal: one index alone already ties the last lab result. The model adds stored volume, a calibrated probability, a ranking and plain-language reasons, and raises fewer false alarms (Test 2: B 10 vs NDCI 17), at the cost of more missed blooms (29 vs 15). In Test 1 the NDCI rule missed fewer blooms than the model (1 vs 17) with about the same false alarms (19 vs 18).
 
 **Live map (14 Nov 2026, model B, `outputs/risk_map.html`):**
 - 49 of the 65 Jaguaribe-system reservoirs had a clear image between 24 Oct and 13 Nov; 16 had none.
