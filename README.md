@@ -67,6 +67,10 @@ There is no location or reservoir ID, so the model cannot memorise reservoirs.
 
 **Model:** logistic regression on standardized features. Its coefficients are the explanation. On validation it beat a small LightGBM (PR-AUC 0.951 vs 0.928), so we kept the simpler model. After Test 1, a pre-registered rule replaced it in the map with an even simpler version that uses only the 6 satellite and stored-water inputs (see Test 2). Explanations add related inputs together (both temperature windows, both rain windows, month + season), because they are strongly correlated (0.91 for temperature) and would otherwise give contradictory reasons.
 
+![Model B coefficients](outputs/lr_coefficients_modelB.png)
+
+*Model B, used in the map: each bar is how much one standard deviation of an input changes the log-odds of a bloom. NDCI dominates (+1.39); more open water near the sampling point (+0.29) and lower turbidity (NDTI −0.31) also raise the risk. The SHAP summary in `outputs/lgbm_shap_summary.png` is for the small LightGBM, for comparison only (not used in the map).*
+
 **Testing:** time split by campaign, never shuffled.
 
 | Split | Campaigns | Dates | Samples | Share above 20,000 |
@@ -102,7 +106,7 @@ The decision threshold is chosen on validation to catch at least 80% of blooms, 
 3. **Image within 2 days of the lab visit:** no gain. PR-AUC 0.937 on 130 samples, vs 0.944 for all.
 
 **Where it fails, and why** (thumbnails in `outputs/failures_rgb.png`, checks in notebook 04):
-- **Missed blooms come from the season inputs, not from clouds.** The five worst misses were all in the Oct–Dec 2021 campaign, and their thumbnails showed broken clouds. But across the whole test set, partly cloudy scenes had *fewer* errors (14%) than clear ones (24%). What the misses share is the season: 16 of the 17 missed blooms were in the dry-season campaigns (Aug, Nov). In 2016–2020, dry-season samples were blooms less often (70% vs 79%), and the model learned that through its season and temperature inputs. In the test years, dry-season blooms were common (84%).
+- **Missed blooms come from the season inputs, not from clouds.** The five worst misses were all in the Oct–Dec 2021 campaign, and their thumbnails showed broken clouds. But across the whole test set, partly cloudy scenes had *fewer* errors (14%) than clear ones (24%). What the misses share is the season: 16 of the 17 missed blooms were in the dry-season campaigns (Aug, Nov). In 2016–2020, dry-season samples were blooms less often (70% vs 79%), and the model learned that through its season and temperature inputs. In the test years, dry-season blooms were common (84%). Model A's coefficients (`outputs/lr_coefficients_modelA.png`) show this: `month_sin` is +0.73, and the two temperature windows have opposite signs (`tmax_7d` −0.73, `tmax_30d` +0.37) although they are 0.91 correlated. That is why the map's explanations add related inputs together, and why model B drops the season and weather inputs.
 - **Many cells, little chlorophyll.** For example, Riacho do Sangue had 191,134 cells/mL but only 12.85 µg/L chlorophyll-a. NDCI sees chlorophyll, not cell numbers.
 - **False alarms:**
   - Atalho (16,046 cells/mL) and Bengue (10,422) were close to the limit; both are above 10,000, where the same Portaria (Annex 12) already asks for weekly cyanobacteria counts.
