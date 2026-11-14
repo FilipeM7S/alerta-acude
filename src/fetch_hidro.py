@@ -93,3 +93,24 @@ def main(root: Path):
 
 if __name__ == "__main__":
     main(Path(sys.argv[1]))
+
+
+def load_db_records(root: Path):
+    """All saved lab records from the portal database, one row per reservoir and campaign.
+    Reservoirs with two sampling points in the same campaign are left out (ambiguous)."""
+    import pandas as pd
+    from common import normalize_name
+
+    raw = root / "data" / "raw" / "hidro"
+    names = pd.read_csv(raw / "reservoir_list.csv")
+    rows = []
+    for f in (raw / "dadosanuais").glob("*.json"):
+        rows += json.loads(f.read_text(encoding="utf-8")) or []
+    db = pd.DataFrame(rows)
+    db["campaign"] = db["campanha"].map(lambda c: f"{c[4:]}-{MONTHS[c[:3]]:02d}")
+    db = db.merge(names[["hidro_id", "name"]], left_on="reservatorio", right_on="hidro_id")
+    db["reservoir"] = db["name"].map(normalize_name)
+    db["date_db"] = pd.to_datetime(db["data"])
+    db = db.rename(columns={"cianobacterias": "cyano_db", "clorofila": "chla_db"})
+    db = db[~db.duplicated(["reservoir", "campaign"], keep=False)]
+    return db[["reservoir", "campaign", "date_db", "cyano_db", "chla_db", "ponto"]]
