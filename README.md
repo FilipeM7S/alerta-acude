@@ -116,7 +116,7 @@ The decision threshold is chosen on validation to catch at least 80% of blooms, 
 
 **Test 2 (pre-registered, six campaigns nobody had seen):**
 
-We wrote down a hypothesis and a rule before extracting anything (commit `50b694b`). The hypothesis: a model without the season and weather inputs ("B": satellite + stored water, 6 inputs) misses fewer dry-season blooms than the chosen model ("A"). The rule: the map uses B if its PR-AUC is within 0.02 of A's. The test covers 238 samples (89% blooms), with counts from COGERH's database only, because no PDF report exists for these campaigns yet.
+We wrote down a hypothesis and a rule before extracting anything (commit `50b694b`). The hypothesis: a model without the season and weather inputs ("B": satellite + stored water, 6 inputs) misses fewer dry-season blooms than the chosen model ("A"). The rule: the map uses B if its PR-AUC is within 0.02 of A's. The test covers 238 samples (89% blooms), with counts from COGERH's database only, because no PDF report exists for these campaigns yet. A filter for the database's thousands-separator slip (counts below 1,000 with decimals) could have removed genuine clean samples; in these six campaigns it dropped **0 rows** in any basin (`data/processed/new_campaign_slip_dropped.csv`), so it cannot have biased Test 2.
 
 | Method | Recall | Precision | Missed blooms | False alarms | PR-AUC | PR-AUC for *clean* water | Balanced accuracy¹ |
 |---|---|---|---|---|---|---|---|
