@@ -1,14 +1,16 @@
 # Alerta Açude
 **Track:** Climate
-**Team:** (to be filled in)
+**Team:** *(names, emails and schools to be confirmed)*
 
 > This project is a prototype. It does not replace laboratory testing of drinking water.
 
+**Main takeaway:** the colour of the water seen from space (Sentinel-2) is about as good as the last lab result at telling whether a reservoir is above the legal cyanobacteria limit. It is available every few days instead of every three months. But in our region blooms are the norm, and no method we tried is good at spotting the few clean reservoirs.
+
 ## The problem
 
-The semi-arid interior of Ceará, Brazil, drinks from **açudes** (reservoirs). Heat and drought concentrate nutrients and warm the water, which feeds **cyanobacteria blooms**, and many cyanobacteria produce toxins. Brazil's drinking-water rule (Portaria GM/MS 888/2021, Annex XX, art. 43) requires **weekly cyanotoxin testing when cyanobacteria exceed 20,000 cells/mL** at the intake.
+The semi-arid interior of Ceará, Brazil, drinks from **açudes** (reservoirs). Heat and drought concentrate nutrients and warm the water, which feeds **cyanobacteria blooms**, and many cyanobacteria produce toxins. Brazil's drinking-water rule (Portaria GM/MS nº 888/2021, art. 43 § 2º) says that **above 20,000 cyanobacteria cells/mL at the intake, cyanotoxins must be analysed at least weekly**.
 
-The state water agency COGERH measures about 150 reservoirs, but only **once per quarter**. Between campaigns a bloom can grow for three months unseen. In the Jaguaribe Valley, where cities such as Tabuleiro do Norte, Limoeiro do Norte and Russas have depended on the Castanhão reservoir, 80% of lab samples since 2016 were above the legal threshold.
+The state water agency COGERH samples about 150 reservoirs, but only **once per quarter**. Between campaigns a bloom can grow for three months unseen. In the Jaguaribe system, where Tabuleiro do Norte, Limoeiro do Norte and Russas have depended on the Castanhão reservoir, **78% of the 1,479 lab samples from 2016 to 2025 were above 20,000 cells/mL**.
 
 **User:** a COGERH water-quality technician, or the operator of a Jaguaribe Valley water service.
 **Decision:** *which reservoirs do I sample first this week, and where do I start toxin testing before the next lab campaign?*
@@ -16,36 +18,127 @@ Today their best guess is the **last lab result**, up to three months old.
 
 ## What we built
 
-A weekly risk map. For each of the 65 reservoirs of the Jaguaribe system it takes the most recent clear **Sentinel-2** image, the **weather** of the days before it and today's **stored volume**, and returns the **probability that cyanobacteria exceed 20,000 cells/mL**, a risk band, the **top three reasons in plain language**, and the last lab result for comparison.
+A weekly risk map (`outputs/risk_map.html`, notebook 05). For each reservoir of the Jaguaribe system it uses:
+- the most recent clear **Sentinel-2** image;
+- the **weather** of the days before it;
+- today's **stored volume**.
+
+It returns:
+- the **probability that cyanobacteria exceed 20,000 cells/mL**;
+- an **Alert / Lower risk** band from a threshold fixed on validation data;
+- a ranked list;
+- the **top three reasons in plain language**;
+- the last lab result, for comparison.
 
 ## What we added
 
-- **Our own ground truth:** we parsed all 28 COGERH trophic-state reports (Feb/2016 to Feb/2025, PDF) into a clean table, with a parser test, and cross-checked every value against COGERH's own online database. The two official sources agree on 99.6% of counts; we found and documented errors in both (a shifted table in one report; counts stored ÷1,000 in the database for two campaigns).
+- **Our own ground truth.** We parsed all 28 COGERH trophic-state reports (PDF, Feb/2016 to Feb/2025) into one table of 3,679 lab samples from 156 reservoirs. A parser test reproduces four known values exactly.
+  - We cross-checked every value against COGERH's own online database. The two sources agree on 99.6% of counts.
+  - We found and documented errors in both sources: a shifted table in one report, and counts stored divided by 1,000 in the database for two campaigns.
+  - We drop a sample only when the two sources contradict each other (23 samples).
 - **Our own user and question:** a technician deciding where to sample, compared against what they know today (the last lab result).
 - **Our own questions:** does it still work in drought (volume < 20%)? On reservoirs it never saw? When the image is within 2 days of the lab visit?
+- **A second, pre-registered test.** After the first test exposed a weakness, we wrote down a fix and a decision rule (commit `50b694b`) *before* touching six newer campaigns (May/2025 to Aug/2026) that no model had seen. Then we scored them once.
 
 ## How it works
 
 **Data** (all public):
-- Lab results: COGERH IET reports (28 campaigns), checked against the Portal Hidrológico database. A sample is used only if the two sources do not contradict each other. *(counts: to be filled in)*
-- Reservoir locations and basins: Portal Hidrológico do Ceará. Water polygons: OpenStreetMap.
-- Satellite: Sentinel-2 L2A (Microsoft Planetary Computer). For each lab sample, the closest image within ±5 days; only pixels that are water (scene classification) **and** have MNDWI > 0, eroded 2 pixels from the shore, within 1 km of the reservoir's reference point.
-- Weather: NASA POWER daily (heat, rain, wind, sunlight over 7 to 90 days). Stored volume: COGERH.
+- **Lab results:** COGERH IET reports, checked against the Portal Hidrológico database.
+- **Reservoir points and basins:** Portal Hidrológico do Ceará. **Water polygons:** OpenStreetMap.
+- **Satellite:** Sentinel-2 L2A (Microsoft Planetary Computer).
+  - For each lab sample, we take the closest image within ±5 days.
+  - We keep only pixels the scene classification calls water **and** with MNDWI > 0, eroded 2 pixels from the shore, within 1 km of the sampling point.
+  - We correct the 2022 change in processing baseline (−1000 offset).
+- **Weather:** NASA POWER daily. **Stored volume:** COGERH.
 
-**Features (15):** chlorophyll index NDCI, turbidity NDTI, MNDWI, share of the area that is water; max temperature (7 and 30 days), rain (30 and 90 days), wind, sunlight; volume % and its change; month and rainy season. No location or reservoir ID, so the model cannot memorise reservoirs.
+For bandwidth we extracted satellite data only for the **Jaguaribe system** (65 reservoirs, 1,479 usable lab samples). **614 samples have a clear image**:
+- 730 were too cloudy;
+- 135 had no image within 5 days, mostly in 2016–2017, when only one Sentinel-2 satellite was flying.
 
-**Model:** logistic regression on standardized features (its coefficients are the explanation), compared with a small LightGBM. *(choice and reason: to be filled in)*
+The chlorophyll index NDCI follows lab chlorophyll-a closely (Spearman 0.81), and cyanobacteria counts less so (0.41).
 
-**Testing:** time split by campaign, never shuffled. *(date ranges: to be filled in)* The decision threshold is chosen on validation to catch at least 80% of blooms, because a missed bloom is worse than an extra sample.
+**Features (15):**
+- **Satellite:** NDCI (chlorophyll), NDTI (turbidity), MNDWI, share of the area that is water.
+- **Weather:** max temperature (7 and 30 days), rain (30 and 90 days), wind, sunlight.
+- **Water:** volume % and its change since the last campaign.
+- **Season:** month and rainy season.
+
+There is no location or reservoir ID, so the model cannot memorise reservoirs.
+
+**Model:** logistic regression on standardized features. Its coefficients are the explanation. On validation it beat a small LightGBM (PR-AUC 0.951 vs 0.928), so we kept the simpler model. Explanations add related inputs together (both temperature windows, both rain windows, month + season), because they are strongly correlated (0.91 for temperature) and would otherwise give contradictory reasons.
+
+**Testing:** time split by campaign, never shuffled.
+
+| Split | Campaigns | Dates | Samples | Share above 20,000 |
+|---|---|---|---|---|
+| Train | 16 (May/2016 to Feb/2020) | 2016-05-09 to 2020-02-12 | 288 | 74% |
+| Validation | 5 (Aug/2020 to Aug/2021) | 2020-07-28 to 2021-09-14 | 142 | 92% |
+| Test 1 | 6 (Nov/2021 to Feb/2025) | 2021-10-05 to 2025-03-12 | 184 | 87% |
+| Test 2 (database only) | 6 (May/2025 to Aug/2026) | TEST2_DATES | TEST2_N | TEST2_SHARE |
+
+The decision threshold is chosen on validation to catch at least 80% of blooms, because a missed bloom is worse than an extra sample.
 
 ## Results
 
-*(to be filled in after the final run)*
+**Test 1** (184 samples, 160 above 20,000 cells/mL; every method scored on the same samples):
+
+| Method | Recall | Precision | Missed blooms | False alarms | PR-AUC | PR-AUC for *clean* water |
+|---|---|---|---|---|---|---|
+| Persistence (last lab result) | 0.90 | 0.89 | 16 | 18 | 0.931 | 0.281 |
+| Always "bloom" | 1.00 | 0.87 | 0 | 24 | 0.870 | 0.130 |
+| NDCI > t (one satellite index) | 0.99 | 0.89 | 1 | 19 | 0.962 | 0.455 |
+| **Logistic regression (chosen)** | 0.89 | 0.89 | 17 | 18 | 0.944 | 0.225 |
+| LightGBM (small) | 0.88 | 0.93 | 19 | 11 | 0.943 | 0.425 |
+
+- **The model ties persistence; it does not beat it.** The bootstrap 95% interval for the PR-AUC difference (model − persistence) is −0.030 to +0.056. The satellite gives the technician about what a three-month-old lab result gives, with no lab visit.
+- **The PR-AUC values above 0.95 are not leakage.** 87% of test samples are blooms, so a random guess already scores 0.87. A model trained on shuffled labels scores 0.868, and no lab value is among the inputs.
+- **The hard part is finding the clean reservoirs** (last column; chance = 0.13). The single index NDCI does best (0.455). Our chosen model is worse than persistence here.
+
+**Our own questions** (Test 1):
+1. **Drought (volume < 20%):** no drop. Recall 0.89 and precision 0.91 (38 samples), vs 0.90 and 0.88 above 20% volume.
+2. **Unseen reservoirs** (5 folds grouped by reservoir, all years): the model and persistence tie, with mean PR-AUC 0.913 each.
+3. **Image within 2 days of the lab visit:** no gain. PR-AUC 0.937 on 130 samples, vs 0.944 for all.
+
+**Where it fails, and why** (thumbnails in `outputs/failures_rgb.png`, checks in notebook 04):
+- **Missed blooms come from the season inputs, not from clouds.** The five worst misses were all in the Oct–Dec 2021 campaign, and their thumbnails showed broken clouds. But across the whole test set, partly cloudy scenes had *fewer* errors (14%) than clear ones (24%). What the misses share is the season: 16 of the 17 missed blooms were in the dry-season campaigns (Aug, Nov). In 2016–2020, dry-season samples were blooms less often (70% vs 79%), and the model learned that through its season and temperature inputs. In the test years, dry-season blooms were common (84%).
+- **Many cells, little chlorophyll.** For example, Riacho do Sangue had 191,134 cells/mL but only 12.85 µg/L chlorophyll-a. NDCI sees chlorophyll, not cell numbers.
+- **False alarms:**
+  - Atalho (16,046 cells/mL) and Bengue (10,422) were close to the limit; both are above 10,000, where the same Portaria (Annex 12) already asks for weekly cyanobacteria counts.
+  - Poço da Pedra was green from other algae: 13.90 µg/L chlorophyll-a but only 4,130 cyanobacteria cells/mL.
+  - Cachoeira's image was hazy.
+
+**Test 2 (pre-registered, six campaigns nobody had seen):**
+
+TEST2_RESULTS
+
+**Live map (Nov 2026):** LIVE_MAP
 
 ## What we'd do next
 
-*(to be filled in)*
+- Retrain on all campaigns up to Aug/2026 (we kept the newest ones for testing), and keep re-checking each new campaign as COGERH publishes it.
+- Extract the other basins of Ceará (≈ 2,000 more lab samples), which our connection did not allow in 48 hours.
+- Add red-edge bands B06/B07 for a three-band chlorophyll index, and a phycocyanin proxy to separate cyanobacteria from other algae.
+- Ask COGERH technicians whether a ranked list helps them plan sampling, and which mistakes cost them more.
+- The same pipeline needs only Sentinel-2, NASA POWER and a lab table, so it could run on semi-arid reservoirs elsewhere (Northeast Brazil, Spain, the Sahel, Australia). We have not tested that.
 
 ## Sources
 
-*(to be completed)*
+**Data**
+- COGERH / FUNCEME, *Relatórios de Estado Trófico (IET)*, 28 campaigns Feb/2016 to Feb/2025, Portal Hidrológico do Ceará: https://www.hidro.ce.gov.br/documentos/152 (file list and URLs in `data/raw/cogerh/SOURCES.md`).
+- Portal Hidrológico do Ceará: eutrophication database (`/acude/eutrofizacao`, `/acude/eutrofizacao/dadosanuais`) and daily reservoir levels (`/quantidade-nivel-diario`), https://www.hidro.ce.gov.br (details in `data/raw/hidro/SOURCES.md`).
+- Copernicus Sentinel-2 Level-2A data (ESA), accessed through Microsoft Planetary Computer: https://planetarycomputer.microsoft.com/dataset/sentinel-2-l2a
+- NASA POWER daily data (MERRA-2 based), NASA Langley Research Center: https://power.larc.nasa.gov
+- Map data © OpenStreetMap contributors, ODbL (via the Overpass API): https://www.openstreetmap.org/copyright
+
+**Law and context**
+- Brasil, Ministério da Saúde. Portaria GM/MS nº 888, de 4 de maio de 2021 (art. 43; Anexo 12): https://bvsms.saude.gov.br/bvs/saudelegis/gm/2021/prt0888_07_05_2021.html
+- Diário do Nordeste, "Castanhão tem o segundo pior volume para setembro da história", 9 Sep 2019: https://diariodonordeste.verdesmares.com.br/regiao/castanhao-tem-o-segundo-pior-volume-para-setembro-da-historia-1.2147535
+
+**Methods**
+- Mishra, S. & Mishra, D. R. (2012). Normalized difference chlorophyll index: A novel model for remote estimation of chlorophyll-a concentration in turbid productive waters. *Remote Sensing of Environment*, 117, 394–406.
+- Xu, H. (2006). Modification of normalised difference water index (NDWI) to enhance open water features in remotely sensed imagery. *International Journal of Remote Sensing*, 27(14), 3025–3033.
+- Lacaux, J. P. et al. (2007). Classification of ponds from high-spatial resolution remote sensing: Application to Rift Valley Fever epidemics in Senegal. *Remote Sensing of Environment*, 106(1), 66–74. (NDTI)
+
+**Software:** Python, pdfplumber, pandas, NumPy, SciPy, GeoPandas, Shapely, pystac-client, planetary-computer, odc-stac, rasterio, scikit-learn, LightGBM, SHAP, Matplotlib, Folium, Jupyter (versions in `requirements.txt`).
+
+**AI tools:** Claude Code (Anthropic), running Claude Opus 5.5, was used as a coding assistant for the parser, the data pipeline, the notebooks and drafting this write-up. Every result was produced by the code in this repository.

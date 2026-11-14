@@ -1,0 +1,1975 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_b0c42e5ef8dc4fd860504a370b60e8e7 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    <div style='position:fixed;bottom:20px;left:20px;z-index:999;background:white;padding:8px;border:1px solid #999;font-size:12px'><b>Alerta Açude</b> · 14 Nov 2026<br><span style='color:#c0392b'>●</span> Alert<br><span style='color:#2e86c1'>●</span> Lower risk<br><span style='color:gray'>●</span> no clear image<br><i>Dry season: the model under-warns (see README).<br>Prototype. Does not replace laboratory testing.</i></div>
+    
+            <div class="folium-map" id="map_b0c42e5ef8dc4fd860504a370b60e8e7" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_b0c42e5ef8dc4fd860504a370b60e8e7 = L.map(
+                "map_b0c42e5ef8dc4fd860504a370b60e8e7",
+                {
+                    center: [-6.079331623146964, -39.24939059299233],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 8,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_3abd074177eeb31450ad328a39c687f0 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_3abd074177eeb31450ad328a39c687f0.addTo(map_b0c42e5ef8dc4fd860504a370b60e8e7);
+        
+    
+            var circle_marker_5d3bd674339206cb44d827d220968a80 = L.circleMarker(
+                [-6.037778, -38.447193],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_b0c42e5ef8dc4fd860504a370b60e8e7);
+        
+    
+        var popup_345e7ac9a56e26bc37278406871578db = L.popup({
+  "maxWidth": 340,
+});
+
+        
+            
+                var html_309e5e4f5249f4f5099e6badc11627c5 = $(`<div id="html_309e5e4f5249f4f5099e6badc11627c5" style="width: 100.0%; height: 100.0%;"><b>Adauto Bezerra</b> (Médio Jaguaribe)<br>Risk of &gt; 20,000 cells/mL: <b>31%</b> (<span style='color:#c0392b'><b>Alert</b></span>)<br>Image: 2026-11-08 · Volume: 10%<br>↑ dry last 90 days (5 mm; 1 mm in the last 30)<br>↓ hot last 30 days (max 38.9 °C; last week 39.2 °C)<br>↓ time of year: dry season<br><i>Last lab result: 235,378 cells/mL on 2026-08-14 </i></div>`)[0];
+                popup_345e7ac9a56e26bc37278406871578db.setContent(html_309e5e4f5249f4f5099e6badc11627c5);
+            
+        
+
+        circle_marker_5d3bd674339206cb44d827d220968a80.bindPopup(popup_345e7ac9a56e26bc37278406871578db)
+        ;
+
+        
+    
+    
+            circle_marker_5d3bd674339206cb44d827d220968a80.bindTooltip(
+                `<div>
+                     Adauto Bezerra: 31%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_754a510bbfd3f4b72f9205312c7a93b0 = L.circleMarker(
+                [-6.27146638594, -40.220220464],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_b0c42e5ef8dc4fd860504a370b60e8e7);
+        
+    
+        var popup_e1ff7ec931081dfa3d291095ee9d4f73 = L.popup({
+  "maxWidth": 340,
+});
+
+        
+            
+                var html_d6c41628bde7c93299a5a66f586a6fd1 = $(`<div id="html_d6c41628bde7c93299a5a66f586a6fd1" style="width: 100.0%; height: 100.0%;"><b>Arneiroz II</b> (Alto Jaguaribe)<br>Risk of &gt; 20,000 cells/mL: <b>77%</b> (<span style='color:#c0392b'><b>Alert</b></span>)<br>Image: 2026-11-08 · Volume: 82%<br>↑ dry last 90 days (5 mm; 1 mm in the last 30)<br>↑ 58% of the area near the sampling point is water<br>↓ time of year: dry season<br><i>Last lab result: 371,651 cells/mL on 2026-07-14 </i></div>`)[0];
+                popup_e1ff7ec931081dfa3d291095ee9d4f73.setContent(html_d6c41628bde7c93299a5a66f586a6fd1);
+            
+        
+
+        circle_marker_754a510bbfd3f4b72f9205312c7a93b0.bindPopup(popup_e1ff7ec931081dfa3d291095ee9d4f73)
+        ;
+
+        
+    
+    
+            circle_marker_754a510bbfd3f4b72f9205312c7a93b0.bindTooltip(
+                `<div>
+                     Arneiroz II: 77%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ea7d956ee7d82c01b18c48c89e39bb95 = L.circleMarker(
+                [-7.641854, -38.894554],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_b0c42e5ef8dc4fd860504a370b60e8e7);
+        
+    
+        var popup_4a47607d6f1c017b12518abab2e54688 = L.popup({
+  "maxWidth": 340,
+});
+
+        
+            
+                var html_591a9e5ab6ac8f34ecb898564d451502 = $(`<div id="html_591a9e5ab6ac8f34ecb898564d451502" style="width: 100.0%; height: 100.0%;"><b>Atalho</b> (Salgado)<br>Risk of &gt; 20,000 cells/mL: <b>35%</b> (<span style='color:#c0392b'><b>Alert</b></span>)<br>Image: 2026-11-13 · Volume: 66%<br>↓ little chlorophyll seen (index -0.027)<br>↑ dry last 90 days (12 mm; 4 mm in the last 30)<br>↓ hot last 30 days (max 38.7 °C; last week 39.0 °C)<br><i>Last lab result: 311,479 cells/mL on 2026-08-03 </i></div>`)[0];
+                popup_4a47607d6f1c017b12518abab2e54688.setContent(html_591a9e5ab6ac8f34ecb898564d451502);
+            
+        
+
+        circle_marker_ea7d956ee7d82c01b18c48c89e39bb95.bindPopup(popup_4a47607d6f1c017b12518abab2e54688)
+        ;
+
+        
+    
+    
+            circle_marker_ea7d956ee7d82c01b18c48c89e39bb95.bindTooltip(
+                `<div>
+                     Atalho: 35%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ac35bce676e1c743065e26739969453d = L.circleMarker(
+                [-5.32859467909, -38.9223710722],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_b0c42e5ef8dc4fd860504a370b60e8e7);
+        
+    
+        var popup_ddd290ae9455764f4cbff4ce625af111 = L.popup({
+  "maxWidth": 340,
+});
+
+        
+            
+                var html_b750038b9162e4163de6bd3043aecc38 = $(`<div id="html_b750038b9162e4163de6bd3043aecc38" style="width: 100.0%; height: 100.0%;"><b>Banabuiú</b> (Banabuiú)<br>Risk of &gt; 20,000 cells/mL: <b>40%</b> (<span style='color:#c0392b'><b>Alert</b></span>)<br>Image: 2026-11-08 · Volume: 28%<br>↓ little chlorophyll seen (index -0.001)<br>↑ dry last 90 days (7 mm; 4 mm in the last 30)<br>↓ hot last 30 days (max 39.0 °C; last week 39.2 °C)<br><i>Last lab result: 147,482 cells/mL on 2026-07-14 </i></div>`)[0];
+                popup_ddd290ae9455764f4cbff4ce625af111.setContent(html_b750038b9162e4163de6bd3043aecc38);
+            
+        
+
+        circle_marker_ac35bce676e1c743065e26739969453d.bindPopup(popup_ddd290ae9455764f4cbff4ce625af111)
+        ;
+
+        
+    
+    
+            circle_marker_ac35bce676e1c743065e26739969453d.bindTooltip(
+                `<div>
+                     Banabuiú: 40%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_40d43f926833274ff8fd4249f7926518 = L.circleMarker(
+                [-6.59658743945, -40.1392436122],
+                {"bubblingMouseEvents": true, "color": "#2e86c1", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2e86c1", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_b0c42e5ef8dc4fd860504a370b60e8e7);
+        
+    
+        var popup_0bab60816a5abe7ee704f14e05acb4a2 = L.popup({
+  "maxWidth": 340,
+});
+
+        
+            
+                var html_0dbaf43414d13788c69efb219b22dfcf = $(`<div id="html_0dbaf43414d13788c69efb219b22dfcf" style="width: 100.0%; height: 100.0%;"><b>Benguê</b> (Alto Jaguaribe)<br>Risk of &gt; 20,000 cells/mL: <b>25%</b> (<span style='color:#2e86c1'><b>Lower risk</b></span>)<br>Image: 2026-11-03 · Volume: 70%<br>↓ little chlorophyll seen (index -0.004)<br>↑ dry last 90 days (5 mm; 1 mm in the last 30)<br>↓ time of year: dry season<br><i>Last lab result: 34,924 cells/mL on 2026-08-26 </i></div>`)[0];
+                popup_0bab60816a5abe7ee704f14e05acb4a2.setContent(html_0dbaf43414d13788c69efb219b22dfcf);
+            
+        
+
+        circle_marker_40d43f926833274ff8fd4249f7926518.bindPopup(popup_0bab60816a5abe7ee704f14e05acb4a2)
+        ;
+
+        
+    
+    
+            circle_marker_40d43f926833274ff8fd4249f7926518.bindTooltip(
+                `<div>
+                     Benguê: 25%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_bb257742f7584be10cd5d6749d1f2ac8 = L.circleMarker(
+                [-6.990421, -39.017881],
+                {"bubblingMouseEvents": true, "color": "#2e86c1", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2e86c1", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_b0c42e5ef8dc4fd860504a370b60e8e7);
+        
+    
+        var popup_262c2f5ef3608b0afad882b92dcb1af7 = L.popup({
+  "maxWidth": 340,
+});
+
+        
+            
+                var html_00a7caf3cbb3860550f1191684f8fc08 = $(`<div id="html_00a7caf3cbb3860550f1191684f8fc08" style="width: 100.0%; height: 100.0%;"><b>Cachoeira</b> (Salgado)<br>Risk of &gt; 20,000 cells/mL: <b>21%</b> (<span style='color:#2e86c1'><b>Lower risk</b></span>)<br>Image: 2026-11-13 · Volume: 87%<br>↓ little chlorophyll seen (index -0.051)<br>↑ dry last 90 days (10 mm; 4 mm in the last 30)<br>↓ hot last 30 days (max 39.2 °C; last week 39.4 °C)<br><i>Last lab result: 627 cells/mL on 2026-07-14 </i></div>`)[0];
+                popup_262c2f5ef3608b0afad882b92dcb1af7.setContent(html_00a7caf3cbb3860550f1191684f8fc08);
+            
+        
+
+        circle_marker_bb257742f7584be10cd5d6749d1f2ac8.bindPopup(popup_262c2f5ef3608b0afad882b92dcb1af7)
+        ;
+
+        
+    
+    
+            circle_marker_bb257742f7584be10cd5d6749d1f2ac8.bindTooltip(
+                `<div>
+                     Cachoeira: 21%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5443189f5b2213b7b95437a08e72b964 = L.circleMarker(
+                [-6.53, -39.917],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_b0c42e5ef8dc4fd860504a370b60e8e7);
+        
+    
+        var popup_5e48c86aaa9d34b7a57436ec35950255 = L.popup({
+  "maxWidth": 340,
+});
+
+        
+            
+                var html_0c783b7f106574177c1e3ccd8f2d2a28 = $(`<div id="html_0c783b7f106574177c1e3ccd8f2d2a28" style="width: 100.0%; height: 100.0%;"><b>Caldeirões</b> (Alto Jaguaribe)<br>Risk of &gt; 20,000 cells/mL: <b>38%</b> (<span style='color:#c0392b'><b>Alert</b></span>)<br>Image: 2026-11-03 · Volume: 103%<br>↑ dry last 90 days (5 mm; 1 mm in the last 30)<br>↓ little chlorophyll seen (index 0.017)<br>↓ time of year: dry season<br><i>Last lab result: 276,084 cells/mL on 2026-07-24 </i></div>`)[0];
+                popup_5e48c86aaa9d34b7a57436ec35950255.setContent(html_0c783b7f106574177c1e3ccd8f2d2a28);
+            
+        
+
+        circle_marker_5443189f5b2213b7b95437a08e72b964.bindPopup(popup_5e48c86aaa9d34b7a57436ec35950255)
+        ;
+
+        
+    
+    
+            circle_marker_5443189f5b2213b7b95437a08e72b964.bindTooltip(
+                `<div>
+                     Caldeirões: 38%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8b6898324fd49a7301121c67c0ae9448 = L.circleMarker(
+                [-5.86834198717, -38.3179973854],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_b0c42e5ef8dc4fd860504a370b60e8e7);
+        
+    
+        var popup_52a24a13d695e6def1b8999a771fb200 = L.popup({
+  "maxWidth": 340,
+});
+
+        
+            
+                var html_d626daa55ea8afc6d52fba133ec42bbe = $(`<div id="html_d626daa55ea8afc6d52fba133ec42bbe" style="width: 100.0%; height: 100.0%;"><b>Canafístula</b> (Médio Jaguaribe)<br>Risk of &gt; 20,000 cells/mL: <b>80%</b> (<span style='color:#c0392b'><b>Alert</b></span>)<br>Image: 2026-11-13 · Volume: 5%<br>↑ green water (chlorophyll index 0.278)<br>↑ dry last 90 days (12 mm; 3 mm in the last 30)<br>↓ hot last 30 days (max 39.2 °C; last week 39.4 °C)<br><i>Last lab result: 304,400 cells/mL on 2026-08-04 </i></div>`)[0];
+                popup_52a24a13d695e6def1b8999a771fb200.setContent(html_d626daa55ea8afc6d52fba133ec42bbe);
+            
+        
+
+        circle_marker_8b6898324fd49a7301121c67c0ae9448.bindPopup(popup_52a24a13d695e6def1b8999a771fb200)
+        ;
+
+        
+    
+    
+            circle_marker_8b6898324fd49a7301121c67c0ae9448.bindTooltip(
+                `<div>
+                     Canafístula: 80%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_677ed1eeac8ab5f0361726685efcf6b9 = L.circleMarker(
+                [-6.946681, -39.941319],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_b0c42e5ef8dc4fd860504a370b60e8e7);
+        
+    
+        var popup_d3f7cc446ec4f0d7f4b7d72c55e7eba4 = L.popup({
+  "maxWidth": 340,
+});
+
+        
+            
+                var html_79a819dde0f6742bd8e49259103d02a6 = $(`<div id="html_79a819dde0f6742bd8e49259103d02a6" style="width: 100.0%; height: 100.0%;"><b>Canoas</b> (Alto Jaguaribe)<br>Risk of &gt; 20,000 cells/mL: <b>48%</b> (<span style='color:#c0392b'><b>Alert</b></span>)<br>Image: 2026-11-08 · Volume: 70%<br>↓ little chlorophyll seen (index -0.025)<br>↑ dry last 90 days (6 mm; 2 mm in the last 30)<br>↓ time of year: dry season<br><i>Last lab result: none</i></div>`)[0];
+                popup_d3f7cc446ec4f0d7f4b7d72c55e7eba4.setContent(html_79a819dde0f6742bd8e49259103d02a6);
+            
+        
+
+        circle_marker_677ed1eeac8ab5f0361726685efcf6b9.bindPopup(popup_d3f7cc446ec4f0d7f4b7d72c55e7eba4)
+        ;
+
+        
+    
+    
+            circle_marker_677ed1eeac8ab5f0361726685efcf6b9.bindTooltip(
+                `<div>
+                     Canoas: 48%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5bb3cf17c495a072a7b01825c64a251c = L.circleMarker(
+                [-5.626210128, -39.99916198],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_b0c42e5ef8dc4fd860504a370b60e8e7);
+        
+    
+        var popup_15d4197f6cca7ebc955d55a4a3c7342b = L.popup({
+  "maxWidth": 340,
+});
+
+        
+            
+                var html_b2060cfd2bcc9891ad413792c3105932 = $(`<div id="html_b2060cfd2bcc9891ad413792c3105932" style="width: 100.0%; height: 100.0%;"><b>Capitão Mor</b> (Banabuiú)<br>Risk of &gt; 20,000 cells/mL: <b>43%</b> (<span style='color:#c0392b'><b>Alert</b></span>)<br>Image: 2026-11-10 · Volume: 50%<br>↑ dry last 90 days (4 mm; 1 mm in the last 30)<br>↓ time of year: dry season<br>↓ little chlorophyll seen (index 0.057)<br><i>Last lab result: 134,502 cells/mL on 2026-07-15 </i></div>`)[0];
+                popup_15d4197f6cca7ebc955d55a4a3c7342b.setContent(html_b2060cfd2bcc9891ad413792c3105932);
+            
+        
+
+        circle_marker_5bb3cf17c495a072a7b01825c64a251c.bindPopup(popup_15d4197f6cca7ebc955d55a4a3c7342b)
+        ;
+
+        
+    
+    
+            circle_marker_5bb3cf17c495a072a7b01825c64a251c.bindTooltip(
+                `<div>
+                     Capitão Mor: 43%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_495a8eb43da9c934918c043b76735e75 = L.circleMarker(
+                [-5.48909482144, -38.4502293061],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11, "stroke": true, "weight": 3}
+            ).addTo(map_b0c42e5ef8dc4fd860504a370b60e8e7);
+        
+    
+        var popup_180c4b7138d26b72574dfe5bb9b00607 = L.popup({
+  "maxWidth": 340,
+});
+
+        
+            
+                var html_5eae8d4665e947ffaadd55481a19670d = $(`<div id="html_5eae8d4665e947ffaadd55481a19670d" style="width: 100.0%; height: 100.0%;"><b>Castanhão</b> (Médio Jaguaribe)<br>Risk of &gt; 20,000 cells/mL: <b>47%</b> (<span style='color:#c0392b'><b>Alert</b></span>)<br>Image: 2026-11-13 · Volume: 27%<br>↑ dry last 90 days (11 mm; 8 mm in the last 30)<br>↓ little chlorophyll seen (index 0.029)<br>↑ 63% of the area near the sampling point is water<br><i>Last lab result: 38,492 cells/mL on 2026-07-31 </i><br><b>Supplied Tabuleiro do Norte, Limoeiro do Norte, Russas, Jaguaribara and São João do Jaguaribe (Diário do Nordeste, Sep 2019)</b></div>`)[0];
+                popup_180c4b7138d26b72574dfe5bb9b00607.setContent(html_5eae8d4665e947ffaadd55481a19670d);
+            
+        
+
+        circle_marker_495a8eb43da9c934918c043b76735e75.bindPopup(popup_180c4b7138d26b72574dfe5bb9b00607)
+        ;
+
+        
+    
+    
+            circle_marker_495a8eb43da9c934918c043b76735e75.bindTooltip(
+                `<div>
+                     Castanhão: 47%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f2606b2707d5a0dac3dfa9e67853d0df = L.circleMarker(
+                [-4.97772872522, -39.0631731394],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_b0c42e5ef8dc4fd860504a370b60e8e7);
+        
+    
+        var popup_0b5895e0341262d0f52da353b23424fb = L.popup({
+  "maxWidth": 340,
+});
+
+        
+            
+                var html_903fd3ccd6dc8a8b14e43fe1f8848312 = $(`<div id="html_903fd3ccd6dc8a8b14e43fe1f8848312" style="width: 100.0%; height: 100.0%;"><b>Cedro</b> (Banabuiú)<br>Risk of &gt; 20,000 cells/mL: <b>69%</b> (<span style='color:#c0392b'><b>Alert</b></span>)<br>Image: 2026-11-10 · Volume: 0%<br>↑ dry last 90 days (8 mm; 5 mm in the last 30)<br>↓ time of year: dry season<br>↓ hot last 30 days (max 37.6 °C; last week 37.6 °C)<br><i>Last lab result: 619,419 cells/mL on 2026-07-28 </i></div>`)[0];
+                popup_0b5895e0341262d0f52da353b23424fb.setContent(html_903fd3ccd6dc8a8b14e43fe1f8848312);
+            
+        
+
+        circle_marker_f2606b2707d5a0dac3dfa9e67853d0df.bindPopup(popup_0b5895e0341262d0f52da353b23424fb)
+        ;
+
+        
+    
+    
+            circle_marker_f2606b2707d5a0dac3dfa9e67853d0df.bindTooltip(
+                `<div>
+                     Cedro: 69%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_58c6f75fbf053f24aa883b24ec675343 = L.circleMarker(
+                [-5.26185481392, -38.6457784847],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_b0c42e5ef8dc4fd860504a370b60e8e7);
+        
+    
+        var popup_595f1f15c876e3f38b7f243bc2da9a6e = L.popup({
+  "maxWidth": 340,
+});
+
+        
+            
+                var html_bfc54d5fc9ee6084c53c5e1d589f7aae = $(`<div id="html_bfc54d5fc9ee6084c53c5e1d589f7aae" style="width: 100.0%; height: 100.0%;"><b>Cipoada</b> (Banabuiú)<br>Risk of &gt; 20,000 cells/mL: <b>30%</b> (<span style='color:#c0392b'><b>Alert</b></span>)<br>Image: 2026-11-13 · Volume: 8%<br>↓ little chlorophyll seen (index 0.015)<br>↑ dry last 90 days (11 mm; 8 mm in the last 30)<br>↓ time of year: dry season<br><i>Last lab result: 79,050 cells/mL on 2026-07-30 </i></div>`)[0];
+                popup_595f1f15c876e3f38b7f243bc2da9a6e.setContent(html_bfc54d5fc9ee6084c53c5e1d589f7aae);
+            
+        
+
+        circle_marker_58c6f75fbf053f24aa883b24ec675343.bindPopup(popup_595f1f15c876e3f38b7f243bc2da9a6e)
+        ;
+
+        
+    
+    
+            circle_marker_58c6f75fbf053f24aa883b24ec675343.bindTooltip(
+                `<div>
+                     Cipoada: 30%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_31045fb2e2306d2cd75cc2a3bab64f5b = L.circleMarker(
+                [-5.083883, -38.305097],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_b0c42e5ef8dc4fd860504a370b60e8e7);
+        
+    
+        var popup_9061364c9c4950e073ffbea05a402973 = L.popup({
+  "maxWidth": 340,
+});
+
+        
+            
+                var html_7beb35b63d374078096edc9da7823228 = $(`<div id="html_7beb35b63d374078096edc9da7823228" style="width: 100.0%; height: 100.0%;"><b>Curral Velho</b> (Banabuiú)<br>Risk of &gt; 20,000 cells/mL: <b>71%</b> (<span style='color:#c0392b'><b>Alert</b></span>)<br>Image: 2026-11-13 · Volume: 91%<br>↑ 67% of the area near the sampling point is water<br>↑ dry last 90 days (17 mm; 11 mm in the last 30)<br>↓ time of year: dry season<br><i>Last lab result: 484,916 cells/mL on 2026-08-05 </i></div>`)[0];
+                popup_9061364c9c4950e073ffbea05a402973.setContent(html_7beb35b63d374078096edc9da7823228);
+            
+        
+
+        circle_marker_31045fb2e2306d2cd75cc2a3bab64f5b.bindPopup(popup_9061364c9c4950e073ffbea05a402973)
+        ;
+
+        
+    
+    
+            circle_marker_31045fb2e2306d2cd75cc2a3bab64f5b.bindTooltip(
+                `<div>
+                     Curral Velho: 71%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_30c4e58f391c0b18b2abe6bb67ef00a4 = L.circleMarker(
+                [-5.77632884496, -38.3449743134],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_b0c42e5ef8dc4fd860504a370b60e8e7);
+        
+    
+        var popup_8c84892bcb526678118aae192010e607 = L.popup({
+  "maxWidth": 340,
+});
+
+        
+            
+                var html_0ae1466e5514139d022a88cb2398e26b = $(`<div id="html_0ae1466e5514139d022a88cb2398e26b" style="width: 100.0%; height: 100.0%;"><b>Ema</b> (Médio Jaguaribe)<br>Risk of &gt; 20,000 cells/mL: <b>46%</b> (<span style='color:#c0392b'><b>Alert</b></span>)<br>Image: 2026-11-13 · Volume: 41%<br>↑ dry last 90 days (12 mm; 3 mm in the last 30)<br>↓ hot last 30 days (max 39.2 °C; last week 39.4 °C)<br>↓ time of year: dry season<br><i>Last lab result: 229,362 cells/mL on 2026-08-13 </i></div>`)[0];
+                popup_8c84892bcb526678118aae192010e607.setContent(html_0ae1466e5514139d022a88cb2398e26b);
+            
+        
+
+        circle_marker_30c4e58f391c0b18b2abe6bb67ef00a4.bindPopup(popup_8c84892bcb526678118aae192010e607)
+        ;
+
+        
+    
+    
+            circle_marker_30c4e58f391c0b18b2abe6bb67ef00a4.bindTooltip(
+                `<div>
+                     Ema: 46%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ddce0008072871ff91e45dd7d6f0fca9 = L.circleMarker(
+                [-5.16690241966, -39.4913777371],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_b0c42e5ef8dc4fd860504a370b60e8e7);
+        
+    
+        var popup_919907a0ca540e52f6d017f9d1819f9c = L.popup({
+  "maxWidth": 340,
+});
+
+        
+            
+                var html_ea0c9d8d37e210fae49d53d2e5a02519 = $(`<div id="html_ea0c9d8d37e210fae49d53d2e5a02519" style="width: 100.0%; height: 100.0%;"><b>Fogareiro</b> (Banabuiú)<br>Risk of &gt; 20,000 cells/mL: <b>58%</b> (<span style='color:#c0392b'><b>Alert</b></span>)<br>Image: 2026-11-13 · Volume: 37%<br>↑ dry last 90 days (9 mm; 6 mm in the last 30)<br>↓ time of year: dry season<br>↓ hot last 30 days (max 37.7 °C; last week 37.6 °C)<br><i>Last lab result: 375,191 cells/mL on 2026-08-04 </i></div>`)[0];
+                popup_919907a0ca540e52f6d017f9d1819f9c.setContent(html_ea0c9d8d37e210fae49d53d2e5a02519);
+            
+        
+
+        circle_marker_ddce0008072871ff91e45dd7d6f0fca9.bindPopup(popup_919907a0ca540e52f6d017f9d1819f9c)
+        ;
+
+        
+    
+    
+            circle_marker_ddce0008072871ff91e45dd7d6f0fca9.bindTooltip(
+                `<div>
+                     Fogareiro: 58%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c5bc37f033c9922c4e1930a370b8ae60 = L.circleMarker(
+                [-5.81315115414, -39.2474835705],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_b0c42e5ef8dc4fd860504a370b60e8e7);
+        
+    
+        var popup_ed978376046e518cbf481c280771d709 = L.popup({
+  "maxWidth": 340,
+});
+
+        
+            
+                var html_e95cc9d6c8cefabf3a81a164896fea92 = $(`<div id="html_e95cc9d6c8cefabf3a81a164896fea92" style="width: 100.0%; height: 100.0%;"><b>Jenipapeiro</b> (Médio Jaguaribe)<br>Risk of &gt; 20,000 cells/mL: <b>39%</b> (<span style='color:#c0392b'><b>Alert</b></span>)<br>Image: 2026-11-03 · Volume: 68%<br>↓ little chlorophyll seen (index 0.001)<br>↑ dry last 90 days (5 mm; 2 mm in the last 30)<br>↓ time of year: dry season<br><i>Last lab result: 215,912 cells/mL on 2026-08-31 </i></div>`)[0];
+                popup_ed978376046e518cbf481c280771d709.setContent(html_e95cc9d6c8cefabf3a81a164896fea92);
+            
+        
+
+        circle_marker_c5bc37f033c9922c4e1930a370b8ae60.bindPopup(popup_ed978376046e518cbf481c280771d709)
+        ;
+
+        
+    
+    
+            circle_marker_c5bc37f033c9922c4e1930a370b8ae60.bindTooltip(
+                `<div>
+                     Jenipapeiro: 39%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_65192ab35447b533c50c2a54fac00593 = L.circleMarker(
+                [-5.94905457118, -38.8304650715],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_b0c42e5ef8dc4fd860504a370b60e8e7);
+        
+    
+        var popup_9e14dc04ac3e49699d77c8aa0efa6e65 = L.popup({
+  "maxWidth": 340,
+});
+
+        
+            
+                var html_596c62e414554ba82fe3d824fd103db8 = $(`<div id="html_596c62e414554ba82fe3d824fd103db8" style="width: 100.0%; height: 100.0%;"><b>Joaquim Távora</b> (Médio Jaguaribe)<br>Risk of &gt; 20,000 cells/mL: <b>26%</b> (<span style='color:#c0392b'><b>Alert</b></span>)<br>Image: 2026-10-29 · Volume: 67%<br>↓ time of year: dry season<br>↑ dry last 90 days (5 mm; 1 mm in the last 30)<br>↓ little chlorophyll seen (index 0.035)<br><i>Last lab result: 148,660 cells/mL on 2026-08-20 </i></div>`)[0];
+                popup_9e14dc04ac3e49699d77c8aa0efa6e65.setContent(html_596c62e414554ba82fe3d824fd103db8);
+            
+        
+
+        circle_marker_65192ab35447b533c50c2a54fac00593.bindPopup(popup_9e14dc04ac3e49699d77c8aa0efa6e65)
+        ;
+
+        
+    
+    
+            circle_marker_65192ab35447b533c50c2a54fac00593.bindTooltip(
+                `<div>
+                     Joaquim Távora: 26%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4ebb575ca93cf38dcebe774f48dd43ab = L.circleMarker(
+                [-6.402325, -38.956848],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_b0c42e5ef8dc4fd860504a370b60e8e7);
+        
+    
+        var popup_c446b01c49f6c6348f90fcf96150f723 = L.popup({
+  "maxWidth": 340,
+});
+
+        
+            
+                var html_966c3580f6295ce2f8ba2c81b676e558 = $(`<div id="html_966c3580f6295ce2f8ba2c81b676e558" style="width: 100.0%; height: 100.0%;"><b>Lima Campos</b> (Salgado)<br>Risk of &gt; 20,000 cells/mL: <b>56%</b> (<span style='color:#c0392b'><b>Alert</b></span>)<br>Image: 2026-11-10 · Volume: 65%<br>↑ 74% of the area near the sampling point is water<br>↑ dry last 90 days (6 mm; 1 mm in the last 30)<br>↓ hot last 30 days (max 39.1 °C; last week 39.4 °C)<br><i>Last lab result: 109,017 cells/mL on 2026-07-09 </i></div>`)[0];
+                popup_c446b01c49f6c6348f90fcf96150f723.setContent(html_966c3580f6295ce2f8ba2c81b676e558);
+            
+        
+
+        circle_marker_4ebb575ca93cf38dcebe774f48dd43ab.bindPopup(popup_c446b01c49f6c6348f90fcf96150f723)
+        ;
+
+        
+    
+    
+            circle_marker_4ebb575ca93cf38dcebe774f48dd43ab.bindTooltip(
+                `<div>
+                     Lima Campos: 56%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_66817cef86a03a0e4f5afe92e1475459 = L.circleMarker(
+                [-6.788675, -40.0651],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_b0c42e5ef8dc4fd860504a370b60e8e7);
+        
+    
+        var popup_876063f6edafae620c41005a21250965 = L.popup({
+  "maxWidth": 340,
+});
+
+        
+            
+                var html_25e8106c804f151e24626f888cc5ec4c = $(`<div id="html_25e8106c804f151e24626f888cc5ec4c" style="width: 100.0%; height: 100.0%;"><b>Mamoeiro</b> (Alto Jaguaribe)<br>Risk of &gt; 20,000 cells/mL: <b>34%</b> (<span style='color:#c0392b'><b>Alert</b></span>)<br>Image: 2026-10-31 · Volume: 81%<br>↓ time of year: dry season<br>↑ dry last 90 days (6 mm; 2 mm in the last 30)<br>↓ hot last 30 days (max 37.3 °C; last week 37.6 °C)<br><i>Last lab result: 228,300 cells/mL on 2026-08-05 </i></div>`)[0];
+                popup_876063f6edafae620c41005a21250965.setContent(html_25e8106c804f151e24626f888cc5ec4c);
+            
+        
+
+        circle_marker_66817cef86a03a0e4f5afe92e1475459.bindPopup(popup_876063f6edafae620c41005a21250965)
+        ;
+
+        
+    
+    
+            circle_marker_66817cef86a03a0e4f5afe92e1475459.bindTooltip(
+                `<div>
+                     Mamoeiro: 34%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6e860a945bcb0950d1f2355ca123ef90 = L.circleMarker(
+                [-4.809093, -40.012494],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_b0c42e5ef8dc4fd860504a370b60e8e7);
+        
+    
+        var popup_b42ad5f72dc01e2e405d09321a5588c2 = L.popup({
+  "maxWidth": 340,
+});
+
+        
+            
+                var html_15b6e1997cdcda0f777d405a75b08192 = $(`<div id="html_15b6e1997cdcda0f777d405a75b08192" style="width: 100.0%; height: 100.0%;"><b>Monsenhor Tabosa</b> (Banabuiú)<br>Risk of &gt; 20,000 cells/mL: <b>95%</b> (<span style='color:#c0392b'><b>Alert</b></span>)<br>Image: 2026-11-08 · Volume: 47%<br>↑ green water (chlorophyll index 0.344)<br>↑ dry last 90 days (4 mm; 1 mm in the last 30)<br>↓ time of year: dry season<br><i>Last lab result: 369,881 cells/mL on 2026-08-20 </i></div>`)[0];
+                popup_b42ad5f72dc01e2e405d09321a5588c2.setContent(html_15b6e1997cdcda0f777d405a75b08192);
+            
+        
+
+        circle_marker_6e860a945bcb0950d1f2355ca123ef90.bindPopup(popup_b42ad5f72dc01e2e405d09321a5588c2)
+        ;
+
+        
+    
+    
+            circle_marker_6e860a945bcb0950d1f2355ca123ef90.bindTooltip(
+                `<div>
+                     Monsenhor Tabosa: 95%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_fd930f8e4fce0bbf668b1f946ac417fa = L.circleMarker(
+                [-6.6105731406, -39.482342939],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_b0c42e5ef8dc4fd860504a370b60e8e7);
+        
+    
+        var popup_3565810a569a471ca97d7ed46b85e2e6 = L.popup({
+  "maxWidth": 340,
+});
+
+        
+            
+                var html_6b7fe244cfb99fccefb1e7acd452ca76 = $(`<div id="html_6b7fe244cfb99fccefb1e7acd452ca76" style="width: 100.0%; height: 100.0%;"><b>Muquém</b> (Alto Jaguaribe)<br>Risk of &gt; 20,000 cells/mL: <b>39%</b> (<span style='color:#c0392b'><b>Alert</b></span>)<br>Image: 2026-11-10 · Volume: 84%<br>↓ little chlorophyll seen (index -0.024)<br>↑ dry last 90 days (6 mm; 2 mm in the last 30)<br>↓ hot last 30 days (max 39.0 °C; last week 39.3 °C)<br><i>Last lab result: none</i></div>`)[0];
+                popup_3565810a569a471ca97d7ed46b85e2e6.setContent(html_6b7fe244cfb99fccefb1e7acd452ca76);
+            
+        
+
+        circle_marker_fd930f8e4fce0bbf668b1f946ac417fa.bindPopup(popup_3565810a569a471ca97d7ed46b85e2e6)
+        ;
+
+        
+    
+    
+            circle_marker_fd930f8e4fce0bbf668b1f946ac417fa.bindTooltip(
+                `<div>
+                     Muquém: 39%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_efdce42716ad89b97e1c890a9f255eac = L.circleMarker(
+                [-6.78888346631, -39.3753014774],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_b0c42e5ef8dc4fd860504a370b60e8e7);
+        
+    
+        var popup_56f70e904e3311d83a562a8a54b9a549 = L.popup({
+  "maxWidth": 340,
+});
+
+        
+            
+                var html_5236df33c712dee1898d41eb62680111 = $(`<div id="html_5236df33c712dee1898d41eb62680111" style="width: 100.0%; height: 100.0%;"><b>Olho d'Água</b> (Salgado)<br>Risk of &gt; 20,000 cells/mL: <b>34%</b> (<span style='color:#c0392b'><b>Alert</b></span>)<br>Image: 2026-11-13 · Volume: 86%<br>↓ little chlorophyll seen (index -0.034)<br>↑ dry last 90 days (8 mm; 5 mm in the last 30)<br>↑ 56% of the area near the sampling point is water<br><i>Last lab result: 68,667 cells/mL on 2026-07-07 </i></div>`)[0];
+                popup_56f70e904e3311d83a562a8a54b9a549.setContent(html_5236df33c712dee1898d41eb62680111);
+            
+        
+
+        circle_marker_efdce42716ad89b97e1c890a9f255eac.bindPopup(popup_56f70e904e3311d83a562a8a54b9a549)
+        ;
+
+        
+    
+    
+            circle_marker_efdce42716ad89b97e1c890a9f255eac.bindTooltip(
+                `<div>
+                     Olho d'Água: 34%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c04d86ca402244a870085e3317690d3e = L.circleMarker(
+                [-6.2381264298, -38.9250093577],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_b0c42e5ef8dc4fd860504a370b60e8e7);
+        
+    
+        var popup_7b6b70611fb7f0f247e853bb9282f9f8 = L.popup({
+  "maxWidth": 340,
+});
+
+        
+            
+                var html_35e27b01d9d7c86940a8363e3aef17a2 = $(`<div id="html_35e27b01d9d7c86940a8363e3aef17a2" style="width: 100.0%; height: 100.0%;"><b>Orós</b> (Alto Jaguaribe)<br>Risk of &gt; 20,000 cells/mL: <b>65%</b> (<span style='color:#c0392b'><b>Alert</b></span>)<br>Image: 2026-11-13 · Volume: 85%<br>↑ dry last 90 days (8 mm; 4 mm in the last 30)<br>↑ 69% of the area near the sampling point is water<br>↓ hot last 30 days (max 39.1 °C; last week 39.2 °C)<br><i>Last lab result: 138,042 cells/mL on 2026-08-20 </i></div>`)[0];
+                popup_7b6b70611fb7f0f247e853bb9282f9f8.setContent(html_35e27b01d9d7c86940a8363e3aef17a2);
+            
+        
+
+        circle_marker_c04d86ca402244a870085e3317690d3e.bindPopup(popup_7b6b70611fb7f0f247e853bb9282f9f8)
+        ;
+
+        
+    
+    
+            circle_marker_c04d86ca402244a870085e3317690d3e.bindTooltip(
+                `<div>
+                     Orós: 65%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d9f0435908169da5d8e0d3ace86b19c9 = L.circleMarker(
+                [-6.202115, -40.711288],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_b0c42e5ef8dc4fd860504a370b60e8e7);
+        
+    
+        var popup_a724d91b998e441fa91c3242417a6585 = L.popup({
+  "maxWidth": 340,
+});
+
+        
+            
+                var html_170e9143076d5fa834c97a89f5150364 = $(`<div id="html_170e9143076d5fa834c97a89f5150364" style="width: 100.0%; height: 100.0%;"><b>Parambu</b> (Alto Jaguaribe)<br>Risk of &gt; 20,000 cells/mL: <b>56%</b> (<span style='color:#c0392b'><b>Alert</b></span>)<br>Image: 2026-10-31 · Volume: 22%<br>↓ time of year: dry season<br>↑ dry last 90 days (3 mm; 1 mm in the last 30)<br>↓ hot last 30 days (max 36.8 °C; last week 37.3 °C)<br><i>Last lab result: 47,430 cells/mL on 2026-08-18 </i></div>`)[0];
+                popup_a724d91b998e441fa91c3242417a6585.setContent(html_170e9143076d5fa834c97a89f5150364);
+            
+        
+
+        circle_marker_d9f0435908169da5d8e0d3ace86b19c9.bindPopup(popup_a724d91b998e441fa91c3242417a6585)
+        ;
+
+        
+    
+    
+            circle_marker_d9f0435908169da5d8e0d3ace86b19c9.bindTooltip(
+                `<div>
+                     Parambu: 56%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f08d7703d0dcb72f54f516ead16edbaa = L.circleMarker(
+                [-5.58186998208, -39.4023005082],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_b0c42e5ef8dc4fd860504a370b60e8e7);
+        
+    
+        var popup_1719c275e0adab076d0b4c1d4f4e986a = L.popup({
+  "maxWidth": 340,
+});
+
+        
+            
+                var html_8ba70150c158a75a983fbc14a0189a2b = $(`<div id="html_8ba70150c158a75a983fbc14a0189a2b" style="width: 100.0%; height: 100.0%;"><b>Patu</b> (Banabuiú)<br>Risk of &gt; 20,000 cells/mL: <b>81%</b> (<span style='color:#c0392b'><b>Alert</b></span>)<br>Image: 2026-11-10 · Volume: 73%<br>↑ 80% of the area near the sampling point is water<br>↑ dry last 90 days (6 mm; 3 mm in the last 30)<br>↓ time of year: dry season<br><i>Last lab result: 272,544 cells/mL on 2026-08-06 </i></div>`)[0];
+                popup_1719c275e0adab076d0b4c1d4f4e986a.setContent(html_8ba70150c158a75a983fbc14a0189a2b);
+            
+        
+
+        circle_marker_f08d7703d0dcb72f54f516ead16edbaa.bindPopup(popup_1719c275e0adab076d0b4c1d4f4e986a)
+        ;
+
+        
+    
+    
+            circle_marker_f08d7703d0dcb72f54f516ead16edbaa.bindTooltip(
+                `<div>
+                     Patu: 81%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_74fb616889e75ebca891782da6c35ef3 = L.circleMarker(
+                [-5.14985135743, -38.8777544386],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_b0c42e5ef8dc4fd860504a370b60e8e7);
+        
+    
+        var popup_d76f62277a8a01ac518d76ef4dba42fa = L.popup({
+  "maxWidth": 340,
+});
+
+        
+            
+                var html_203d91e65de066714f7225617060232c = $(`<div id="html_203d91e65de066714f7225617060232c" style="width: 100.0%; height: 100.0%;"><b>Pedras Brancas</b> (Banabuiú)<br>Risk of &gt; 20,000 cells/mL: <b>38%</b> (<span style='color:#c0392b'><b>Alert</b></span>)<br>Image: 2026-11-10 · Volume: 16%<br>↑ dry last 90 days (11 mm; 7 mm in the last 30)<br>↓ little chlorophyll seen (index 0.023)<br>↓ time of year: dry season<br><i>Last lab result: 179,631 cells/mL on 2026-07-14 </i></div>`)[0];
+                popup_d76f62277a8a01ac518d76ef4dba42fa.setContent(html_203d91e65de066714f7225617060232c);
+            
+        
+
+        circle_marker_74fb616889e75ebca891782da6c35ef3.bindPopup(popup_d76f62277a8a01ac518d76ef4dba42fa)
+        ;
+
+        
+    
+    
+            circle_marker_74fb616889e75ebca891782da6c35ef3.bindTooltip(
+                `<div>
+                     Pedras Brancas: 38%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e2a7a3a0284aee2e577d04d8eaa081d0 = L.circleMarker(
+                [-4.98075408108, -39.3657924914],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_b0c42e5ef8dc4fd860504a370b60e8e7);
+        
+    
+        var popup_0197f246722d9c101c3533aa4c0b7c40 = L.popup({
+  "maxWidth": 340,
+});
+
+        
+            
+                var html_a07afe0326dd78073aa0cd2140fb10e2 = $(`<div id="html_a07afe0326dd78073aa0cd2140fb10e2" style="width: 100.0%; height: 100.0%;"><b>Margarida de Morais Queiroz (Pirabibu)</b> (Banabuiú)<br>Risk of &gt; 20,000 cells/mL: <b>53%</b> (<span style='color:#c0392b'><b>Alert</b></span>)<br>Image: 2026-11-10 · Volume: 1%<br>↑ dry last 90 days (8 mm; 5 mm in the last 30)<br>↓ little chlorophyll seen (index 0.028)<br>↓ time of year: dry season<br><i>Last lab result: 96,895 cells/mL on 2026-08-05 </i></div>`)[0];
+                popup_0197f246722d9c101c3533aa4c0b7c40.setContent(html_a07afe0326dd78073aa0cd2140fb10e2);
+            
+        
+
+        circle_marker_e2a7a3a0284aee2e577d04d8eaa081d0.bindPopup(popup_0197f246722d9c101c3533aa4c0b7c40)
+        ;
+
+        
+    
+    
+            circle_marker_e2a7a3a0284aee2e577d04d8eaa081d0.bindTooltip(
+                `<div>
+                     Margarida de Morais Queiroz (Pirabibu): 53%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a22db782ca7327b79742eedaa22595c4 = L.circleMarker(
+                [-6.98372899185, -40.3559822646],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_b0c42e5ef8dc4fd860504a370b60e8e7);
+        
+    
+        var popup_27c8ef6927ed2b0a975805ccbd047189 = L.popup({
+  "maxWidth": 340,
+});
+
+        
+            
+                var html_891f1b63e2677274b672b0b15051213f = $(`<div id="html_891f1b63e2677274b672b0b15051213f" style="width: 100.0%; height: 100.0%;"><b>Poço da Pedra</b> (Alto Jaguaribe)<br>Risk of &gt; 20,000 cells/mL: <b>47%</b> (<span style='color:#c0392b'><b>Alert</b></span>)<br>Image: 2026-11-13 · Volume: 6%<br>↑ dry last 90 days (8 mm; 5 mm in the last 30)<br>↓ time of year: dry season<br>↓ hot last 30 days (max 38.1 °C; last week 38.3 °C)<br><i>Last lab result: 126,715 cells/mL on 2026-07-06 </i></div>`)[0];
+                popup_27c8ef6927ed2b0a975805ccbd047189.setContent(html_891f1b63e2677274b672b0b15051213f);
+            
+        
+
+        circle_marker_a22db782ca7327b79742eedaa22595c4.bindPopup(popup_27c8ef6927ed2b0a975805ccbd047189)
+        ;
+
+        
+    
+    
+            circle_marker_a22db782ca7327b79742eedaa22595c4.bindTooltip(
+                `<div>
+                     Poço da Pedra: 47%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d7658fb0c70a277901a1d765097a59e0 = L.circleMarker(
+                [-5.38257288767, -38.4595984652],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_b0c42e5ef8dc4fd860504a370b60e8e7);
+        
+    
+        var popup_a152cd74cd74616b857f3c402189297b = L.popup({
+  "maxWidth": 340,
+});
+
+        
+            
+                var html_fa31abe07da7c69f9e8e77e774377730 = $(`<div id="html_fa31abe07da7c69f9e8e77e774377730" style="width: 100.0%; height: 100.0%;"><b>Poço do Barro</b> (Banabuiú)<br>Risk of &gt; 20,000 cells/mL: <b>29%</b> (<span style='color:#c0392b'><b>Alert</b></span>)<br>Image: 2026-11-03 · Volume: 40%<br>↑ dry last 90 days (7 mm; 3 mm in the last 30)<br>↓ little chlorophyll seen (index 0.022)<br>↓ time of year: dry season<br><i>Last lab result: 5,026 cells/mL on 2026-07-30 </i></div>`)[0];
+                popup_a152cd74cd74616b857f3c402189297b.setContent(html_fa31abe07da7c69f9e8e77e774377730);
+            
+        
+
+        circle_marker_d7658fb0c70a277901a1d765097a59e0.bindPopup(popup_a152cd74cd74616b857f3c402189297b)
+        ;
+
+        
+    
+    
+            circle_marker_d7658fb0c70a277901a1d765097a59e0.bindTooltip(
+                `<div>
+                     Poço do Barro: 29%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6a05c90a2dcacc2e4f8135e85f80d11e = L.circleMarker(
+                [-5.7228775, -38.1681776],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_b0c42e5ef8dc4fd860504a370b60e8e7);
+        
+    
+        var popup_fedbb1d32f16ba1ece2b99763f2e3c34 = L.popup({
+  "maxWidth": 340,
+});
+
+        
+            
+                var html_615b2478f7e0fcedfaf17e0c2302aef8 = $(`<div id="html_615b2478f7e0fcedfaf17e0c2302aef8" style="width: 100.0%; height: 100.0%;"><b>Potiretama</b> (Médio Jaguaribe)<br>Risk of &gt; 20,000 cells/mL: <b>82%</b> (<span style='color:#c0392b'><b>Alert</b></span>)<br>Image: 2026-11-10 · Volume: 11%<br>↑ 76% of the area near the sampling point is water<br>↑ dry last 90 days (10 mm; 3 mm in the last 30)<br>↓ hot last 30 days (max 39.3 °C; last week 39.3 °C)<br><i>Last lab result: 273,889 cells/mL on 2026-08-11 </i></div>`)[0];
+                popup_fedbb1d32f16ba1ece2b99763f2e3c34.setContent(html_615b2478f7e0fcedfaf17e0c2302aef8);
+            
+        
+
+        circle_marker_6a05c90a2dcacc2e4f8135e85f80d11e.bindPopup(popup_fedbb1d32f16ba1ece2b99763f2e3c34)
+        ;
+
+        
+    
+    
+            circle_marker_6a05c90a2dcacc2e4f8135e85f80d11e.bindTooltip(
+                `<div>
+                     Potiretama: 82%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_aaf53337e527f8ce42b2b4284a30476d = L.circleMarker(
+                [-7.10901972051, -38.6829425533],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_b0c42e5ef8dc4fd860504a370b60e8e7);
+        
+    
+        var popup_ec076b721c00272dffe90e418f7e8e4c = L.popup({
+  "maxWidth": 340,
+});
+
+        
+            
+                var html_c2d6497d7b298983bdd145b131b8e692 = $(`<div id="html_c2d6497d7b298983bdd145b131b8e692" style="width: 100.0%; height: 100.0%;"><b>Prazeres</b> (Salgado)<br>Risk of &gt; 20,000 cells/mL: <b>32%</b> (<span style='color:#c0392b'><b>Alert</b></span>)<br>Image: 2026-11-13 · Volume: 77%<br>↑ dry last 90 days (10 mm; 4 mm in the last 30)<br>↓ hot last 30 days (max 39.2 °C; last week 39.4 °C)<br>↓ little chlorophyll seen (index 0.047)<br><i>Last lab result: 132,733 cells/mL on 2026-07-16 </i></div>`)[0];
+                popup_ec076b721c00272dffe90e418f7e8e4c.setContent(html_c2d6497d7b298983bdd145b131b8e692);
+            
+        
+
+        circle_marker_aaf53337e527f8ce42b2b4284a30476d.bindPopup(popup_ec076b721c00272dffe90e418f7e8e4c)
+        ;
+
+        
+    
+    
+            circle_marker_aaf53337e527f8ce42b2b4284a30476d.bindTooltip(
+                `<div>
+                     Prazeres: 32%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7991862fa3d1071ddb74a4c37ab1f89f = L.circleMarker(
+                [-6.084822, -39.454306],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_b0c42e5ef8dc4fd860504a370b60e8e7);
+        
+    
+        var popup_8e0f5090c72021bc51b688f297074775 = L.popup({
+  "maxWidth": 340,
+});
+
+        
+            
+                var html_f678e3a7bf4447b76871013d01eb29b9 = $(`<div id="html_f678e3a7bf4447b76871013d01eb29b9" style="width: 100.0%; height: 100.0%;"><b>Quincoé</b> (Alto Jaguaribe)<br>Risk of &gt; 20,000 cells/mL: <b>26%</b> (<span style='color:#c0392b'><b>Alert</b></span>)<br>Image: 2026-11-03 · Volume: 60%<br>↑ dry last 90 days (5 mm; 2 mm in the last 30)<br>↓ little chlorophyll seen (index 0.028)<br>↓ time of year: dry season<br><i>Last lab result: 44,598 cells/mL on 2026-07-09 </i></div>`)[0];
+                popup_8e0f5090c72021bc51b688f297074775.setContent(html_f678e3a7bf4447b76871013d01eb29b9);
+            
+        
+
+        circle_marker_7991862fa3d1071ddb74a4c37ab1f89f.bindPopup(popup_8e0f5090c72021bc51b688f297074775)
+        ;
+
+        
+    
+    
+            circle_marker_7991862fa3d1071ddb74a4c37ab1f89f.bindTooltip(
+                `<div>
+                     Quincoé: 26%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_06ffdbb30e7b7ad7c3548001577956d9 = L.circleMarker(
+                [-7.501992, -38.747302],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_b0c42e5ef8dc4fd860504a370b60e8e7);
+        
+    
+        var popup_2e63ff63d0630884607b81b48fcda376 = L.popup({
+  "maxWidth": 340,
+});
+
+        
+            
+                var html_652f2389114889f50ad09c2f89c5684b = $(`<div id="html_652f2389114889f50ad09c2f89c5684b" style="width: 100.0%; height: 100.0%;"><b>Quixabinha</b> (Salgado)<br>Risk of &gt; 20,000 cells/mL: <b>41%</b> (<span style='color:#c0392b'><b>Alert</b></span>)<br>Image: 2026-11-08 · Volume: 14%<br>↑ dry last 90 days (9 mm; 0 mm in the last 30)<br>↓ little chlorophyll seen (index 0.048)<br>↓ hot last 30 days (max 38.5 °C; last week 38.8 °C)<br><i>Last lab result: 474,298 cells/mL on 2026-07-08 </i></div>`)[0];
+                popup_2e63ff63d0630884607b81b48fcda376.setContent(html_652f2389114889f50ad09c2f89c5684b);
+            
+        
+
+        circle_marker_06ffdbb30e7b7ad7c3548001577956d9.bindPopup(popup_2e63ff63d0630884607b81b48fcda376)
+        ;
+
+        
+    
+    
+            circle_marker_06ffdbb30e7b7ad7c3548001577956d9.bindTooltip(
+                `<div>
+                     Quixabinha: 41%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f6265ad9fbe340b0a0f4a6208b1aa633 = L.circleMarker(
+                [-5.19828377485, -39.3127774588],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_b0c42e5ef8dc4fd860504a370b60e8e7);
+        
+    
+        var popup_9d93567928bd57e28420a1a7d2cb075d = L.popup({
+  "maxWidth": 340,
+});
+
+        
+            
+                var html_d6276fa8262f16316fae6f690f8665fc = $(`<div id="html_d6276fa8262f16316fae6f690f8665fc" style="width: 100.0%; height: 100.0%;"><b>Quixeramobim</b> (Banabuiú)<br>Risk of &gt; 20,000 cells/mL: <b>26%</b> (<span style='color:#c0392b'><b>Alert</b></span>)<br>Image: 2026-11-03 · Volume: 39%<br>↑ dry last 90 days (7 mm; 4 mm in the last 30)<br>↓ volume changed -34 points in 3 months<br>↓ little chlorophyll seen (index 0.038)<br><i>Last lab result: 193,789 cells/mL on 2026-07-28 </i></div>`)[0];
+                popup_9d93567928bd57e28420a1a7d2cb075d.setContent(html_d6276fa8262f16316fae6f690f8665fc);
+            
+        
+
+        circle_marker_f6265ad9fbe340b0a0f4a6208b1aa633.bindPopup(popup_9d93567928bd57e28420a1a7d2cb075d)
+        ;
+
+        
+    
+    
+            circle_marker_f6265ad9fbe340b0a0f4a6208b1aa633.bindTooltip(
+                `<div>
+                     Quixeramobim: 26%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_442c0f8f2ab4045f0e7790cc04a3fe7e = L.circleMarker(
+                [-5.69373683323, -38.9506399185],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_b0c42e5ef8dc4fd860504a370b60e8e7);
+        
+    
+        var popup_2044ceaaa99f0c8ae20aa2c0c3a86d8e = L.popup({
+  "maxWidth": 340,
+});
+
+        
+            
+                var html_8eb7e5739e6bffa6b3d27c61b9cedad1 = $(`<div id="html_8eb7e5739e6bffa6b3d27c61b9cedad1" style="width: 100.0%; height: 100.0%;"><b>Riacho do Sangue</b> (Médio Jaguaribe)<br>Risk of &gt; 20,000 cells/mL: <b>42%</b> (<span style='color:#c0392b'><b>Alert</b></span>)<br>Image: 2026-11-13 · Volume: 76%<br>↑ dry last 90 days (11 mm; 8 mm in the last 30)<br>↓ time of year: dry season<br>↓ hot last 30 days (max 39.1 °C; last week 39.1 °C)<br><i>Last lab result: 180,517 cells/mL on 2026-08-05 </i></div>`)[0];
+                popup_2044ceaaa99f0c8ae20aa2c0c3a86d8e.setContent(html_8eb7e5739e6bffa6b3d27c61b9cedad1);
+            
+        
+
+        circle_marker_442c0f8f2ab4045f0e7790cc04a3fe7e.bindPopup(popup_2044ceaaa99f0c8ae20aa2c0c3a86d8e)
+        ;
+
+        
+    
+    
+            circle_marker_442c0f8f2ab4045f0e7790cc04a3fe7e.bindTooltip(
+                `<div>
+                     Riacho do Sangue: 42%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9724f148922a2477bb3840838189012f = L.circleMarker(
+                [-6.27222899396, -39.9331061101],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_b0c42e5ef8dc4fd860504a370b60e8e7);
+        
+    
+        var popup_40666272631e8e6732d0cb5816b623da = L.popup({
+  "maxWidth": 340,
+});
+
+        
+            
+                var html_3617daf5f50cb2953f7defb9ee44c42f = $(`<div id="html_3617daf5f50cb2953f7defb9ee44c42f" style="width: 100.0%; height: 100.0%;"><b>Rivaldo de Carvalho</b> (Alto Jaguaribe)<br>Risk of &gt; 20,000 cells/mL: <b>86%</b> (<span style='color:#c0392b'><b>Alert</b></span>)<br>Image: 2026-11-10 · Volume: 49%<br>↑ dry last 90 days (5 mm; 1 mm in the last 30)<br>↑ green water (chlorophyll index 0.213)<br>↓ time of year: dry season<br><i>Last lab result: 219,451 cells/mL on 2026-08-25 </i></div>`)[0];
+                popup_40666272631e8e6732d0cb5816b623da.setContent(html_3617daf5f50cb2953f7defb9ee44c42f);
+            
+        
+
+        circle_marker_9724f148922a2477bb3840838189012f.bindPopup(popup_40666272631e8e6732d0cb5816b623da)
+        ;
+
+        
+    
+    
+            circle_marker_9724f148922a2477bb3840838189012f.bindTooltip(
+                `<div>
+                     Rivaldo de Carvalho: 86%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ebd51633244532770020f7198f0ea311 = L.circleMarker(
+                [-6.88895926968, -39.0810678932],
+                {"bubblingMouseEvents": true, "color": "#2e86c1", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2e86c1", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_b0c42e5ef8dc4fd860504a370b60e8e7);
+        
+    
+        var popup_c70d6e3be58bea312a09e37c7947131c = L.popup({
+  "maxWidth": 340,
+});
+
+        
+            
+                var html_2fa3df6400526ab106ce7a35dbc81368 = $(`<div id="html_2fa3df6400526ab106ce7a35dbc81368" style="width: 100.0%; height: 100.0%;"><b>Rosário</b> (Salgado)<br>Risk of &gt; 20,000 cells/mL: <b>21%</b> (<span style='color:#2e86c1'><b>Lower risk</b></span>)<br>Image: 2026-11-13 · Volume: 77%<br>↓ little chlorophyll seen (index 0.005)<br>↑ dry last 90 days (8 mm; 5 mm in the last 30)<br>↓ time of year: dry season<br><i>Last lab result: 260 cells/mL on 2026-07-14 </i></div>`)[0];
+                popup_c70d6e3be58bea312a09e37c7947131c.setContent(html_2fa3df6400526ab106ce7a35dbc81368);
+            
+        
+
+        circle_marker_ebd51633244532770020f7198f0ea311.bindPopup(popup_c70d6e3be58bea312a09e37c7947131c)
+        ;
+
+        
+    
+    
+            circle_marker_ebd51633244532770020f7198f0ea311.bindTooltip(
+                `<div>
+                     Rosário: 21%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9ec2c4338e3738bc6b51e56ce0963033 = L.circleMarker(
+                [-5.965648, -38.276387],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_b0c42e5ef8dc4fd860504a370b60e8e7);
+        
+    
+        var popup_a891c0e15dc8ed7eabfa899cbf1922ee = L.popup({
+  "maxWidth": 340,
+});
+
+        
+            
+                var html_7f125900e2de1b031d618b19d8286fc4 = $(`<div id="html_7f125900e2de1b031d618b19d8286fc4" style="width: 100.0%; height: 100.0%;"><b>Santa Maria</b> (Médio Jaguaribe)<br>Risk of &gt; 20,000 cells/mL: <b>27%</b> (<span style='color:#c0392b'><b>Alert</b></span>)<br>Image: 2026-11-13 · Volume: 12%<br>↓ little chlorophyll seen (index 0.008)<br>↑ dry last 90 days (12 mm; 3 mm in the last 30)<br>↓ hot last 30 days (max 39.2 °C; last week 39.4 °C)<br><i>Last lab result: 417,665 cells/mL on 2026-08-13 </i></div>`)[0];
+                popup_a891c0e15dc8ed7eabfa899cbf1922ee.setContent(html_7f125900e2de1b031d618b19d8286fc4);
+            
+        
+
+        circle_marker_9ec2c4338e3738bc6b51e56ce0963033.bindPopup(popup_a891c0e15dc8ed7eabfa899cbf1922ee)
+        ;
+
+        
+    
+    
+            circle_marker_9ec2c4338e3738bc6b51e56ce0963033.bindTooltip(
+                `<div>
+                     Santa Maria: 27%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f80a61a2db29a731b6c5c4320c63a2d9 = L.circleMarker(
+                [-5.890459, -38.411789],
+                {"bubblingMouseEvents": true, "color": "#2e86c1", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2e86c1", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_b0c42e5ef8dc4fd860504a370b60e8e7);
+        
+    
+        var popup_9c12b424e5e3a5f99df81d962f199819 = L.popup({
+  "maxWidth": 340,
+});
+
+        
+            
+                var html_2f283fe03578be5ffe93fb06873d455c = $(`<div id="html_2f283fe03578be5ffe93fb06873d455c" style="width: 100.0%; height: 100.0%;"><b>Santo Antônio</b> (Médio Jaguaribe)<br>Risk of &gt; 20,000 cells/mL: <b>24%</b> (<span style='color:#2e86c1'><b>Lower risk</b></span>)<br>Image: 2026-10-24 · Volume: 18%<br>↓ time of year: dry season<br>↑ dry last 90 days (12 mm; 2 mm in the last 30)<br>↓ hot last 30 days (max 38.6 °C; last week 39.0 °C)<br><i>Last lab result: 69,021 cells/mL on 2026-08-06 </i></div>`)[0];
+                popup_9c12b424e5e3a5f99df81d962f199819.setContent(html_2f283fe03578be5ffe93fb06873d455c);
+            
+        
+
+        circle_marker_f80a61a2db29a731b6c5c4320c63a2d9.bindPopup(popup_9c12b424e5e3a5f99df81d962f199819)
+        ;
+
+        
+    
+    
+            circle_marker_f80a61a2db29a731b6c5c4320c63a2d9.bindTooltip(
+                `<div>
+                     Santo Antônio: 24%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9ba7eaad7bfe14cfd3c65658a4a7a0e8 = L.circleMarker(
+                [-4.85195462398, -38.1657398571],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_b0c42e5ef8dc4fd860504a370b60e8e7);
+        
+    
+        var popup_610f4ac8b5c59607b4505a3cb3df5ab7 = L.popup({
+  "maxWidth": 340,
+});
+
+        
+            
+                var html_73d5c02ef4c3b0cfdf409ad41e0edde6 = $(`<div id="html_73d5c02ef4c3b0cfdf409ad41e0edde6" style="width: 100.0%; height: 100.0%;"><b>Santo Antônio de Russas</b> (Baixo Jaguaribe)<br>Risk of &gt; 20,000 cells/mL: <b>37%</b> (<span style='color:#c0392b'><b>Alert</b></span>)<br>Image: 2026-11-13 · Volume: 21%<br>↓ little chlorophyll seen (index 0.016)<br>↑ dry last 90 days (17 mm; 11 mm in the last 30)<br>↓ time of year: dry season<br><i>Last lab result: 261,926 cells/mL on 2026-08-19 </i></div>`)[0];
+                popup_610f4ac8b5c59607b4505a3cb3df5ab7.setContent(html_73d5c02ef4c3b0cfdf409ad41e0edde6);
+            
+        
+
+        circle_marker_9ba7eaad7bfe14cfd3c65658a4a7a0e8.bindPopup(popup_610f4ac8b5c59607b4505a3cb3df5ab7)
+        ;
+
+        
+    
+    
+            circle_marker_9ba7eaad7bfe14cfd3c65658a4a7a0e8.bindTooltip(
+                `<div>
+                     Santo Antônio de Russas: 37%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_455ecc4789d78995705295aa2f6afec7 = L.circleMarker(
+                [-5.083883, -39.305097],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_b0c42e5ef8dc4fd860504a370b60e8e7);
+        
+    
+        var popup_a9d34695881193bfa42d2962b399518c = L.popup({
+  "maxWidth": 340,
+});
+
+        
+            
+                var html_0ec82c8ee4d1f9af520bf29ad4cbe3c6 = $(`<div id="html_0ec82c8ee4d1f9af520bf29ad4cbe3c6" style="width: 100.0%; height: 100.0%;"><b>São José II</b> (Banabuiú)<br>Risk of &gt; 20,000 cells/mL: <b>27%</b> (<span style='color:#c0392b'><b>Alert</b></span>)<br>Image: 2026-10-24 · Volume: 20%<br>↓ time of year: dry season<br>↑ dry last 90 days (7 mm; 5 mm in the last 30)<br>↓ only 1% of the area near the sampling point is water<br><i>Last lab result: 206,178 cells/mL on 2026-07-29 </i></div>`)[0];
+                popup_a9d34695881193bfa42d2962b399518c.setContent(html_0ec82c8ee4d1f9af520bf29ad4cbe3c6);
+            
+        
+
+        circle_marker_455ecc4789d78995705295aa2f6afec7.bindPopup(popup_a9d34695881193bfa42d2962b399518c)
+        ;
+
+        
+    
+    
+            circle_marker_455ecc4789d78995705295aa2f6afec7.bindTooltip(
+                `<div>
+                     São José II: 27%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e386568a955a645329c0e8edca5d0573 = L.circleMarker(
+                [-5.72847965121, -39.6472365319],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_b0c42e5ef8dc4fd860504a370b60e8e7);
+        
+    
+        var popup_af7bfdb447a0e4c2be192c1f29bf354b = L.popup({
+  "maxWidth": 340,
+});
+
+        
+            
+                var html_22c37eefad15fba2aff02b47925b4121 = $(`<div id="html_22c37eefad15fba2aff02b47925b4121" style="width: 100.0%; height: 100.0%;"><b>Serafim Dias</b> (Banabuiú)<br>Risk of &gt; 20,000 cells/mL: <b>63%</b> (<span style='color:#c0392b'><b>Alert</b></span>)<br>Image: 2026-11-13 · Volume: 87%<br>↑ dry last 90 days (9 mm; 6 mm in the last 30)<br>↑ 60% of the area near the sampling point is water<br>↓ time of year: dry season<br><i>Last lab result: 263,695 cells/mL on 2026-07-29 </i></div>`)[0];
+                popup_af7bfdb447a0e4c2be192c1f29bf354b.setContent(html_22c37eefad15fba2aff02b47925b4121);
+            
+        
+
+        circle_marker_e386568a955a645329c0e8edca5d0573.bindPopup(popup_af7bfdb447a0e4c2be192c1f29bf354b)
+        ;
+
+        
+    
+    
+            circle_marker_e386568a955a645329c0e8edca5d0573.bindTooltip(
+                `<div>
+                     Serafim Dias: 63%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c9956c0e05d152307122e868db98c1b5 = L.circleMarker(
+                [-7.09077807818, -39.4869088371],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_b0c42e5ef8dc4fd860504a370b60e8e7);
+        
+    
+        var popup_a70ef44e071f94ff0e1a4c27bb7ca822 = L.popup({
+  "maxWidth": 340,
+});
+
+        
+            
+                var html_3107c5e57ea7b24c50bc0e0f9f36a285 = $(`<div id="html_3107c5e57ea7b24c50bc0e0f9f36a285" style="width: 100.0%; height: 100.0%;"><b>Thomás Osterne</b> (Salgado)<br>Risk of &gt; 20,000 cells/mL: <b>26%</b> (<span style='color:#c0392b'><b>Alert</b></span>)<br>Image: 2026-11-03 · Volume: 69%<br>↓ little chlorophyll seen (index 0.001)<br>↑ dry last 90 days (5 mm; 1 mm in the last 30)<br>↓ time of year: dry season<br><i>Last lab result: 24,423 cells/mL on 2026-07-21 </i></div>`)[0];
+                popup_a70ef44e071f94ff0e1a4c27bb7ca822.setContent(html_3107c5e57ea7b24c50bc0e0f9f36a285);
+            
+        
+
+        circle_marker_c9956c0e05d152307122e868db98c1b5.bindPopup(popup_a70ef44e071f94ff0e1a4c27bb7ca822)
+        ;
+
+        
+    
+    
+            circle_marker_c9956c0e05d152307122e868db98c1b5.bindTooltip(
+                `<div>
+                     Thomás Osterne: 26%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f7cac019c28b51cbbaf92b3cb87505cc = L.circleMarker(
+                [-5.50257888999, -39.7366728894],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_b0c42e5ef8dc4fd860504a370b60e8e7);
+        
+    
+        var popup_f33a103a50714313e5cbf906083ba904 = L.popup({
+  "maxWidth": 340,
+});
+
+        
+            
+                var html_b3a536cb4a3bcc5cdde823f5a4c99751 = $(`<div id="html_b3a536cb4a3bcc5cdde823f5a4c99751" style="width: 100.0%; height: 100.0%;"><b>Trapiá II</b> (Banabuiú)<br>Risk of &gt; 20,000 cells/mL: <b>35%</b> (<span style='color:#c0392b'><b>Alert</b></span>)<br>Image: 2026-11-03 · Volume: 12%<br>↓ little chlorophyll seen (index 0.010)<br>↑ dry last 90 days (4 mm; 1 mm in the last 30)<br>↓ time of year: dry season<br><i>Last lab result: 35,985 cells/mL on 2026-07-15 </i></div>`)[0];
+                popup_f33a103a50714313e5cbf906083ba904.setContent(html_b3a536cb4a3bcc5cdde823f5a4c99751);
+            
+        
+
+        circle_marker_f7cac019c28b51cbbaf92b3cb87505cc.bindPopup(popup_f33a103a50714313e5cbf906083ba904)
+        ;
+
+        
+    
+    
+            circle_marker_f7cac019c28b51cbbaf92b3cb87505cc.bindTooltip(
+                `<div>
+                     Trapiá II: 35%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1e9fc365372139a7bd2bfdcb0ed4c08f = L.circleMarker(
+                [-5.91533033329, -40.413943243],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_b0c42e5ef8dc4fd860504a370b60e8e7);
+        
+    
+        var popup_7f51f5fd86e7ca5a83cec4330cedc628 = L.popup({
+  "maxWidth": 340,
+});
+
+        
+            
+                var html_67ba809194887ac6d63257da542da6eb = $(`<div id="html_67ba809194887ac6d63257da542da6eb" style="width: 100.0%; height: 100.0%;"><b>Trici</b> (Alto Jaguaribe)<br>Risk of &gt; 20,000 cells/mL: <b>47%</b> (<span style='color:#c0392b'><b>Alert</b></span>)<br>Image: 2026-11-10 · Volume: 64%<br>↓ little chlorophyll seen (index 0.012)<br>↑ dry last 90 days (3 mm; 1 mm in the last 30)<br>↓ time of year: dry season<br><i>Last lab result: 114,150 cells/mL on 2026-08-06 </i></div>`)[0];
+                popup_7f51f5fd86e7ca5a83cec4330cedc628.setContent(html_67ba809194887ac6d63257da542da6eb);
+            
+        
+
+        circle_marker_1e9fc365372139a7bd2bfdcb0ed4c08f.bindPopup(popup_7f51f5fd86e7ca5a83cec4330cedc628)
+        ;
+
+        
+    
+    
+            circle_marker_1e9fc365372139a7bd2bfdcb0ed4c08f.bindTooltip(
+                `<div>
+                     Trici: 47%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_376c104a91d59a62a31081656c7fa911 = L.circleMarker(
+                [-6.30829420879, -39.433659842],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_b0c42e5ef8dc4fd860504a370b60e8e7);
+        
+    
+        var popup_5ac5270262d50be52bd529b2ce5f2d05 = L.popup({
+  "maxWidth": 340,
+});
+
+        
+            
+                var html_2dabdd533dacb426778466de3b672efa = $(`<div id="html_2dabdd533dacb426778466de3b672efa" style="width: 100.0%; height: 100.0%;"><b>Trussu</b> (Alto Jaguaribe)<br>Risk of &gt; 20,000 cells/mL: <b>35%</b> (<span style='color:#c0392b'><b>Alert</b></span>)<br>Image: 2026-11-13 · Volume: 86%<br>↓ little chlorophyll seen (index 0.000)<br>↑ dry last 90 days (10 mm; 6 mm in the last 30)<br>↑ 66% of the area near the sampling point is water<br><i>Last lab result: 79,050 cells/mL on 2026-07-17 </i></div>`)[0];
+                popup_5ac5270262d50be52bd529b2ce5f2d05.setContent(html_2dabdd533dacb426778466de3b672efa);
+            
+        
+
+        circle_marker_376c104a91d59a62a31081656c7fa911.bindPopup(popup_5ac5270262d50be52bd529b2ce5f2d05)
+        ;
+
+        
+    
+    
+            circle_marker_376c104a91d59a62a31081656c7fa911.bindTooltip(
+                `<div>
+                     Trussu: 35%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d915b039d040835f2a333dc0f100ad53 = L.circleMarker(
+                [-6.58385878059, -39.2375639263],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_b0c42e5ef8dc4fd860504a370b60e8e7);
+        
+    
+        var popup_941680670e08b5b2be6d86e62f381209 = L.popup({
+  "maxWidth": 340,
+});
+
+        
+            
+                var html_573181b76db520157674df304b355578 = $(`<div id="html_573181b76db520157674df304b355578" style="width: 100.0%; height: 100.0%;"><b>Ubaldinho</b> (Salgado)<br>Risk of &gt; 20,000 cells/mL: <b>55%</b> (<span style='color:#c0392b'><b>Alert</b></span>)<br>Image: 2026-11-10 · Volume: 80%<br>↓ little chlorophyll seen (index -0.012)<br>↑ 78% of the area near the sampling point is water<br>↑ dry last 90 days (6 mm; 2 mm in the last 30)<br><i>Last lab result: 23,785 cells/mL on 2026-07-07 </i></div>`)[0];
+                popup_941680670e08b5b2be6d86e62f381209.setContent(html_573181b76db520157674df304b355578);
+            
+        
+
+        circle_marker_d915b039d040835f2a333dc0f100ad53.bindPopup(popup_941680670e08b5b2be6d86e62f381209)
+        ;
+
+        
+    
+    
+            circle_marker_d915b039d040835f2a333dc0f100ad53.bindTooltip(
+                `<div>
+                     Ubaldinho: 55%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c5db6ddaaba4771b5c1d9ae74111ee06 = L.circleMarker(
+                [-5.15679628805, -39.7183924085],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 1}
+            ).addTo(map_b0c42e5ef8dc4fd860504a370b60e8e7);
+        
+    
+        var popup_1423b1a32d79f531e9441e62386decb1 = L.popup({
+  "maxWidth": 340,
+});
+
+        
+            
+                var html_c4cb98259f89d37c7889ac36a98f5b6c = $(`<div id="html_c4cb98259f89d37c7889ac36a98f5b6c" style="width: 100.0%; height: 100.0%;"><b>Vieirão</b> (Banabuiú)<br>Risk of &gt; 20,000 cells/mL: <b>84%</b> (<span style='color:#c0392b'><b>Alert</b></span>)<br>Image: 2026-11-10 · Volume: 25%<br>↑ green water (chlorophyll index 0.228)<br>↑ dry last 90 days (3 mm; 1 mm in the last 30)<br>↓ time of year: dry season<br><i>Last lab result: 261,925 cells/mL on 2026-07-16 </i></div>`)[0];
+                popup_1423b1a32d79f531e9441e62386decb1.setContent(html_c4cb98259f89d37c7889ac36a98f5b6c);
+            
+        
+
+        circle_marker_c5db6ddaaba4771b5c1d9ae74111ee06.bindPopup(popup_1423b1a32d79f531e9441e62386decb1)
+        ;
+
+        
+    
+    
+            circle_marker_c5db6ddaaba4771b5c1d9ae74111ee06.bindTooltip(
+                `<div>
+                     Vieirão: 84%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a4f6e731ee0e3233f68d02fb9484f0ea = L.circleMarker(
+                [-6.304448, -40.676041],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_b0c42e5ef8dc4fd860504a370b60e8e7);
+        
+    
+            circle_marker_a4f6e731ee0e3233f68d02fb9484f0ea.bindTooltip(
+                `<div>
+                     Facundo: no clear image in the last 30 days
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6f63771409747d3bba64566ccec9b487 = L.circleMarker(
+                [-6.160069, -39.219267],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_b0c42e5ef8dc4fd860504a370b60e8e7);
+        
+    
+            circle_marker_6f63771409747d3bba64566ccec9b487.bindTooltip(
+                `<div>
+                     Faé: no clear image in the last 30 days
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0922319ce9992e667a209e000e453dc6 = L.circleMarker(
+                [-5.6257164369237, -38.257198698736],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_b0c42e5ef8dc4fd860504a370b60e8e7);
+        
+    
+            circle_marker_0922319ce9992e667a209e000e453dc6.bindTooltip(
+                `<div>
+                     Figueiredo: no clear image in the last 30 days
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_dda10a3c413d27dcc3372de4a0f5836f = L.circleMarker(
+                [-7.481016, -38.73024],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_b0c42e5ef8dc4fd860504a370b60e8e7);
+        
+    
+            circle_marker_dda10a3c413d27dcc3372de4a0f5836f.bindTooltip(
+                `<div>
+                     Gomes: no clear image in the last 30 days
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a2ff914114779bc6737b4c5df2e34761 = L.circleMarker(
+                [-6.672764, -38.755099],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_b0c42e5ef8dc4fd860504a370b60e8e7);
+        
+    
+            circle_marker_a2ff914114779bc6737b4c5df2e34761.bindTooltip(
+                `<div>
+                     Jenipapeiro II: no clear image in the last 30 days
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_642a15228de13f86f9e98dbb258010dd = L.circleMarker(
+                [-7.080531357019, -40.177232052265],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_b0c42e5ef8dc4fd860504a370b60e8e7);
+        
+    
+            circle_marker_642a15228de13f86f9e98dbb258010dd.bindTooltip(
+                `<div>
+                     João Luís: no clear image in the last 30 days
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0e8d183818da5ec7e93eff983f7f0ec5 = L.circleMarker(
+                [-7.10729145731, -39.3292996457],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_b0c42e5ef8dc4fd860504a370b60e8e7);
+        
+    
+            circle_marker_0e8d183818da5ec7e93eff983f7f0ec5.bindTooltip(
+                `<div>
+                     Manoel Balbino: no clear image in the last 30 days
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e06094caf8f2946d6d072cc1dccaf4ab = L.circleMarker(
+                [-5.949263, -38.907803],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_b0c42e5ef8dc4fd860504a370b60e8e7);
+        
+    
+            circle_marker_e06094caf8f2946d6d072cc1dccaf4ab.bindTooltip(
+                `<div>
+                     Nova Floresta: no clear image in the last 30 days
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3300ccda9d037e12e9df5f723c9a52fd = L.circleMarker(
+                [-7.081014, -40.084615],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_b0c42e5ef8dc4fd860504a370b60e8e7);
+        
+    
+            circle_marker_3300ccda9d037e12e9df5f723c9a52fd.bindTooltip(
+                `<div>
+                     Pau Preto: no clear image in the last 30 days
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e327560ce80726032ff60f82671e2a25 = L.circleMarker(
+                [-5.562632, -38.325225],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_b0c42e5ef8dc4fd860504a370b60e8e7);
+        
+    
+            circle_marker_e327560ce80726032ff60f82671e2a25.bindTooltip(
+                `<div>
+                     Riacho da Serra: no clear image in the last 30 days
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_bc062f38a90413940aca35422dd55b90 = L.circleMarker(
+                [-7.029354, -39.28301],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_b0c42e5ef8dc4fd860504a370b60e8e7);
+        
+    
+            circle_marker_bc062f38a90413940aca35422dd55b90.bindTooltip(
+                `<div>
+                     São Domingos II: no clear image in the last 30 days
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_31f71c76abd38c7e0aef62cb6a1b95b0 = L.circleMarker(
+                [-5.195816, -39.601225],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_b0c42e5ef8dc4fd860504a370b60e8e7);
+        
+    
+            circle_marker_31f71c76abd38c7e0aef62cb6a1b95b0.bindTooltip(
+                `<div>
+                     São José I: no clear image in the last 30 days
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_fe187b37d7a1b25d6212ab6e66555d28 = L.circleMarker(
+                [-6.415912, -39.08259],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_b0c42e5ef8dc4fd860504a370b60e8e7);
+        
+    
+            circle_marker_fe187b37d7a1b25d6212ab6e66555d28.bindTooltip(
+                `<div>
+                     Tatajuba: no clear image in the last 30 days
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e10ca4000f8d011e703044ff555272c3 = L.circleMarker(
+                [-5.889177, -39.15382],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_b0c42e5ef8dc4fd860504a370b60e8e7);
+        
+    
+            circle_marker_e10ca4000f8d011e703044ff555272c3.bindTooltip(
+                `<div>
+                     Tigre: no clear image in the last 30 days
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_56beebbff545af825fc01d267f77198c = L.circleMarker(
+                [-4.809116, -39.551388],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_b0c42e5ef8dc4fd860504a370b60e8e7);
+        
+    
+            circle_marker_56beebbff545af825fc01d267f77198c.bindTooltip(
+                `<div>
+                     José Barbosa Filho (Umari): no clear image in the last 30 days
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e67b480308b6ddc6dba3b5fd60b3deb2 = L.circleMarker(
+                [-6.967953, -39.727293],
+                {"bubblingMouseEvents": true, "color": "gray", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "gray", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_b0c42e5ef8dc4fd860504a370b60e8e7);
+        
+    
+            circle_marker_e67b480308b6ddc6dba3b5fd60b3deb2.bindTooltip(
+                `<div>
+                     Valério: no clear image in the last 30 days
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+</script>
+</html>
