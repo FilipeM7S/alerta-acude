@@ -13,7 +13,7 @@
 
 ## The problem
 
-The semi-arid interior of Ceará, Brazil, drinks from **açudes** (reservoirs). Heat and drought concentrate nutrients and warm the water, which feeds **cyanobacteria blooms**, and many cyanobacteria produce toxins. Brazil's drinking-water rule (Portaria GM/MS nº 888/2021, art. 43 § 2º) says that **above 20,000 cyanobacteria cells/mL at the intake, cyanotoxins must be analysed at least weekly**.
+The semi-arid interior of Ceará, Brazil, drinks from **açudes** (reservoirs). Heat and drought concentrate nutrients and warm the water, which feeds **cyanobacteria blooms**, and many cyanobacteria produce toxins. As the region gets hotter and its droughts longer, blooms are one of the most direct local climate impacts on drinking water, so a tool that tracks them must keep working when reservoirs run low: in our drought test it did, with recall 0.89 below 20% volume (38 samples) vs 0.90 above. Brazil's drinking-water rule (Portaria GM/MS nº 888/2021, art. 43 § 2º) says that **above 20,000 cyanobacteria cells/mL at the intake, cyanotoxins must be analysed at least weekly**.
 
 The state water agency COGERH samples about 150 reservoirs, but only **once per quarter**. Between campaigns a bloom can grow for three months unseen. In the Jaguaribe system, where Tabuleiro do Norte, Limoeiro do Norte and Russas have depended on the Castanhão reservoir, **78% of the 1,479 lab samples from 2016 to 2025 were above 20,000 cells/mL**.
 
