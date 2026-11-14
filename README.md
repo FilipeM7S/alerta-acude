@@ -9,7 +9,7 @@
 2. **In and out:** the latest Sentinel-2 image plus today's stored volume give, for each reservoir, a bloom probability, a ranking, 3 plain-language reasons and the last lab result, on a map.
 3. **Result:** on future campaigns it ties the last lab result without a lab visit, from an image a few days old. In the pre-registered Test 2 it has the best balanced accuracy (0.732) and the fewest false alarms (10).
 4. **Main weakness:** it under-warns in the dry season (Test 2: 22 missed dry-season blooms vs 10 for the last lab result), and it is weak at finding the few clean reservoirs.
-5. **Demo:** `outputs/risk_map.html` (14 Nov 2026: 49 of 65 reservoirs imaged, 38 on Alert).
+5. **Demo:** [interactive risk map](https://filipem7s.github.io/alerta-acude/outputs/risk_map.html) (source: `outputs/risk_map.html`) (14 Nov 2026: 49 of 65 reservoirs imaged, 38 on Alert).
 
 ## The problem
 
@@ -23,14 +23,14 @@ Today their best guess is the **last lab result**, up to three months old.
 
 ## What we built
 
-A weekly risk map (`outputs/risk_map.html`, notebook 05). For each reservoir of the Jaguaribe system, the most recent clear **Sentinel-2** image and today's **stored volume** go in. Out come the **probability that cyanobacteria exceed 20,000 cells/mL**, an **Alert / Lower risk** band (threshold fixed on validation data), a ranked list, the **top three reasons in plain language**, the **last lab result** for comparison, and a **low-confidence** flag where the satellite measurement is unreliable.
+A weekly risk map ([interactive risk map](https://filipem7s.github.io/alerta-acude/outputs/risk_map.html); source: `outputs/risk_map.html`, notebook 05). For each reservoir of the Jaguaribe system, the most recent clear **Sentinel-2** image and today's **stored volume** go in. Out come the **probability that cyanobacteria exceed 20,000 cells/mL**, an **Alert / Lower risk** band (threshold fixed on validation data), a ranked list, the **top three reasons in plain language**, the **last lab result** for comparison, and a **low-confidence** flag where the satellite measurement is unreliable.
 
 ## What we added
 
 - **Our own ground truth:** all 28 COGERH trophic-state reports (PDF, Feb/2016 to Feb/2025) parsed into 3,679 lab samples from 156 reservoirs, and cross-checked against COGERH's online database (99.6% of counts agree; details at the end).
 - **Our own user and question:** a technician deciding where to sample, compared against what they know today (the last lab result).
 - **Our own questions:** does it still work in drought (volume < 20%)? On reservoirs it never saw? When the image is within 2 days of the lab visit?
-- **A second, pre-registered test.** After the first test exposed a weakness, we wrote down a fix and a decision rule (commit `50b694b`) *before* touching six newer campaigns (May/2025 to Aug/2026) that no model had seen. Then we scored them once.
+- **A second, pre-registered test.** After the first test exposed a weakness, we wrote down a fix and a decision rule (commit [`50b694b`](https://github.com/FilipeM7S/alerta-acude/commit/50b694b)) *before* touching six newer campaigns (May/2025 to Aug/2026) that no model had seen. Then we scored them once. The commit history shows it (14 Nov, 14:28) before the second test was scored (7430d8a, 15:38).
 
 ## How it works
 
@@ -74,13 +74,15 @@ A weekly risk map (`outputs/risk_map.html`, notebook 05). For each reservoir of 
 - **The hard part is finding the clean reservoirs** (chance = 0.13). The single index NDCI does best (0.455); our chosen model is worse than persistence here.
 - **Our own questions:** no drop in drought (recall 0.89 below 20% volume), a tie with persistence on unseen reservoirs (mean PR-AUC 0.913 each), and no gain when the image is within 2 days of the lab visit (full numbers at the end).
 
+![Worst misses and false alarms (Test 1)](outputs/failures_rgb.png)
+
 **Where it fails, and why** (thumbnails in `outputs/failures_rgb.png`, checks in notebook 04):
 - **Missed blooms come from the season inputs, not from clouds.** Partly cloudy scenes had *fewer* errors (14%) than clear ones (24%), but 16 of the 17 missed blooms were in the dry-season campaigns (Aug, Nov). In 2016–2020, dry-season samples were blooms less often (70% vs 79%); in the test years they were common (84%). Model A's coefficients (`outputs/lr_coefficients_modelA.png`) show what it learned: `month_sin` is +0.73, and the two temperature windows have opposite signs (`tmax_7d` −0.73, `tmax_30d` +0.37) although they are 0.91 correlated. That is why the map's explanations add related inputs together, and why model B drops the season and weather inputs.
 - **Many cells, little chlorophyll.** Riacho do Sangue had 191,134 cells/mL but only 12.85 µg/L chlorophyll-a. NDCI sees chlorophyll, not cell numbers.
 - **False alarms:** Atalho (16,046 cells/mL) and Bengue (10,422) were close to the limit, both above the 10,000 at which the same Portaria (Annex 12) already asks for weekly counts; Poço da Pedra was green from other algae (13.90 µg/L chlorophyll-a, 4,130 cyanobacteria cells/mL); Cachoeira's image was hazy.
 - **The water-share input partly measures geometry, not water.** `water_frac` raises the risk, but it also depends on the sampling area's shape and the reservoir's size. It is tiny when the area fell back to a plain disc or the reservoir is nearly dry, which pushes those reservoirs toward "Lower risk" for reasons unrelated to water quality. On the live map, 6 of the 49 imaged reservoirs are flagged **low confidence** (disc fallback, water share < 5%, or volume < 5%). São José II (1% water) and Santo Antônio (2%) are "Lower risk" although their last lab counts were 206,178 and 69,021 cells/mL; Cedro (0.44% volume) and Pirabibu (0.63%) are nearly empty. The flag only changes the display (dashed outline, a popup note), not the risk or the band.
 
-**Test 2 (pre-registered, six campaigns nobody had seen):** before extracting anything (commit `50b694b`) we wrote down a hypothesis, that a model without the season and weather inputs ("B": satellite + stored water, 6 inputs) misses fewer dry-season blooms than model A, and a rule: the map uses B if its PR-AUC is within 0.02 of A's. 238 samples (89% blooms), with counts from COGERH's database only, because no PDF report exists for these campaigns yet.
+**Test 2 (pre-registered, six campaigns nobody had seen):** before extracting anything (commit [`50b694b`](https://github.com/FilipeM7S/alerta-acude/commit/50b694b)) we wrote down a hypothesis, that a model without the season and weather inputs ("B": satellite + stored water, 6 inputs) misses fewer dry-season blooms than model A, and a rule: the map uses B if its PR-AUC is within 0.02 of A's. 238 samples (89% blooms), with counts from COGERH's database only, because no PDF report exists for these campaigns yet.
 
 | Method | Recall | Precision | Missed blooms | False alarms | PR-AUC | PR-AUC for *clean* water | Balanced accuracy¹ |
 |---|---|---|---|---|---|---|---|
@@ -147,6 +149,8 @@ A weekly risk map (`outputs/risk_map.html`, notebook 05). For each reservoir of 
 **AI tools:** Claude Code (Anthropic), running Claude Opus 5.5, was used as a coding assistant for the parser, the data pipeline, the notebooks and drafting this write-up. Every result was produced by the code in this repository.
 
 ## Details
+
+All work was done during the hackathon window; the full commit history starts on 14 Nov 2026 at 09:10 (Brasília time).
 
 **Ground truth (notebook 01).** A parser test reproduces four known values from the Nov/2020 report exactly. We cross-checked every value against COGERH's own online database; the two sources agree on 99.6% of counts. We found and documented errors in both sources: a shifted table in one report, and counts stored divided by 1,000 in the database for two campaigns. We drop a sample only when the two sources contradict each other (23 samples).
 
