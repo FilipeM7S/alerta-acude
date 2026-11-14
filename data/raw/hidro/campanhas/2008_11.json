@@ -1,0 +1,560 @@
+[
+{
+"reservatorio": {
+"cianobacteria": 269737.2,
+"classe": 3,
+"clorofila": null,
+"data": "2008-11-26",
+"fosforo": null,
+"id": 11,
+"info": "Número alto de cianobactérias",
+"latitude": -5.14985135743,
+"longitude": -38.8777544386,
+"nitrogenio": null,
+"nome": "Pedras Brancas",
+"ponto": "PEB-11",
+"profundidade": null,
+"regiao_hidrografica": "Banabuiú"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": null,
+"classe": 1,
+"clorofila": 1.11,
+"data": "2008-11-27",
+"fosforo": 0.05,
+"id": 122,
+"info": null,
+"latitude": -6.30829420879,
+"longitude": -39.433659842,
+"nitrogenio": 0.422,
+"nome": "Trussu",
+"ponto": "TRU-06",
+"profundidade": null,
+"regiao_hidrografica": "Alto Jaguaribe"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 3035.3,
+"classe": 1,
+"clorofila": null,
+"data": "2008-10-01",
+"fosforo": null,
+"id": 63,
+"info": "Número baixo de cianobactérias",
+"latitude": -6.402325,
+"longitude": -38.956848,
+"nitrogenio": null,
+"nome": "Lima Campos",
+"ponto": "LMC-01",
+"profundidade": null,
+"regiao_hidrografica": "Salgado"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 23558.0,
+"classe": 3,
+"clorofila": null,
+"data": "2008-11-05",
+"fosforo": null,
+"id": 32,
+"info": "Presença massiva de vegetação aquática",
+"latitude": -6.037778,
+"longitude": -38.447193,
+"nitrogenio": null,
+"nome": "Adauto Bezerra",
+"ponto": "ADB-01",
+"profundidade": null,
+"regiao_hidrografica": "Médio Jaguaribe"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 569.8,
+"classe": 3,
+"clorofila": 6.06,
+"data": "2008-11-13",
+"fosforo": 0.096,
+"id": 80,
+"info": null,
+"latitude": -4.22225681679,
+"longitude": -38.3838534079,
+"nitrogenio": 2.304,
+"nome": "Pacajus",
+"ponto": "PAC-06",
+"profundidade": null,
+"regiao_hidrografica": "Metropolitana"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 513.6,
+"classe": 1,
+"clorofila": null,
+"data": "2008-11-18",
+"fosforo": null,
+"id": 112,
+"info": null,
+"latitude": -3.63564653661,
+"longitude": -40.8204151777,
+"nitrogenio": null,
+"nome": "Angicos",
+"ponto": "ANG-01",
+"profundidade": null,
+"regiao_hidrografica": "Coreaú"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 8225.6,
+"classe": 1,
+"clorofila": null,
+"data": "2008-12-03",
+"fosforo": null,
+"id": 233,
+"info": "Número baixo de cianobactérias",
+"latitude": -5.890459,
+"longitude": -38.411789,
+"nitrogenio": null,
+"nome": "Santo Antônio",
+"ponto": "STA-01",
+"profundidade": null,
+"regiao_hidrografica": "Médio Jaguaribe"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 8584.4,
+"classe": 1,
+"clorofila": 1.26,
+"data": "2008-12-03",
+"fosforo": -0.008,
+"id": 69,
+"info": "Número baixo de cianobactérias",
+"latitude": -3.86508767029,
+"longitude": -41.1133035668,
+"nitrogenio": 1.54,
+"nome": "Jaburu I",
+"ponto": "JB1-07",
+"profundidade": null,
+"regiao_hidrografica": "Serra da Ibiapaba"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 178902.0,
+"classe": 3,
+"clorofila": null,
+"data": "2008-12-03",
+"fosforo": null,
+"id": 82,
+"info": "Número alto de cianobactérias",
+"latitude": -5.7228775,
+"longitude": -38.1681776,
+"nitrogenio": null,
+"nome": "Potiretama",
+"ponto": "POT-01",
+"profundidade": null,
+"regiao_hidrografica": "Médio Jaguaribe"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 11591.8,
+"classe": 2,
+"clorofila": 1.07,
+"data": "2008-12-08",
+"fosforo": 0.032,
+"id": 155,
+"info": "Qualidade da água relativamente degradada",
+"latitude": -6.78888346631,
+"longitude": -39.3753014774,
+"nitrogenio": -0.321,
+"nome": "Olho d'Água",
+"ponto": "OLH-01",
+"profundidade": null,
+"regiao_hidrografica": "Salgado"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": null,
+"classe": 1,
+"clorofila": 1.78,
+"data": "2008-09-30",
+"fosforo": 0.033,
+"id": 34,
+"info": null,
+"latitude": -5.3933069733739,
+"longitude": -40.301177404304,
+"nitrogenio": null,
+"nome": "Cupim",
+"ponto": "CUP-01",
+"profundidade": null,
+"regiao_hidrografica": "Sertões de Crateús"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 5876.4,
+"classe": 1,
+"clorofila": null,
+"data": "2008-11-27",
+"fosforo": 0.116,
+"id": 7,
+"info": "Número baixo de cianobactérias",
+"latitude": -4.06243387754,
+"longitude": -39.4537367839,
+"nitrogenio": 2.679,
+"nome": "General Sampaio",
+"ponto": "GNS-01",
+"profundidade": null,
+"regiao_hidrografica": "Curu"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 4305.9,
+"classe": 1,
+"clorofila": null,
+"data": "2008-11-06",
+"fosforo": null,
+"id": 194,
+"info": "Número baixo de cianobactérias",
+"latitude": -5.48909482144,
+"longitude": -38.4502293061,
+"nitrogenio": null,
+"nome": "Castanhão",
+"ponto": "CTN-20",
+"profundidade": null,
+"regiao_hidrografica": "Médio Jaguaribe"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 648148.3,
+"classe": 4,
+"clorofila": null,
+"data": "2008-10-21",
+"fosforo": null,
+"id": 16,
+"info": "Número muito alto de cianobactérias",
+"latitude": -5.19828377485,
+"longitude": -39.3127774588,
+"nitrogenio": null,
+"nome": "Quixeramobim",
+"ponto": "QXM-05",
+"profundidade": null,
+"regiao_hidrografica": "Banabuiú"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 388000.6,
+"classe": 3,
+"clorofila": 46.04,
+"data": "2008-11-11",
+"fosforo": 0.137,
+"id": 78,
+"info": null,
+"latitude": -4.19354599542,
+"longitude": -38.7993848299,
+"nitrogenio": 1.601,
+"nome": "Acarape do Meio",
+"ponto": "ACA-09",
+"profundidade": null,
+"regiao_hidrografica": "Metropolitana"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 510822.5,
+"classe": 3,
+"clorofila": null,
+"data": "2008-11-10",
+"fosforo": null,
+"id": 5,
+"info": "Número alto de cianobactérias",
+"latitude": -4.21537241249,
+"longitude": -40.0665698637,
+"nitrogenio": null,
+"nome": "Edson Queiroz",
+"ponto": "EDQ-01",
+"profundidade": null,
+"regiao_hidrografica": "Acaraú"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 221720.5,
+"classe": 3,
+"clorofila": null,
+"data": "2008-11-26",
+"fosforo": 0.138,
+"id": 12,
+"info": null,
+"latitude": -3.80330004105,
+"longitude": -39.2616481781,
+"nitrogenio": 1.011,
+"nome": "Pentecoste",
+"ponto": "PET-01",
+"profundidade": null,
+"regiao_hidrografica": "Curu"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": null,
+"classe": 2,
+"clorofila": null,
+"data": "2008-11-19",
+"fosforo": null,
+"id": 117,
+"info": null,
+"latitude": -4.00099902774,
+"longitude": -38.5231717263,
+"nitrogenio": null,
+"nome": "Riachão",
+"ponto": "RIA-10",
+"profundidade": null,
+"regiao_hidrografica": "Metropolitana"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": null,
+"classe": 3,
+"clorofila": 6.64,
+"data": "2008-12-17",
+"fosforo": 0.137,
+"id": 159,
+"info": null,
+"latitude": -3.77127334573,
+"longitude": -38.9597828672,
+"nitrogenio": 4.443,
+"nome": "Sitios Novos",
+"ponto": "SIN-14",
+"profundidade": null,
+"regiao_hidrografica": "Metropolitana"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 1507.2,
+"classe": 3,
+"clorofila": null,
+"data": "2008-12-03",
+"fosforo": null,
+"id": 74,
+"info": "Presença massiva de vegetação aquática",
+"latitude": -5.86834198717,
+"longitude": -38.3179973854,
+"nitrogenio": null,
+"nome": "Canafístula",
+"ponto": "CNF-01",
+"profundidade": null,
+"regiao_hidrografica": "Médio Jaguaribe"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 607.5,
+"classe": 1,
+"clorofila": 0.53,
+"data": "2008-12-09",
+"fosforo": 0.118,
+"id": 170,
+"info": null,
+"latitude": -6.990421,
+"longitude": -39.017881,
+"nitrogenio": 0.118,
+"nome": "Cachoeira",
+"ponto": "CAC-70",
+"profundidade": null,
+"regiao_hidrografica": "Salgado"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 358.8,
+"classe": 1,
+"clorofila": null,
+"data": "2008-11-06",
+"fosforo": null,
+"id": 30,
+"info": "Número baixo de cianobactérias",
+"latitude": -5.77632884496,
+"longitude": -38.3449743134,
+"nitrogenio": null,
+"nome": "Ema",
+"ponto": "EMA-01",
+"profundidade": null,
+"regiao_hidrografica": "Médio Jaguaribe"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 109952.0,
+"classe": 3,
+"clorofila": null,
+"data": "2008-11-26",
+"fosforo": null,
+"id": 2,
+"info": "Número alto de cianobactérias",
+"latitude": -5.32859467909,
+"longitude": -38.9223710722,
+"nitrogenio": null,
+"nome": "Banabuiú",
+"ponto": "BAN-10",
+"profundidade": null,
+"regiao_hidrografica": "Banabuiú"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 15734.8,
+"classe": 1,
+"clorofila": null,
+"data": "2008-11-11",
+"fosforo": null,
+"id": 49,
+"info": "Número baixo de cianobactérias",
+"latitude": -3.77962049329,
+"longitude": -40.4978967562,
+"nitrogenio": null,
+"nome": "Ayres de Sousa",
+"ponto": "AYS-02",
+"profundidade": null,
+"regiao_hidrografica": "Acaraú"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 7431.8,
+"classe": 3,
+"clorofila": 3.78,
+"data": "2008-11-20",
+"fosforo": 0.154,
+"id": 88,
+"info": null,
+"latitude": -4.03602241472,
+"longitude": -38.5333114066,
+"nitrogenio": 0.68,
+"nome": "Pacoti",
+"ponto": "PCT-18",
+"profundidade": null,
+"regiao_hidrografica": "Metropolitana"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": null,
+"classe": 2,
+"clorofila": null,
+"data": "2008-11-25",
+"fosforo": null,
+"id": 9,
+"info": "Número médio de cianobactérias",
+"latitude": -6.2381264298,
+"longitude": -38.9250093577,
+"nitrogenio": null,
+"nome": "Orós",
+"ponto": "ORO-12",
+"profundidade": null,
+"regiao_hidrografica": "Alto Jaguaribe"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 298544.1,
+"classe": 3,
+"clorofila": 20.37,
+"data": "2008-11-26",
+"fosforo": 0.085,
+"id": 97,
+"info": null,
+"latitude": -4.56489990367,
+"longitude": -38.932369564,
+"nitrogenio": 2.546,
+"nome": "Castro",
+"ponto": "CAS-11",
+"profundidade": null,
+"regiao_hidrografica": "Metropolitana"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 92318.2,
+"classe": 3,
+"clorofila": 14.19,
+"data": "2008-11-27",
+"fosforo": 0.053,
+"id": 234,
+"info": null,
+"latitude": -4.40220028355,
+"longitude": -38.6957249782,
+"nitrogenio": 1.2,
+"nome": "Aracoiaba",
+"ponto": "ARC-10",
+"profundidade": null,
+"regiao_hidrografica": "Metropolitana"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 113176.8,
+"classe": 3,
+"clorofila": 12.93,
+"data": "2008-11-17",
+"fosforo": 0.055,
+"id": 95,
+"info": null,
+"latitude": -3.905961845,
+"longitude": -38.5553424,
+"nitrogenio": 2.777,
+"nome": "Gavião",
+"ponto": "GAV-05",
+"profundidade": null,
+"regiao_hidrografica": "Metropolitana"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 636755.1,
+"classe": 4,
+"clorofila": null,
+"data": "2008-11-28",
+"fosforo": 0.251,
+"id": 3,
+"info": "Número muito alto de cianobactérias",
+"latitude": -3.74191444021,
+"longitude": -39.3553731239,
+"nitrogenio": 2.116,
+"nome": "Caxitoré",
+"ponto": "CAX-01",
+"profundidade": null,
+"regiao_hidrografica": "Curu"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 76.4,
+"classe": 1,
+"clorofila": null,
+"data": "2008-10-01",
+"fosforo": null,
+"id": 75,
+"info": "Número baixo de cianobactérias",
+"latitude": -6.415912,
+"longitude": -39.08259,
+"nitrogenio": null,
+"nome": "Tatajuba",
+"ponto": "TAT-01",
+"profundidade": null,
+"regiao_hidrografica": "Salgado"
+}
+}
+]

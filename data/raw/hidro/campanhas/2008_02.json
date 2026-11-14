@@ -1,0 +1,434 @@
+[
+{
+"reservatorio": {
+"cianobacteria": 80595.0,
+"classe": 3,
+"clorofila": null,
+"data": "2008-07-10",
+"fosforo": 0.257,
+"id": 32,
+"info": "Número alto de cianobactérias",
+"latitude": -6.037778,
+"longitude": -38.447193,
+"nitrogenio": null,
+"nome": "Adauto Bezerra",
+"ponto": "ADB-01",
+"profundidade": null,
+"regiao_hidrografica": "Médio Jaguaribe"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": null,
+"classe": 3,
+"clorofila": null,
+"data": "2008-06-11",
+"fosforo": 0.29,
+"id": 28,
+"info": "Presença excessiva de macrófitas aquáticas",
+"latitude": -5.94905457118,
+"longitude": -38.8304650715,
+"nitrogenio": null,
+"nome": "Joaquim Távora",
+"ponto": "JOT-01",
+"profundidade": null,
+"regiao_hidrografica": "Médio Jaguaribe"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 4926940.0,
+"classe": 4,
+"clorofila": 218.2,
+"data": "2008-02-19",
+"fosforo": 0.236,
+"id": 59,
+"info": "Número muito alto de cianobactérias",
+"latitude": -4.76698183204,
+"longitude": -40.5824805724,
+"nitrogenio": null,
+"nome": "Farias de Sousa",
+"ponto": "FAS-01",
+"profundidade": null,
+"regiao_hidrografica": "Acaraú"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 12832.0,
+"classe": 1,
+"clorofila": 5.76,
+"data": "2008-06-11",
+"fosforo": -1.0,
+"id": 129,
+"info": "Número baixo de cianobactérias",
+"latitude": -3.730804,
+"longitude": -40.680701,
+"nitrogenio": null,
+"nome": "Trapiá III",
+"ponto": "TR3-01",
+"profundidade": null,
+"regiao_hidrografica": "Coreaú"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 38724.1,
+"classe": 2,
+"clorofila": null,
+"data": "2008-01-14",
+"fosforo": null,
+"id": 233,
+"info": "Número médio de cianobactérias",
+"latitude": -5.890459,
+"longitude": -38.411789,
+"nitrogenio": null,
+"nome": "Santo Antônio",
+"ponto": "STA-01",
+"profundidade": null,
+"regiao_hidrografica": "Médio Jaguaribe"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 284.4,
+"classe": 1,
+"clorofila": null,
+"data": "2008-01-08",
+"fosforo": null,
+"id": 67,
+"info": "Número baixo de cianobactérias",
+"latitude": -5.38257288767,
+"longitude": -38.4595984652,
+"nitrogenio": null,
+"nome": "Poço do Barro",
+"ponto": "PÇB-01",
+"profundidade": null,
+"regiao_hidrografica": "Banabuiú"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": null,
+"classe": 1,
+"clorofila": 0.4,
+"data": "2008-01-16",
+"fosforo": -1.0,
+"id": 69,
+"info": null,
+"latitude": -3.86508767029,
+"longitude": -41.1133035668,
+"nitrogenio": null,
+"nome": "Jaburu I",
+"ponto": "JB1-10",
+"profundidade": null,
+"regiao_hidrografica": "Serra da Ibiapaba"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 45552.8,
+"classe": 2,
+"clorofila": null,
+"data": "2008-07-01",
+"fosforo": 0.126,
+"id": 166,
+"info": "Número médio de cianobactérias",
+"latitude": -5.965648,
+"longitude": -38.276387,
+"nitrogenio": null,
+"nome": "Santa Maria",
+"ponto": "SMR-01",
+"profundidade": null,
+"regiao_hidrografica": "Médio Jaguaribe"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 594953.5,
+"classe": 3,
+"clorofila": null,
+"data": "2008-01-08",
+"fosforo": null,
+"id": 171,
+"info": "Número alto de cianobactérias",
+"latitude": -5.81315115414,
+"longitude": -39.2474835705,
+"nitrogenio": null,
+"nome": "Jenipapeiro",
+"ponto": "JEN-01",
+"profundidade": null,
+"regiao_hidrografica": "Médio Jaguaribe"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 185936.1,
+"classe": 3,
+"clorofila": null,
+"data": "2008-07-02",
+"fosforo": 0.26,
+"id": 82,
+"info": "Número alto de cianobactérias",
+"latitude": -5.7228775,
+"longitude": -38.1681776,
+"nitrogenio": null,
+"nome": "Potiretama",
+"ponto": "POT-01",
+"profundidade": null,
+"regiao_hidrografica": "Médio Jaguaribe"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 3303.9,
+"classe": 1,
+"clorofila": 6.4,
+"data": "2008-06-12",
+"fosforo": -1.0,
+"id": 180,
+"info": "Número baixo de cianobactérias",
+"latitude": -3.15241157107,
+"longitude": -41.1672940639,
+"nitrogenio": null,
+"nome": "Itaúna",
+"ponto": "ITA-01",
+"profundidade": null,
+"regiao_hidrografica": "Coreaú"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": null,
+"classe": 3,
+"clorofila": 24.06,
+"data": "2008-02-13",
+"fosforo": -1.0,
+"id": 155,
+"info": null,
+"latitude": -6.78888346631,
+"longitude": -39.3753014774,
+"nitrogenio": -1.0,
+"nome": "Olho d'Água",
+"ponto": "OLH-01",
+"profundidade": null,
+"regiao_hidrografica": "Salgado"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": null,
+"classe": 3,
+"clorofila": 35.4,
+"data": "2008-02-21",
+"fosforo": null,
+"id": 16,
+"info": null,
+"latitude": -5.19828377485,
+"longitude": -39.3127774588,
+"nitrogenio": null,
+"nome": "Quixeramobim",
+"ponto": "QXM-05",
+"profundidade": null,
+"regiao_hidrografica": "Banabuiú"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 94085.4,
+"classe": 3,
+"clorofila": 46.2,
+"data": "2008-07-09",
+"fosforo": -1.0,
+"id": 62,
+"info": null,
+"latitude": -3.31937079269,
+"longitude": -40.554447325,
+"nitrogenio": null,
+"nome": "Premuoca",
+"ponto": "PRE-01",
+"profundidade": null,
+"regiao_hidrografica": "Coreaú"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 3081.0,
+"classe": 3,
+"clorofila": null,
+"data": "2008-06-11",
+"fosforo": null,
+"id": 26,
+"info": "Presença excessiva de macrófitas aquáticas",
+"latitude": -5.949263,
+"longitude": -38.907803,
+"nitrogenio": null,
+"nome": "Nova Floresta",
+"ponto": "NOF-01",
+"profundidade": null,
+"regiao_hidrografica": "Médio Jaguaribe"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 4851.1,
+"classe": 1,
+"clorofila": 4.3,
+"data": "2008-06-11",
+"fosforo": -1.0,
+"id": 60,
+"info": null,
+"latitude": -3.59921740221,
+"longitude": -40.8636571293,
+"nitrogenio": null,
+"nome": "Diamante",
+"ponto": "DIA-01",
+"profundidade": null,
+"regiao_hidrografica": "Coreaú"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 340.8,
+"classe": 1,
+"clorofila": null,
+"data": "2008-01-09",
+"fosforo": null,
+"id": 84,
+"info": "Número baixo de cianobactérias",
+"latitude": -5.26185481392,
+"longitude": -38.6457784847,
+"nitrogenio": null,
+"nome": "Cipoada",
+"ponto": "CIP-01",
+"profundidade": null,
+"regiao_hidrografica": "Banabuiú"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 2556.0,
+"classe": 3,
+"clorofila": null,
+"data": "2008-01-09",
+"fosforo": null,
+"id": 19,
+"info": "Presença de macrófitas",
+"latitude": -4.85195462398,
+"longitude": -38.1657398571,
+"nitrogenio": null,
+"nome": "Santo Antônio de Russas",
+"ponto": "SAR-01",
+"profundidade": null,
+"regiao_hidrografica": "Baixo Jaguaribe"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": null,
+"classe": 3,
+"clorofila": null,
+"data": "2008-05-13",
+"fosforo": 0.1,
+"id": 33,
+"info": null,
+"latitude": -5.626210128,
+"longitude": -39.99916198,
+"nitrogenio": null,
+"nome": "Capitão Mor",
+"ponto": "COM-01",
+"profundidade": null,
+"regiao_hidrografica": "Banabuiú"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 414.4,
+"classe": 1,
+"clorofila": null,
+"data": "2008-07-02",
+"fosforo": 0.2,
+"id": 30,
+"info": "Número baixo de cianobactérias",
+"latitude": -5.77632884496,
+"longitude": -38.3449743134,
+"nitrogenio": null,
+"nome": "Ema",
+"ponto": "EMA-01",
+"profundidade": null,
+"regiao_hidrografica": "Médio Jaguaribe"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": null,
+"classe": 3,
+"clorofila": 115.81,
+"data": "2008-06-04",
+"fosforo": 0.037,
+"id": 50,
+"info": null,
+"latitude": -3.88220245137,
+"longitude": -40.0124731184,
+"nitrogenio": 2.281,
+"nome": "Santo Antônio de Aracatiaçu",
+"ponto": "SAA-01",
+"profundidade": null,
+"regiao_hidrografica": "Litoral"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 55258.2,
+"classe": 2,
+"clorofila": null,
+"data": "2008-07-03",
+"fosforo": 0.16,
+"id": 17,
+"info": "Número médio de cianobactérias",
+"latitude": -5.69373683323,
+"longitude": -38.9506399185,
+"nitrogenio": null,
+"nome": "Riacho do Sangue",
+"ponto": "RIS-01",
+"profundidade": null,
+"regiao_hidrografica": "Médio Jaguaribe"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 36.0,
+"classe": 1,
+"clorofila": 6.9,
+"data": "2008-06-12",
+"fosforo": -1.0,
+"id": 126,
+"info": "Número baixo de cianobactérias",
+"latitude": -3.23703261442,
+"longitude": -40.6162092689,
+"nitrogenio": null,
+"nome": "Martinópole",
+"ponto": "MRT-01",
+"profundidade": null,
+"regiao_hidrografica": "Coreaú"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": null,
+"classe": 3,
+"clorofila": 2.0,
+"data": "2008-01-09",
+"fosforo": 0.26,
+"id": 51,
+"info": null,
+"latitude": -3.79604357192,
+"longitude": -40.2535632298,
+"nitrogenio": 4.85,
+"nome": "Forquilha",
+"ponto": "FOR-01",
+"profundidade": null,
+"regiao_hidrografica": "Acaraú"
+}
+}
+]

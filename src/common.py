@@ -24,7 +24,10 @@ S_PREFIX = {"antonio": "santo", "maria": "santa", "pedro": "sao"}
 ALIASES = {"gerninal": "germinal",          # typo in Table 3 (2016-2021)
            "osterne": "thomas osterne",     # Table 2, Feb/2024
            "volta": "varzea da volta",      # Table 2, Feb/2024
-           "do batalhao": "barragem do batalhao"}  # Feb/2024; never in the same campaign as the full name
+           "do batalhao": "barragem do batalhao",  # Feb/2024; never in the same campaign as the full name
+           # The portal lists official names with the common name in brackets.
+           "jose barbosa filho umari": "umari", "jose barbosa filho": "umari",
+           "margarida de morais queiroz pirabibu": "pirabibu"}
 
 
 def normalize_name(name: str) -> str:

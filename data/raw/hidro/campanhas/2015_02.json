@@ -1,0 +1,1802 @@
+[
+{
+"reservatorio": {
+"cianobacteria": 1006706.0,
+"classe": 4,
+"clorofila": 183.74,
+"data": "2015-03-03",
+"fosforo": 0.131,
+"id": 240,
+"info": null,
+"latitude": -6.27146638594,
+"longitude": -40.220220464,
+"nitrogenio": 5.04,
+"nome": "Arneiroz II",
+"ponto": "ARN-02",
+"profundidade": 0.32,
+"regiao_hidrografica": "Alto Jaguaribe"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 672865.0,
+"classe": 4,
+"clorofila": 114.45,
+"data": "2015-01-27",
+"fosforo": 0.184,
+"id": 192,
+"info": null,
+"latitude": -4.444447,
+"longitude": -38.961082,
+"nitrogenio": 0.682,
+"nome": "Pesqueiro",
+"ponto": "PES-01",
+"profundidade": 0.35,
+"regiao_hidrografica": "Metropolitana"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 68945.0,
+"classe": 3,
+"clorofila": 23.55,
+"data": "2015-02-10",
+"fosforo": 0.228,
+"id": 163,
+"info": null,
+"latitude": -5.32157850307443,
+"longitude": -40.3260736079356,
+"nitrogenio": 4.93,
+"nome": "Barra Velha",
+"ponto": "BAV-01",
+"profundidade": 0.3,
+"regiao_hidrografica": "Sertões de Crateús"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 176252.0,
+"classe": 3,
+"clorofila": 2.51,
+"data": "2015-01-27",
+"fosforo": 0.017,
+"id": 11,
+"info": null,
+"latitude": -5.14985135743,
+"longitude": -38.8777544386,
+"nitrogenio": -0.025,
+"nome": "Pedras Brancas",
+"ponto": "PEB-11",
+"profundidade": 1.6,
+"regiao_hidrografica": "Banabuiú"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 557266.0,
+"classe": 4,
+"clorofila": 240.8,
+"data": "2015-01-28",
+"fosforo": 0.094,
+"id": 27,
+"info": null,
+"latitude": -6.98372899185,
+"longitude": -40.3559822646,
+"nitrogenio": 4.76,
+"nome": "Poço da Pedra",
+"ponto": "PÇP-01",
+"profundidade": 0.18,
+"regiao_hidrografica": "Alto Jaguaribe"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 9331.0,
+"classe": 1,
+"clorofila": 4.44,
+"data": "2015-01-14",
+"fosforo": 0.014,
+"id": 122,
+"info": null,
+"latitude": -6.30829420879,
+"longitude": -39.433659842,
+"nitrogenio": 0.33,
+"nome": "Trussu",
+"ponto": "TRU-06",
+"profundidade": 2.8,
+"regiao_hidrografica": "Alto Jaguaribe"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 252725.0,
+"classe": 3,
+"clorofila": 164.53,
+"data": "2015-01-28",
+"fosforo": 0.097,
+"id": 31,
+"info": null,
+"latitude": -4.20951501641,
+"longitude": -40.4485984244,
+"nitrogenio": 2.11,
+"nome": "Araras",
+"ponto": "ARA-01",
+"profundidade": null,
+"regiao_hidrografica": "Acaraú"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 498170.0,
+"classe": 4,
+"clorofila": 138.42,
+"data": "2015-01-20",
+"fosforo": 0.069,
+"id": 127,
+"info": null,
+"latitude": -6.946681,
+"longitude": -39.941319,
+"nitrogenio": 2.81,
+"nome": "Canoas",
+"ponto": "CAN-02",
+"profundidade": 0.35,
+"regiao_hidrografica": "Alto Jaguaribe"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 571779.0,
+"classe": 4,
+"clorofila": 49.26,
+"data": "2015-01-28",
+"fosforo": 0.062,
+"id": 63,
+"info": null,
+"latitude": -6.402325,
+"longitude": -38.956848,
+"nitrogenio": 0.53,
+"nome": "Lima Campos",
+"ponto": "LMC-01",
+"profundidade": null,
+"regiao_hidrografica": "Salgado"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 54431.0,
+"classe": 2,
+"clorofila": -1.0,
+"data": "2015-03-12",
+"fosforo": 0.036,
+"id": 28,
+"info": null,
+"latitude": -5.94905457118,
+"longitude": -38.8304650715,
+"nitrogenio": 1.66,
+"nome": "Joaquim Távora",
+"ponto": "JOT-01",
+"profundidade": null,
+"regiao_hidrografica": "Médio Jaguaribe"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 302737.0,
+"classe": 3,
+"clorofila": 2.88,
+"data": "2015-01-26",
+"fosforo": 0.021,
+"id": 181,
+"info": null,
+"latitude": -6.88895926968,
+"longitude": -39.0810678932,
+"nitrogenio": 0.91,
+"nome": "Rosário",
+"ponto": "ROS-01",
+"profundidade": null,
+"regiao_hidrografica": "Salgado"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 234.31,
+"classe": 3,
+"clorofila": 26.7,
+"data": "2015-03-11",
+"fosforo": 0.097,
+"id": 217,
+"info": null,
+"latitude": -6.53,
+"longitude": -39.917,
+"nitrogenio": 4.06,
+"nome": "Caldeirões",
+"ponto": "CAL-01",
+"profundidade": null,
+"regiao_hidrografica": "Alto Jaguaribe"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 8295.0,
+"classe": 3,
+"clorofila": 6.76,
+"data": "2015-02-05",
+"fosforo": 0.077,
+"id": 80,
+"info": null,
+"latitude": -4.22225681679,
+"longitude": -38.3838534079,
+"nitrogenio": 0.993,
+"nome": "Pacajus",
+"ponto": "PAC-06",
+"profundidade": 0.5,
+"regiao_hidrografica": "Metropolitana"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 1913361.0,
+"classe": 4,
+"clorofila": 24.35,
+"data": "2015-03-05",
+"fosforo": 0.042,
+"id": 112,
+"info": null,
+"latitude": -3.63564653661,
+"longitude": -40.8204151777,
+"nitrogenio": 1.59,
+"nome": "Angicos",
+"ponto": "ANG-01",
+"profundidade": 0.6,
+"regiao_hidrografica": "Coreaú"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 1277821.0,
+"classe": 4,
+"clorofila": 23.92,
+"data": "2015-02-12",
+"fosforo": 0.15,
+"id": 1119,
+"info": null,
+"latitude": -3.471698,
+"longitude": -39.858824,
+"nitrogenio": 5.55,
+"nome": "Missi",
+"ponto": "MIS-01",
+"profundidade": null,
+"regiao_hidrografica": "Litoral"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 215129.0,
+"classe": 3,
+"clorofila": 8.16,
+"data": "2015-02-25",
+"fosforo": 0.038,
+"id": 111,
+"info": null,
+"latitude": -5.889177,
+"longitude": -39.15382,
+"nitrogenio": 1.3,
+"nome": "Tigre",
+"ponto": "TGR-01",
+"profundidade": 1.2,
+"regiao_hidrografica": "Médio Jaguaribe"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 2910218.0,
+"classe": 4,
+"clorofila": 173.4,
+"data": "2015-02-19",
+"fosforo": 0.088,
+"id": 129,
+"info": null,
+"latitude": -3.730804,
+"longitude": -40.680701,
+"nitrogenio": 3.69,
+"nome": "Trapiá III",
+"ponto": "TR3-01",
+"profundidade": null,
+"regiao_hidrografica": "Coreaú"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 1157555.0,
+"classe": 4,
+"clorofila": 29.1,
+"data": "2015-02-25",
+"fosforo": 0.062,
+"id": 22,
+"info": null,
+"latitude": -3.65705,
+"longitude": -40.365556,
+"nitrogenio": 5.78,
+"nome": "Sobral",
+"ponto": "SOB-01",
+"profundidade": null,
+"regiao_hidrografica": "Acaraú"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 307403.0,
+"classe": 4,
+"clorofila": 482.47,
+"data": "2015-02-10",
+"fosforo": 0.494,
+"id": 167,
+"info": null,
+"latitude": -4.98075408108,
+"longitude": -39.3657924914,
+"nitrogenio": 5.75,
+"nome": "Margarida de Morais Queiroz (Pirabibu)",
+"ponto": "PRB-01",
+"profundidade": 0.2,
+"regiao_hidrografica": "Banabuiú"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 940870.0,
+"classe": 4,
+"clorofila": null,
+"data": "2015-02-03",
+"fosforo": 0.083,
+"id": 169,
+"info": null,
+"latitude": -3.16831720221,
+"longitude": -40.8614034371,
+"nitrogenio": 2.11,
+"nome": "Gangorra",
+"ponto": "GAN-01",
+"profundidade": null,
+"regiao_hidrografica": "Coreaú"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 14515.0,
+"classe": 1,
+"clorofila": 1.79,
+"data": "2015-01-27",
+"fosforo": -0.01,
+"id": 254,
+"info": null,
+"latitude": -3.896112,
+"longitude": -40.611118,
+"nitrogenio": -0.025,
+"nome": "Taquara",
+"ponto": "TAQ-01",
+"profundidade": null,
+"regiao_hidrografica": "Acaraú"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 4147.0,
+"classe": 2,
+"clorofila": 3.97,
+"data": "2015-01-20",
+"fosforo": 0.028,
+"id": 8,
+"info": null,
+"latitude": -7.10729145731,
+"longitude": -39.3292996457,
+"nitrogenio": 0.62,
+"nome": "Manoel Balbino",
+"ponto": "MAB-01",
+"profundidade": null,
+"regiao_hidrografica": "Salgado"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 706041.0,
+"classe": 4,
+"clorofila": 39.47,
+"data": "2015-03-03",
+"fosforo": 0.055,
+"id": 83,
+"info": null,
+"latitude": -3.85306388499,
+"longitude": -40.2707202921,
+"nitrogenio": 2.86,
+"nome": "Arrebita",
+"ponto": "ARR-02",
+"profundidade": 0.5,
+"regiao_hidrografica": "Acaraú"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 1920102.0,
+"classe": 4,
+"clorofila": 278.3,
+"data": "2015-02-11",
+"fosforo": 0.124,
+"id": 174,
+"info": null,
+"latitude": -6.27222899396,
+"longitude": -39.9331061101,
+"nitrogenio": 5.88,
+"nome": "Rivaldo de Carvalho",
+"ponto": "RVC-02",
+"profundidade": 0.13,
+"regiao_hidrografica": "Alto Jaguaribe"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 16588.0,
+"classe": 3,
+"clorofila": 35.82,
+"data": "2015-02-05",
+"fosforo": 0.069,
+"id": 85,
+"info": null,
+"latitude": -5.083883,
+"longitude": -39.305097,
+"nitrogenio": 1.76,
+"nome": "São José II",
+"ponto": "SJ2-01",
+"profundidade": 0.3,
+"regiao_hidrografica": "Banabuiú"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 75684.0,
+"classe": 3,
+"clorofila": 7.3,
+"data": "2015-02-03",
+"fosforo": 0.188,
+"id": 147,
+"info": null,
+"latitude": -7.080531357019,
+"longitude": -40.177232052265,
+"nitrogenio": 1.1,
+"nome": "João Luís",
+"ponto": "JLU-01",
+"profundidade": 1.3,
+"regiao_hidrografica": "Alto Jaguaribe"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": null,
+"classe": 3,
+"clorofila": 53.17,
+"data": "2015-02-24",
+"fosforo": 0.09,
+"id": 197,
+"info": null,
+"latitude": -5.083883,
+"longitude": -38.305097,
+"nitrogenio": 1.64,
+"nome": "Curral Velho",
+"ponto": "CRV-01",
+"profundidade": 0.7,
+"regiao_hidrografica": "Banabuiú"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 13478.0,
+"classe": 1,
+"clorofila": -1.0,
+"data": "2015-03-05",
+"fosforo": 0.052,
+"id": 233,
+"info": null,
+"latitude": -5.890459,
+"longitude": -38.411789,
+"nitrogenio": 2.01,
+"nome": "Santo Antônio",
+"ponto": "STA-01",
+"profundidade": 1.7,
+"regiao_hidrografica": "Médio Jaguaribe"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 333321.0,
+"classe": 3,
+"clorofila": 3.94,
+"data": "2015-02-12",
+"fosforo": 0.197,
+"id": 67,
+"info": null,
+"latitude": -5.38257288767,
+"longitude": -38.4595984652,
+"nitrogenio": 1.91,
+"nome": "Poço do Barro",
+"ponto": "PÇB-01",
+"profundidade": 0.2,
+"regiao_hidrografica": "Banabuiú"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 80102.0,
+"classe": 3,
+"clorofila": 3.4,
+"data": "2015-03-05",
+"fosforo": 0.019,
+"id": 69,
+"info": null,
+"latitude": -3.86508767029,
+"longitude": -41.1133035668,
+"nitrogenio": 0.74,
+"nome": "Jaburu I",
+"ponto": "JB1-10",
+"profundidade": 2.1,
+"regiao_hidrografica": "Serra da Ibiapaba"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 615843.0,
+"classe": 4,
+"clorofila": 15.26,
+"data": "2015-03-10",
+"fosforo": 0.057,
+"id": 166,
+"info": null,
+"latitude": -5.965648,
+"longitude": -38.276387,
+"nitrogenio": 1.3,
+"nome": "Santa Maria",
+"ponto": "SMR-01",
+"profundidade": 1.0,
+"regiao_hidrografica": "Médio Jaguaribe"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 158626.0,
+"classe": 4,
+"clorofila": 96.83,
+"data": "2015-03-03",
+"fosforo": 0.204,
+"id": 171,
+"info": null,
+"latitude": -5.81315115414,
+"longitude": -39.2474835705,
+"nitrogenio": 6.28,
+"nome": "Jenipapeiro",
+"ponto": "JEN-01",
+"profundidade": 0.3,
+"regiao_hidrografica": "Médio Jaguaribe"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 77828.0,
+"classe": 4,
+"clorofila": 72.09,
+"data": "2015-02-26",
+"fosforo": 0.354,
+"id": 235,
+"info": null,
+"latitude": -4.10582877875,
+"longitude": -38.2890791497,
+"nitrogenio": 4.777,
+"nome": "Malcozinhado",
+"ponto": "MAL-02",
+"profundidade": 0.4,
+"regiao_hidrografica": "Metropolitana"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 289739.0,
+"classe": 3,
+"clorofila": 42.45,
+"data": "2015-03-11",
+"fosforo": 0.067,
+"id": 186,
+"info": null,
+"latitude": -5.562632,
+"longitude": -38.325225,
+"nitrogenio": 4.5,
+"nome": "Riacho da Serra",
+"ponto": "RSE-01",
+"profundidade": 0.4,
+"regiao_hidrografica": "Médio Jaguaribe"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 245196.0,
+"classe": 3,
+"clorofila": 5.61,
+"data": "2015-02-19",
+"fosforo": 0.248,
+"id": 244,
+"info": null,
+"latitude": -4.059148,
+"longitude": -38.903176,
+"nitrogenio": 5.011,
+"nome": "Itapebussu",
+"ponto": "ITP-01",
+"profundidade": 0.7,
+"regiao_hidrografica": "Metropolitana"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 171067.0,
+"classe": 4,
+"clorofila": 261.66,
+"data": "2015-02-10",
+"fosforo": 0.294,
+"id": 119,
+"info": null,
+"latitude": -5.16690241966,
+"longitude": -39.4913777371,
+"nitrogenio": 6.12,
+"nome": "Fogareiro",
+"ponto": "FOG-01",
+"profundidade": 0.3,
+"regiao_hidrografica": "Banabuiú"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 657314.0,
+"classe": 4,
+"clorofila": null,
+"data": "2015-02-03",
+"fosforo": 0.066,
+"id": 180,
+"info": null,
+"latitude": -3.15241157107,
+"longitude": -41.1672940639,
+"nitrogenio": 2.21,
+"nome": "Itaúna",
+"ponto": "ITA-01",
+"profundidade": null,
+"regiao_hidrografica": "Coreaú"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 100048.0,
+"classe": 3,
+"clorofila": 1.18,
+"data": "2015-02-02",
+"fosforo": 0.024,
+"id": 155,
+"info": null,
+"latitude": -6.78888346631,
+"longitude": -39.3753014774,
+"nitrogenio": 0.95,
+"nome": "Olho d'Água",
+"ponto": "OLH-01",
+"profundidade": null,
+"regiao_hidrografica": "Salgado"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 13478.0,
+"classe": 2,
+"clorofila": 4.49,
+"data": "2015-01-20",
+"fosforo": 0.024,
+"id": 23,
+"info": null,
+"latitude": -7.09077807818,
+"longitude": -39.4869088371,
+"nitrogenio": 0.52,
+"nome": "Thomás Osterne",
+"ponto": "THO-01",
+"profundidade": null,
+"regiao_hidrografica": "Salgado"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 32658.0,
+"classe": 3,
+"clorofila": 195.44,
+"data": "2015-01-28",
+"fosforo": 0.076,
+"id": 96,
+"info": null,
+"latitude": -5.50257888999,
+"longitude": -39.7366728894,
+"nitrogenio": 3.26,
+"nome": "Trapiá II",
+"ponto": "TR2-01",
+"profundidade": 0.3,
+"regiao_hidrografica": "Banabuiú"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 49764.0,
+"classe": 3,
+"clorofila": 6.84,
+"data": "2015-01-12",
+"fosforo": 0.073,
+"id": 7,
+"info": null,
+"latitude": -4.06243387754,
+"longitude": -39.4537367839,
+"nitrogenio": 1.26,
+"nome": "General Sampaio",
+"ponto": "GNS-01",
+"profundidade": 0.0,
+"regiao_hidrografica": "Curu"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 1109636.0,
+"classe": 4,
+"clorofila": 307.01,
+"data": "2015-02-25",
+"fosforo": 0.314,
+"id": 77,
+"info": null,
+"latitude": -3.69046238001,
+"longitude": -39.295427951,
+"nitrogenio": 7.175,
+"nome": "Frios",
+"ponto": "FRI-01",
+"profundidade": null,
+"regiao_hidrografica": "Curu"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 983378.0,
+"classe": 3,
+"clorofila": 13.63,
+"data": "2015-03-04",
+"fosforo": 0.064,
+"id": 194,
+"info": null,
+"latitude": -5.48909482144,
+"longitude": -38.4502293061,
+"nitrogenio": 1.14,
+"nome": "Castanhão",
+"ponto": "CTN-20",
+"profundidade": 1.6,
+"regiao_hidrografica": "Médio Jaguaribe"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 357686.0,
+"classe": 3,
+"clorofila": 174.62,
+"data": "2015-01-27",
+"fosforo": 0.09,
+"id": 47,
+"info": null,
+"latitude": -7.641854,
+"longitude": -38.894554,
+"nitrogenio": 1.92,
+"nome": "Atalho",
+"ponto": "ATA-01",
+"profundidade": null,
+"regiao_hidrografica": "Salgado"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 298591.0,
+"classe": 3,
+"clorofila": 12.82,
+"data": "2015-02-12",
+"fosforo": 0.166,
+"id": 21,
+"info": null,
+"latitude": -3.57161761888,
+"longitude": -39.9725210698,
+"nitrogenio": 1.58,
+"nome": "São Pedro Timbaúba",
+"ponto": "SPT-01",
+"profundidade": null,
+"regiao_hidrografica": "Litoral"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 236384.0,
+"classe": 3,
+"clorofila": 131.25,
+"data": "2015-01-22",
+"fosforo": 0.107,
+"id": 61,
+"info": null,
+"latitude": -3.633621,
+"longitude": -39.516132,
+"nitrogenio": 2.65,
+"nome": "Mundaú",
+"ponto": "MUN-08",
+"profundidade": null,
+"regiao_hidrografica": "Litoral"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 144110.0,
+"classe": 4,
+"clorofila": 327.98,
+"data": "2015-02-04",
+"fosforo": 0.29,
+"id": 16,
+"info": null,
+"latitude": -5.19828377485,
+"longitude": -39.3127774588,
+"nitrogenio": 6.8,
+"nome": "Quixeramobim",
+"ponto": "QXM-05",
+"profundidade": 0.2,
+"regiao_hidrografica": "Banabuiú"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 164846.0,
+"classe": 3,
+"clorofila": 10.17,
+"data": "2015-01-26",
+"fosforo": 0.066,
+"id": 211,
+"info": null,
+"latitude": -3.6743394493979,
+"longitude": -39.574599028008,
+"nitrogenio": 0.74,
+"nome": "Itapajé",
+"ponto": "ITP-01",
+"profundidade": null,
+"regiao_hidrografica": "Curu"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 177324240.0,
+"classe": 4,
+"clorofila": 1.38,
+"data": "2015-01-21",
+"fosforo": 0.035,
+"id": 201,
+"info": null,
+"latitude": -6.788675,
+"longitude": -40.0651,
+"nitrogenio": 1.11,
+"nome": "Mamoeiro",
+"ponto": "MAM-01",
+"profundidade": 0.9,
+"regiao_hidrografica": "Alto Jaguaribe"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 1037.0,
+"classe": 2,
+"clorofila": 3.29,
+"data": "2015-03-12",
+"fosforo": 0.095,
+"id": 26,
+"info": null,
+"latitude": -5.949263,
+"longitude": -38.907803,
+"nitrogenio": 1.66,
+"nome": "Nova Floresta",
+"ponto": "NOF-01",
+"profundidade": 1.7,
+"regiao_hidrografica": "Médio Jaguaribe"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 154478.0,
+"classe": 3,
+"clorofila": -1.0,
+"data": "2015-03-05",
+"fosforo": 0.024,
+"id": 60,
+"info": null,
+"latitude": -3.59921740221,
+"longitude": -40.8636571293,
+"nitrogenio": 1.55,
+"nome": "Diamante",
+"ponto": "DIA-01",
+"profundidade": 1.4,
+"regiao_hidrografica": "Coreaú"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 20735.0,
+"classe": 3,
+"clorofila": 38.54,
+"data": "2015-02-04",
+"fosforo": 0.113,
+"id": 78,
+"info": null,
+"latitude": -4.19354599542,
+"longitude": -38.7993848299,
+"nitrogenio": 1.263,
+"nome": "Acarape do Meio",
+"ponto": "ACA-09",
+"profundidade": 0.4,
+"regiao_hidrografica": "Metropolitana"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 3182890.0,
+"classe": 4,
+"clorofila": 57.07,
+"data": "2015-02-25",
+"fosforo": 0.067,
+"id": 5,
+"info": null,
+"latitude": -4.21537241249,
+"longitude": -40.0665698637,
+"nitrogenio": 3.46,
+"nome": "Edson Queiroz",
+"ponto": "EDQ-01",
+"profundidade": null,
+"regiao_hidrografica": "Acaraú"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 45099.0,
+"classe": 3,
+"clorofila": 54.68,
+"data": "2015-02-12",
+"fosforo": 0.052,
+"id": 84,
+"info": null,
+"latitude": -5.26185481392,
+"longitude": -38.6457784847,
+"nitrogenio": 2.2,
+"nome": "Cipoada",
+"ponto": "CIP-10",
+"profundidade": 0.6,
+"regiao_hidrografica": "Banabuiú"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": null,
+"classe": 3,
+"clorofila": 22.96,
+"data": "2015-02-24",
+"fosforo": 0.126,
+"id": 19,
+"info": null,
+"latitude": -4.85195462398,
+"longitude": -38.1657398571,
+"nitrogenio": 4.79,
+"nome": "Santo Antônio de Russas",
+"ponto": "SAR-01",
+"profundidade": 0.5,
+"regiao_hidrografica": "Baixo Jaguaribe"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 36806.0,
+"classe": 4,
+"clorofila": 64.93,
+"data": "2015-01-08",
+"fosforo": 0.308,
+"id": 90,
+"info": null,
+"latitude": -3.43872126279,
+"longitude": -39.6295223261,
+"nitrogenio": 4.65,
+"nome": "Poço Verde",
+"ponto": "PÇV-01",
+"profundidade": null,
+"regiao_hidrografica": "Litoral"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 242085.0,
+"classe": 4,
+"clorofila": 135.28,
+"data": "2015-01-15",
+"fosforo": 0.218,
+"id": 12,
+"info": null,
+"latitude": -3.80330004105,
+"longitude": -39.2616481781,
+"nitrogenio": 5.37,
+"nome": "Pentecoste",
+"ponto": "PET-01",
+"profundidade": null,
+"regiao_hidrografica": "Curu"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 192320.0,
+"classe": 4,
+"clorofila": 242.04,
+"data": "2015-02-05",
+"fosforo": 0.25,
+"id": 99,
+"info": null,
+"latitude": -5.72847965121,
+"longitude": -39.6472365319,
+"nitrogenio": 4.73,
+"nome": "Serafim Dias",
+"ponto": "SRD-01",
+"profundidade": 0.3,
+"regiao_hidrografica": "Banabuiú"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 7257.0,
+"classe": 1,
+"clorofila": null,
+"data": "2015-02-05",
+"fosforo": null,
+"id": 117,
+"info": null,
+"latitude": -4.00099902774,
+"longitude": -38.5231717263,
+"nitrogenio": null,
+"nome": "Riachão",
+"ponto": "RIA-10",
+"profundidade": 0.9,
+"regiao_hidrografica": "Metropolitana"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 188175.0,
+"classe": 4,
+"clorofila": 114.45,
+"data": "2015-02-03",
+"fosforo": 0.566,
+"id": 159,
+"info": null,
+"latitude": -3.77127334573,
+"longitude": -38.9597828672,
+"nitrogenio": 6.313,
+"nome": "Sitios Novos",
+"ponto": "SIN-14",
+"profundidade": 0.4,
+"regiao_hidrografica": "Metropolitana"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 404341.0,
+"classe": 4,
+"clorofila": 76.9,
+"data": "2015-03-16",
+"fosforo": 0.097,
+"id": 208,
+"info": null,
+"latitude": -6.304448,
+"longitude": -40.676041,
+"nitrogenio": 2.53,
+"nome": "Facundo",
+"ponto": "FAC-01",
+"profundidade": 0.4,
+"regiao_hidrografica": "Alto Jaguaribe"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 283039.0,
+"classe": 3,
+"clorofila": 147.42,
+"data": "2015-01-28",
+"fosforo": 0.104,
+"id": 33,
+"info": null,
+"latitude": -5.626210128,
+"longitude": -39.99916198,
+"nitrogenio": 3.62,
+"nome": "Capitão Mor",
+"ponto": "COM-01",
+"profundidade": 0.3,
+"regiao_hidrografica": "Banabuiú"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 538087.0,
+"classe": 4,
+"clorofila": 211.46,
+"data": "2015-01-13",
+"fosforo": 0.44,
+"id": 239,
+"info": null,
+"latitude": -6.160069,
+"longitude": -39.219267,
+"nitrogenio": 3.1,
+"nome": "Faé",
+"ponto": "FAE-01",
+"profundidade": 0.16,
+"regiao_hidrografica": "Alto Jaguaribe"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 353538.0,
+"classe": 3,
+"clorofila": 52.58,
+"data": "2015-02-03",
+"fosforo": 0.147,
+"id": 15,
+"info": null,
+"latitude": -7.501992,
+"longitude": -38.747302,
+"nitrogenio": 1.88,
+"nome": "Quixabinha",
+"ponto": "QXB-01",
+"profundidade": null,
+"regiao_hidrografica": "Salgado"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 571261.0,
+"classe": 4,
+"clorofila": 80.33,
+"data": "2015-03-10",
+"fosforo": 0.252,
+"id": 74,
+"info": null,
+"latitude": -5.86834198717,
+"longitude": -38.3179973854,
+"nitrogenio": 4.21,
+"nome": "Canafístula",
+"ponto": "CNF-05",
+"profundidade": 0.4,
+"regiao_hidrografica": "Médio Jaguaribe"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 2091168.0,
+"classe": 4,
+"clorofila": 195.26,
+"data": "2015-01-22",
+"fosforo": 0.142,
+"id": 79,
+"info": null,
+"latitude": -3.573526,
+"longitude": -39.629007,
+"nitrogenio": 2.46,
+"nome": "Quandú",
+"ponto": "QUA-01",
+"profundidade": null,
+"regiao_hidrografica": "Litoral"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 35251.0,
+"classe": 2,
+"clorofila": 3.93,
+"data": "2015-02-03",
+"fosforo": 0.029,
+"id": 170,
+"info": null,
+"latitude": -6.990421,
+"longitude": -39.017881,
+"nitrogenio": 0.83,
+"nome": "Cachoeira",
+"ponto": "CAC-01",
+"profundidade": null,
+"regiao_hidrografica": "Salgado"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 456697.0,
+"classe": 4,
+"clorofila": 182.63,
+"data": "2015-02-04",
+"fosforo": 0.119,
+"id": 4,
+"info": null,
+"latitude": -4.97772872522,
+"longitude": -39.0631731394,
+"nitrogenio": 6.8,
+"nome": "Cedro",
+"ponto": "CED-01",
+"profundidade": 0.3,
+"regiao_hidrografica": "Banabuiú"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 823195.0,
+"classe": 4,
+"clorofila": 229.49,
+"data": "2015-03-05",
+"fosforo": 0.221,
+"id": 30,
+"info": null,
+"latitude": -5.77632884496,
+"longitude": -38.3449743134,
+"nitrogenio": 9.32,
+"nome": "Ema",
+"ponto": "EMA-01",
+"profundidade": 0.25,
+"regiao_hidrografica": "Médio Jaguaribe"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 3929883.0,
+"classe": 4,
+"clorofila": 1.97,
+"data": "2015-02-19",
+"fosforo": 0.128,
+"id": 1,
+"info": null,
+"latitude": -3.5058917892,
+"longitude": -40.278364501,
+"nitrogenio": 0.45,
+"nome": "Acaraú Mirim",
+"ponto": "ACM-06",
+"profundidade": null,
+"regiao_hidrografica": "Acaraú"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 369091.0,
+"classe": 3,
+"clorofila": 60.57,
+"data": "2015-01-27",
+"fosforo": 0.062,
+"id": 2,
+"info": null,
+"latitude": -5.32859467909,
+"longitude": -38.9223710722,
+"nitrogenio": 1.5,
+"nome": "Banabuiú",
+"ponto": "BAN-01",
+"profundidade": 0.5,
+"regiao_hidrografica": "Banabuiú"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 3072472.0,
+"classe": 4,
+"clorofila": 6.94,
+"data": "2015-02-24",
+"fosforo": 0.103,
+"id": 199,
+"info": null,
+"latitude": -4.799747,
+"longitude": -38.709306,
+"nitrogenio": 1.76,
+"nome": "Macacos",
+"ponto": "MAC-01",
+"profundidade": 0.5,
+"regiao_hidrografica": "Metropolitana"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 118709.0,
+"classe": 3,
+"clorofila": 7.95,
+"data": "2015-02-02",
+"fosforo": 0.036,
+"id": 162,
+"info": null,
+"latitude": -6.58385878059,
+"longitude": -39.2375639263,
+"nitrogenio": 0.8,
+"nome": "Ubaldinho",
+"ponto": "UBA-02",
+"profundidade": null,
+"regiao_hidrografica": "Salgado"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 1753699.0,
+"classe": 4,
+"clorofila": 312.39,
+"data": "2015-02-03",
+"fosforo": 0.171,
+"id": 50,
+"info": null,
+"latitude": -3.88220245137,
+"longitude": -40.0124731184,
+"nitrogenio": 8.57,
+"nome": "Santo Antônio de Aracatiaçu",
+"ponto": "SAA-01",
+"profundidade": null,
+"regiao_hidrografica": "Litoral"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 10886.0,
+"classe": 2,
+"clorofila": -1.0,
+"data": "2015-01-27",
+"fosforo": 0.094,
+"id": 49,
+"info": null,
+"latitude": -3.77962049329,
+"longitude": -40.4978967562,
+"nitrogenio": 1.07,
+"nome": "Ayres de Sousa",
+"ponto": "AYS-01",
+"profundidade": null,
+"regiao_hidrografica": "Acaraú"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 46137.0,
+"classe": 2,
+"clorofila": null,
+"data": "2015-02-05",
+"fosforo": null,
+"id": 88,
+"info": null,
+"latitude": -4.03602241472,
+"longitude": -38.5333114066,
+"nitrogenio": null,
+"nome": "Pacoti",
+"ponto": "PCT-18",
+"profundidade": 0.9,
+"regiao_hidrografica": "Metropolitana"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 238457.0,
+"classe": 3,
+"clorofila": 3.08,
+"data": "2015-01-27",
+"fosforo": 0.024,
+"id": 14,
+"info": null,
+"latitude": -7.10901972051,
+"longitude": -38.6829425533,
+"nitrogenio": -0.025,
+"nome": "Prazeres",
+"ponto": "PRA-01",
+"profundidade": null,
+"regiao_hidrografica": "Salgado"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 2337922.0,
+"classe": 4,
+"clorofila": 356.8,
+"data": "2015-03-03",
+"fosforo": 0.264,
+"id": 17,
+"info": null,
+"latitude": -5.69373683323,
+"longitude": -38.9506399185,
+"nitrogenio": 5.625,
+"nome": "Riacho do Sangue",
+"ponto": "RIS-01",
+"profundidade": 0.15,
+"regiao_hidrografica": "Médio Jaguaribe"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 1430744.0,
+"classe": 4,
+"clorofila": 252.64,
+"data": "2015-03-04",
+"fosforo": 0.1,
+"id": 126,
+"info": null,
+"latitude": -3.23703261442,
+"longitude": -40.6162092689,
+"nitrogenio": 5.6,
+"nome": "Martinópole",
+"ponto": "MRT-01",
+"profundidade": 0.15,
+"regiao_hidrografica": "Coreaú"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 53394.0,
+"classe": 2,
+"clorofila": 7.45,
+"data": "2015-01-08",
+"fosforo": 0.059,
+"id": 210,
+"info": null,
+"latitude": -3.3713896732337,
+"longitude": -39.492505583781,
+"nitrogenio": 1.22,
+"nome": "Gameleira",
+"ponto": "GAM-01",
+"profundidade": 0.0,
+"regiao_hidrografica": "Litoral"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 190765.0,
+"classe": 3,
+"clorofila": 28.73,
+"data": "2015-03-10",
+"fosforo": 0.059,
+"id": 9,
+"info": null,
+"latitude": -6.2381264298,
+"longitude": -38.9250093577,
+"nitrogenio": 1.56,
+"nome": "Orós",
+"ponto": "ORO-12",
+"profundidade": null,
+"regiao_hidrografica": "Alto Jaguaribe"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 528752.0,
+"classe": 4,
+"clorofila": 530.39,
+"data": "2015-02-03",
+"fosforo": 0.323,
+"id": 130,
+"info": null,
+"latitude": -5.15679628805,
+"longitude": -39.7183924085,
+"nitrogenio": 11.1,
+"nome": "Vieirão",
+"ponto": "VIE-02",
+"profundidade": 0.3,
+"regiao_hidrografica": "Banabuiú"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 256602.0,
+"classe": 3,
+"clorofila": 32.96,
+"data": "2015-02-24",
+"fosforo": 0.042,
+"id": 10,
+"info": null,
+"latitude": -5.58186998208,
+"longitude": -39.4023005082,
+"nitrogenio": 1.5,
+"nome": "Patu",
+"ponto": "PTU-01",
+"profundidade": null,
+"regiao_hidrografica": "Banabuiú"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 497651.0,
+"classe": 4,
+"clorofila": null,
+"data": "2015-03-16",
+"fosforo": null,
+"id": 58,
+"info": null,
+"latitude": -3.17959092544,
+"longitude": -40.4458464533,
+"nitrogenio": 0.75,
+"nome": "Tucunduba",
+"ponto": "TUC-01",
+"profundidade": 0.45,
+"regiao_hidrografica": "Coreaú"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 493503.0,
+"classe": 4,
+"clorofila": 227.48,
+"data": "2015-01-21",
+"fosforo": 0.235,
+"id": 97,
+"info": null,
+"latitude": -4.56489990367,
+"longitude": -38.932369564,
+"nitrogenio": 2.838,
+"nome": "Castro",
+"ponto": "CAS-11",
+"profundidade": 0.3,
+"regiao_hidrografica": "Metropolitana"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 167957.0,
+"classe": 3,
+"clorofila": 155.2,
+"data": "2015-02-04",
+"fosforo": 0.1,
+"id": 177,
+"info": null,
+"latitude": -6.59658743945,
+"longitude": -40.1392436122,
+"nitrogenio": 3.63,
+"nome": "Benguê",
+"ponto": "BEN-01",
+"profundidade": 0.32,
+"regiao_hidrografica": "Alto Jaguaribe"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 417301.0,
+"classe": 4,
+"clorofila": 10.44,
+"data": "2015-03-11",
+"fosforo": 0.085,
+"id": 212,
+"info": null,
+"latitude": -5.6257164369237,
+"longitude": -38.257198698736,
+"nitrogenio": 1.22,
+"nome": "Figueiredo",
+"ponto": "FIG-01",
+"profundidade": 0.4,
+"regiao_hidrografica": "Médio Jaguaribe"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 280445.0,
+"classe": 3,
+"clorofila": 44.32,
+"data": "2015-02-04",
+"fosforo": -0.013,
+"id": 234,
+"info": null,
+"latitude": -4.40220028355,
+"longitude": -38.6957249782,
+"nitrogenio": 1.222,
+"nome": "Aracoiaba",
+"ponto": "ARC-10",
+"profundidade": 0.8,
+"regiao_hidrografica": "Metropolitana"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 456699.0,
+"classe": 4,
+"clorofila": -1.0,
+"data": "2015-03-04",
+"fosforo": 0.029,
+"id": 110,
+"info": null,
+"latitude": -6.967953,
+"longitude": -39.727293,
+"nitrogenio": 1.19,
+"nome": "Valério",
+"ponto": "VAL-01",
+"profundidade": 1.0,
+"regiao_hidrografica": "Alto Jaguaribe"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 373757.0,
+"classe": 3,
+"clorofila": null,
+"data": "2015-02-24",
+"fosforo": 0.487,
+"id": 65,
+"info": null,
+"latitude": -4.81667052184,
+"longitude": -40.361733153,
+"nitrogenio": 0.65,
+"nome": "Carão",
+"ponto": "CRO-02",
+"profundidade": null,
+"regiao_hidrografica": "Acaraú"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 1555.0,
+"classe": 3,
+"clorofila": 9.91,
+"data": "2015-01-21",
+"fosforo": 0.055,
+"id": 190,
+"info": null,
+"latitude": -7.029354,
+"longitude": -39.28301,
+"nitrogenio": 1.28,
+"nome": "São Domingos II",
+"ponto": "SD2-01",
+"profundidade": null,
+"regiao_hidrografica": "Salgado"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 596143.0,
+"classe": 4,
+"clorofila": 10.22,
+"data": "2015-02-26",
+"fosforo": 0.026,
+"id": 213,
+"info": null,
+"latitude": -3.562631,
+"longitude": -40.441178,
+"nitrogenio": 0.6,
+"nome": "Jenipapo",
+"ponto": "JEP-01",
+"profundidade": null,
+"regiao_hidrografica": "Acaraú"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 65317.0,
+"classe": 3,
+"clorofila": 22.43,
+"data": "2015-02-03",
+"fosforo": 0.096,
+"id": 95,
+"info": null,
+"latitude": -3.905961845,
+"longitude": -38.5553424,
+"nitrogenio": 0.963,
+"nome": "Gavião",
+"ponto": "GAV-05",
+"profundidade": 0.8,
+"regiao_hidrografica": "Metropolitana"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 161736.0,
+"classe": 3,
+"clorofila": 102.16,
+"data": "2015-01-13",
+"fosforo": 0.08,
+"id": 3,
+"info": null,
+"latitude": -3.74191444021,
+"longitude": -39.3553731239,
+"nitrogenio": 2.26,
+"nome": "Caxitoré",
+"ponto": "CAX-01",
+"profundidade": null,
+"regiao_hidrografica": "Curu"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 677012.0,
+"classe": 4,
+"clorofila": 2.56,
+"data": "2015-03-11",
+"fosforo": 0.031,
+"id": 168,
+"info": null,
+"latitude": -6.6105731406,
+"longitude": -39.482342939,
+"nitrogenio": 1.1,
+"nome": "Muquém",
+"ponto": "MUQ-01",
+"profundidade": null,
+"regiao_hidrografica": "Alto Jaguaribe"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 50283.0,
+"classe": 3,
+"clorofila": 79.14,
+"data": "2015-01-13",
+"fosforo": 0.094,
+"id": 68,
+"info": null,
+"latitude": -6.084822,
+"longitude": -39.454306,
+"nitrogenio": 2.41,
+"nome": "Quincoé",
+"ponto": "QUI-01",
+"profundidade": 0.32,
+"regiao_hidrografica": "Alto Jaguaribe"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 1733483.0,
+"classe": 4,
+"clorofila": 164.06,
+"data": "2015-03-03",
+"fosforo": 0.185,
+"id": 51,
+"info": null,
+"latitude": -3.79604357192,
+"longitude": -40.2535632298,
+"nitrogenio": 5.59,
+"nome": "Forquilha",
+"ponto": "FOR-01",
+"profundidade": 0.3,
+"regiao_hidrografica": "Acaraú"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 1805471.0,
+"classe": 4,
+"clorofila": 596.3,
+"data": "2015-02-03",
+"fosforo": 0.249,
+"id": 54,
+"info": null,
+"latitude": -5.260969,
+"longitude": -40.806474,
+"nitrogenio": 10.95,
+"nome": "Realejo",
+"ponto": "REA-01",
+"profundidade": 0.1,
+"regiao_hidrografica": "Sertões de Crateús"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 6739.0,
+"classe": 1,
+"clorofila": 1.79,
+"data": "2015-01-28",
+"fosforo": 0.01,
+"id": 75,
+"info": null,
+"latitude": -6.415912,
+"longitude": -39.08259,
+"nitrogenio": -0.025,
+"nome": "Tatajuba",
+"ponto": "TAT-01",
+"profundidade": null,
+"regiao_hidrografica": "Salgado"
+}
+},
+{
+"reservatorio": {
+"cianobacteria": 1506430.0,
+"classe": 4,
+"clorofila": 387.04,
+"data": "2015-02-12",
+"fosforo": 0.211,
+"id": 161,
+"info": null,
+"latitude": -4.809093,
+"longitude": -40.012494,
+"nitrogenio": 3.93,
+"nome": "Monsenhor Tabosa",
+"ponto": "MNT-01",
+"profundidade": 0.15,
+"regiao_hidrografica": "Banabuiú"
+}
+}
+]

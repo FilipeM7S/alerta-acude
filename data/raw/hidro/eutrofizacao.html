@@ -1,0 +1,1734 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <title>Portal Hidrológico - CE</title>
+    <link rel="icon" href="/static/dist/img/favicon.ico" type="image/x-icon">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    
+   
+      <script src="/static/plugins/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+      <script src="/static/plugins/jquery-ui/1.13.2/jquery-ui.min.js"></script>
+      <script src="/static/plugins/propper/2.11.8/propper.min.js" crossorigin="anonymous"></script>
+      <script src="/static/plugins/bootstrap/5.3.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
+      <script src="/static/plugins/highcharts/11.4.0/highcharts.js" crossorigin="anonymous"></script>
+      <script src="/static/plugins/highcharts/11.4.0/exporting.js" crossorigin="anonymous"></script>
+      <script src="/static/plugins/highcharts/11.4.0/export-data.js" crossorigin="anonymous"></script>
+      <script src="/static/plugins/datatable/2.0.2/dataTables.min.js" crossorigin="anonymous"></script>
+      <script src="/static/plugins/bxslider/4.2.12/jquery.bxslider.min.js" crossorigin="anonymous"></script>
+      <script src="/static/plugins/buttons/3.0.1/buttons.bootstrap.min.js" crossorigin="anonymous"></script>
+      <script src="/static/plugins/datatable/2.0.2/buttons.bootstrap.min.js"></script>
+      <script src="/static/plugins/datatable/2.0.2/buttons.print.min.js"></script>
+      <script src="/static/plugins/moment/2.30.1/moment.js" crossorigin="anonymous"></script>
+      <script src="/static/dist/js/base.js"></script>
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-16R91BPC7R"></script>
+      <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-16R91BPC7R');
+      </script>
+
+    
+   <script src="/static/dist/js/base.js"></script>
+   <!-- <script src="/static/dist/js/content.js"></script> -->
+   <script src="/static/plugins/openlayers/10.6.0/ol.js"></script>
+
+
+    
+   
+      <link rel="stylesheet" href="/static/plugins/bootstrap/5.3.3/css/bootstrap.min.css" crossorigin="anonymous">
+      <link rel="stylesheet" href="/static/plugins/jquery-ui/1.13.2/jquery-ui.min.css">
+      <link rel="stylesheet" href="/static/plugins/datatable/2.0.2/datatables.min.css">
+      <link rel="stylesheet" href="/static/plugins/bxslider/4.2.12/jquery.bxslider.css">
+      <link rel="stylesheet" href="/static/plugins/buttons/3.0.1/buttons.bootstrap.min.css">
+
+      <link rel="stylesheet" href="/static/plugins/fontawesome/6.5.2/css/fontawesome.min.css">
+      <link rel="stylesheet" href="/static/plugins/fontawesome/6.5.2/css/regular.css">
+      <link rel="stylesheet" href="/static/plugins/fontawesome/6.5.2/css/solid.css">
+    
+  <link rel="stylesheet" href="/static/dist/css/styles.css" />
+   <link rel="stylesheet" href= "/static/plugins/openlayers/10.6.0/ol.css">
+
+
+  </head>
+  
+<header>
+    <div class="container-nomarginnopadding">
+      <div id="wrapper" class="hfeed">
+          <div id="header"  class="topo">
+            <div class="barra_topo" id="masthead">
+              <div class="content-top">
+                <div class="">
+                  <div class="data">
+                    <p id="data-corrente"></p>
+                  </div>
+                  <div class="login">
+                    <a href="/login" style="padding: 4px; float: left;">
+                      <img src="/static/dist/img/login.png" alt="Login"/>
+                    </a>
+                  </div>
+                </div>
+                <h1 class="titulo_topo">
+                  <span>
+                    <a rel="home" title="Portal Hidrológico do Ceará" href="http://www.hidro.ce.gov.br/" class="text_indent">Portal Hidrológico do Ceará</a>
+                  </span>
+                </h1>
+                <div class="logo_governo">
+                  <h4>
+                    <a href="http://www.ceara.gov.br" class="text_indent" title="Governo do Estado do Ceará">Governo do Estado do Ceará</a>
+                  </h4>
+                </div>
+              </div>
+            </div>
+            <div class="conteudo_topo" style="background-color: white;">
+              <div class="logo_funceme" style="position: relative;">
+                <h3>
+                  <a href="http://www.funceme.br" class="text_indent" title="FUNCEME">Fundação Cearense de Meteorologia a recursos hídricos</a>
+                </h3>
+              </div>
+              <div class="logo_cogerh" style="position: relative;">
+                <h3>
+                  <a href="http://portal.cogerh.com.br/" class="text_indent" title="COGERH">Companhia de Gestão dos Recursos Hídricos</a>
+                </h3>
+              </div>
+            </div>
+            <div class="container-nomarginnopadding" >
+              <div class="collapse navbar-collapse bg_menu" style="width: 100%; background-size:100%">
+                <div class="content-menu" style="display: flex; justify-content: space-between;">
+                  
+<link rel="stylesheet" href="/static/dist/css/menu.css" />
+
+
+<script src="/static/dist/js/nav-menu.js"></script>
+
+
+<div id="menu-desktop">
+   <ul class="nav navbar-nav lista_menu" id="menu_principal">
+      <li class="dropdown" id="menu">
+      <a id="link-top" style="color: #FFF;" href="#" data-bs-toggle="dropdown" class="dropdown-toggle">Reservatórios<b class="caret"></b></a>
+      <ul class="dropdown-menu">
+         <!-- <li class="dropdown-submenu">
+            <a href="#" tabindex="-1"> Reservatórios Chuva Thiessen</a>
+            <ul class="dropdown-menu">
+               <li>
+                  <a href="#/158">Diário</a>
+               </li>
+               <li>
+                  <a href="#/159">Mensal</a>
+               </li>
+               <li>
+                  <a href="#/160">Anual</a>
+               </li>
+            </ul>
+         </li> -->
+         <li class="dropdown-submenu">
+            <a href="#" tabindex="-1"> Quantidade (Volume)</a>
+            <ul class="dropdown-menu">
+               <li>
+                  <a href="/quantidade-nivel-diario">Nível Diário</a>
+               </li>
+               <li>
+                  <a href="/quantidade-sistema-jaguaribe_rmf">Sistema Jaguaribe - RMF</a>
+               </li>
+               <!-- <li>
+                  <a href="#/213">Sistema PISF-Castanhão</a>
+               </li> -->
+               <li>
+                  <a href="/documentos/view/155">Aporte</a>
+               </li>
+               <li>
+                  <a href="/documentos/view/151">Resenha</a>
+               </li>
+            </ul>
+         </li>
+<!--
+         <li class="dropdown-submenu">
+            <a href="#" tabindex="-1"> Qualidade</a>
+            <ul class="dropdown-menu">
+               <li>
+                  <a href="/acude/eutrofizacao">Eutrofização</a>
+               </li>
+               <li>
+                  <a href="/clorofilaturbidez">Monitoramento Satélite</a>
+               </li>
+               <li>
+                  <a href="/documentos/view/169">Castanhão</a>
+               </li>
+               <li>
+                  <a href="/documentos/view/170">Nictemeral Castanhão</a>
+               </li>
+            </ul>
+         </li>
+         Qualidade
+            Castanhão;
+            Eutrofização;
+            Monitoramento Satélite;
+
+         Castanhão
+            Nictemeral
+            Perfilagem - Sonda
+            Relatórios Anteriores (Tela que hoje aparace ao clicar no menu Castanhão no menu qualidade)
+-->
+         <li class="dropdown-submenu">
+            <a href="#" tabindex="-1"> Qualidade</a>
+            <ul class="dropdown-menu">
+               <li class="dropdown-submenu">
+                  <a href="#" tabindex="-1"> Castanhão</a>
+                  <ul class="dropdown-menu">
+                     <li>
+                        <a href="/documentos/view/170">Nictemeral</a>
+                     </li>
+                     <li>
+                        <a href="/perfilagem?reservatorio=castanhao">Perfilagem - Sonda</a>
+                     </li>
+                     <li>
+                        <a href="/documentos/view/169">Relatórios Anteriores</a>
+                     </li>
+                     <li>
+                        <a href="/documentos/view/175" tabindex="-1">Relatório Final do Projeto Capacidade de Suporte do Castanhão</a>
+                     </li>
+                  </ul>
+               </li>
+               <li>
+                  <a href="/perfilagem">Perfilagem - Sonda</a>
+               </li>
+               <li>
+                  <a href="/acude/eutrofizacao">Eutrofização</a>
+               </li>
+               <li>
+                  <a href="/clorofilaturbidez">Monitoramento Satélite</a>
+               </li>
+               <!-- <li>
+                  <a href="/clorofilaturbidez">Clorofila/Turbidez</a>
+               </li> -->
+            </ul>
+         </li>
+         <!-- <li class="dropdown-submenu">
+            <a href="#" tabindex="-1"> Castanhão</a>
+            <ul class="dropdown-menu">
+               <li>
+                  <a href="/documentos/view/170">Nictemeral</a>
+               </li>
+               <li>
+                  <a href="/perfilagem?reservatorio=castanhao">Perfilagem - Sonda</a>
+               </li>
+               <li>
+                  <a href="/documentos/view/169">Relatórios Anteriores</a>
+               </li>
+            </ul>
+         </li> -->
+         <!-- <li class="dropdown-submenu">
+            <a href="#" tabindex="-1"> Previsão</a>
+            <ul class="dropdown-menu">
+               <li>
+                  <a href="#/165">Clima - Afluências</a>
+               </li>
+            </ul>
+         </li>-->
+         <li class="dropdown-submenu">
+            <a href="#/26">Segurança</a>
+            <ul class="dropdown-menu">
+               <li>
+                  <a href="/acude/seguranca-barragens">Segurança de Barragens</a>
+               </li>
+               <li>
+                  <a href="/documentos/view/171">Inspeção de segurança regular</a>
+               </li>
+            </ul>
+         </li>
+      </ul>
+      </li>
+   </ul>
+   <ul class="nav navbar-nav lista_menu" id="menu_principal">
+      <li class="dropdown" id="menu">
+      <a id="link-top" style="color: #FFF;" href="#" data-bs-toggle="dropdown" class="dropdown-toggle">Regiões Hidrográficas<b class="caret"></b></a>
+      <ul class="dropdown-menu">
+         <li class="dropdown-submenu">
+               <a href="#" tabindex="-1"> Regiões Chuva Thiessen</a>
+               <ul class="dropdown-menu">
+                  <li>
+                  <a href="/regiao-chuva-thiessen/diario">Diário</a>
+                  </li>
+                  <li>
+                  <a href="/regiao-chuva-thiessen/mensal">Mensal</a>
+               </li>
+               <li>
+                  <a href="/regiao-chuva-thiessen/bimestral">Bimestral</a>
+               </li>
+               <li>
+                  <a href="/regiao-chuva-thiessen/trimestral">Trimestral</a>
+               </li>
+               <li>
+                  <a href="/regiao-chuva-thiessen/quadrimestral">Quadrimestral</a>
+               </li>
+               <li>
+                  <a href="/regiao-chuva-thiessen/anual">Anual</a>
+               </li>
+                  <!-- <li>
+                  <a href="#/169">Evolução Anual</a>
+                  </li> -->
+               </ul>
+         </li>
+         <li class="dropdown-submenu">
+               <a href="#" tabindex="-1"> Volume</a>
+               <ul class="dropdown-menu">
+                  <li>
+                  <a href="/regiao-volume-diario">Diário</a>
+                  </li>
+                  <!-- <li>
+                  <a href="#/171">Evolução Semestral</a>
+                  </li>
+                  <li>
+                  <a href="#/172">Máximos Interanuais</a>
+                  </li> -->
+               </ul>
+         </li>
+         <!-- <li class="dropdown-submenu">
+               <a href="#" tabindex="-1"> Regiões Previsão</a>
+               <ul class="dropdown-menu">
+                  <li>
+                  <a href="#/173">Tempo - Chuva</a>
+                  </li>
+               </ul>
+         </li>-->
+      </ul>
+      </li>
+   </ul>
+   <ul class="nav navbar-nav lista_menu" id="menu_principal">
+      <li class="dropdown" id="menu">
+      <a id="link-top" style="color: #FFF;" href="#" data-bs-toggle="dropdown" class="dropdown-toggle">Sub-bacias<b class="caret"></b></a>
+      <ul class="dropdown-menu">
+         <li class="dropdown-submenu">
+               <a href="#" tabindex="-1"> Sub-bacias Chuva Thiessen</a>
+               <ul class="dropdown-menu">
+                  <li>
+                  <a href="/sub-bacia-chuva-thiessen/diario">Diário</a>
+                  </li>
+                  <li>
+                  <a href="/sub-bacia-chuva-thiessen/mensal">Mensal</a>
+                  </li>
+                  <li>
+                  <a href="/sub-bacia-chuva-thiessen/anual">Anual</a>
+                  </li>
+               </ul>
+         </li>
+      </ul>
+      </li>
+   </ul>
+   <ul class="nav navbar-nav lista_menu" id="menu_principal">
+      <li class="dropdown" id="menu">
+      <a id="link-top" style="color: #FFF;" href="#" data-bs-toggle="dropdown" class="dropdown-toggle">Rios<b class="caret"></b></a>
+      <ul class="dropdown-menu">
+         <!--<li>
+               <a href="#/178">Indicadores de Cheia no Vale do Jaguaribe</a>
+         </li>
+         <li>
+               <a href="#/179">Indicadores de Cheia no Vale do Acaraú</a>
+         </li>-->
+         <li>
+               <a href="/vales-perenizados" id="vales-perenizados">Vales Perenizados</a>
+         </li>
+      </ul>
+      </li>
+   </ul>
+   <ul class="nav navbar-nav lista_menu" id="menu_principal">
+      <li class="dropdown" id="menu">
+         <a id="link-top" style="color: #FFF;" href="#" data-bs-toggle="dropdown" class="dropdown-toggle">Documentos<b class="caret"></b></a>
+         <ul class="dropdown-menu">
+            <li>
+               <a href="/documentos/148" tabindex="-1"> Leituras de Minuto</a>
+            </li>
+            <li>
+               <a href="/documentos/149" tabindex="-1"> Documentos Diversos</a>
+            </li>
+            <li>
+               <a href="/documentos/150" tabindex="-1"> Inventários Ambientais</a>
+            </li>
+            <li>
+               <a href="/documentos/151" tabindex="-1"> Resenha Diária</a>
+            </li>
+            <li>
+               <a href="/documentos/152" tabindex="-1"> Estado Trófico</a>
+            </li>
+         </ul>
+      </li>
+   </ul>
+   <ul class="nav navbar-nav lista_menu" id="menu_principal">
+      <li class="dropdown" id="menu">
+      <a id="link-top" style="color: #FFF;" href="#" data-bs-toggle="dropdown" class="dropdown-toggle">Links Externos<b class="caret"></b></a>
+      <ul class="dropdown-menu">
+         <li>
+               <a href="http://pcd.funceme.br" target="_blank">Plataforma de Coleta de Dados</a>
+         </li>
+         <li>
+               <a href="https://radar.funceme.br" target="_blank">Precipitação por Radar </a>
+         </li>
+         <li>
+               <a href=" http://www.funceme.br/?page_id=2694" target="_blank">Postos Pluviométricos</a>
+         </li>
+         <li>
+               <a href="https://datastudio.google.com/u/0/reporting/1fe040a5-359f-4206-9163-3698cac51da8/page/YwmhC." target="_blank">Sistema PISF-Castanhão</a>
+         </li>
+      </ul>
+      </li>
+   </ul>
+   <!-- <ul class="nav navbar-nav lista_menu" id="menu_principal">
+      <li class="dropdown" id="menu">
+      <a id="link-top" style="color: #FFF;" href="#" data-bs-toggle="dropdown" class="dropdown-toggle">Sensoriamento Remoto<b class="caret"></b></a>
+      <ul class="dropdown-menu">
+            <li>
+               <a href="/sensoriamento-remoto" id="sensoriamento-remoto">Quantidade</a>
+            </li>
+            <li>
+               <a href="#" target="">Outro</a>
+            </li>
+      </ul>
+      </li>
+   </ul> -->
+</div>
+
+<div id="menu-mobile">
+  <div id="menu-toggle">☰</div>
+  <div id="menu-lateral" class="menu-fechado">
+    <ul class="nav navbar-nav lista_menu" id="menu_principal">
+      <li class="dropdown" id="menu">
+        <a id="link-top" style="color: #FFF;" href="#" data-bs-toggle="dropdown" class="dropdown-toggle mobile">Reservatórios<b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li class="dropdown-submenu">
+            <a href="#" tabindex="-1">Quantidade (Volume)</a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="/quantidade-nivel-diario">Nível Diário</a>
+              </li>
+              <li>
+                <a href="/quantidade-sistema-jaguaribe_rmf">Sistema Jaguaribe - RMF</a>
+              </li>
+              <li>
+                <a href="/documentos/view/155">Aporte</a>
+              </li>
+              <li>
+                <a href="/documentos/view/151">Resenha</a>
+              </li>
+            </ul>
+          </li>
+          <li class="dropdown-submenu">
+            <a href="#" tabindex="-1">Qualidade</a>
+            <ul class="dropdown-menu">
+              <li class="dropdown-submenu">
+                <a href="#" tabindex="-1">Castanhão</a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a href="/documentos/view/170">Nictemeral</a>
+                  </li>
+                  <li>
+                    <a href="/perfilagem?reservatorio=castanhao">Perfilagem - Sonda</a>
+                  </li>
+                  <li>
+                    <a href="/documentos/view/169">Relatórios Anteriores</a>
+                  </li>
+                  <li>
+                    <a href="/documentos/view/175" tabindex="-1">Relatório Final do Projeto Capacidade de Suporte do Castanhão</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="/perfilagem">Perfilagem - Sonda</a>
+              </li>
+              <li>
+                <a href="/acude/eutrofizacao">Eutrofização</a>
+              </li>
+              <li>
+                <a href="/clorofilaturbidez">Monitoramento Satélite</a>
+              </li>
+            </ul>
+          </li>
+          <li class="dropdown-submenu">
+            <a href="#/26">Segurança</a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="/acude/seguranca-barragens">Segurança de Barragens</a>
+              </li>
+              <li>
+                <a href="/documentos/view/171">Inspeção de segurança regular</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+    <ul class="nav navbar-nav lista_menu" id="menu_principal">
+      <li class="dropdown" id="menu">
+        <a id="link-top" style="color: #FFF;" href="#" data-bs-toggle="dropdown" class="dropdown-toggle mobile">Regiões Hidrográficas<b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li class="dropdown-submenu">
+            <a href="#" tabindex="-1">Regiões Chuva Thiessen</a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="/regiao-chuva-thiessen/diario">Diário</a>
+              </li>
+              <li>
+                <a href="/regiao-chuva-thiessen/mensal">Mensal</a>
+              </li>
+              <li>
+                <a href="/regiao-chuva-thiessen/bimestral">Bimestral</a>
+              </li>
+              <li>
+                <a href="/regiao-chuva-thiessen/trimestral">Trimestral</a>
+              </li>
+              <li>
+                <a href="/regiao-chuva-thiessen/quadrimestral">Quadrimestral</a>
+              </li>
+              <li>
+                <a href="/regiao-chuva-thiessen/anual">Anual</a>
+              </li>
+            </ul>
+          </li>
+          <li class="dropdown-submenu">
+            <a href="#" tabindex="-1">Volume</a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="/regiao-volume-diario">Diário</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+    <ul class="nav navbar-nav lista_menu" id="menu_principal">
+      <li class="dropdown" id="menu">
+        <a id="link-top" style="color: #FFF;" href="#" data-bs-toggle="dropdown" class="dropdown-toggle mobile">Sub-bacias<b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li class="dropdown-submenu">
+            <a href="#" tabindex="-1">Sub-bacias Chuva Thiessen</a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="/sub-bacia-chuva-thiessen/diario">Diário</a>
+              </li>
+              <li>
+                <a href="/sub-bacia-chuva-thiessen/mensal">Mensal</a>
+              </li>
+              <li>
+                <a href="/sub-bacia-chuva-thiessen/anual">Anual</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+    <ul class="nav navbar-nav lista_menu" id="menu_principal">
+      <li class="dropdown" id="menu">
+        <a id="link-top" style="color: #FFF;" href="#" data-bs-toggle="dropdown" class="dropdown-toggle mobile">Rios<b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li>
+            <a href="/vales-perenizados" id="vales-perenizados">Vales Perenizados</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+    <ul class="nav navbar-nav lista_menu" id="menu_principal">
+      <li class="dropdown" id="menu">
+        <a id="link-top" style="color: #FFF;" href="#" data-bs-toggle="dropdown" class="dropdown-toggle mobile">Documentos<b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li>
+            <a href="/documentos/148" tabindex="-1">Leituras de Minuto</a>
+          </li>
+          <li>
+            <a href="/documentos/149" tabindex="-1">Documentos Diversos</a>
+          </li>
+          <li>
+            <a href="/documentos/150" tabindex="-1">Inventários Ambientais</a>
+          </li>
+          <li>
+            <a href="/documentos/151" tabindex="-1">Resenha Diária</a>
+          </li>
+          <li>
+            <a href="/documentos/152" tabindex="-1">Estado Trófico</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+    <ul class="nav navbar-nav lista_menu" id="menu_principal">
+      <li class="dropdown" id="menu">
+        <a id="link-top" style="color: #FFF;" href="#" data-bs-toggle="dropdown" class="dropdown-toggle mobile">Links Externos<b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li>
+            <a href="http://pcd.funceme.br" target="_blank">Plataforma de Coleta de Dados</a>
+          </li>
+          <li>
+            <a href="https://radar.funceme.br" target="_blank">Precipitação por Radar</a>
+          </li>
+          <li>
+            <a href="http://www.funceme.br/?page_id=2694" target="_blank">Postos Pluviométricos</a>
+          </li>
+          <li>
+            <a href="https://datastudio.google.com/u/0/reporting/1fe040a5-359f-4206-9163-3698cac51da8/page/YwmhC." target="_blank">Sistema PISF-Castanhão</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+                  <div>
+                  <a href="/" style="padding: 14px; float: right;">
+                    <img src="/static/dist/img/icon-home.png"/>
+                  </a>
+                  <a href="/contato" style="padding: 14px; float: right;">
+                    <img src="/static/dist/img/icon-email.png"/>
+                  </a>
+                  <a href="/downloads" style="padding: 14px; float: right;">
+                    <img src="/static/dist/img/icon-download.png"/>
+                  </a>
+                  <div style="position: relative; float: right;">
+                    <a id="survey-hitbox-trigger" target="_blank" href="https://www.cogerh.com.br/pesquisa/index.php?origem=portal_hidrologico" title="Pesquisa de Satisfação" style="padding: 12px; display: inline-block; position: relative;">
+                      <img style="height: 18px; background: transparent;" src="/static/dist/img/icon-pesquisa.png" alt="Pesquisa de satisfação"/>
+                    </a>
+                    <div id="survey-hitbox">
+                      <button id="survey-hitbox-close" type="button" aria-label="Fechar" style="position:absolute; top:-4px; right:0px; border:none; background:transparent; color:#fff; font-size:20px; line-height:1; cursor:pointer;">×</button>
+                      <span>Responda a pesquisa</span>
+                    </div>
+                  </div>
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+    <style>
+      #survey-hitbox {
+        display: none;
+        position: absolute;
+        left: 50%;
+        top: calc(65% + 12px);
+        transform: translateX(-50%);
+        background: #3a4aff;
+        color: #ffffff;
+        border: 4px solid #dfe6ee;
+        border-radius: 8px;
+        padding: 10px 15px 10px 12px;
+        font-size: 18px;
+        font-weight: 600;
+        white-space: nowrap;
+        z-index: 10;
+      }
+
+      #survey-hitbox::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: -6px;
+        width: 10px;
+        height: 10px;
+        background: #3a4aff;
+        border-left: 2px solid #ffffff;
+        border-top: 2px solid #ffffff;
+        transform: translateX(-50%) rotate(45deg);
+      }
+
+      #survey-hitbox-trigger {
+        position: relative;
+      }
+    </style>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const hitbox = document.getElementById('survey-hitbox');
+        const closeButton = document.getElementById('survey-hitbox-close');
+
+        if (!hitbox || !closeButton) {
+          return;
+        }
+
+        try {
+          if (localStorage.getItem('hidro_survey_hitbox_seen') === '1') {
+            return;
+          }
+        } catch (error) {
+          return;
+        }
+
+        hitbox.style.display = 'block';
+
+        closeButton.addEventListener('click', function (event) {
+          event.preventDefault();
+          event.stopPropagation();
+          hitbox.style.display = 'none';
+          try {
+            localStorage.setItem('hidro_survey_hitbox_seen', '1');
+          } catch (error) {
+            // ignora se o navegador bloquear localStorage
+          }
+        });
+      });
+    </script>
+</header>
+
+  <body>
+    <div id="loading" style="display: none;"></div>
+    <div id="blocker" style="display: none;"></div>
+
+    <div id="main_content" class="main_content">
+      
+   
+  <link rel="stylesheet" href="/static/dist/css/menu-content/reservatorios/eutrofizacao.css" />
+  <link rel="stylesheet" href="/static/plugins/select2/select2.min.css">
+
+
+    <script>
+    // Bloco para atribuição de variáveis jinja que não ficam acessíveis quando atribuidas dentro do arquivo por include
+    var pontos_eutrofizados = [{"reservatorio": {"cianobacteria": 371651.0, "classe": 3, "clorofila": null, "data": "2026-07-14", "fosforo": null, "id": 240, "info": null, "latitude": -6.27146638594, "longitude": -40.220220464, "nitrogenio": null, "nome": "Arneiroz II", "ponto": "ARN-02", "profundidade": 0.6, "regiao_hidrografica": "Alto Jaguaribe"}}, {"reservatorio": {"cianobacteria": 100877.0, "classe": 3, "clorofila": null, "data": "2026-07-16", "fosforo": null, "id": 192, "info": null, "latitude": -4.444447, "longitude": -38.961082, "nitrogenio": null, "nome": "Pesqueiro", "ponto": "PES-01", "profundidade": 1.3, "regiao_hidrografica": "Metropolitana"}}, {"reservatorio": {"cianobacteria": 205293.0, "classe": 3, "clorofila": null, "data": "2026-07-29", "fosforo": null, "id": 13, "info": null, "latitude": -4.83834625589, "longitude": -39.1409573634, "nitrogenio": null, "nome": "Pompeu Sobrinho", "ponto": "PMS-02", "profundidade": 0.45, "regiao_hidrografica": "Metropolitana"}}, {"reservatorio": {"cianobacteria": 325637.0, "classe": 3, "clorofila": null, "data": "2026-08-05", "fosforo": null, "id": 191, "info": null, "latitude": -4.809116, "longitude": -39.551388, "nitrogenio": null, "nome": "Jos\u00e9 Barbosa Filho (Umari)", "ponto": "UMA-01", "profundidade": 0.7, "regiao_hidrografica": "Banabui\u00fa"}}, {"reservatorio": {"cianobacteria": 1239.0, "classe": 1, "clorofila": null, "data": "2026-08-27", "fosforo": null, "id": 228, "info": null, "latitude": -4.45326, "longitude": -38.04188, "nitrogenio": null, "nome": "Amarelas", "ponto": "AMR-01", "profundidade": 1.2, "regiao_hidrografica": "Metropolitana"}}, {"reservatorio": {"cianobacteria": 179631.0, "classe": 3, "clorofila": null, "data": "2026-07-14", "fosforo": null, "id": 11, "info": null, "latitude": -5.14985135743, "longitude": -38.8777544386, "nitrogenio": null, "nome": "Pedras Brancas", "ponto": "PEB-11", "profundidade": 0.8, "regiao_hidrografica": "Banabui\u00fa"}}, {"reservatorio": {"cianobacteria": 126715.0, "classe": 3, "clorofila": null, "data": "2026-07-06", "fosforo": null, "id": 27, "info": null, "latitude": -6.98372899185, "longitude": -40.3559822646, "nitrogenio": null, "nome": "Po\u00e7o da Pedra", "ponto": "P\u00c7P-01", "profundidade": 0.9, "regiao_hidrografica": "Alto Jaguaribe"}}, {"reservatorio": {"cianobacteria": 79050.0, "classe": 2, "clorofila": null, "data": "2026-07-17", "fosforo": null, "id": 122, "info": null, "latitude": -6.30829420879, "longitude": -39.433659842, "nitrogenio": null, "nome": "Trussu", "ponto": "TRU-06", "profundidade": 1.2, "regiao_hidrografica": "Alto Jaguaribe"}}, {"reservatorio": {"cianobacteria": 47430.0, "classe": 2, "clorofila": null, "data": "2026-08-18", "fosforo": null, "id": 89, "info": null, "latitude": -6.202115, "longitude": -40.711288, "nitrogenio": null, "nome": "Parambu", "ponto": "PAR-01", "profundidade": 0.6, "regiao_hidrografica": "Alto Jaguaribe"}}, {"reservatorio": {"cianobacteria": 293781.0, "classe": 3, "clorofila": null, "data": "2026-07-24", "fosforo": null, "id": 31, "info": null, "latitude": -4.20951501641, "longitude": -40.4485984244, "nitrogenio": null, "nome": "Araras", "ponto": "ARA-01", "profundidade": 0.9, "regiao_hidrografica": "Acara\u00fa"}}, {"reservatorio": {"cianobacteria": 109017.0, "classe": 3, "clorofila": null, "data": "2026-07-09", "fosforo": null, "id": 63, "info": null, "latitude": -6.402325, "longitude": -38.956848, "nitrogenio": null, "nome": "Lima Campos", "ponto": "LMC-01", "profundidade": 1.2, "regiao_hidrografica": "Salgado"}}, {"reservatorio": {"cianobacteria": 235378.0, "classe": 3, "clorofila": null, "data": "2026-08-14", "fosforo": null, "id": 32, "info": null, "latitude": -6.037778, "longitude": -38.447193, "nitrogenio": null, "nome": "Adauto Bezerra", "ponto": "ADB-01", "profundidade": 0.8, "regiao_hidrografica": "M\u00e9dio Jaguaribe"}}, {"reservatorio": {"cianobacteria": 148660.0, "classe": 3, "clorofila": null, "data": "2026-08-20", "fosforo": null, "id": 28, "info": null, "latitude": -5.94905457118, "longitude": -38.8304650715, "nitrogenio": null, "nome": "Joaquim T\u00e1vora", "ponto": "JOT-01", "profundidade": 0.9, "regiao_hidrografica": "M\u00e9dio Jaguaribe"}}, {"reservatorio": {"cianobacteria": 260.0, "classe": 1, "clorofila": null, "data": "2026-07-14", "fosforo": null, "id": 181, "info": null, "latitude": -6.88895926968, "longitude": -39.0810678932, "nitrogenio": null, "nome": "Ros\u00e1rio", "ponto": "ROS-01", "profundidade": 5.5, "regiao_hidrografica": "Salgado"}}, {"reservatorio": {"cianobacteria": 276084.0, "classe": 3, "clorofila": null, "data": "2026-07-24", "fosforo": null, "id": 217, "info": null, "latitude": -6.53, "longitude": -39.917, "nitrogenio": null, "nome": "Caldeir\u00f5es", "ponto": "CAL-01", "profundidade": 1.0, "regiao_hidrografica": "Alto Jaguaribe"}}, {"reservatorio": {"cianobacteria": 136272.0, "classe": 3, "clorofila": null, "data": "2026-08-03", "fosforo": null, "id": 59, "info": null, "latitude": -4.76698183204, "longitude": -40.5824805724, "nitrogenio": null, "nome": "Farias de Sousa", "ponto": "FAS-01", "profundidade": 1.0, "regiao_hidrografica": "Acara\u00fa"}}, {"reservatorio": {"cianobacteria": 2891.0, "classe": 1, "clorofila": null, "data": "2026-07-27", "fosforo": null, "id": 81, "info": null, "latitude": -3.397075, "longitude": -40.263431, "nitrogenio": null, "nome": "S\u00e3o Vicente", "ponto": "SAV-01", "profundidade": 1.8, "regiao_hidrografica": "Acara\u00fa"}}, {"reservatorio": {"cianobacteria": 104062.0, "classe": 3, "clorofila": null, "data": "2026-08-06", "fosforo": null, "id": 80, "info": null, "latitude": -4.22225681679, "longitude": -38.3838534079, "nitrogenio": null, "nome": "Pacajus", "ponto": "PAC-06", "profundidade": 1.2, "regiao_hidrografica": "Metropolitana"}}, {"reservatorio": {"cianobacteria": 157155.0, "classe": 3, "clorofila": null, "data": "2026-07-28", "fosforo": null, "id": 112, "info": null, "latitude": -3.63564653661, "longitude": -40.8204151777, "nitrogenio": null, "nome": "Angicos", "ponto": "ANG-01", "profundidade": 1.0, "regiao_hidrografica": "Corea\u00fa"}}, {"reservatorio": {"cianobacteria": 91320.0, "classe": 3, "clorofila": null, "data": "2026-09-15", "fosforo": null, "id": 1119, "info": null, "latitude": -3.471698, "longitude": -39.858824, "nitrogenio": null, "nome": "Missi", "ponto": "MIS-01", "profundidade": 1.6, "regiao_hidrografica": "Litoral"}}, {"reservatorio": {"cianobacteria": 3363.0, "classe": 1, "clorofila": null, "data": "2026-08-31", "fosforo": null, "id": 111, "info": null, "latitude": -5.889177, "longitude": -39.15382, "nitrogenio": null, "nome": "Tigre", "ponto": "TGR-01", "profundidade": 1.8, "regiao_hidrografica": "M\u00e9dio Jaguaribe"}}, {"reservatorio": {"cianobacteria": 99107.0, "classe": 3, "clorofila": null, "data": "2026-07-31", "fosforo": null, "id": 129, "info": null, "latitude": -3.730804, "longitude": -40.680701, "nitrogenio": null, "nome": "Trapi\u00e1 III", "ponto": "TR3-01", "profundidade": 1.3, "regiao_hidrografica": "Corea\u00fa"}}, {"reservatorio": {"cianobacteria": 145121.0, "classe": 3, "clorofila": null, "data": "2026-07-08", "fosforo": null, "id": 20, "info": null, "latitude": -4.37069635174, "longitude": -39.3158692024, "nitrogenio": null, "nome": "S\u00e3o Mateus", "ponto": "SMT-01", "profundidade": 0.78, "regiao_hidrografica": "Curu"}}, {"reservatorio": {"cianobacteria": 261926.0, "classe": 3, "clorofila": null, "data": "2026-08-12", "fosforo": null, "id": 22, "info": null, "latitude": -3.65705, "longitude": -40.365556, "nitrogenio": null, "nome": "Sobral", "ponto": "SOB-01", "profundidade": 0.4, "regiao_hidrografica": "Acara\u00fa"}}, {"reservatorio": {"cianobacteria": 96895.0, "classe": 3, "clorofila": null, "data": "2026-08-05", "fosforo": null, "id": 167, "info": null, "latitude": -4.98075408108, "longitude": -39.3657924914, "nitrogenio": null, "nome": "Margarida de Morais Queiroz (Pirabibu)", "ponto": "PRB-01", "profundidade": 0.4, "regiao_hidrografica": "Banabui\u00fa"}}, {"reservatorio": {"cianobacteria": 205293.0, "classe": 3, "clorofila": null, "data": "2026-08-06", "fosforo": null, "id": 169, "info": null, "latitude": -3.16831720221, "longitude": -40.8614034371, "nitrogenio": null, "nome": "Gangorra", "ponto": "GAN-01", "profundidade": 1.5, "regiao_hidrografica": "Corea\u00fa"}}, {"reservatorio": {"cianobacteria": 382270.0, "classe": 3, "clorofila": null, "data": "2026-07-30", "fosforo": null, "id": 254, "info": null, "latitude": -3.896112, "longitude": -40.611118, "nitrogenio": null, "nome": "Taquara", "ponto": "TAQ-01", "profundidade": 2.1, "regiao_hidrografica": "Acara\u00fa"}}, {"reservatorio": {"cianobacteria": 1250.0, "classe": 1, "clorofila": null, "data": "2026-07-21", "fosforo": null, "id": 8, "info": null, "latitude": -7.10729145731, "longitude": -39.3292996457, "nitrogenio": null, "nome": "Manoel Balbino", "ponto": "MAB-01", "profundidade": 2.4, "regiao_hidrografica": "Salgado"}}, {"reservatorio": {"cianobacteria": 101319.0, "classe": 3, "clorofila": null, "data": "2026-07-16", "fosforo": null, "id": 141, "info": null, "latitude": -4.220286, "longitude": -39.283268, "nitrogenio": null, "nome": "S\u00e3o Domingos", "ponto": "SAD-01", "profundidade": 0.88, "regiao_hidrografica": "Curu"}}, {"reservatorio": {"cianobacteria": 163703.0, "classe": 3, "clorofila": null, "data": "2026-08-10", "fosforo": null, "id": 83, "info": null, "latitude": -3.85306388499, "longitude": -40.2707202921, "nitrogenio": null, "nome": "Arrebita", "ponto": "ARR-02", "profundidade": 2.2, "regiao_hidrografica": "Acara\u00fa"}}, {"reservatorio": {"cianobacteria": 219451.0, "classe": 3, "clorofila": null, "data": "2026-08-25", "fosforo": null, "id": 174, "info": null, "latitude": -6.27222899396, "longitude": -39.9331061101, "nitrogenio": null, "nome": "Rivaldo de Carvalho", "ponto": "RVC-02", "profundidade": 0.5, "regiao_hidrografica": "Alto Jaguaribe"}}, {"reservatorio": {"cianobacteria": 206178.0, "classe": 3, "clorofila": null, "data": "2026-07-29", "fosforo": null, "id": 85, "info": null, "latitude": -5.083883, "longitude": -39.305097, "nitrogenio": null, "nome": "S\u00e3o Jos\u00e9 II", "ponto": "SJ2-01", "profundidade": 1.6, "regiao_hidrografica": "Banabui\u00fa"}}, {"reservatorio": {"cianobacteria": 1820.0, "classe": 1, "clorofila": null, "data": "2026-07-21", "fosforo": null, "id": 147, "info": null, "latitude": -7.080531357019, "longitude": -40.177232052265, "nitrogenio": null, "nome": "Jo\u00e3o Lu\u00eds", "ponto": "JLU-01", "profundidade": 1.7, "regiao_hidrografica": "Alto Jaguaribe"}}, {"reservatorio": {"cianobacteria": 484916.0, "classe": 4, "clorofila": null, "data": "2026-08-05", "fosforo": null, "id": 197, "info": null, "latitude": -5.083883, "longitude": -38.305097, "nitrogenio": null, "nome": "Curral Velho", "ponto": "CRV-01", "profundidade": 0.8, "regiao_hidrografica": "Banabui\u00fa"}}, {"reservatorio": {"cianobacteria": 69021.0, "classe": 2, "clorofila": null, "data": "2026-08-06", "fosforo": null, "id": 233, "info": null, "latitude": -5.890459, "longitude": -38.411789, "nitrogenio": null, "nome": "Santo Ant\u00f4nio", "ponto": "STA-01", "profundidade": 0.7, "regiao_hidrografica": "M\u00e9dio Jaguaribe"}}, {"reservatorio": {"cianobacteria": 114150.0, "classe": 3, "clorofila": null, "data": "2026-08-06", "fosforo": null, "id": 24, "info": null, "latitude": -5.91533033329, "longitude": -40.413943243, "nitrogenio": null, "nome": "Trici", "ponto": "TRC-01", "profundidade": 1.1, "regiao_hidrografica": "Alto Jaguaribe"}}, {"reservatorio": {"cianobacteria": 5026.0, "classe": 1, "clorofila": null, "data": "2026-07-30", "fosforo": null, "id": 67, "info": null, "latitude": -5.38257288767, "longitude": -38.4595984652, "nitrogenio": null, "nome": "Po\u00e7o do Barro", "ponto": "P\u00c7B-01", "profundidade": 4.0, "regiao_hidrografica": "Banabui\u00fa"}}, {"reservatorio": {"cianobacteria": 62295.0, "classe": 2, "clorofila": null, "data": "2026-08-13", "fosforo": null, "id": 69, "info": null, "latitude": -3.86508767029, "longitude": -41.1133035668, "nitrogenio": null, "nome": "Jaburu I", "ponto": "JB1-10", "profundidade": 3.8, "regiao_hidrografica": "Serra da Ibiapaba"}}, {"reservatorio": {"cianobacteria": 222991.0, "classe": 3, "clorofila": null, "data": "2026-07-29", "fosforo": null, "id": 215, "info": null, "latitude": -3.154383, "longitude": -40.364018, "nitrogenio": null, "nome": "Diamantino II", "ponto": "DI2-01", "profundidade": 1.5, "regiao_hidrografica": "Corea\u00fa"}}, {"reservatorio": {"cianobacteria": 375191.0, "classe": 3, "clorofila": null, "data": "2026-08-11", "fosforo": null, "id": 185, "info": null, "latitude": -4.897313, "longitude": -40.77043, "nitrogenio": null, "nome": "S\u00e3o Jos\u00e9 III", "ponto": "SJ3-01", "profundidade": 1.0, "regiao_hidrografica": "Sert\u00f5es de Crate\u00fas"}}, {"reservatorio": {"cianobacteria": 417665.0, "classe": 4, "clorofila": null, "data": "2026-08-13", "fosforo": null, "id": 166, "info": null, "latitude": -5.965648, "longitude": -38.276387, "nitrogenio": null, "nome": "Santa Maria", "ponto": "SMR-01", "profundidade": 0.7, "regiao_hidrografica": "M\u00e9dio Jaguaribe"}}, {"reservatorio": {"cianobacteria": 215912.0, "classe": 3, "clorofila": null, "data": "2026-08-31", "fosforo": null, "id": 171, "info": null, "latitude": -5.81315115414, "longitude": -39.2474835705, "nitrogenio": null, "nome": "Jenipapeiro", "ponto": "JEN-01", "profundidade": 1.3, "regiao_hidrografica": "M\u00e9dio Jaguaribe"}}, {"reservatorio": {"cianobacteria": 72118.0, "classe": 2, "clorofila": null, "data": "2026-09-09", "fosforo": null, "id": 158, "info": null, "latitude": -3.73934463276, "longitude": -38.8683396159, "nitrogenio": null, "nome": "Cauhipe", "ponto": "CAU-01", "profundidade": 1.2, "regiao_hidrografica": "Metropolitana"}}, {"reservatorio": {"cianobacteria": 81115.0, "classe": 3, "clorofila": null, "data": "2026-08-19", "fosforo": null, "id": 235, "info": null, "latitude": -4.10582877875, "longitude": -38.2890791497, "nitrogenio": null, "nome": "Malcozinhado", "ponto": "MAL-02", "profundidade": 0.8, "regiao_hidrografica": "Metropolitana"}}, {"reservatorio": {"cianobacteria": 456600.0, "classe": 4, "clorofila": null, "data": "2026-07-23", "fosforo": null, "id": 223, "info": null, "latitude": -4.02183311314, "longitude": -38.4369544335, "nitrogenio": null, "nome": "Catucinzenta", "ponto": "CAT-02", "profundidade": 0.8, "regiao_hidrografica": "Metropolitana"}}, {"reservatorio": {"cianobacteria": 4645.0, "classe": 1, "clorofila": null, "data": "2026-08-04", "fosforo": null, "id": 186, "info": null, "latitude": -5.562632, "longitude": -38.325225, "nitrogenio": null, "nome": "Riacho da Serra", "ponto": "RSE-01", "profundidade": 1.4, "regiao_hidrografica": "M\u00e9dio Jaguaribe"}}, {"reservatorio": {"cianobacteria": 273889.0, "classe": 3, "clorofila": null, "data": "2026-08-11", "fosforo": null, "id": 82, "info": null, "latitude": -5.7228775, "longitude": -38.1681776, "nitrogenio": null, "nome": "Potiretama", "ponto": "POT-02", "profundidade": 0.6, "regiao_hidrografica": "M\u00e9dio Jaguaribe"}}, {"reservatorio": {"cianobacteria": 21946.0, "classe": 2, "clorofila": null, "data": "2026-08-26", "fosforo": null, "id": 244, "info": null, "latitude": -4.059148, "longitude": -38.903176, "nitrogenio": null, "nome": "Itapebussu", "ponto": "ITP-01", "profundidade": 1.2, "regiao_hidrografica": "Metropolitana"}}, {"reservatorio": {"cianobacteria": 25084.0, "classe": 2, "clorofila": null, "data": "2026-08-03", "fosforo": null, "id": 216, "info": null, "latitude": -4.59, "longitude": -40.743, "nitrogenio": null, "nome": "Jatob\u00e1 II", "ponto": "JA2-01", "profundidade": 1.1, "regiao_hidrografica": "Acara\u00fa"}}, {"reservatorio": {"cianobacteria": 375191.0, "classe": 3, "clorofila": null, "data": "2026-08-04", "fosforo": null, "id": 119, "info": null, "latitude": -5.16690241966, "longitude": -39.4913777371, "nitrogenio": null, "nome": "Fogareiro", "ponto": "FOG-01", "profundidade": 1.2, "regiao_hidrografica": "Banabui\u00fa"}}, {"reservatorio": {"cianobacteria": 47194.0, "classe": 2, "clorofila": null, "data": "2026-08-06", "fosforo": null, "id": 180, "info": null, "latitude": -3.15241157107, "longitude": -41.1672940639, "nitrogenio": null, "nome": "Ita\u00fana", "ponto": "ITA-01", "profundidade": 1.7, "regiao_hidrografica": "Corea\u00fa"}}, {"reservatorio": {"cianobacteria": 68667.0, "classe": 2, "clorofila": null, "data": "2026-07-07", "fosforo": null, "id": 155, "info": null, "latitude": -6.78888346631, "longitude": -39.3753014774, "nitrogenio": null, "nome": "Olho d\u0027\u00c1gua", "ponto": "OLH-01", "profundidade": 2.1, "regiao_hidrografica": "Salgado"}}, {"reservatorio": {"cianobacteria": 24423.0, "classe": 2, "clorofila": null, "data": "2026-07-21", "fosforo": null, "id": 23, "info": null, "latitude": -7.09077807818, "longitude": -39.4869088371, "nitrogenio": null, "nome": "Thom\u00e1s Osterne", "ponto": "THO-01", "profundidade": 3.5, "regiao_hidrografica": "Salgado"}}, {"reservatorio": {"cianobacteria": 148661.0, "classe": 3, "clorofila": null, "data": "2026-08-12", "fosforo": null, "id": 34, "info": null, "latitude": -5.3933069733739, "longitude": -40.301177404304, "nitrogenio": null, "nome": "Cupim", "ponto": "CUP-01", "profundidade": 0.5, "regiao_hidrografica": "Sert\u00f5es de Crate\u00fas"}}, {"reservatorio": {"cianobacteria": 35985.0, "classe": 2, "clorofila": null, "data": "2026-07-15", "fosforo": null, "id": 96, "info": null, "latitude": -5.50257888999, "longitude": -39.7366728894, "nitrogenio": null, "nome": "Trapi\u00e1 II", "ponto": "TR2-01", "profundidade": 1.1, "regiao_hidrografica": "Banabui\u00fa"}}, {"reservatorio": {"cianobacteria": 338025.0, "classe": 3, "clorofila": null, "data": "2026-08-07", "fosforo": null, "id": 236, "info": null, "latitude": -4.66645336177, "longitude": -40.2019816973, "nitrogenio": null, "nome": "Carmina", "ponto": "CMN-01", "profundidade": 0.5, "regiao_hidrografica": "Acara\u00fa"}}, {"reservatorio": {"cianobacteria": 311479.0, "classe": 3, "clorofila": null, "data": "2026-07-16", "fosforo": null, "id": 7, "info": null, "latitude": -4.06243387754, "longitude": -39.4537367839, "nitrogenio": null, "nome": "General Sampaio", "ponto": "GNS-01", "profundidade": 0.81, "regiao_hidrografica": "Curu"}}, {"reservatorio": {"cianobacteria": 130963.0, "classe": 3, "clorofila": null, "data": "2026-07-22", "fosforo": null, "id": 77, "info": null, "latitude": -3.69046238001, "longitude": -39.295427951, "nitrogenio": null, "nome": "Frios", "ponto": "FRI-01", "profundidade": 1.47, "regiao_hidrografica": "Curu"}}, {"reservatorio": {"cianobacteria": 38492.0, "classe": 2, "clorofila": null, "data": "2026-07-31", "fosforo": null, "id": 194, "info": null, "latitude": -5.48909482144, "longitude": -38.4502293061, "nitrogenio": null, "nome": "Castanh\u00e3o", "ponto": "CTN-20", "profundidade": 2.7, "regiao_hidrografica": "M\u00e9dio Jaguaribe"}}, {"reservatorio": {"cianobacteria": 311479.0, "classe": 3, "clorofila": null, "data": "2026-08-03", "fosforo": null, "id": 47, "info": null, "latitude": -7.641854, "longitude": -38.894554, "nitrogenio": null, "nome": "Atalho", "ponto": "ATA-01", "profundidade": 2.7, "regiao_hidrografica": "Salgado"}}, {"reservatorio": {"cianobacteria": null, "classe": 3, "clorofila": null, "data": "2026-09-15", "fosforo": null, "id": 21, "info": null, "latitude": -3.57161761888, "longitude": -39.9725210698, "nitrogenio": null, "nome": "S\u00e3o Pedro Timba\u00faba", "ponto": "SPT-01", "profundidade": 0.6, "regiao_hidrografica": "Litoral"}}, {"reservatorio": {"cianobacteria": 153970.0, "classe": 3, "clorofila": null, "data": "2026-07-15", "fosforo": null, "id": 61, "info": null, "latitude": -3.633621, "longitude": -39.516132, "nitrogenio": null, "nome": "Munda\u00fa", "ponto": "MUN-08", "profundidade": 1.4, "regiao_hidrografica": "Litoral"}}, {"reservatorio": {"cianobacteria": 193789.0, "classe": 3, "clorofila": null, "data": "2026-07-28", "fosforo": null, "id": 16, "info": null, "latitude": -5.19828377485, "longitude": -39.3127774588, "nitrogenio": null, "nome": "Quixeramobim", "ponto": "QXM-05", "profundidade": 1.2, "regiao_hidrografica": "Banabui\u00fa"}}, {"reservatorio": {"cianobacteria": 472528.0, "classe": 4, "clorofila": null, "data": "2026-08-05", "fosforo": null, "id": 62, "info": null, "latitude": -3.31937079269, "longitude": -40.554447325, "nitrogenio": null, "nome": "Premuoca", "ponto": "PRE-01", "profundidade": 1.0, "regiao_hidrografica": "Corea\u00fa"}}, {"reservatorio": {"cianobacteria": 130963.0, "classe": 3, "clorofila": null, "data": "2026-07-28", "fosforo": null, "id": 179, "info": null, "latitude": -3.970682, "longitude": -38.744555, "nitrogenio": null, "nome": "Penedo", "ponto": "PEN-01", "profundidade": 1.2, "regiao_hidrografica": "Metropolitana"}}, {"reservatorio": {"cianobacteria": 253431.0, "classe": 3, "clorofila": null, "data": "2026-08-12", "fosforo": null, "id": 56, "info": null, "latitude": -3.761444, "longitude": -40.036497, "nitrogenio": null, "nome": "Patos", "ponto": "PAT-01", "profundidade": 0.6, "regiao_hidrografica": "Litoral"}}, {"reservatorio": {"cianobacteria": 73268.0, "classe": 2, "clorofila": null, "data": "2026-07-15", "fosforo": null, "id": 211, "info": null, "latitude": -3.6743394493979, "longitude": -39.574599028008, "nitrogenio": null, "nome": "Itapaj\u00e9", "ponto": "ITP-01", "profundidade": 1.7, "regiao_hidrografica": "Curu"}}, {"reservatorio": {"cianobacteria": 228300.0, "classe": 3, "clorofila": null, "data": "2026-08-05", "fosforo": null, "id": 201, "info": null, "latitude": -6.788675, "longitude": -40.0651, "nitrogenio": null, "nome": "Mamoeiro", "ponto": "MAM-01", "profundidade": 0.7, "regiao_hidrografica": "Alto Jaguaribe"}}, {"reservatorio": {"cianobacteria": 19821.0, "classe": 1, "clorofila": null, "data": "2026-08-20", "fosforo": null, "id": 26, "info": null, "latitude": -5.949263, "longitude": -38.907803, "nitrogenio": null, "nome": "Nova Floresta", "ponto": "NOF-01", "profundidade": 1.1, "regiao_hidrografica": "M\u00e9dio Jaguaribe"}}, {"reservatorio": {"cianobacteria": 22653.0, "classe": 2, "clorofila": null, "data": "2026-07-28", "fosforo": null, "id": 60, "info": null, "latitude": -3.59921740221, "longitude": -40.8636571293, "nitrogenio": null, "nome": "Diamante", "ponto": "DIA-01", "profundidade": 2.1, "regiao_hidrografica": "Corea\u00fa"}}, {"reservatorio": {"cianobacteria": 169898.0, "classe": 3, "clorofila": null, "data": "2026-09-22", "fosforo": null, "id": 205, "info": null, "latitude": -4.181292, "longitude": -38.865006, "nitrogenio": null, "nome": "Germinal", "ponto": "GER-01", "profundidade": 1.4, "regiao_hidrografica": "Metropolitana"}}, {"reservatorio": {"cianobacteria": 65481.0, "classe": 3, "clorofila": null, "data": "2026-08-05", "fosforo": null, "id": 78, "info": null, "latitude": -4.19354599542, "longitude": -38.7993848299, "nitrogenio": null, "nome": "Acarape do Meio", "ponto": "ACA-09", "profundidade": 1.2, "regiao_hidrografica": "Metropolitana"}}, {"reservatorio": {"cianobacteria": 405277.0, "classe": 4, "clorofila": null, "data": "2026-08-14", "fosforo": null, "id": 5, "info": null, "latitude": -4.21537241249, "longitude": -40.0665698637, "nitrogenio": null, "nome": "Edson Queiroz", "ponto": "EDQ-01", "profundidade": 1.2, "regiao_hidrografica": "Acara\u00fa"}}, {"reservatorio": {"cianobacteria": 79050.0, "classe": 2, "clorofila": null, "data": "2026-07-30", "fosforo": null, "id": 84, "info": null, "latitude": -5.26185481392, "longitude": -38.6457784847, "nitrogenio": null, "nome": "Cipoada", "ponto": "CIP-10", "profundidade": 1.8, "regiao_hidrografica": "Banabui\u00fa"}}, {"reservatorio": {"cianobacteria": 22181.0, "classe": 2, "clorofila": null, "data": "2026-07-16", "fosforo": null, "id": 39, "info": null, "latitude": -5.195816, "longitude": -39.601225, "nitrogenio": null, "nome": "S\u00e3o Jos\u00e9 I", "ponto": "SJ1-01", "profundidade": 0.8, "regiao_hidrografica": "Banabui\u00fa"}}, {"reservatorio": {"cianobacteria": 261926.0, "classe": 3, "clorofila": null, "data": "2026-08-19", "fosforo": null, "id": 19, "info": null, "latitude": -4.85195462398, "longitude": -38.1657398571, "nitrogenio": null, "nome": "Santo Ant\u00f4nio de Russas", "ponto": "SAR-01", "profundidade": 0.8, "regiao_hidrografica": "Baixo Jaguaribe"}}, {"reservatorio": {"cianobacteria": 242458.0, "classe": 3, "clorofila": null, "data": "2026-07-14", "fosforo": null, "id": 90, "info": null, "latitude": -3.43872126279, "longitude": -39.6295223261, "nitrogenio": null, "nome": "Po\u00e7o Verde", "ponto": "P\u00c7V-01", "profundidade": 0.4, "regiao_hidrografica": "Litoral"}}, {"reservatorio": {"cianobacteria": 203524.0, "classe": 3, "clorofila": null, "data": "2026-08-11", "fosforo": null, "id": 12, "info": null, "latitude": -3.80330004105, "longitude": -39.2616481781, "nitrogenio": null, "nome": "Pentecoste", "ponto": "PET-01", "profundidade": 1.08, "regiao_hidrografica": "Curu"}}, {"reservatorio": {"cianobacteria": 263695.0, "classe": 3, "clorofila": null, "data": "2026-07-29", "fosforo": null, "id": 99, "info": null, "latitude": -5.72847965121, "longitude": -39.6472365319, "nitrogenio": null, "nome": "Serafim Dias", "ponto": "SRD-01", "profundidade": 1.3, "regiao_hidrografica": "Banabui\u00fa"}}, {"reservatorio": {"cianobacteria": 226530.0, "classe": 3, "clorofila": null, "data": "2026-08-11", "fosforo": null, "id": 117, "info": null, "latitude": -4.00099902774, "longitude": -38.5231717263, "nitrogenio": null, "nome": "Riach\u00e3o", "ponto": "RIA-10", "profundidade": 0.7, "regiao_hidrografica": "Metropolitana"}}, {"reservatorio": {"cianobacteria": 644195.0, "classe": 4, "clorofila": null, "data": "2026-07-07", "fosforo": null, "id": 159, "info": null, "latitude": -3.77127334573, "longitude": -38.9597828672, "nitrogenio": null, "nome": "Sitios Novos", "ponto": "SIN-14", "profundidade": 0.6, "regiao_hidrografica": "Metropolitana"}}, {"reservatorio": {"cianobacteria": 3893.0, "classe": 1, "clorofila": null, "data": "2026-08-19", "fosforo": null, "id": 208, "info": null, "latitude": -6.304448, "longitude": -40.676041, "nitrogenio": null, "nome": "Facundo", "ponto": "FAC-01", "profundidade": 1.6, "regiao_hidrografica": "Alto Jaguaribe"}}, {"reservatorio": {"cianobacteria": 227415.0, "classe": 3, "clorofila": null, "data": "2026-08-12", "fosforo": null, "id": 52, "info": null, "latitude": -5.41692977208, "longitude": -40.4790214295, "nitrogenio": null, "nome": "Jaburu II", "ponto": "JB2-01", "profundidade": 0.6, "regiao_hidrografica": "Sert\u00f5es de Crate\u00fas"}}, {"reservatorio": {"cianobacteria": 708.0, "classe": 1, "clorofila": null, "data": "2026-08-13", "fosforo": null, "id": 132, "info": null, "latitude": -4.317856, "longitude": -38.894027, "nitrogenio": null, "nome": "Tijuquinha", "ponto": "TJQ-01", "profundidade": 1.3, "regiao_hidrografica": "Metropolitana"}}, {"reservatorio": {"cianobacteria": 146891.0, "classe": 3, "clorofila": null, "data": "2026-07-21", "fosforo": null, "id": 121, "info": null, "latitude": -3.83753285061, "longitude": -39.6896801289, "nitrogenio": null, "nome": "Jerimum", "ponto": "JER-01", "profundidade": 1.3, "regiao_hidrografica": "Curu"}}, {"reservatorio": {"cianobacteria": 50439.0, "classe": 2, "clorofila": null, "data": "2026-07-22", "fosforo": null, "id": 148, "info": null, "latitude": -7.081014, "longitude": -40.084615, "nitrogenio": null, "nome": "Pau Preto", "ponto": "PPE-01", "profundidade": 2.6, "regiao_hidrografica": "Alto Jaguaribe"}}, {"reservatorio": {"cianobacteria": 134502.0, "classe": 3, "clorofila": null, "data": "2026-07-15", "fosforo": null, "id": 33, "info": null, "latitude": -5.626210128, "longitude": -39.99916198, "nitrogenio": null, "nome": "Capit\u00e3o Mor", "ponto": "COM-01", "profundidade": 0.4, "regiao_hidrografica": "Banabui\u00fa"}}, {"reservatorio": {"cianobacteria": 63358.0, "classe": 2, "clorofila": null, "data": "2026-07-09", "fosforo": null, "id": 239, "info": null, "latitude": -6.160069, "longitude": -39.219267, "nitrogenio": null, "nome": "Fa\u00e9", "ponto": "FAE-01", "profundidade": 1.4, "regiao_hidrografica": "Alto Jaguaribe"}}, {"reservatorio": {"cianobacteria": 336256.0, "classe": 3, "clorofila": null, "data": "2026-09-15", "fosforo": null, "id": 173, "info": null, "latitude": -4.651008, "longitude": -38.48875, "nitrogenio": null, "nome": "Batente", "ponto": "BAT-01", "profundidade": 0.6, "regiao_hidrografica": "Metropolitana"}}, {"reservatorio": {"cianobacteria": 474298.0, "classe": 4, "clorofila": null, "data": "2026-07-08", "fosforo": null, "id": 15, "info": null, "latitude": -7.501992, "longitude": -38.747302, "nitrogenio": null, "nome": "Quixabinha", "ponto": "QXB-01", "profundidade": 0.4, "regiao_hidrografica": "Salgado"}}, {"reservatorio": {"cianobacteria": 304400.0, "classe": 3, "clorofila": null, "data": "2026-08-04", "fosforo": null, "id": 74, "info": null, "latitude": -5.86834198717, "longitude": -38.3179973854, "nitrogenio": null, "nome": "Canaf\u00edstula", "ponto": "CNF-05", "profundidade": 0.25, "regiao_hidrografica": "M\u00e9dio Jaguaribe"}}, {"reservatorio": {"cianobacteria": 157509.0, "classe": 3, "clorofila": null, "data": "2026-07-15", "fosforo": null, "id": 79, "info": null, "latitude": -3.573526, "longitude": -39.629007, "nitrogenio": null, "nome": "Quand\u00fa", "ponto": "QUA-01", "profundidade": 0.8, "regiao_hidrografica": "Litoral"}}, {"reservatorio": {"cianobacteria": 53800.0, "classe": 2, "clorofila": null, "data": "2026-07-15", "fosforo": null, "id": 1120, "info": null, "latitude": -6.672764, "longitude": -38.755099, "nitrogenio": null, "nome": "Jenipapeiro II", "ponto": "JN2-01", "profundidade": 1.3, "regiao_hidrografica": "Salgado"}}, {"reservatorio": {"cianobacteria": 627.0, "classe": 1, "clorofila": null, "data": "2026-07-14", "fosforo": null, "id": 170, "info": null, "latitude": -6.990421, "longitude": -39.017881, "nitrogenio": null, "nome": "Cachoeira", "ponto": "CAC-01", "profundidade": 4.1, "regiao_hidrografica": "Salgado"}}, {"reservatorio": {"cianobacteria": 619419.0, "classe": 4, "clorofila": null, "data": "2026-07-28", "fosforo": null, "id": 4, "info": null, "latitude": -4.97772872522, "longitude": -39.0631731394, "nitrogenio": null, "nome": "Cedro", "ponto": "CED-01", "profundidade": 0.1, "regiao_hidrografica": "Banabui\u00fa"}}, {"reservatorio": {"cianobacteria": 229362.0, "classe": 3, "clorofila": null, "data": "2026-08-13", "fosforo": null, "id": 30, "info": null, "latitude": -5.77632884496, "longitude": -38.3449743134, "nitrogenio": null, "nome": "Ema", "ponto": "EMA-01", "profundidade": 1.4, "regiao_hidrografica": "M\u00e9dio Jaguaribe"}}, {"reservatorio": {"cianobacteria": 73003.0, "classe": 2, "clorofila": null, "data": "2026-08-13", "fosforo": null, "id": 172, "info": null, "latitude": -5.57067277258, "longitude": -40.6717961812, "nitrogenio": null, "nome": "Flor do Campo", "ponto": "FLC-01", "profundidade": 0.5, "regiao_hidrografica": "Sert\u00f5es de Crate\u00fas"}}, {"reservatorio": {"cianobacteria": 41590.0, "classe": 2, "clorofila": null, "data": "2026-08-13", "fosforo": null, "id": 133, "info": null, "latitude": -5.840381, "longitude": -40.712804, "nitrogenio": null, "nome": "Colina", "ponto": "COL-01", "profundidade": 0.6, "regiao_hidrografica": "Sert\u00f5es de Crate\u00fas"}}, {"reservatorio": {"cianobacteria": 54155.0, "classe": 3, "clorofila": null, "data": "2026-07-27", "fosforo": null, "id": 1, "info": null, "latitude": -3.5058917892, "longitude": -40.278364501, "nitrogenio": null, "nome": "Acara\u00fa Mirim", "ponto": "ACM-06", "profundidade": 1.6, "regiao_hidrografica": "Acara\u00fa"}}, {"reservatorio": {"cianobacteria": 147482.0, "classe": 3, "clorofila": null, "data": "2026-07-14", "fosforo": null, "id": 2, "info": null, "latitude": -5.32859467909, "longitude": -38.9223710722, "nitrogenio": null, "nome": "Banabui\u00fa", "ponto": "BAN-01", "profundidade": 2.0, "regiao_hidrografica": "Banabui\u00fa"}}, {"reservatorio": {"cianobacteria": 348644.0, "classe": 3, "clorofila": null, "data": "2026-07-22", "fosforo": null, "id": 199, "info": null, "latitude": -4.799747, "longitude": -38.709306, "nitrogenio": null, "nome": "Macacos", "ponto": "MAC-01", "profundidade": 0.75, "regiao_hidrografica": "Metropolitana"}}, {"reservatorio": {"cianobacteria": 23785.0, "classe": 2, "clorofila": null, "data": "2026-07-07", "fosforo": null, "id": 162, "info": null, "latitude": -6.58385878059, "longitude": -39.2375639263, "nitrogenio": null, "nome": "Ubaldinho", "ponto": "UBA-02", "profundidade": 3.3, "regiao_hidrografica": "Salgado"}}, {"reservatorio": {"cianobacteria": 32917.0, "classe": 2, "clorofila": null, "data": "2026-08-12", "fosforo": null, "id": 50, "info": null, "latitude": -3.88220245137, "longitude": -40.0124731184, "nitrogenio": null, "nome": "Santo Ant\u00f4nio de Aracatia\u00e7u", "ponto": "SAA-01", "profundidade": 1.9, "regiao_hidrografica": "Litoral"}}, {"reservatorio": {"cianobacteria": 178746.0, "classe": 3, "clorofila": null, "data": "2026-07-30", "fosforo": null, "id": 49, "info": null, "latitude": -3.77962049329, "longitude": -40.4978967562, "nitrogenio": null, "nome": "Ayres de Sousa", "ponto": "AYS-01", "profundidade": 0.7, "regiao_hidrografica": "Acara\u00fa"}}, {"reservatorio": {"cianobacteria": 357492.0, "classe": 3, "clorofila": null, "data": "2026-08-11", "fosforo": null, "id": 88, "info": null, "latitude": -4.03602241472, "longitude": -38.5333114066, "nitrogenio": null, "nome": "Pacoti", "ponto": "PCT-18", "profundidade": 0.7, "regiao_hidrografica": "Metropolitana"}}, {"reservatorio": {"cianobacteria": 133912.0, "classe": 3, "clorofila": null, "data": "2026-07-22", "fosforo": null, "id": 405, "info": null, "latitude": -3.692837, "longitude": -39.216622, "nitrogenio": null, "nome": "Melancia", "ponto": "MEL-01", "profundidade": 1.44, "regiao_hidrografica": "Curu"}}, {"reservatorio": {"cianobacteria": 132733.0, "classe": 3, "clorofila": null, "data": "2026-07-16", "fosforo": null, "id": 14, "info": null, "latitude": -7.10901972051, "longitude": -38.6829425533, "nitrogenio": null, "nome": "Prazeres", "ponto": "PRA-01", "profundidade": 1.1, "regiao_hidrografica": "Salgado"}}, {"reservatorio": {"cianobacteria": 180517.0, "classe": 3, "clorofila": null, "data": "2026-08-05", "fosforo": null, "id": 17, "info": null, "latitude": -5.69373683323, "longitude": -38.9506399185, "nitrogenio": null, "nome": "Riacho do Sangue", "ponto": "RIS-01", "profundidade": 1.1, "regiao_hidrografica": "M\u00e9dio Jaguaribe"}}, {"reservatorio": {"cianobacteria": 432284.0, "classe": 4, "clorofila": null, "data": "2026-08-05", "fosforo": null, "id": 126, "info": null, "latitude": -3.23703261442, "longitude": -40.6162092689, "nitrogenio": null, "nome": "Martin\u00f3pole", "ponto": "MRT-01", "profundidade": 0.8, "regiao_hidrografica": "Corea\u00fa"}}, {"reservatorio": {"cianobacteria": 175207.0, "classe": 3, "clorofila": null, "data": "2026-07-14", "fosforo": null, "id": 210, "info": null, "latitude": -3.3713896732337, "longitude": -39.492505583781, "nitrogenio": null, "nome": "Gameleira", "ponto": "GAM-01", "profundidade": 0.9, "regiao_hidrografica": "Litoral"}}, {"reservatorio": {"cianobacteria": 138042.0, "classe": 3, "clorofila": null, "data": "2026-08-20", "fosforo": null, "id": 9, "info": null, "latitude": -6.2381264298, "longitude": -38.9250093577, "nitrogenio": null, "nome": "Or\u00f3s", "ponto": "ORO-12", "profundidade": 1.5, "regiao_hidrografica": "Alto Jaguaribe"}}, {"reservatorio": {"cianobacteria": 126243.0, "classe": 3, "clorofila": null, "data": "2026-07-31", "fosforo": null, "id": 70, "info": null, "latitude": -3.50214320968, "longitude": -40.6146865971, "nitrogenio": null, "nome": "V\u00e1rzea da Volta", "ponto": "VZV-01", "profundidade": 1.6, "regiao_hidrografica": "Corea\u00fa"}}, {"reservatorio": {"cianobacteria": 261925.0, "classe": 3, "clorofila": null, "data": "2026-07-16", "fosforo": null, "id": 130, "info": null, "latitude": -5.15679628805, "longitude": -39.7183924085, "nitrogenio": null, "nome": "Vieir\u00e3o", "ponto": "VIE-02", "profundidade": 0.7, "regiao_hidrografica": "Banabui\u00fa"}}, {"reservatorio": {"cianobacteria": 272544.0, "classe": 3, "clorofila": null, "data": "2026-08-06", "fosforo": null, "id": 10, "info": null, "latitude": -5.58186998208, "longitude": -39.4023005082, "nitrogenio": null, "nome": "Patu", "ponto": "PTU-01", "profundidade": 0.9, "regiao_hidrografica": "Banabui\u00fa"}}, {"reservatorio": {"cianobacteria": 380500.0, "classe": 3, "clorofila": null, "data": "2026-07-28", "fosforo": null, "id": 45, "info": null, "latitude": -4.01262168678, "longitude": -38.8837233213, "nitrogenio": null, "nome": "Amanary", "ponto": "AMA-01", "profundidade": 0.8, "regiao_hidrografica": "Metropolitana"}}, {"reservatorio": {"cianobacteria": 129193.0, "classe": 3, "clorofila": null, "data": "2026-07-07", "fosforo": null, "id": 18, "info": null, "latitude": -4.4069701, "longitude": -39.3111742, "nitrogenio": null, "nome": "Sal\u00e3o", "ponto": "SAL-01", "profundidade": 0.2, "regiao_hidrografica": "Curu"}}, {"reservatorio": {"cianobacteria": 12035.0, "classe": 1, "clorofila": null, "data": "2026-07-29", "fosforo": null, "id": 58, "info": null, "latitude": -3.17959092544, "longitude": -40.4458464533, "nitrogenio": null, "nome": "Tucunduba", "ponto": "TUC-01", "profundidade": 1.7, "regiao_hidrografica": "Corea\u00fa"}}, {"reservatorio": {"cianobacteria": 198213.0, "classe": 3, "clorofila": null, "data": "2026-09-10", "fosforo": null, "id": 97, "info": null, "latitude": -4.56489990367, "longitude": -38.932369564, "nitrogenio": null, "nome": "Castro", "ponto": "CAS-11", "profundidade": 0.7, "regiao_hidrografica": "Metropolitana"}}, {"reservatorio": {"cianobacteria": 34924.0, "classe": 2, "clorofila": null, "data": "2026-08-26", "fosforo": null, "id": 177, "info": null, "latitude": -6.59658743945, "longitude": -40.1392436122, "nitrogenio": null, "nome": "Bengu\u00ea", "ponto": "BEN-01", "profundidade": 2.6, "regiao_hidrografica": "Alto Jaguaribe"}}, {"reservatorio": {"cianobacteria": 207652.0, "classe": 3, "clorofila": null, "data": "2026-08-18", "fosforo": null, "id": 53, "info": null, "latitude": -5.28008132502, "longitude": -40.668200617, "nitrogenio": null, "nome": "Carnaubal", "ponto": "CRN-01", "profundidade": 0.65, "regiao_hidrografica": "Sert\u00f5es de Crate\u00fas"}}, {"reservatorio": {"cianobacteria": 56633.0, "classe": 2, "clorofila": null, "data": "2026-08-11", "fosforo": null, "id": 212, "info": null, "latitude": -5.6257164369237, "longitude": -38.257198698736, "nitrogenio": null, "nome": "Figueiredo", "ponto": "FIG-01", "profundidade": 2.3, "regiao_hidrografica": "M\u00e9dio Jaguaribe"}}, {"reservatorio": {"cianobacteria": 136273.0, "classe": 3, "clorofila": null, "data": "2026-08-13", "fosforo": null, "id": 234, "info": null, "latitude": -4.40220028355, "longitude": -38.6957249782, "nitrogenio": null, "nome": "Aracoiaba", "ponto": "ARC-10", "profundidade": 1.1, "regiao_hidrografica": "Metropolitana"}}, {"reservatorio": {"cianobacteria": 213552.0, "classe": 3, "clorofila": null, "data": "2026-08-07", "fosforo": null, "id": 65, "info": null, "latitude": -4.81667052184, "longitude": -40.361733153, "nitrogenio": null, "nome": "Car\u00e3o", "ponto": "CRO-02", "profundidade": 0.5, "regiao_hidrografica": "Acara\u00fa"}}, {"reservatorio": {"cianobacteria": 75038.0, "classe": 2, "clorofila": null, "data": "2026-07-22", "fosforo": null, "id": 190, "info": null, "latitude": -7.029354, "longitude": -39.28301, "nitrogenio": null, "nome": "S\u00e3o Domingos II", "ponto": "SD2-01", "profundidade": 0.9, "regiao_hidrografica": "Salgado"}}, {"reservatorio": {"cianobacteria": 28316.0, "classe": 2, "clorofila": null, "data": "2026-08-12", "fosforo": null, "id": 213, "info": null, "latitude": -3.562631, "longitude": -40.441178, "nitrogenio": null, "nome": "Jenipapo", "ponto": "JEP-01", "profundidade": 3.8, "regiao_hidrografica": "Acara\u00fa"}}, {"reservatorio": {"cianobacteria": 339795.0, "classe": 3, "clorofila": null, "data": "2026-07-07", "fosforo": null, "id": 95, "info": null, "latitude": -3.905961845, "longitude": -38.5553424, "nitrogenio": null, "nome": "Gavi\u00e3o", "ponto": "GAV-05", "profundidade": 0.8, "regiao_hidrografica": "Metropolitana"}}, {"reservatorio": {"cianobacteria": 25484.0, "classe": 2, "clorofila": null, "data": "2026-07-15", "fosforo": null, "id": 3, "info": null, "latitude": -3.74191444021, "longitude": -39.3553731239, "nitrogenio": null, "nome": "Caxitor\u00e9", "ponto": "CAX-01", "profundidade": 1.98, "regiao_hidrografica": "Curu"}}, {"reservatorio": {"cianobacteria": 44598.0, "classe": 2, "clorofila": null, "data": "2026-07-09", "fosforo": null, "id": 68, "info": null, "latitude": -6.084822, "longitude": -39.454306, "nitrogenio": null, "nome": "Quinco\u00e9", "ponto": "QUI-01", "profundidade": 1.1, "regiao_hidrografica": "Alto Jaguaribe"}}, {"reservatorio": {"cianobacteria": 196444.0, "classe": 3, "clorofila": null, "data": "2026-07-08", "fosforo": null, "id": 92, "info": null, "latitude": -3.97597115391, "longitude": -39.5059762591, "nitrogenio": null, "nome": "Teju\u00e7uoca", "ponto": "TEJ-01", "profundidade": 0.89, "regiao_hidrografica": "Curu"}}, {"reservatorio": {"cianobacteria": 19232.0, "classe": 3, "clorofila": null, "data": "2026-08-26", "fosforo": null, "id": 1124, "info": null, "latitude": -3.8774, "longitude": -38.6493, "nitrogenio": null, "nome": "Maranguapinho", "ponto": "01/03/2026", "profundidade": 0.2, "regiao_hidrografica": "Metropolitana"}}, {"reservatorio": {"cianobacteria": 192904.0, "classe": 3, "clorofila": null, "data": "2026-08-10", "fosforo": null, "id": 51, "info": null, "latitude": -3.79604357192, "longitude": -40.2535632298, "nitrogenio": null, "nome": "Forquilha", "ponto": "FOR-01", "profundidade": 1.2, "regiao_hidrografica": "Acara\u00fa"}}, {"reservatorio": {"cianobacteria": 132142.0, "classe": 3, "clorofila": null, "data": "2026-08-18", "fosforo": null, "id": 54, "info": null, "latitude": -5.260969, "longitude": -40.806474, "nitrogenio": null, "nome": "Realejo", "ponto": "REA-01", "profundidade": 0.7, "regiao_hidrografica": "Sert\u00f5es de Crate\u00fas"}}, {"reservatorio": {"cianobacteria": 13627.0, "classe": 1, "clorofila": null, "data": "2026-07-09", "fosforo": null, "id": 75, "info": null, "latitude": -6.415912, "longitude": -39.08259, "nitrogenio": null, "nome": "Tatajuba", "ponto": "TAT-01", "profundidade": 1.3, "regiao_hidrografica": "Salgado"}}, {"reservatorio": {"cianobacteria": 369881.0, "classe": 3, "clorofila": null, "data": "2026-08-20", "fosforo": null, "id": 161, "info": null, "latitude": -4.809093, "longitude": -40.012494, "nitrogenio": null, "nome": "Monsenhor Tabosa", "ponto": "MNT-01", "profundidade": 0.4, "regiao_hidrografica": "Banabui\u00fa"}}];
+    </script>
+    <script type="module" src="/static/dist/js/menu-content/reservatorios/qualidade-acude-eutrofizacao/qualidade-acude-eutrofizacao.js"></script>
+    <script type="module" src="/static/dist/js/menu-content/reservatorios/qualidade-acude-eutrofizacao/dados-anuais-eutrofizacao.js"></script>
+    <script src="/static/plugins/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="/static/plugins/jspdf/2.5.1/jspdf.plugin.autotable.min.js"></script>
+    <script src="/static/plugins/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+    <script src="/static/plugins/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="/static/plugins/jszip/3.10.1/jszip.min.js"></script>
+    <script src="/static/plugins/select2/select2.min.js"></script>
+
+
+<div id="popup_icon"></div>
+<div id="popup_mouse_over"></div>
+
+<div id="ferramentas" class="btn-group" role="group" style="position: absolute; top: 260px; right: 25px; z-index: 1;">
+    <div class="input-append date pull-right" style="margin-bottom: 0; height: 10px;">
+        <form action="/acude/eutrofizacao" id="data-form" method="GET">
+            <div class="input-append date" title="">
+                <select class="text-center" style="width: 100px; height: 30px; border-radius: 4px;" name="campanha" id="campanha">
+                    
+                     <option value="AGO/2026" >AGO/2026</option>
+                    
+                     <option value="MAI/2026" >MAI/2026</option>
+                    
+                     <option value="FEV/2026" >FEV/2026</option>
+                    
+                     <option value="NOV/2025" >NOV/2025</option>
+                    
+                     <option value="AGO/2025" >AGO/2025</option>
+                    
+                     <option value="MAI/2025" >MAI/2025</option>
+                    
+                     <option value="FEV/2025" >FEV/2025</option>
+                    
+                     <option value="NOV/2024" >NOV/2024</option>
+                    
+                     <option value="AGO/2024" >AGO/2024</option>
+                    
+                     <option value="MAI/2024" >MAI/2024</option>
+                    
+                     <option value="FEV/2024" >FEV/2024</option>
+                    
+                     <option value="NOV/2023" >NOV/2023</option>
+                    
+                     <option value="AGO/2023" >AGO/2023</option>
+                    
+                     <option value="MAI/2023" >MAI/2023</option>
+                    
+                     <option value="FEV/2023" >FEV/2023</option>
+                    
+                     <option value="NOV/2022" >NOV/2022</option>
+                    
+                     <option value="AGO/2022" >AGO/2022</option>
+                    
+                     <option value="MAI/2022" >MAI/2022</option>
+                    
+                     <option value="FEV/2022" >FEV/2022</option>
+                    
+                     <option value="NOV/2021" >NOV/2021</option>
+                    
+                     <option value="AGO/2021" >AGO/2021</option>
+                    
+                     <option value="MAI/2021" >MAI/2021</option>
+                    
+                     <option value="FEV/2021" >FEV/2021</option>
+                    
+                     <option value="NOV/2020" >NOV/2020</option>
+                    
+                     <option value="AGO/2020" >AGO/2020</option>
+                    
+                     <option value="MAI/2020" >MAI/2020</option>
+                    
+                     <option value="FEV/2020" >FEV/2020</option>
+                    
+                     <option value="NOV/2019" >NOV/2019</option>
+                    
+                     <option value="AGO/2019" >AGO/2019</option>
+                    
+                     <option value="MAI/2019" >MAI/2019</option>
+                    
+                     <option value="FEV/2019" >FEV/2019</option>
+                    
+                     <option value="NOV/2018" >NOV/2018</option>
+                    
+                     <option value="AGO/2018" >AGO/2018</option>
+                    
+                     <option value="MAI/2018" >MAI/2018</option>
+                    
+                     <option value="FEV/2018" >FEV/2018</option>
+                    
+                     <option value="NOV/2017" >NOV/2017</option>
+                    
+                     <option value="AGO/2017" >AGO/2017</option>
+                    
+                     <option value="MAI/2017" >MAI/2017</option>
+                    
+                     <option value="FEV/2017" >FEV/2017</option>
+                    
+                     <option value="NOV/2016" >NOV/2016</option>
+                    
+                     <option value="AGO/2016" >AGO/2016</option>
+                    
+                     <option value="MAI/2016" >MAI/2016</option>
+                    
+                     <option value="FEV/2016" >FEV/2016</option>
+                    
+                     <option value="NOV/2015" >NOV/2015</option>
+                    
+                     <option value="AGO/2015" >AGO/2015</option>
+                    
+                     <option value="MAI/2015" >MAI/2015</option>
+                    
+                     <option value="FEV/2015" >FEV/2015</option>
+                    
+                     <option value="NOV/2014" >NOV/2014</option>
+                    
+                     <option value="AGO/2014" >AGO/2014</option>
+                    
+                     <option value="MAI/2014" >MAI/2014</option>
+                    
+                     <option value="FEV/2014" >FEV/2014</option>
+                    
+                     <option value="NOV/2013" >NOV/2013</option>
+                    
+                     <option value="AGO/2013" >AGO/2013</option>
+                    
+                     <option value="MAI/2013" >MAI/2013</option>
+                    
+                     <option value="FEV/2013" >FEV/2013</option>
+                    
+                     <option value="NOV/2012" >NOV/2012</option>
+                    
+                     <option value="AGO/2012" >AGO/2012</option>
+                    
+                     <option value="MAI/2012" >MAI/2012</option>
+                    
+                     <option value="FEV/2012" >FEV/2012</option>
+                    
+                     <option value="NOV/2011" >NOV/2011</option>
+                    
+                     <option value="AGO/2011" >AGO/2011</option>
+                    
+                     <option value="MAI/2011" >MAI/2011</option>
+                    
+                     <option value="FEV/2011" >FEV/2011</option>
+                    
+                     <option value="NOV/2010" >NOV/2010</option>
+                    
+                     <option value="AGO/2010" >AGO/2010</option>
+                    
+                     <option value="MAI/2010" >MAI/2010</option>
+                    
+                     <option value="FEV/2010" >FEV/2010</option>
+                    
+                     <option value="NOV/2009" >NOV/2009</option>
+                    
+                     <option value="AGO/2009" >AGO/2009</option>
+                    
+                     <option value="MAI/2009" >MAI/2009</option>
+                    
+                     <option value="FEV/2009" >FEV/2009</option>
+                    
+                     <option value="NOV/2008" >NOV/2008</option>
+                    
+                     <option value="AGO/2008" >AGO/2008</option>
+                    
+                     <option value="MAI/2008" >MAI/2008</option>
+                    
+                     <option value="FEV/2008" >FEV/2008</option>
+                    
+                </select>
+            </div>
+        </form>
+    </div>
+    <a href="#" id="detalhe-campanha" class="btn btn-sm btn-outline-secondary" title="Detalhe Campanha"
+        style="background-color: #FCFCFC; border-radius: 4px; border-color: gray; width: 35px; background-image: linear-gradient(to bottom,#fff,#e6e6e6);">
+        <i class="fa-xs fa-solid fa-eye"></i>
+    </a>
+    <a href="/documentos/152" tabindex="-1" id="relatorio-eutrofizacao" class="btn btn-sm btn-outline-secondary" title="Relatório"
+        style="background-color: #FCFCFC; border-radius: 4px; border-color: gray; width: 35px; background-image: linear-gradient(to bottom,#fff,#e6e6e6);">
+        <i class="fa-xs fa-solid fa-file"></i>
+    </a>
+    <a href="#" id="ajuda" class="btn btn-sm btn-outline-secondary" title="Ajuda"
+        style="background-color: #FCFCFC; border-radius: 4px; border-color: gray; width: 35px; background-image: linear-gradient(to bottom,#fff,#e6e6e6);">
+        <i class="fa-xs fa-solid fa-info-circle"></i>
+    </a>
+</div>
+
+<fieldset id="detalhe_fieldset">
+    <div style="text-align:center">
+        <form class="d-flex ms-auto justify-content-between">
+            <div class="input-group" style="right: 20px; left: 0; width: 230px;">
+                    <select class="text-center" style="width: 100%; height: 30px; border-radius: 4px; background-color: #fff;" name="acude" id="acude-eutrofizacao" >
+                        <option value="" selected>TODOS</option>
+                        
+                            <option value="Acarape do Meio" data-id="78"
+                            data-lat="-4.19354599542" data-lon="-38.7993848299">
+                            Acarape do Meio
+                        </option>
+                        
+                            <option value="Acaraú Mirim" data-id="1"
+                            data-lat="-3.5058917892" data-lon="-40.278364501">
+                            Acaraú Mirim
+                        </option>
+                        
+                            <option value="Adauto Bezerra" data-id="32"
+                            data-lat="-6.037778" data-lon="-38.447193">
+                            Adauto Bezerra
+                        </option>
+                        
+                            <option value="Amanary" data-id="45"
+                            data-lat="-4.01262168678" data-lon="-38.8837233213">
+                            Amanary
+                        </option>
+                        
+                            <option value="Amarelas" data-id="228"
+                            data-lat="-4.45326" data-lon="-38.04188">
+                            Amarelas
+                        </option>
+                        
+                            <option value="Angicos" data-id="112"
+                            data-lat="-3.63564653661" data-lon="-40.8204151777">
+                            Angicos
+                        </option>
+                        
+                            <option value="Aracoiaba" data-id="234"
+                            data-lat="-4.40220028355" data-lon="-38.6957249782">
+                            Aracoiaba
+                        </option>
+                        
+                            <option value="Araras" data-id="31"
+                            data-lat="-4.20951501641" data-lon="-40.4485984244">
+                            Araras
+                        </option>
+                        
+                            <option value="Arneiroz II" data-id="240"
+                            data-lat="-6.27146638594" data-lon="-40.220220464">
+                            Arneiroz II
+                        </option>
+                        
+                            <option value="Arrebita" data-id="83"
+                            data-lat="-3.85306388499" data-lon="-40.2707202921">
+                            Arrebita
+                        </option>
+                        
+                            <option value="Atalho" data-id="47"
+                            data-lat="-7.641854" data-lon="-38.894554">
+                            Atalho
+                        </option>
+                        
+                            <option value="Ayres de Sousa" data-id="49"
+                            data-lat="-3.77962049329" data-lon="-40.4978967562">
+                            Ayres de Sousa
+                        </option>
+                        
+                            <option value="Banabuiú" data-id="2"
+                            data-lat="-5.32859467909" data-lon="-38.9223710722">
+                            Banabuiú
+                        </option>
+                        
+                            <option value="Batente" data-id="173"
+                            data-lat="-4.651008" data-lon="-38.48875">
+                            Batente
+                        </option>
+                        
+                            <option value="Benguê" data-id="177"
+                            data-lat="-6.59658743945" data-lon="-40.1392436122">
+                            Benguê
+                        </option>
+                        
+                            <option value="Cachoeira" data-id="170"
+                            data-lat="-6.990421" data-lon="-39.017881">
+                            Cachoeira
+                        </option>
+                        
+                            <option value="Caldeirões" data-id="217"
+                            data-lat="-6.53" data-lon="-39.917">
+                            Caldeirões
+                        </option>
+                        
+                            <option value="Canafístula" data-id="74"
+                            data-lat="-5.86834198717" data-lon="-38.3179973854">
+                            Canafístula
+                        </option>
+                        
+                            <option value="Capitão Mor" data-id="33"
+                            data-lat="-5.626210128" data-lon="-39.99916198">
+                            Capitão Mor
+                        </option>
+                        
+                            <option value="Carmina" data-id="236"
+                            data-lat="-4.66645336177" data-lon="-40.2019816973">
+                            Carmina
+                        </option>
+                        
+                            <option value="Carnaubal" data-id="53"
+                            data-lat="-5.28008132502" data-lon="-40.668200617">
+                            Carnaubal
+                        </option>
+                        
+                            <option value="Carão" data-id="65"
+                            data-lat="-4.81667052184" data-lon="-40.361733153">
+                            Carão
+                        </option>
+                        
+                            <option value="Castanhão" data-id="194"
+                            data-lat="-5.48909482144" data-lon="-38.4502293061">
+                            Castanhão
+                        </option>
+                        
+                            <option value="Castro" data-id="97"
+                            data-lat="-4.56489990367" data-lon="-38.932369564">
+                            Castro
+                        </option>
+                        
+                            <option value="Catucinzenta" data-id="223"
+                            data-lat="-4.02183311314" data-lon="-38.4369544335">
+                            Catucinzenta
+                        </option>
+                        
+                            <option value="Cauhipe" data-id="158"
+                            data-lat="-3.73934463276" data-lon="-38.8683396159">
+                            Cauhipe
+                        </option>
+                        
+                            <option value="Caxitoré" data-id="3"
+                            data-lat="-3.74191444021" data-lon="-39.3553731239">
+                            Caxitoré
+                        </option>
+                        
+                            <option value="Cedro" data-id="4"
+                            data-lat="-4.97772872522" data-lon="-39.0631731394">
+                            Cedro
+                        </option>
+                        
+                            <option value="Cipoada" data-id="84"
+                            data-lat="-5.26185481392" data-lon="-38.6457784847">
+                            Cipoada
+                        </option>
+                        
+                            <option value="Colina" data-id="133"
+                            data-lat="-5.840381" data-lon="-40.712804">
+                            Colina
+                        </option>
+                        
+                            <option value="Cupim" data-id="34"
+                            data-lat="-5.3933069733739" data-lon="-40.301177404304">
+                            Cupim
+                        </option>
+                        
+                            <option value="Curral Velho" data-id="197"
+                            data-lat="-5.083883" data-lon="-38.305097">
+                            Curral Velho
+                        </option>
+                        
+                            <option value="Diamante" data-id="60"
+                            data-lat="-3.59921740221" data-lon="-40.8636571293">
+                            Diamante
+                        </option>
+                        
+                            <option value="Diamantino II" data-id="215"
+                            data-lat="-3.154383" data-lon="-40.364018">
+                            Diamantino II
+                        </option>
+                        
+                            <option value="Edson Queiroz" data-id="5"
+                            data-lat="-4.21537241249" data-lon="-40.0665698637">
+                            Edson Queiroz
+                        </option>
+                        
+                            <option value="Ema" data-id="30"
+                            data-lat="-5.77632884496" data-lon="-38.3449743134">
+                            Ema
+                        </option>
+                        
+                            <option value="Facundo" data-id="208"
+                            data-lat="-6.304448" data-lon="-40.676041">
+                            Facundo
+                        </option>
+                        
+                            <option value="Farias de Sousa" data-id="59"
+                            data-lat="-4.76698183204" data-lon="-40.5824805724">
+                            Farias de Sousa
+                        </option>
+                        
+                            <option value="Faé" data-id="239"
+                            data-lat="-6.160069" data-lon="-39.219267">
+                            Faé
+                        </option>
+                        
+                            <option value="Figueiredo" data-id="212"
+                            data-lat="-5.6257164369237" data-lon="-38.257198698736">
+                            Figueiredo
+                        </option>
+                        
+                            <option value="Flor do Campo" data-id="172"
+                            data-lat="-5.57067277258" data-lon="-40.6717961812">
+                            Flor do Campo
+                        </option>
+                        
+                            <option value="Fogareiro" data-id="119"
+                            data-lat="-5.16690241966" data-lon="-39.4913777371">
+                            Fogareiro
+                        </option>
+                        
+                            <option value="Forquilha" data-id="51"
+                            data-lat="-3.79604357192" data-lon="-40.2535632298">
+                            Forquilha
+                        </option>
+                        
+                            <option value="Frios" data-id="77"
+                            data-lat="-3.69046238001" data-lon="-39.295427951">
+                            Frios
+                        </option>
+                        
+                            <option value="Gameleira" data-id="210"
+                            data-lat="-3.3713896732337" data-lon="-39.492505583781">
+                            Gameleira
+                        </option>
+                        
+                            <option value="Gangorra" data-id="169"
+                            data-lat="-3.16831720221" data-lon="-40.8614034371">
+                            Gangorra
+                        </option>
+                        
+                            <option value="Gavião" data-id="95"
+                            data-lat="-3.905961845" data-lon="-38.5553424">
+                            Gavião
+                        </option>
+                        
+                            <option value="General Sampaio" data-id="7"
+                            data-lat="-4.06243387754" data-lon="-39.4537367839">
+                            General Sampaio
+                        </option>
+                        
+                            <option value="Germinal" data-id="205"
+                            data-lat="-4.181292" data-lon="-38.865006">
+                            Germinal
+                        </option>
+                        
+                            <option value="Itapajé" data-id="211"
+                            data-lat="-3.6743394493979" data-lon="-39.574599028008">
+                            Itapajé
+                        </option>
+                        
+                            <option value="Itapebussu" data-id="244"
+                            data-lat="-4.059148" data-lon="-38.903176">
+                            Itapebussu
+                        </option>
+                        
+                            <option value="Itaúna" data-id="180"
+                            data-lat="-3.15241157107" data-lon="-41.1672940639">
+                            Itaúna
+                        </option>
+                        
+                            <option value="Jaburu I" data-id="69"
+                            data-lat="-3.86508767029" data-lon="-41.1133035668">
+                            Jaburu I
+                        </option>
+                        
+                            <option value="Jaburu II" data-id="52"
+                            data-lat="-5.41692977208" data-lon="-40.4790214295">
+                            Jaburu II
+                        </option>
+                        
+                            <option value="Jatobá II" data-id="216"
+                            data-lat="-4.59" data-lon="-40.743">
+                            Jatobá II
+                        </option>
+                        
+                            <option value="Jenipapeiro" data-id="171"
+                            data-lat="-5.81315115414" data-lon="-39.2474835705">
+                            Jenipapeiro
+                        </option>
+                        
+                            <option value="Jenipapeiro II" data-id="1120"
+                            data-lat="-6.672764" data-lon="-38.755099">
+                            Jenipapeiro II
+                        </option>
+                        
+                            <option value="Jenipapo" data-id="213"
+                            data-lat="-3.562631" data-lon="-40.441178">
+                            Jenipapo
+                        </option>
+                        
+                            <option value="Jerimum" data-id="121"
+                            data-lat="-3.83753285061" data-lon="-39.6896801289">
+                            Jerimum
+                        </option>
+                        
+                            <option value="Joaquim Távora" data-id="28"
+                            data-lat="-5.94905457118" data-lon="-38.8304650715">
+                            Joaquim Távora
+                        </option>
+                        
+                            <option value="José Barbosa Filho (Umari)" data-id="191"
+                            data-lat="-4.809116" data-lon="-39.551388">
+                            José Barbosa Filho (Umari)
+                        </option>
+                        
+                            <option value="João Luís" data-id="147"
+                            data-lat="-7.080531357019" data-lon="-40.177232052265">
+                            João Luís
+                        </option>
+                        
+                            <option value="Lima Campos" data-id="63"
+                            data-lat="-6.402325" data-lon="-38.956848">
+                            Lima Campos
+                        </option>
+                        
+                            <option value="Macacos" data-id="199"
+                            data-lat="-4.799747" data-lon="-38.709306">
+                            Macacos
+                        </option>
+                        
+                            <option value="Malcozinhado" data-id="235"
+                            data-lat="-4.10582877875" data-lon="-38.2890791497">
+                            Malcozinhado
+                        </option>
+                        
+                            <option value="Mamoeiro" data-id="201"
+                            data-lat="-6.788675" data-lon="-40.0651">
+                            Mamoeiro
+                        </option>
+                        
+                            <option value="Manoel Balbino" data-id="8"
+                            data-lat="-7.10729145731" data-lon="-39.3292996457">
+                            Manoel Balbino
+                        </option>
+                        
+                            <option value="Maranguapinho" data-id="1124"
+                            data-lat="-3.8774" data-lon="-38.6493">
+                            Maranguapinho
+                        </option>
+                        
+                            <option value="Margarida de Morais Queiroz (Pirabibu)" data-id="167"
+                            data-lat="-4.98075408108" data-lon="-39.3657924914">
+                            Margarida de Morais Queiroz (Pirabibu)
+                        </option>
+                        
+                            <option value="Martinópole" data-id="126"
+                            data-lat="-3.23703261442" data-lon="-40.6162092689">
+                            Martinópole
+                        </option>
+                        
+                            <option value="Melancia" data-id="405"
+                            data-lat="-3.692837" data-lon="-39.216622">
+                            Melancia
+                        </option>
+                        
+                            <option value="Missi" data-id="1119"
+                            data-lat="-3.471698" data-lon="-39.858824">
+                            Missi
+                        </option>
+                        
+                            <option value="Monsenhor Tabosa" data-id="161"
+                            data-lat="-4.809093" data-lon="-40.012494">
+                            Monsenhor Tabosa
+                        </option>
+                        
+                            <option value="Mundaú" data-id="61"
+                            data-lat="-3.633621" data-lon="-39.516132">
+                            Mundaú
+                        </option>
+                        
+                            <option value="Nova Floresta" data-id="26"
+                            data-lat="-5.949263" data-lon="-38.907803">
+                            Nova Floresta
+                        </option>
+                        
+                            <option value="Olho d&#39;Água" data-id="155"
+                            data-lat="-6.78888346631" data-lon="-39.3753014774">
+                            Olho d&#39;Água
+                        </option>
+                        
+                            <option value="Orós" data-id="9"
+                            data-lat="-6.2381264298" data-lon="-38.9250093577">
+                            Orós
+                        </option>
+                        
+                            <option value="Pacajus" data-id="80"
+                            data-lat="-4.22225681679" data-lon="-38.3838534079">
+                            Pacajus
+                        </option>
+                        
+                            <option value="Pacoti" data-id="88"
+                            data-lat="-4.03602241472" data-lon="-38.5333114066">
+                            Pacoti
+                        </option>
+                        
+                            <option value="Parambu" data-id="89"
+                            data-lat="-6.202115" data-lon="-40.711288">
+                            Parambu
+                        </option>
+                        
+                            <option value="Patos" data-id="56"
+                            data-lat="-3.761444" data-lon="-40.036497">
+                            Patos
+                        </option>
+                        
+                            <option value="Patu" data-id="10"
+                            data-lat="-5.58186998208" data-lon="-39.4023005082">
+                            Patu
+                        </option>
+                        
+                            <option value="Pau Preto" data-id="148"
+                            data-lat="-7.081014" data-lon="-40.084615">
+                            Pau Preto
+                        </option>
+                        
+                            <option value="Pedras Brancas" data-id="11"
+                            data-lat="-5.14985135743" data-lon="-38.8777544386">
+                            Pedras Brancas
+                        </option>
+                        
+                            <option value="Penedo" data-id="179"
+                            data-lat="-3.970682" data-lon="-38.744555">
+                            Penedo
+                        </option>
+                        
+                            <option value="Pentecoste" data-id="12"
+                            data-lat="-3.80330004105" data-lon="-39.2616481781">
+                            Pentecoste
+                        </option>
+                        
+                            <option value="Pesqueiro" data-id="192"
+                            data-lat="-4.444447" data-lon="-38.961082">
+                            Pesqueiro
+                        </option>
+                        
+                            <option value="Pompeu Sobrinho" data-id="13"
+                            data-lat="-4.83834625589" data-lon="-39.1409573634">
+                            Pompeu Sobrinho
+                        </option>
+                        
+                            <option value="Potiretama" data-id="82"
+                            data-lat="-5.7228775" data-lon="-38.1681776">
+                            Potiretama
+                        </option>
+                        
+                            <option value="Poço da Pedra" data-id="27"
+                            data-lat="-6.98372899185" data-lon="-40.3559822646">
+                            Poço da Pedra
+                        </option>
+                        
+                            <option value="Poço do Barro" data-id="67"
+                            data-lat="-5.38257288767" data-lon="-38.4595984652">
+                            Poço do Barro
+                        </option>
+                        
+                            <option value="Poço Verde" data-id="90"
+                            data-lat="-3.43872126279" data-lon="-39.6295223261">
+                            Poço Verde
+                        </option>
+                        
+                            <option value="Prazeres" data-id="14"
+                            data-lat="-7.10901972051" data-lon="-38.6829425533">
+                            Prazeres
+                        </option>
+                        
+                            <option value="Premuoca" data-id="62"
+                            data-lat="-3.31937079269" data-lon="-40.554447325">
+                            Premuoca
+                        </option>
+                        
+                            <option value="Quandú" data-id="79"
+                            data-lat="-3.573526" data-lon="-39.629007">
+                            Quandú
+                        </option>
+                        
+                            <option value="Quincoé" data-id="68"
+                            data-lat="-6.084822" data-lon="-39.454306">
+                            Quincoé
+                        </option>
+                        
+                            <option value="Quixabinha" data-id="15"
+                            data-lat="-7.501992" data-lon="-38.747302">
+                            Quixabinha
+                        </option>
+                        
+                            <option value="Quixeramobim" data-id="16"
+                            data-lat="-5.19828377485" data-lon="-39.3127774588">
+                            Quixeramobim
+                        </option>
+                        
+                            <option value="Realejo" data-id="54"
+                            data-lat="-5.260969" data-lon="-40.806474">
+                            Realejo
+                        </option>
+                        
+                            <option value="Riacho da Serra" data-id="186"
+                            data-lat="-5.562632" data-lon="-38.325225">
+                            Riacho da Serra
+                        </option>
+                        
+                            <option value="Riacho do Sangue" data-id="17"
+                            data-lat="-5.69373683323" data-lon="-38.9506399185">
+                            Riacho do Sangue
+                        </option>
+                        
+                            <option value="Riachão" data-id="117"
+                            data-lat="-4.00099902774" data-lon="-38.5231717263">
+                            Riachão
+                        </option>
+                        
+                            <option value="Rivaldo de Carvalho" data-id="174"
+                            data-lat="-6.27222899396" data-lon="-39.9331061101">
+                            Rivaldo de Carvalho
+                        </option>
+                        
+                            <option value="Rosário" data-id="181"
+                            data-lat="-6.88895926968" data-lon="-39.0810678932">
+                            Rosário
+                        </option>
+                        
+                            <option value="Salão" data-id="18"
+                            data-lat="-4.4069701" data-lon="-39.3111742">
+                            Salão
+                        </option>
+                        
+                            <option value="Santa Maria" data-id="166"
+                            data-lat="-5.965648" data-lon="-38.276387">
+                            Santa Maria
+                        </option>
+                        
+                            <option value="Santo Antônio" data-id="233"
+                            data-lat="-5.890459" data-lon="-38.411789">
+                            Santo Antônio
+                        </option>
+                        
+                            <option value="Santo Antônio de Aracatiaçu" data-id="50"
+                            data-lat="-3.88220245137" data-lon="-40.0124731184">
+                            Santo Antônio de Aracatiaçu
+                        </option>
+                        
+                            <option value="Santo Antônio de Russas" data-id="19"
+                            data-lat="-4.85195462398" data-lon="-38.1657398571">
+                            Santo Antônio de Russas
+                        </option>
+                        
+                            <option value="Serafim Dias" data-id="99"
+                            data-lat="-5.72847965121" data-lon="-39.6472365319">
+                            Serafim Dias
+                        </option>
+                        
+                            <option value="Sitios Novos" data-id="159"
+                            data-lat="-3.77127334573" data-lon="-38.9597828672">
+                            Sitios Novos
+                        </option>
+                        
+                            <option value="Sobral" data-id="22"
+                            data-lat="-3.65705" data-lon="-40.365556">
+                            Sobral
+                        </option>
+                        
+                            <option value="São Domingos" data-id="141"
+                            data-lat="-4.220286" data-lon="-39.283268">
+                            São Domingos
+                        </option>
+                        
+                            <option value="São Domingos II" data-id="190"
+                            data-lat="-7.029354" data-lon="-39.28301">
+                            São Domingos II
+                        </option>
+                        
+                            <option value="São José I" data-id="39"
+                            data-lat="-5.195816" data-lon="-39.601225">
+                            São José I
+                        </option>
+                        
+                            <option value="São José II" data-id="85"
+                            data-lat="-5.083883" data-lon="-39.305097">
+                            São José II
+                        </option>
+                        
+                            <option value="São José III" data-id="185"
+                            data-lat="-4.897313" data-lon="-40.77043">
+                            São José III
+                        </option>
+                        
+                            <option value="São Mateus" data-id="20"
+                            data-lat="-4.37069635174" data-lon="-39.3158692024">
+                            São Mateus
+                        </option>
+                        
+                            <option value="São Pedro Timbaúba" data-id="21"
+                            data-lat="-3.57161761888" data-lon="-39.9725210698">
+                            São Pedro Timbaúba
+                        </option>
+                        
+                            <option value="São Vicente" data-id="81"
+                            data-lat="-3.397075" data-lon="-40.263431">
+                            São Vicente
+                        </option>
+                        
+                            <option value="Taquara" data-id="254"
+                            data-lat="-3.896112" data-lon="-40.611118">
+                            Taquara
+                        </option>
+                        
+                            <option value="Tatajuba" data-id="75"
+                            data-lat="-6.415912" data-lon="-39.08259">
+                            Tatajuba
+                        </option>
+                        
+                            <option value="Tejuçuoca" data-id="92"
+                            data-lat="-3.97597115391" data-lon="-39.5059762591">
+                            Tejuçuoca
+                        </option>
+                        
+                            <option value="Thomás Osterne" data-id="23"
+                            data-lat="-7.09077807818" data-lon="-39.4869088371">
+                            Thomás Osterne
+                        </option>
+                        
+                            <option value="Tigre" data-id="111"
+                            data-lat="-5.889177" data-lon="-39.15382">
+                            Tigre
+                        </option>
+                        
+                            <option value="Tijuquinha" data-id="132"
+                            data-lat="-4.317856" data-lon="-38.894027">
+                            Tijuquinha
+                        </option>
+                        
+                            <option value="Trapiá II" data-id="96"
+                            data-lat="-5.50257888999" data-lon="-39.7366728894">
+                            Trapiá II
+                        </option>
+                        
+                            <option value="Trapiá III" data-id="129"
+                            data-lat="-3.730804" data-lon="-40.680701">
+                            Trapiá III
+                        </option>
+                        
+                            <option value="Trici" data-id="24"
+                            data-lat="-5.91533033329" data-lon="-40.413943243">
+                            Trici
+                        </option>
+                        
+                            <option value="Trussu" data-id="122"
+                            data-lat="-6.30829420879" data-lon="-39.433659842">
+                            Trussu
+                        </option>
+                        
+                            <option value="Tucunduba" data-id="58"
+                            data-lat="-3.17959092544" data-lon="-40.4458464533">
+                            Tucunduba
+                        </option>
+                        
+                            <option value="Ubaldinho" data-id="162"
+                            data-lat="-6.58385878059" data-lon="-39.2375639263">
+                            Ubaldinho
+                        </option>
+                        
+                            <option value="Vieirão" data-id="130"
+                            data-lat="-5.15679628805" data-lon="-39.7183924085">
+                            Vieirão
+                        </option>
+                        
+                            <option value="Várzea da Volta" data-id="70"
+                            data-lat="-3.50214320968" data-lon="-40.6146865971">
+                            Várzea da Volta
+                        </option>
+                        
+                    </select>
+            </div>
+            <span style="font-size:15px; margin-top: 10px;" id="detalhamento_title"><strong></strong></span>
+            <div class="d-flex justify-content-between">
+                <a href="#" id="fechar-detalhe" class="fa-solid fa-xmark " title="Fechar"><i class="icon-remove"></i></a>
+            </div>
+        </form>
+    </div>
+    <div style="border: 1px solid;"></div>
+    <div class="d-flex">
+    </div>
+    <div id="componente-detalhe-1" style="width: 100%;"></div>
+    <br>
+    <div id="componente-detalhe-2"> </div>
+    <br>
+    <div class="d-flex ms-auto justify-content-center">
+        <a id="detalhe-anual-eutrofizacao" class="btn btn-sm btn-outline-secondary" title="Detalhe Eutrofização"
+            style="background-color:#f5f5f5;border-radius: 4px; border-color: darkgray; width: 100px; color: blue; background-image: linear-gradient(to bottom,#fff,#e6e6e6);">
+            <i class="fa-xs fa-solid fa-eye" style="color: black;"></i>
+            Detalhes
+        </a>
+    </div>
+    <div id="componente-detalhe-3"></div>
+    <div style="font-size: 10px; text-align: center">
+        *<b>[PT]:</b> fósforo total(mg/L);
+        <b>cl@:</b> clorofila-a (µg/L);
+        <b>[Nt]:</b> Nitrogênio (mg/L);
+        <b>Cont.Cianob:</b> Cont. Cianobactérias (Cél/mL);
+        <b>Transp.:</b> Transparência (m).
+    </div>
+</fieldset>
+
+<fieldset id="info-fieldset">
+    <div id="text-i">
+        <div style="display: flex; flex-direction: row; float: right;">
+            <i class="fa-solid fa-arrows-up-down-left-right" title="Mover" style="margin-top: -10px;"></i>
+            <i id="fechar-info" class="fa-solid fa-xmark" title="Fechar"></i>
+        </div>
+        <p>Esta página permite acessar os dados de qualidade de água, relativo à eutrofização. Para produzir estes dados são realizadas campanhas de forma descentralizada, sendo os trabalhos de campo realizados pelas gerências regionais da Cogerh (Crateús, Crato, Fortaleza, Iguatu, Limoeiro do Norte, Pentecoste, Quixeramobim e Sobral) e as análises laboratoriais por laboratórios contratados.</p>
+        <p>Com raras exceções o ponto avaliado fica na região mais profunda do açude, relativamente próximo à barragem, sendo amostra de água coletada à uma profundidade de 30 cm.</p>
+        <p>Ao selecionar uma campanha automaticamente são apresentados os estados tróficos dos açudes analisados para a referida campanha. Caso o usuário queira visualizar o histórico de um determinado açude basta clicar no triângulo correspondente.</p>
+        <p>Caso o usuário queira ver o resultados detalhados da campanha basta clicar no respectivo botão <span class="btn btn-sm btn-outline-secondary" title="Detalhes estado trófico"><i id="i-detale-e-trofico" class="fa-xs fa-solid fa-eye"></i> <span class="text"></span></span></p>
+        <p>O estado trófico dos açudes é um importante indicador da qualidade da água armazenada nos açudes, sendo que os açudes classificados como oligotróficos apresentam uma melhor qualidade, enquanto que os açudes classificados como hipereutróficos apresentam um qualidade pior.
+            A eutrofização é o processo de deterioração da qualidade da água causada pela presença de nutrientes na coluna de água, que são substâncias oriundas de diversas fontes, como por exemplo o uso e ocupação do solo da bacia hidrográfica, efluentes de indústrias, efluentes de estações de tratamento de água e de esgoto, gado no entorno do açude, piscicultura no espelho de água.
+            Outro fator que desempenha importante papel na eutrofização é a intensidade da renovação da massa de água. Nos anos que os açudes tem reduzido aporte de água isto impacta em uma reduzida renovação da massa de água, que é prejudicial à qualidade da água.
+            A eutrofização pode trazer entre outras consequências um ecossistema desequilibrado, a intensa presença de plantas aquáticas, cor esverdeada, odor, mortandade de peixes e a maior intensidade de tratamento para tornar a água potável.
+            O processo de eutrofização diz respeito à água bruta e como tal para o consumo humano sempre é necessário o seu tratamento para torna-la potável e adequada para o consumo humano.</p>
+    </div>
+</fieldset>
+
+<div id="maisRecenteButton"></div>
+
+<div style="text-align: center; margin-bottom: 10px;">
+    <h5 style="font-size: 15px; font-weight: bold;">Sistema de Qualidades das Águas: Estado Trófico</h5>
+</div>
+
+<div id="loading" style="display: none;"></div>
+<div id="blocker" style="display: none;"></div>
+
+<fieldset class="div_legenda" style="position: absolute; z-index: 1;">
+    <div id="legenda">
+        <div class="content">Legenda: <i style="float: right;" class="fa-solid fa-arrows-up-down-left-right" title="Mover"></i></div>
+    </div>
+    <div style="border: 1px solid #000; margin-top: 2px; margin-bottom: 5px;"></div>
+        <div class="azulescuro ">
+            <img class="fui-fl" src="https://cdn.funceme.br/produtos/imagens/comuns/mapas/azul.png"/>
+            <div class="content">Oligotrófica</div>
+        </div>
+        <div class="verde2 ">
+            <img class="fui-fl" src="https://cdn.funceme.br/produtos/imagens/comuns/mapas/verde.png"/>
+            <div class="content">Mesotrófica</div>
+        </div>
+        <div class="amarelo2">
+            <img class="fui-fl" src="https://cdn.funceme.br/produtos/imagens/comuns/mapas/amarelo.png"/>
+            <div class="content">Eutrófica</div>
+        </div>
+        <div class="vermelho2">
+            <img class="fui-fl" src="https://cdn.funceme.br/produtos/imagens/comuns/mapas/vermelho.png"/>
+            <div class="content">Hipereutrófica</div>
+        </div>
+        <div class="roxo ">
+            <img class="fui-fl" src="https://cdn.funceme.br/produtos/imagens/comuns/mapas/branco.png"/>
+            <div class="content">N.I</div>
+        </div>
+</fieldset>
+
+
+
+    </div>
+
+    <style>
+    #hidro-ok {
+        background-color: #1a550b;
+        line-height: normal;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 13.33px;
+        color: #fff;
+        padding: 9px 20px;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+    }
+
+    #hidro-ok:hover {
+        background-color: #ffbd00;
+    }
+    .cc-cookies p {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 14px ;
+        line-height: 1.2em;
+        color: #FFF;
+    }
+
+</style>
+
+<div id="hidro-mensagem" class="cc-cookies" style="display:none; font-size:larger; justify-content:space-between; align-items:center; position:fixed; bottom:0; width:100%; background:#24a637; color:#fff; padding:15px; text-align:left; z-index:9999;">
+    <p id="hidro-texto" style="flex: 1;">
+    </p>
+    <button id="hidro-ok">OK</button>
+</div>
+
+<div id="survey-popup" style="display:none; position:fixed; inset:0; background:rgba(10, 25, 18, 0.52); backdrop-filter:blur(3px); -webkit-backdrop-filter:blur(3px); z-index:10000; align-items:center; justify-content:center; padding:20px;">
+    <div style="position:relative; width:min(440px, calc(100vw - 32px)); padding:26px 24px 22px; background:linear-gradient(180deg, #ffffff 0%, #f1faf3 100%); border:1px solid rgba(17, 128, 55, 0.18); border-radius:18px; box-shadow:0 24px 60px rgba(11, 35, 18, 0.22); text-align:center;">
+        <button id="survey-popup-close" type="button" aria-label="Fechar" style="position:absolute; top:10px; right:12px; width:32px; height:32px; border:0; border-radius:50%; background:rgba(107, 114, 128, 0.08); color:#4b5563; cursor:pointer; font-size:24px; line-height:1; transition:all 0.2s ease;">&times;</button>
+        <div style="display:flex; align-items:center; justify-content:center; width:68px; height:68px; margin:0 auto 18px; border-radius:50%; background:linear-gradient(135deg, #1da548 0%, #0f7a39 100%); box-shadow:0 12px 24px rgba(19, 138, 61, 0.28); color:#fff; font-size:30px; font-weight:700;">✓</div>
+        <p style="margin:0 0 10px; color:#1b2b1d; font-family:Verdana, Geneva, Tahoma, sans-serif; font-size:17px; line-height:1.5; font-weight:700;">Responda a pesquisa de satisfação.</p>
+        <p style="margin:0 0 18px; color:#4b5d50; font-family:Verdana, Geneva, Tahoma, sans-serif; font-size:13px; line-height:1.5;">Sua opinião ajuda a melhorar a experiência no portal hidrológico.</p>
+        <a href="https://www.cogerh.com.br/pesquisa/index.php?origem=portal_hidrologico" style="display:inline-block; padding:12px 22px; background:linear-gradient(135deg, #15913d 0%, #0d6d2e 100%); border-radius:999px; color:#fff; font-family:Verdana, Geneva, Tahoma, sans-serif; font-size:14px; font-weight:700; text-decoration:none; box-shadow:0 10px 18px rgba(10, 98, 42, 0.22); transition:transform 0.2s ease, box-shadow 0.2s ease;">
+            Responder pesquisa
+        </a>
+    </div>
+</div>
+
+<footer class="container" style="flex: 1; ">
+    <div  class="layout-content">
+        <p align="center">
+        Plataforma desenvolvida pela FUNCEME, integrando dados hidrológicos da COGERH e dados meteorológicos da FUNCEME - <span id="footer-year"></span>
+        </p>
+        <div style="text-align: center;">
+        <div style="display: inline-block; margin-top: 5px;">
+            <a href="https://play.google.com/store/apps/details?id=br.funceme.calendariochuvas" target="_blank">
+            <img src="/static/dist/img/google-play.png" alt="Google Play" width="100">
+            </a>
+        </div>
+        <div style="display: inline-block; margin-top: 5px">
+            <a href="https://apps.apple.com/br/app/calend%C3%A1rio-das-chuvas/id1062939881" target="_blank">
+            <img src="/static/dist/img/app-store.png" alt="App Store" width="100">
+            </a>
+        </div>
+        </div>
+        <p align="center">
+            <small>Dúvidas ou sugestões: <a target="_blank" href="http://www.funceme.br/?page_id=12268&id_origem=4">Clique Aqui</a></small>
+        </p>
+    </div>
+</footer>
+
+<script>
+    document.getElementById("footer-year").textContent = new Date().getFullYear();
+
+    document.addEventListener("DOMContentLoaded", function() {
+        const divMensagem = document.getElementById("hidro-mensagem");
+        const spanTexto = document.getElementById("hidro-texto");
+        const btnOk = document.getElementById("hidro-ok");
+
+        if (localStorage.getItem("hidro_mensagem_ok") === "1") return;
+
+        fetch("https://cdn.funceme.br/assets/json/cookies.json")
+            .then(response => response.json())
+            .then(data => {
+                spanTexto.innerText = data.mensagem;
+                divMensagem.style.display = "flex";
+            })
+            .catch(console.error);
+
+        btnOk.addEventListener("click", function() {
+            localStorage.setItem("hidro_mensagem_ok", "1");
+            divMensagem.style.display = "none";
+        });
+    });
+</script>
+
+  </body>
+
+</html>
