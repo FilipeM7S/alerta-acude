@@ -4,7 +4,7 @@
 
 > This project is a prototype. It does not replace laboratory testing of drinking water.
 
-**Main takeaway:** the colour of the water seen from space (Sentinel-2) is about as good as the last lab result at telling whether a reservoir is above the legal cyanobacteria limit. It is available every few days instead of every three months. But in our region blooms are the norm, and no method we tried is good at spotting the few clean reservoirs.
+**Main takeaway:** on two sets of future campaigns, the colour of the water seen from space (Sentinel-2) was about as good as the last lab result at telling whether a reservoir is above the legal cyanobacteria limit. It is available every few days instead of every three months. But in our region blooms are the norm, and no method we tried is good at spotting the few clean reservoirs.
 
 ## The problem
 
@@ -65,7 +65,7 @@ The chlorophyll index NDCI follows lab chlorophyll-a closely (Spearman 0.81), an
 
 There is no location or reservoir ID, so the model cannot memorise reservoirs.
 
-**Model:** logistic regression on standardized features. Its coefficients are the explanation. On validation it beat a small LightGBM (PR-AUC 0.951 vs 0.928), so we kept the simpler model. Explanations add related inputs together (both temperature windows, both rain windows, month + season), because they are strongly correlated (0.91 for temperature) and would otherwise give contradictory reasons.
+**Model:** logistic regression on standardized features. Its coefficients are the explanation. On validation it beat a small LightGBM (PR-AUC 0.951 vs 0.928), so we kept the simpler model. After Test 1, a pre-registered rule replaced it in the map with an even simpler version that uses only the 6 satellite and stored-water inputs (see Test 2). Explanations add related inputs together (both temperature windows, both rain windows, month + season), because they are strongly correlated (0.91 for temperature) and would otherwise give contradictory reasons.
 
 **Testing:** time split by campaign, never shuffled.
 
@@ -74,7 +74,7 @@ There is no location or reservoir ID, so the model cannot memorise reservoirs.
 | Train | 16 (May/2016 to Feb/2020) | 2016-05-09 to 2020-02-12 | 288 | 74% |
 | Validation | 5 (Aug/2020 to Aug/2021) | 2020-07-28 to 2021-09-14 | 142 | 92% |
 | Test 1 | 6 (Nov/2021 to Feb/2025) | 2021-10-05 to 2025-03-12 | 184 | 87% |
-| Test 2 (database only) | 6 (May/2025 to Aug/2026) | TEST2_DATES | TEST2_N | TEST2_SHARE |
+| Test 2 (database only) | 6 (May/2025 to Aug/2026) | 2025-04-03 to 2026-08-25 | 238 | 89% |
 
 The decision threshold is chosen on validation to catch at least 80% of blooms, because a missed bloom is worse than an extra sample.
 
@@ -109,9 +109,27 @@ The decision threshold is chosen on validation to catch at least 80% of blooms, 
 
 **Test 2 (pre-registered, six campaigns nobody had seen):**
 
-TEST2_RESULTS
+We wrote down a hypothesis and a rule before extracting anything (commit `50b694b`). The hypothesis: a model without the season and weather inputs ("B": satellite + stored water, 6 inputs) misses fewer dry-season blooms than the chosen model ("A"). The rule: the map uses B if its PR-AUC is within 0.02 of A's. The test covers 238 samples (89% blooms), with counts from COGERH's database only, because no PDF report exists for these campaigns yet.
 
-**Live map (Nov 2026):** LIVE_MAP
+| Method | Recall | Precision | Missed blooms | False alarms | PR-AUC | PR-AUC for *clean* water |
+|---|---|---|---|---|---|---|
+| Persistence (last lab result) | 0.93 | 0.94 | 16 | 13 | 0.975 | 0.435 |
+| NDCI > t | 0.93 | 0.92 | 15 | 17 | 0.980 | 0.371 |
+| A: logistic regression, 15 inputs | 0.83 | 0.94 | 37 | 11 | 0.958 | 0.269 |
+| **B: satellite + stored water, 6 inputs** | 0.86 | 0.95 | 29 | 10 | 0.972 | 0.380 |
+
+- **The hypothesis held.** In the dry-season campaigns, B missed 22 blooms and A missed 30. B also scored higher overall, so **the map uses B**.
+- **The last lab result is still not beaten.** The bootstrap 95% intervals for the difference with persistence include zero:
+  - B: −0.026 to +0.020;
+  - NDCI: −0.012 to +0.025.
+
+  In the dry season, persistence missed only 10 blooms.
+
+**Live map (14 Nov 2026, model B, `outputs/risk_map.html`):**
+- 49 of the 65 Jaguaribe-system reservoirs had a clear image between 24 Oct and 13 Nov; 16 had none.
+- **38 are on Alert and 11 are Lower risk.** Castanhão is on Alert, at 0.50.
+- Several "Lower risk" reservoirs had counts well above 20,000 at their last lab visit (Aug 2026). So the band means "can wait if capacity is short", not "safe", and the map says this is the season where the model under-warns.
+- NASA POWER sunlight was not yet published for the last days, but model B does not use weather.
 
 ## What we'd do next
 
