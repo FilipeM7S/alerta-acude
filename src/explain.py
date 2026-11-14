@@ -75,3 +75,34 @@ def reasons(bundle, X: pd.DataFrame, train_means: pd.Series, k=3) -> list[list[s
                 break
         out.append(parts)
     return out
+
+
+def check_reasons(bundle, X: pd.DataFrame, train_means: pd.Series, shown: pd.Series) -> pd.DataFrame:
+    """Independent check of shown reasons (one ' | '-joined string per row of X). For every reason, find
+    which input or group it describes, recompute its contribution (coef x standardized value, summed over
+    a group) and check that the arrow is its sign and the phrase matches the value vs the training mean."""
+    c = contributions(bundle, X)
+    rows = []
+    for i in X.index:
+        for reason in shown[i].split(" | "):
+            arrow, text = reason[0], reason[2:]
+            found = None
+            for u, (high, low) in PHRASES.items():
+                if u in c.columns:
+                    for side, tpl in (("high", high), ("low", low)):
+                        if tpl.format(v=X.at[i, u]) == text:
+                            found = (u, [u], u, side if high != low else None)  # same phrase both ways
+            for g, (fs, key, (high, low)) in GROUPS.items():
+                if set(fs) <= set(c.columns):
+                    for side, tpl in (("high", high), ("low", low)):
+                        if tpl.format(**X.loc[i, fs].to_dict()) == text:
+                            found = (g, fs, key, side)
+            if found is None:
+                rows.append({"row": i, "reason": reason, "input": None, "arrow_ok": False, "phrase_ok": False})
+                continue
+            u, fs, key, side = found
+            total = c.loc[i, fs].sum()
+            rows.append({"row": i, "reason": reason, "input": u, "contribution": total,
+                         "arrow_ok": arrow == ("↑" if total > 0 else "↓"),
+                         "phrase_ok": side is None or side == ("high" if X.at[i, key] >= train_means[key] else "low")})
+    return pd.DataFrame(rows)
