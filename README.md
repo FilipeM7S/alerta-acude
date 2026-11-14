@@ -93,9 +93,11 @@ The decision threshold is chosen on validation to catch at least 80% of blooms, 
 | NDCI > t (one satellite index) | 0.99 | 0.89 | 1 | 19 | 0.962 | 0.455 | 0.601 |
 | **Logistic regression (chosen)** | 0.89 | 0.89 | 17 | 18 | 0.944 | 0.225 | 0.572 |
 | LightGBM (small) | 0.88 | 0.93 | 19 | 11 | 0.943 | 0.425 | 0.711 |
+| Logistic regression + last lab result | 0.88 | 0.89 | 20 | 18 | 0.952 | 0.268 | 0.562 |
 
 ¹ Balanced accuracy is a secondary metric, not pre-registered; the pre-registered metric is PR-AUC.
 
+- **Combining the satellite with the last lab result did not reduce missed blooms** (20, vs 17 for the satellite model and 16 for persistence).
 - **The model ties persistence; it does not beat it.** The bootstrap 95% interval for the PR-AUC difference (model − persistence) is −0.030 to +0.056. The satellite gives the technician about what a three-month-old lab result gives, with no lab visit.
 - **The PR-AUC values above 0.95 are not leakage.** 87% of test samples are blooms, so a random guess already scores 0.87. A model trained on shuffled labels scores 0.868, and no lab value is among the inputs.
 - **The hard part is finding the clean reservoirs** (last column; chance = 0.13). The single index NDCI does best (0.455). Our chosen model is worse than persistence here.
