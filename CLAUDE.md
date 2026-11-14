@@ -319,3 +319,16 @@ If a data source fails to load within about 30 minutes, switch to the fallback (
 - Commit after every working step with a clear message.
 - If a result looks too good (for example, PR-AUC > 0.95), assume leakage and check before celebrating.
 - Before the final submission, collect from Filipe: each team member's full name, email and school.
+
+## 14. Decisions made during the hackathon (Sat 14 Nov)
+
+Filipe asked to keep everything simple and explainable. These replace the plan above where they differ.
+
+- **Ground truth:** all 28 COGERH IET PDF reports on the official list (Feb/2016 to Feb/2025, `hidro.ce.gov.br/documentos/152`; the old `portalhidrologico` address is dead). Parser test passes.
+- **Database cross-check:** the portal's own database (`/acude/eutrofizacao/dadosanuais`) is a second copy of the same lab results. Rule: a sample is not used if the two sources disagree on its date or count. Exception: the database's thousands-separator slip (Feb/2020, Nov/2021 stored ÷1,000) counts as agreement. Counts agree 99.6%. The database's newer campaigns (to Aug/2026) are used only in the demo, as "last lab result".
+- **Usable sample:** has a count, date within 75 days of its campaign month, not contradicted by the database (`usable` column in `samples.csv`).
+- **Geometry:** reference point and basin from the portal campaign pages (fixed per reservoir). AOI = water within 1 km of the point, clipped to the OSM polygon (+100 m) when the match is trustworthy (≥ 0.1 km², ≤ 200 m), else the disc. 14 reservoirs no longer on the portal are left out (246 samples).
+- **Sentinel-2:** one STAC search per sample (±5 days), closest image with ≥ 30 clean water pixels. Bands B03, B04, B05, B06, B08, B11 only (what the indices need), 20 m. Offset −1000 for baseline ≥ 04.00.
+- **Weather:** NASA POWER daily (MERRA-2 grid, ~50 km) instead of Open-Meteo, because Open-Meteo's free tier counts a multi-year request as hundreds of calls.
+- **Current volume for the demo:** portal page `/quantidade-nivel-diario` (embeds today's volume % for 144 reservoirs).
+- **Target:** stays > 20,000 cells/mL (80% of usable samples are positive). Train on all basins; the demo map focuses on the Jaguaribe Valley.
