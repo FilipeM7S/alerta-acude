@@ -168,3 +168,19 @@ def latest_clear(reservoir, aoi_utm, aoi_bounds_ll, start, end, cache: Path):
             break
     f.write_text(json.dumps(out))
     return out
+
+
+def rgb_thumbnail(item_id, aoi_bounds_ll, size=200, pad_deg=0.005):
+    """True-colour thumbnail (Sentinel-2 'visual' asset, 8-bit) around the AOI, for failure analysis."""
+    import rasterio
+    from rasterio.warp import transform_bounds
+    from rasterio.windows import from_bounds
+
+    item = catalog().get_collection("sentinel-2-l2a").get_item(item_id)
+    href = pc.sign(item).assets["visual"].href
+    w, s, e, n = aoi_bounds_ll
+    with rasterio.open(href) as src:
+        b = transform_bounds("EPSG:4326", src.crs, w - pad_deg, s - pad_deg, e + pad_deg, n + pad_deg)
+        win = from_bounds(*b, transform=src.transform)
+        arr = src.read([1, 2, 3], window=win, out_shape=(3, size, size), boundless=True, fill_value=0)
+    return arr.transpose(1, 2, 0)
