@@ -11,6 +11,9 @@ WEATHER = ["tmax_7d", "tmax_30d", "rain_30d", "rain_90d", "wind_7d", "sw_7d"]
 WATER = ["volume_pct", "volume_change"]
 SEASON = ["month_sin", "month_cos", "rainy_season"]
 FEATURES = SATELLITE + WEATHER + WATER + SEASON
+# Model B (notebook 04b): what the satellite and the volume gauge see, without the calendar and weather
+# inputs that learned a seasonal pattern that did not hold in the first test.
+SAT_WATER = SATELLITE + WATER
 
 
 def time_split(df: pd.DataFrame, train_frac=0.6, val_frac=0.2):

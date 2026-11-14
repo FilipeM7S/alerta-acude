@@ -1,7 +1,8 @@
 """Extract Sentinel-2 water features for every usable lab sample in the Jaguaribe system (resumable: cached
 per sample in data/processed/s2_cache/). Samples run in random order.
 
-Usage: python run_s2.py <repo_root> [workers]
+Usage: python run_s2.py <repo_root> [workers] [samples_csv]
+(samples_csv: optional table with reservoir and date columns, e.g. new_campaign_samples.csv)
 """
 import sys
 import time
@@ -21,6 +22,8 @@ aoi_utm = res.to_crs(CRS).geometry
 s = pd.read_csv(root / "data/processed/samples.csv", parse_dates=["date"])
 # Jaguaribe system only: our connection downloads ~0.3-1 MB/s and each image costs ~3.3 MB.
 jag = res.index[res["jaguaribe_system"]]
+if len(sys.argv) > 3:
+    s = pd.read_csv(sys.argv[3], parse_dates=["date"]).assign(usable=True)
 todo = s[s["usable"] & s["reservoir"].isin(jag)][["reservoir", "date", "campaign"]].drop_duplicates(["reservoir", "date"])
 todo = todo.sample(frac=1, random_state=42)  # random order: a partial cache is a fair subset
 cache = root / "data/processed/s2_cache"
