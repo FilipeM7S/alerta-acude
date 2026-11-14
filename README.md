@@ -131,6 +131,7 @@ A weekly risk map (`outputs/risk_map.html`, notebook 05). For each reservoir of 
 - Copernicus Sentinel-2 Level-2A data (ESA), accessed through Microsoft Planetary Computer: https://planetarycomputer.microsoft.com/dataset/sentinel-2-l2a
 - NASA POWER daily data (MERRA-2 based), NASA Langley Research Center: https://power.larc.nasa.gov
 - Map data © OpenStreetMap contributors, ODbL (via the Overpass API): https://www.openstreetmap.org/copyright
+- Basemaps: © OpenStreetMap contributors; Esri World Imagery (Tiles © Esri — Source: Esri, Maxar, Earthstar Geographics, and the GIS User Community).
 
 **Law and context**
 - Brasil, Ministério da Saúde. Portaria GM/MS nº 888, de 4 de maio de 2021 (art. 43; Anexo 12): https://bvsms.saude.gov.br/bvs/saudelegis/gm/2021/prt0888_07_05_2021.html
