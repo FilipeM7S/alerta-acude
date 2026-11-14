@@ -1,0 +1,422 @@
+reservoir,date,chla,cyano,n_total,p_total,transparency,volume_pct,campaign,reservoir_raw,trophic_class,censored,qc_flag,file,page
+acarape do meio,2019-08-06,2.44,5868.0,1.038,0.079,1.0,96.2,2019-08,Acarape do Meio,Mesotrófica,,,iet_2019_08_ago.pdf,12
+acarau mirim,2019-07-16,2.9,19151.0,0.688,0.042,,99.68,2019-08,Acaraú Mirim,Mesotrófica,,,iet_2019_08_ago.pdf,12
+adauto bezerra,2019-08-14,,2120.0,1.213,0.028,,0.0,2019-08,Adauto Bezerra,Mesotrófica,,,iet_2019_08_ago.pdf,12
+amanary,2019-07-17,16.99,13974.0,1.438,0.083,0.8,58.74,2019-08,Amanary,Eutrófica,,,iet_2019_08_ago.pdf,12
+angicos,2019-07-17,7.08,13478.0,0.938,0.049,,100.0,2019-08,Angicos,Mesotrófica,,,iet_2019_08_ago.pdf,12
+aracoiaba,2019-08-06,34.74,1418243.0,1.663,0.148,1.1,56.28,2019-08,Aracoiaba,Hipereutrófica,,,iet_2019_08_ago.pdf,12
+araras,2019-07-11,83.5,190506.0,1.513,0.146,,66.61,2019-08,Araras,Eutrófica,,,iet_2019_08_ago.pdf,12
+arneiroz ii,2019-07-08,36.76,51533.0,2.45,0.144,,11.12,2019-08,Arneiroz II,Eutrófica,,,iet_2019_08_ago.pdf,12
+arrebita,2019-07-23,41.33,236338.0,1.25,0.107,,86.69,2019-08,Arrebita,Eutrófica,,,iet_2019_08_ago.pdf,12
+atalho,2019-08-13,38.86,307541.0,1.163,0.019,0.7,20.94,2019-08,Atalho,Eutrófica,,,iet_2019_08_ago.pdf,12
+ayres de sousa,2019-07-09,28.43,35542.0,1.1,0.076,,83.47,2019-08,Ayres de Sousa,Eutrófica,,,iet_2019_08_ago.pdf,12
+banabuiu,2019-06-27,1.82,1198.0,1.338,0.16,,7.98,2019-08,Banabuiú,Oligotrófica,,,iet_2019_08_ago.pdf,12
+barra velha,2019-08-29,6.05,4116.0,2.574,0.143,0.3,0.9,2019-08,Barra Velha,Eutrófica,,,iet_2019_08_ago.pdf,12
+batente,2019-08-28,20.78,123766.0,0.932,0.035,0.8,87.19,2019-08,Batente,Eutrófica,,,iet_2019_08_ago.pdf,12
+bengue,2019-09-16,11.09,510487.0,2.363,0.045,,10.09,2019-08,Benguê,Hipereutrófica,,,iet_2019_08_ago.pdf,12
+bonito,2019-08-15,5.67,2926.0,1.15,0.093,,51.5,2019-08,Bonito,Eutrófica,,,iet_2019_08_ago.pdf,12
+caldeiroes,2019-08-05,33.41,195638.0,1.55,0.053,,83.3,2019-08,Caldeirões,Eutrófica,,,iet_2019_08_ago.pdf,12
+canafistula,2019-07-23,26.6,126422.0,1.388,0.045,,18.7,2019-08,Canafístula,Eutrófica,,,iet_2019_08_ago.pdf,12
+canoas,2019-07-02,35.44,109638.0,2.038,0.106,,15.68,2019-08,Canoas,Eutrófica,,cyano value repeated in another reservoir,iet_2019_08_ago.pdf,12
+capitao mor,2019-07-16,47.44,12182.0,3.888,0.183,,6.98,2019-08,Capitão Mor,Eutrófica,,,iet_2019_08_ago.pdf,12
+carao,2019-07-31,75.27,2849.0,2.513,1.286,,7.1,2019-08,Carão,Eutrófica,,,iet_2019_08_ago.pdf,12
+carmina,2019-07-31,25.89,199007.0,1.338,0.132,,11.9,2019-08,Carmina,Eutrófica,,,iet_2019_08_ago.pdf,12
+castanhao,2019-07-09,29.5,2592.0,1.15,0.205,,5.23,2019-08,Castanhão,Eutrófica,,,iet_2019_08_ago.pdf,12
+catucinzenta,2019-08-27,59.56,91324.0,1.825,0.045,0.8,62.91,2019-08,Catucinzenta,Eutrófica,,,iet_2019_08_ago.pdf,12
+cauhipe,2019-07-10,1.56,5443.0,0.813,0.053,1.1,97.1,2019-08,Cauhipe,Mesotrófica,,cyano value repeated in another reservoir,iet_2019_08_ago.pdf,12
+caxitore,2019-07-10,1.56,5443.0,0.813,0.053,1.1,97.12,2019-08,Caxitoré,Mesotrófica,,cyano value repeated in another reservoir,iet_2019_08_ago.pdf,12
+cedro,2019-08-06,6.94,51388.0,1.099,0.09,,35.8,2019-08,Cedro,Eutrófica,,,iet_2019_08_ago.pdf,12
+cipoada,2019-07-23,73.42,426835.0,3.775,0.293,,1.31,2019-08,Cipoada,Hipereutrófica,,,iet_2019_08_ago.pdf,12
+coco,2019-07-31,6.89,30279.0,1.525,0.056,,9.04,2019-08,Cocó,Mesotrófica,,,iet_2019_08_ago.pdf,12
+colina,2019-08-21,21.13,144803.0,1.363,0.044,0.9,72.96,2019-08,Colina,Eutrófica,,,iet_2019_08_ago.pdf,12
+cupim,2019-07-23,145.55,109638.0,2.638,0.182,0.4,45.18,2019-08,Cupim,Hipereutrófica,,cyano value repeated in another reservoir,iet_2019_08_ago.pdf,12
+curral velho,2019-08-29,19.9,87087.0,3.0,0.254,0.2,5.42,2019-08,Curral Velho,Eutrófica,,,iet_2019_08_ago.pdf,12
+desterro,2019-07-25,44.63,245717.0,1.862,0.16,,68.7,2019-08,Desterro,Eutrófica,,,iet_2019_08_ago.pdf,12
+diamante,2019-07-16,49.84,25142.0,2.175,0.084,,34.65,2019-08,Diamante,Eutrófica,,,iet_2019_08_ago.pdf,12
+diamantino ii,2019-07-17,2.38,21772.0,0.863,0.053,,70.45,2019-08,Diamantino II,Mesotrófica,,,iet_2019_08_ago.pdf,12
+do coronel,2019-07-18,7.3,19499.0,0.963,0.042,,93.11,2019-08,Do Coronel,Mesotrófica,,,iet_2019_08_ago.pdf,12
+edson queiroz,2019-07-24,17.57,23875.0,1.5,0.072,,79.92,2019-08,Edson Queiroz,Eutrófica,,,iet_2019_08_ago.pdf,12
+ema,2019-07-24,89.05,1006806.0,2.288,0.091,,50.7,2019-08,Ema,Hipereutrófica,,,iet_2019_08_ago.pdf,12
+escuridao,2019-07-04,,8035.0,1.713,0.099,,6.4,2019-08,Escuridão,Eutrófica,,cyano value repeated in another reservoir,iet_2019_08_ago.pdf,12
+facundo,2019-07-10,116.74,121821.0,3.85,0.123,,10.55,2019-08,Facundo,Eutrófica,,,iet_2019_08_ago.pdf,12
+farias de sousa,2019-08-13,24.83,67361.0,1.238,0.1,,39.23,2019-08,Farias de Sousa,Eutrófica,,,iet_2019_08_ago.pdf,12
+figueiredo,2019-07-04,,696.0,0.9,0.06,,6.53,2019-08,Figueiredo,Eutrófica,,,iet_2019_08_ago.pdf,13
+flor do campo,2019-08-21,15.38,210613.0,1.375,0.088,0.7,7.53,2019-08,Flor do Campo,Eutrófica,,,iet_2019_08_ago.pdf,13
+fogareiro,2019-08-06,62.32,128507.0,2.55,0.116,,2.71,2019-08,Fogareiro,Eutrófica,,,iet_2019_08_ago.pdf,13
+forquilha,2019-07-23,12.09,424397.0,1.287,0.072,,59.45,2019-08,Forquilha,Hipereutrófica,,,iet_2019_08_ago.pdf,13
+frios,2019-08-27,7.61,97090.0,1.675,0.04,,93.27,2019-08,Frios,Eutrófica,,,iet_2019_08_ago.pdf,13
+gameleira,2019-08-01,9.02,38749.0,0.775,0.047,,96.76,2019-08,Gameleira,Mesotrófica,,,iet_2019_08_ago.pdf,13
+gangorra,2019-08-07,46.03,329296.0,0.938,0.012,,93.94,2019-08,Gangorra,Eutrófica,,,iet_2019_08_ago.pdf,13
+gaviao,2019-08-01,40.6,494149.0,1.25,0.065,0.9,86.12,2019-08,Gavião,Hipereutrófica,,,iet_2019_08_ago.pdf,13
+general sampaio,2019-08-07,10.96,22906.0,1.913,0.024,,19.56,2019-08,General Sampaio,Mesotrófica,,,iet_2019_08_ago.pdf,13
+gerardo atimbone,2019-08-21,9.2,139687.0,1.313,0.038,,50.63,2019-08,Gerardo Atimbone,Eutrófica,,,iet_2019_08_ago.pdf,13
+germinal,2019-07-25,9.03,11404.0,0.713,0.033,1.2,100.0,2019-08,Gerninal,Mesotrófica,,,iet_2019_08_ago.pdf,13
+itapaje,2019-08-15,29.22,122045.0,0.675,0.038,,100.0,2019-08,Itapajé,Eutrófica,,,iet_2019_08_ago.pdf,13
+itapebussu,2019-09-24,4.78,16160.0,0.825,0.099,0.8,91.28,2019-08,Itapebussu,Mesotrófica,,,iet_2019_08_ago.pdf,13
+itauna,2019-08-07,2.77,21050.0,0.563,0.014,,95.82,2019-08,Itaúna,Mesotrófica,,,iet_2019_08_ago.pdf,13
+jaburu i,2019-08-06,5.7,7967.0,0.413,0.01,3.3,73.14,2019-08,Jaburu I,Oligotrófica,,,iet_2019_08_ago.pdf,13
+jaburu ii,2019-08-07,18.02,15642.0,1.288,0.136,0.5,10.63,2019-08,Jaburu II,Eutrófica,,,iet_2019_08_ago.pdf,13
+jatoba,2019-08-13,10.01,19658.0,2.088,0.079,,21.3,2019-08,Jatobá,Eutrófica,,,iet_2019_08_ago.pdf,13
+jatoba ii,2019-08-15,13.22,18041.0,0.638,0.03,,92.47,2019-08,Jatobá II,Mesotrófica,,,iet_2019_08_ago.pdf,13
+jenipapeiro,2019-07-29,14.42,62512.0,1.35,0.067,,15.92,2019-08,Jenipapeiro,Eutrófica,,,iet_2019_08_ago.pdf,13
+jenipapeiro ii,2019-08-21,11.68,19844.0,1.5,0.086,0.6,4.9,2019-08,Jenipapeiro II,Eutrófica,,,iet_2019_08_ago.pdf,13
+jenipapo,2019-08-01,1.32,24241.0,0.338,0.024,,100.0,2019-08,Jenipapo,Mesotrófica,,,iet_2019_08_ago.pdf,13
+jerimum,2019-08-15,102.99,399489.0,3.05,0.153,,2.17,2019-08,Jerimum,Eutrófica,,,iet_2019_08_ago.pdf,13
+joao luis,2019-07-23,19.65,236544.0,1.55,0.07,,28.66,2019-08,João Luís,Eutrófica,,,iet_2019_08_ago.pdf,13
+joaquim tavora,2019-08-13,181.56,287216.0,33.0,0.44,,1.46,2019-08,Joaquim Távora,Hipereutrófica,,,iet_2019_08_ago.pdf,13
+junco,2019-08-28,57.67,1680058.0,2.9,0.182,0.2,6.97,2019-08,Junco,Hipereutrófica,,,iet_2019_08_ago.pdf,13
+lima campos,2019-08-20,95.8,532319.0,2.949,0.127,3.5,4.21,2019-08,Lima Campos,Hipereutrófica,,,iet_2019_08_ago.pdf,13
+macacos,2019-08-28,1.0,144150.0,1.3,0.035,0.6,38.95,2019-08,Macacos,Eutrófica,,,iet_2019_08_ago.pdf,13
+madeiro,2019-08-15,,23766.0,5.2,0.516,,0.34,2019-08,Madeiro,Hipereutrófica,,,iet_2019_08_ago.pdf,13
+malcozinhado,2019-08-27,18.31,32340.0,1.663,0.114,1.0,62.41,2019-08,Malcozinhado,Eutrófica,,,iet_2019_08_ago.pdf,13
+mamoeiro,2019-08-05,1.79,1160.0,0.525,0.01,,72.08,2019-08,Mamoeiro,Oligotrófica,,,iet_2019_08_ago.pdf,13
+manoel balbino,2019-08-27,1.63,58.0,0.913,0.019,2.8,7.21,2019-08,Manoel Balbino,Oligotrófica,,,iet_2019_08_ago.pdf,13
+maranguapinho,2019-09-24,112.47,644737.0,1.975,0.127,0.4,81.79,2019-08,Maranguapinho,Hipereutrófica,,,iet_2019_08_ago.pdf,13
+martinopole,2019-08-06,8.96,243739.0,1.388,0.01,,84.09,2019-08,Martinópole,Eutrófica,,,iet_2019_08_ago.pdf,13
+missi,2019-08-22,45.77,383489.0,1.4,0.047,,92.15,2019-08,Missi,Eutrófica,,,iet_2019_08_ago.pdf,13
+monte belo,2019-07-23,24.45,129064.0,1.287,0.091,,33.9,2019-08,Monte Belo,Eutrófica,,,iet_2019_08_ago.pdf,13
+mundau,2019-08-13,11.04,3834.0,0.6,0.06,,94.04,2019-08,Mundaú,Eutrófica,,,iet_2019_08_ago.pdf,13
+nova floresta,2019-08-13,16.39,1300.0,3.3,0.262,,2.32,2019-08,Nova Floresta,Eutrófica,,,iet_2019_08_ago.pdf,13
+olho d agua,2019-08-14,15.99,44050.0,0.65,0.012,1.6,26.53,2019-08,Olho d'Água,Mesotrófica,,,iet_2019_08_ago.pdf,13
+oros,2019-08-07,25.44,265404.0,2.113,0.127,,8.28,2019-08,Orós,Eutrófica,,,iet_2019_08_ago.pdf,13
+pacajus,2019-08-07,7.44,19167.0,0.825,0.056,1.0,82.64,2019-08,Pacajus,Mesotrófica,,,iet_2019_08_ago.pdf,13
+pacoti,2019-08-08,35.48,495403.0,1.275,0.107,1.0,67.5,2019-08,Pacoti,Hipereutrófica,,,iet_2019_08_ago.pdf,13
+patos,2019-08-21,10.41,47123.0,1.474,0.091,,89.93,2019-08,Patos,Eutrófica,,,iet_2019_08_ago.pdf,13
+patu,2019-08-13,145.96,913951.0,3.588,0.095,,10.79,2019-08,Patu,Hipereutrófica,,,iet_2019_08_ago.pdf,13
+pau preto,2019-07-22,2.24,9337.0,0.8,0.053,,80.07,2019-08,Pau Preto,Mesotrófica,,,iet_2019_08_ago.pdf,14
+pedras brancas,2019-07-10,9.72,11923.0,1.55,0.044,,12.23,2019-08,Pedras Brancas,Mesotrófica,,,iet_2019_08_ago.pdf,14
+penedo,2019-07-17,21.27,80859.0,1.388,0.162,0.9,100.0,2019-08,Penedo,Eutrófica,,,iet_2019_08_ago.pdf,14
+pentecoste,2019-08-08,15.79,111106.0,0.513,0.038,,19.69,2019-08,Pentecoste,Eutrófica,,,iet_2019_08_ago.pdf,14
+pesqueiro,2019-07-18,64.14,66353.0,2.055,0.086,0.5,36.98,2019-08,Pesqueiro,Eutrófica,,,iet_2019_08_ago.pdf,14
+poco da pedra,2019-07-03,27.6,21960.0,0.85,0.079,,9.77,2019-08,Poço da Pedra,Eutrófica,,,iet_2019_08_ago.pdf,14
+poco do barro,2019-07-31,24.99,119143.0,1.4,0.053,,26.01,2019-08,Poço do Barro,Eutrófica,,,iet_2019_08_ago.pdf,14
+poco verde,2019-07-25,18.29,826589.0,1.075,0.061,,97.96,2019-08,Poço Verde,Hipereutrófica,,,iet_2019_08_ago.pdf,14
+pompeu sobrinho,2019-08-29,67.28,18042.0,3.987,0.068,0.5,5.68,2019-08,Pompeu Sobrinho,Eutrófica,,,iet_2019_08_ago.pdf,14
+prazeres,2019-08-22,6.12,11435.0,0.688,0.019,0.9,36.41,2019-08,Prazeres,Oligotrófica,,,iet_2019_08_ago.pdf,14
+premuoca,2019-08-06,11.5,150496.0,1.263,0.01,,90.3,2019-08,Premuoca,Eutrófica,,,iet_2019_08_ago.pdf,14
+quandu,2019-08-13,28.1,104148.0,0.75,0.045,,99.4,2019-08,Quandú,Eutrófica,,,iet_2019_08_ago.pdf,14
+quincoe,2019-07-04,35.44,162515.0,2.163,0.196,,2.82,2019-08,Quincoé,Eutrófica,,,iet_2019_08_ago.pdf,14
+quixabinha,2019-08-15,14.06,38162.0,1.238,0.033,0.9,11.93,2019-08,Quixabinha,Mesotrófica,,,iet_2019_08_ago.pdf,14
+quixeramobim,2019-07-23,42.23,226898.0,2.675,0.175,,6.52,2019-08,Quixeramobim,Eutrófica,,,iet_2019_08_ago.pdf,14
+realejo,2019-08-28,16.98,22360.0,3.513,0.116,0.4,0.9,2019-08,Realejo,Eutrófica,,,iet_2019_08_ago.pdf,14
+riachao,2019-08-08,31.1,178293.0,1.075,0.068,1.1,69.99,2019-08,Riachão,Eutrófica,,,iet_2019_08_ago.pdf,14
+riacho da serra,2019-07-03,17.09,8035.0,0.95,0.056,,10.12,2019-08,Riacho da Serra,Eutrófica,,cyano value repeated in another reservoir,iet_2019_08_ago.pdf,14
+riacho do sangue,2019-07-24,24.83,11692.0,1.613,0.047,,11.36,2019-08,Riacho do Sangue,Eutrófica,,,iet_2019_08_ago.pdf,14
+rivaldo de carvalho,2019-09-02,35.87,,3.538,0.164,,1.02,2019-08,Rivaldo de Carvalho,Eutrófica,,,iet_2019_08_ago.pdf,14
+rosario,2019-08-29,5.48,642642.0,0.675,0.019,1.2,64.99,2019-08,Rosário,Hipereutrófica,,,iet_2019_08_ago.pdf,14
+s pedro timbauba,2019-08-22,27.87,77368.0,1.175,0.023,,89.77,2019-08,S. Pedro Timbaúba,Mesotrófica,,,iet_2019_08_ago.pdf,14
+santa maria,2019-07-23,29.9,100640.0,2.025,0.063,,4.94,2019-08,Santa Maria,Eutrófica,,,iet_2019_08_ago.pdf,14
+santa maria de aracatiacu,2019-08-20,40.46,64296.0,1.763,0.185,,17.66,2019-08,Sta Mª de Aracatiaçu,Eutrófica,,,iet_2019_08_ago.pdf,14
+santo antonio,2019-08-07,34.34,55420.0,1.538,0.04,,10.46,2019-08,Sto Antônio,Eutrófica,,,iet_2019_08_ago.pdf,14
+santo antonio de aracatiacu,2019-08-20,28.5,33247.0,1.425,0.024,,60.56,2019-08,Sto Antº de Aracatiaçu,Mesotrófica,,,iet_2019_08_ago.pdf,14
+santo antonio de russas,2019-07-25,37.74,115954.0,1.475,0.035,,90.45,2019-08,Sto Antº de Russas,Eutrófica,,,iet_2019_08_ago.pdf,14
+sao domingos,2019-07-10,10.68,4666.0,1.425,0.049,,43.9,2019-08,São Domingos,Mesotrófica,,,iet_2019_08_ago.pdf,14
+sao domingos ii,2019-08-28,4.57,22251.0,0.863,0.028,1.6,12.2,2019-08,São Domingos II,Mesotrófica,,,iet_2019_08_ago.pdf,14
+sao jose i,2019-07-17,5.65,46655.0,0.813,0.093,,95.5,2019-08,São José I,Mesotrófica,,,iet_2019_08_ago.pdf,14
+sao jose iii,2019-08-28,42.01,140381.0,1.25,0.053,0.9,67.25,2019-08,São José III,Eutrófica,,,iet_2019_08_ago.pdf,14
+sao mateus,2019-07-09,5.05,6998.0,1.125,0.114,,7.25,2019-08,São Mateus,Mesotrófica,,,iet_2019_08_ago.pdf,14
+sao vicente,2019-07-16,2.08,518.0,1.15,0.04,,97.0,2019-08,São Vicente,Oligotrófica,,,iet_2019_08_ago.pdf,14
+sitios novos,2019-08-01,18.75,375349.0,1.313,0.146,1.0,31.3,2019-08,Sitios Novos,Eutrófica,,,iet_2019_08_ago.pdf,14
+sobral,2019-08-01,43.36,386883.0,1.05,0.068,,97.67,2019-08,Sobral,Eutrófica,,,iet_2019_08_ago.pdf,14
+sousa,2019-07-09,11.02,1392.0,1.713,0.22,,1.39,2019-08,Sousa,Eutrófica,,,iet_2019_08_ago.pdf,14
+sucesso,2019-08-08,12.25,118872.0,0.938,0.058,0.7,88.33,2019-08,Sucesso,Eutrófica,,,iet_2019_08_ago.pdf,14
+taquara,2019-07-09,11.89,17758.0,0.688,0.04,,63.05,2019-08,Taquara,Mesotrófica,,,iet_2019_08_ago.pdf,14
+tatajuba,2019-08-20,2.48,5446.0,0.462,0.01,3.1,33.67,2019-08,Tatajuba,Oligotrófica,,,iet_2019_08_ago.pdf,14
+tejucuoca,2019-08-27,19.11,19747.0,1.413,0.068,,38.31,2019-08,Tejuçuoca,Eutrófica,,,iet_2019_08_ago.pdf,14
+thomas osterne,2019-08-27,9.49,71.0,1.013,0.014,2.2,25.19,2019-08,Thomás Osterne,Oligotrófica,,,iet_2019_08_ago.pdf,14
+tigre,2019-08-22,,38096.0,1.325,0.035,,14.97,2019-08,Tigre,Mesotrófica,,,iet_2019_08_ago.pdf,14
+tijuquinha,2019-07-16,4.49,38303.0,0.838,0.02,0.5,100.0,2019-08,Tijuquinha,Mesotrófica,,,iet_2019_08_ago.pdf,14
+trapia ii,2019-07-16,68.89,3110.0,1.85,0.04,,5.1,2019-08,Trapiá II,Eutrófica,,cyano value repeated in another reservoir,iet_2019_08_ago.pdf,15
+trapia iii,2019-07-10,4.97,3110.0,1.488,0.099,,93.63,2019-08,Trapiá III,Eutrófica,,cyano value repeated in another reservoir,iet_2019_08_ago.pdf,15
+trici,2019-08-06,7.1,44408.0,0.888,0.031,,46.46,2019-08,Trici,Mesotrófica,,,iet_2019_08_ago.pdf,15
+trussu,2019-07-10,127.28,117155.0,3.388,0.235,,2.95,2019-08,Trussu,Hipereutrófica,,,iet_2019_08_ago.pdf,15
+tucunduba,2019-07-18,2.17,799.0,0.788,0.076,,99.02,2019-08,Tucunduba,Mesotrófica,,,iet_2019_08_ago.pdf,15
+ubaldinho,2019-08-14,10.57,226411.0,1.113,0.035,0.5,30.82,2019-08,Ubaldinho,Eutrófica,,,iet_2019_08_ago.pdf,15
+umari,2019-08-07,113.21,542415.0,2.438,0.056,,40.21,2019-08,Umari,Hipereutrófica,,,iet_2019_08_ago.pdf,15
+valerio,2019-07-09,1.0,3110.0,0.888,0.063,,94.27,2019-08,Valério,Oligotrófica,,cyano value repeated in another reservoir,iet_2019_08_ago.pdf,15
+varzea da volta,2019-07-10,10.51,7776.0,0.775,0.06,,98.1,2019-08,Várzea da Volta,Eutrófica,,,iet_2019_08_ago.pdf,15
+acarape do meio,2020-11-18,8.84,8849.0,0.463,0.014,1.2,79.8,2020-11,Acarape do Meio,Oligotrófica,,,iet_2020_11_nov.pdf,14
+acarau mirim,2020-11-11,4.99,99696.0,0.38,0.031,1.3,81.1,2020-11,Acaraú Mirim,Eutrófica,,,iet_2020_11_nov.pdf,14
+adauto bezerra,2020-11-18,31.13,2023.0,1.738,0.082,0.9,3.4,2020-11,Adauto Bezerra,Eutrófica,,,iet_2020_11_nov.pdf,14
+amanary,2020-12-17,80.14,491111.0,1.888,0.075,0.5,60.7,2020-11,Amanary,Eutrófica,,,iet_2020_11_nov.pdf,14
+angicos,2020-11-17,39.74,1293699.0,0.838,0.029,0.8,78.4,2020-11,Angicos,Hipereutrófica,,,iet_2020_11_nov.pdf,14
+aracoiaba,2020-11-19,39.8,396428.0,0.925,0.036,0.8,81.9,2020-11,Aracoiaba,Eutrófica,,,iet_2020_11_nov.pdf,14
+araras,2020-11-10,12.24,355954.0,0.88,0.027,1.5,84.7,2020-11,Araras,Eutrófica,,,iet_2020_11_nov.pdf,14
+arneiroz ii,2020-11-03,82.49,880637.0,1.288,0.06,0.4,85.4,2020-11,Arneiroz II,Eutrófica,,,iet_2020_11_nov.pdf,14
+arrebita,2020-12-15,13.78,312895.0,0.44,0.022,2.3,79.4,2020-11,Arrebita,Eutrófica,,,iet_2020_11_nov.pdf,14
+atalho,2020-11-04,78.16,976911.0,1.413,0.047,0.6,22.5,2020-11,Atalho,Hipereutrófica,,,iet_2020_11_nov.pdf,14
+ayres de sousa,2020-11-03,78.5,1199901.0,1.063,0.038,1.0,78.3,2020-11,Ayres de Sousa,Hipereutrófica,,,iet_2020_11_nov.pdf,14
+banabuiu,2020-11-04,15.4,60880.0,0.963,0.093,1.5,12.8,2020-11,Banabuiú,Eutrófica,,,iet_2020_11_nov.pdf,14
+barragem do batalhao,2020-12-10,14.6,138927.0,0.82,0.053,1.1,34.7,2020-11,Barragem do Batalhão,Eutrófica,,cyano value repeated in another reservoir,iet_2020_11_nov.pdf,14
+batente,2020-12-22,88.11,318558.0,1.475,0.049,0.8,71.1,2020-11,Batente,Eutrófica,,,iet_2020_11_nov.pdf,14
+bengue,2020-12-15,29.55,201753.0,1.113,0.029,0.6,40.8,2020-11,Benguê,Eutrófica,,,iet_2020_11_nov.pdf,14
+bonito,2020-12-09,8.81,12653.0,1.05,0.038,1.8,35.9,2020-11,Bonito,Mesotrófica,,,iet_2020_11_nov.pdf,14
+broco,2020-11-17,7.6,25662.0,0.7,0.035,1.8,74.9,2020-11,Broco,Mesotrófica,,,iet_2020_11_nov.pdf,14
+caldeiroes,2020-11-11,17.12,906121.0,2.11,0.104,0.3,100.0,2020-11,Caldeirões,Hipereutrófica,,,iet_2020_11_nov.pdf,14
+canafistula,2020-11-17,41.2,106628.0,1.713,0.095,0.85,13.6,2020-11,Canafístula,Eutrófica,,,iet_2020_11_nov.pdf,14
+canoas,2020-10-13,5.95,44245.0,0.588,0.022,2.5,52.7,2020-11,Canoas,Mesotrófica,,,iet_2020_11_nov.pdf,14
+capitao mor,2020-11-10,15.34,158571.0,1.85,0.068,0.9,30.1,2020-11,Capitão Mor,Eutrófica,,,iet_2020_11_nov.pdf,14
+carao,2020-11-24,46.4,71970.0,1.9,0.722,0.6,37.5,2020-11,Carão,Mesotrófica,,,iet_2020_11_nov.pdf,14
+carmina,2020-11-24,22.97,313249.0,1.32,0.055,0.9,37.3,2020-11,Carmina,Eutrófica,,,iet_2020_11_nov.pdf,14
+carnaubal,2020-12-15,6.99,124769.0,0.64,0.033,2.5,73.2,2020-11,Carnaubal,Eutrófica,,,iet_2020_11_nov.pdf,14
+castanhao,2020-11-19,9.64,32209.0,0.7,0.066,2.4,12.4,2020-11,Castanhão,Eutrófica,,,iet_2020_11_nov.pdf,14
+castro,2020-12-08,8.51,31266.0,2.2,0.06,0.8,2.4,2020-11,Castro,Mesotrófica,,,iet_2020_11_nov.pdf,14
+catucinzenta,2020-11-12,95.64,812323.0,2.11,0.04,0.5,72.8,2020-11,Catucinzenta,Eutrófica,,,iet_2020_11_nov.pdf,14
+cauhipe,2020-11-05,19.64,1239544.0,1.025,0.033,0.7,73.7,2020-11,Cauhipe,Hipereutrófica,,,iet_2020_11_nov.pdf,14
+caxitore,2020-12-03,24.0,152553.0,1.05,0.033,1.16,33.7,2020-11,Caxitoré,Eutrófica,,,iet_2020_11_nov.pdf,14
+cedro,2020-11-17,210.93,877804.0,5.36,0.383,0.3,0.8,2020-11,Cedro,Hipereutrófica,,,iet_2020_11_nov.pdf,14
+cipoada,2020-11-19,29.62,566326.0,2.188,0.046,0.7,5.2,2020-11,Cipoada,Eutrófica,,,iet_2020_11_nov.pdf,14
+coco,2020-10-29,39.44,,1.14,0.064,,62.3,2020-11,Cocó,Eutrófica,,,iet_2020_11_nov.pdf,14
+colina,2020-12-16,247.09,,4.538,0.755,,25.5,2020-11,Colina,Eutrófica,,,iet_2020_11_nov.pdf,14
+cupim,2020-12-17,28.78,155740.0,1.32,0.097,0.7,31.4,2020-11,Cupim,Eutrófica,,,iet_2020_11_nov.pdf,14
+curral velho,2020-11-24,84.17,778697.0,1.75,0.106,0.5,86.5,2020-11,Curral Velho,Eutrófica,,,iet_2020_11_nov.pdf,14
+desterro,2020-11-10,36.5,86011.0,1.913,0.077,0.74,32.3,2020-11,Desterro,Eutrófica,,,iet_2020_11_nov.pdf,14
+diamante,2020-11-17,6.37,231839.0,0.638,0.014,2.0,64.8,2020-11,Diamante,Eutrófica,,,iet_2020_11_nov.pdf,14
+diamantino ii,2020-11-18,18.93,502613.0,0.838,0.031,1.0,70.5,2020-11,Diamantino II,Eutrófica,,,iet_2020_11_nov.pdf,14
+do coronel,2020-11-11,86.41,37873.0,1.51,0.053,0.6,66.1,2020-11,Do Coronel,Eutrófica,,,iet_2020_11_nov.pdf,14
+edson queiroz,2020-12-16,37.33,1032912.0,1.4,0.057,0.6,66.0,2020-11,Edson Queiroz,Hipereutrófica,,,iet_2020_11_nov.pdf,14
+ema,2020-12-01,31.87,73622.0,1.74,0.069,0.9,20.4,2020-11,Ema,Eutrófica,,cyano value repeated in another reservoir,iet_2020_11_nov.pdf,14
+escuridao,2020-11-05,32.1,1433511.0,2.088,0.066,0.7,18.0,2020-11,Escuridão,Hipereutrófica,,,iet_2020_11_nov.pdf,14
+facundo,2020-11-30,9.22,169898.0,1.01,0.057,0.9,28.1,2020-11,Facundo,Eutrófica,,,iet_2020_11_nov.pdf,14
+fae,2020-10-21,13.96,4450.0,0.775,0.042,3.1,58.8,2020-11,Faé,Mesotrófica,,,iet_2020_11_nov.pdf,14
+farias de sousa,2020-12-10,14.13,242113.0,0.64,0.042,1.0,43.9,2020-11,Farias de Sousa,Eutrófica,,,iet_2020_11_nov.pdf,14
+figueiredo,2020-12-02,15.67,348644.0,1.06,0.04,1.3,3.8,2020-11,Figueiredo,Eutrófica,,,iet_2020_11_nov.pdf,15
+flor do campo,2020-12-16,14.55,164588.0,0.92,0.044,1.5,43.5,2020-11,Flor do Campo,Eutrófica,,,iet_2020_11_nov.pdf,15
+fogareiro,2020-11-24,34.67,60879.0,1.59,0.064,1.1,13.0,2020-11,Fogareiro,Eutrófica,,,iet_2020_11_nov.pdf,15
+forquilha,2020-12-15,8.91,67251.0,0.91,0.031,1.2,77.5,2020-11,Forquilha,Mesotrófica,,,iet_2020_11_nov.pdf,15
+frios,2020-12-17,14.18,67694.0,0.62,0.031,1.6,71.9,2020-11,Frios,Mesotrófica,,,iet_2020_11_nov.pdf,15
+gameleira,2020-11-11,41.99,522081.0,1.15,0.04,0.82,78.5,2020-11,Gameleira,Eutrófica,,,iet_2020_11_nov.pdf,15
+gangorra,2020-12-08,39.87,1649422.0,1.28,0.029,0.5,73.1,2020-11,Gangorra,Hipereutrófica,,,iet_2020_11_nov.pdf,15
+gaviao,2020-11-17,72.89,677821.0,1.55,0.047,0.8,83.1,2020-11,Gavião,Eutrófica,,,iet_2020_11_nov.pdf,15
+general sampaio,2020-11-26,77.46,1093717.0,2.09,0.095,0.57,17.4,2020-11,General Sampaio,Hipereutrófica,,,iet_2020_11_nov.pdf,15
+gerardo atimbone,2020-11-18,72.47,10088.0,1.75,0.108,1.22,79.0,2020-11,Gerardo Atimbone,Mesotrófica,,,iet_2020_11_nov.pdf,15
+germinal,2020-12-16,9.64,247767.0,0.375,0.02,1.2,98.4,2020-11,Gerninal,Eutrófica,,,iet_2020_11_nov.pdf,15
+itapaje,2020-12-15,14.5,118574.0,0.45,0.038,1.42,72.8,2020-11,Itapajé,Eutrófica,,,iet_2020_11_nov.pdf,15
+itapebussu,2020-12-15,19.46,75879.0,0.838,0.077,1.0,74.3,2020-11,Itapebussu,Eutrófica,,,iet_2020_11_nov.pdf,15
+itauna,2020-12-08,3.0,32741.0,0.24,0.018,2.1,72.8,2020-11,Itaúna,Mesotrófica,,,iet_2020_11_nov.pdf,15
+jaburu i,2020-12-22,3.89,232724.0,0.32,0.016,3.4,69.6,2020-11,Jaburu I,Eutrófica,,,iet_2020_11_nov.pdf,15
+jaburu ii,2020-12-15,19.5,191843.0,1.35,0.189,0.7,16.6,2020-11,Jaburu II,Eutrófica,,,iet_2020_11_nov.pdf,15
+jatoba ii,2020-12-09,12.2,18229.0,0.39,0.038,1.6,78.6,2020-11,Jatobá II,Mesotrófica,,,iet_2020_11_nov.pdf,15
+jenipapeiro,2020-11-05,7.58,25214.0,0.875,0.024,2.3,29.8,2020-11,Jenipapeiro,Mesotrófica,,,iet_2020_11_nov.pdf,15
+jenipapeiro ii,2020-12-01,5.61,239272.0,0.96,0.058,1.3,21.3,2020-11,Jenipapeiro II,Eutrófica,,,iet_2020_11_nov.pdf,15
+jenipapo,2020-12-17,5.18,48279.0,0.12,0.013,2.5,82.3,2020-11,Jenipapo,Mesotrófica,,,iet_2020_11_nov.pdf,15
+jerimum,2020-12-15,34.09,46232.0,1.51,0.064,0.8,10.2,2020-11,Jerimum,Eutrófica,,,iet_2020_11_nov.pdf,15
+joao luis,2020-11-04,12.93,141228.0,1.15,0.036,0.9,12.7,2020-11,João Luís,Eutrófica,,,iet_2020_11_nov.pdf,15
+joaquim tavora,2020-12-03,87.58,64892.0,5.14,0.423,0.45,2.6,2020-11,Joaquim Távora,Eutrófica,,,iet_2020_11_nov.pdf,15
+junco,2020-12-16,14.75,690209.0,0.66,0.027,1.3,30.3,2020-11,Junco,Eutrófica,,,iet_2020_11_nov.pdf,15
+lima campos,2020-11-24,57.67,212372.0,1.788,0.084,0.4,11.6,2020-11,Lima Campos,Eutrófica,,,iet_2020_11_nov.pdf,15
+macacos,2020-12-22,80.18,150430.0,2.013,0.051,0.6,27.3,2020-11,Macacos,Eutrófica,,,iet_2020_11_nov.pdf,15
+malcozinhado,2020-12-10,18.55,373420.0,1.12,0.031,1.0,80.1,2020-11,Malcozinhado,Eutrófica,,,iet_2020_11_nov.pdf,15
+mamoeiro,2020-11-16,6.07,500844.0,0.81,0.042,1.6,52.7,2020-11,Mamoeiro,Eutrófica,,,iet_2020_11_nov.pdf,15
+manoel balbino,2020-12-02,3.81,21591.0,0.64,0.025,3.0,7.0,2020-11,Manoel Balbino,Mesotrófica,,,iet_2020_11_nov.pdf,15
+maranguapinho,2020-12-15,256.47,1125572.0,3.65,0.346,0.3,31.3,2020-11,Maranguapinho,Hipereutrófica,,,iet_2020_11_nov.pdf,15
+martinopole,2020-11-25,41.31,771618.0,1.56,0.025,0.6,65.7,2020-11,Martinópole,Eutrófica,,,iet_2020_11_nov.pdf,15
+missi,2020-11-25,144.62,545088.0,2.11,0.071,0.44,77.6,2020-11,Missi,Hipereutrófica,,,iet_2020_11_nov.pdf,15
+mons tabosa,2020-12-09,706.48,34511.0,9.88,0.975,0.1,0.0,2020-11,Mons. Tabosa,Hipereutrófica,,,iet_2020_11_nov.pdf,15
+monte belo,2020-11-10,12.33,26724.0,1.34,0.044,0.7,42.8,2020-11,Monte Belo,Mesotrófica,,,iet_2020_11_nov.pdf,15
+mundau,2020-12-10,33.04,153379.0,0.888,0.033,1.36,80.8,2020-11,Mundaú,Eutrófica,,,iet_2020_11_nov.pdf,15
+muquem,2020-11-09,5.08,86129.0,0.55,0.035,2.9,66.5,2020-11,Muquém,Eutrófica,,,iet_2020_11_nov.pdf,15
+nova floresta,2020-12-03,11.94,7669.0,2.76,0.073,0.6,5.5,2020-11,Nova Floresta,Mesotrófica,,,iet_2020_11_nov.pdf,15
+olho d agua,2020-11-03,7.23,229362.0,0.4,0.278,2.1,46.8,2020-11,Olho d'Água,Eutrófica,,,iet_2020_11_nov.pdf,15
+oros,2020-11-18,43.41,313603.0,1.34,0.082,0.8,22.4,2020-11,Orós,Eutrófica,,,iet_2020_11_nov.pdf,15
+pacajus,2020-11-24,7.12,21355.0,0.713,0.049,1.2,67.0,2020-11,Pacajus,Mesotrófica,,,iet_2020_11_nov.pdf,15
+pacoti,2020-11-25,45.41,301744.0,1.088,0.049,0.9,59.0,2020-11,Pacoti,Eutrófica,,,iet_2020_11_nov.pdf,15
+parambu,2020-12-01,16.06,205293.0,1.01,0.047,0.8,52.2,2020-11,Parambu,Eutrófica,,,iet_2020_11_nov.pdf,15
+patos,2020-11-18,66.85,97337.0,1.263,0.086,1.0,68.6,2020-11,Patos,Eutrófica,,cyano value repeated in another reservoir,iet_2020_11_nov.pdf,15
+patu,2020-12-03,16.21,4071.0,1.25,0.031,1.8,24.6,2020-11,Patu,Oligotrófica,,,iet_2020_11_nov.pdf,15
+pau preto,2020-11-10,3.32,259270.0,0.86,0.027,2.0,79.4,2020-11,Pau Preto,Eutrófica,,,iet_2020_11_nov.pdf,16
+pedras brancas,2020-11-05,23.51,228653.0,1.813,0.025,0.9,7.1,2020-11,Pedras Brancas,Eutrófica,,,iet_2020_11_nov.pdf,16
+penedo,2020-12-17,10.68,208832.0,0.8,0.04,1.0,57.8,2020-11,Penedo,Eutrófica,,,iet_2020_11_nov.pdf,16
+pentecoste,2020-12-09,48.0,573404.0,1.263,0.068,0.82,16.8,2020-11,Pentecoste,Eutrófica,,,iet_2020_11_nov.pdf,16
+pesqueiro,2020-11-10,104.49,982220.0,2.338,0.066,0.4,37.7,2020-11,Pesqueiro,Hipereutrófica,,,iet_2020_11_nov.pdf,16
+poco da pedra,2020-10-20,27.37,73622.0,1.325,0.064,0.7,8.0,2020-11,Poço da Pedra,Eutrófica,,cyano value repeated in another reservoir,iet_2020_11_nov.pdf,16
+poco do barro,2020-11-19,15.97,403507.0,1.638,0.04,1.05,18.5,2020-11,Poço do Barro,Eutrófica,,,iet_2020_11_nov.pdf,16
+poco verde,2020-11-11,77.72,980451.0,2.14,0.113,0.48,73.5,2020-11,Poço Verde,Hipereutrófica,,,iet_2020_11_nov.pdf,16
+pompeu sobrinho,2020-11-11,136.17,106186.0,4.463,0.106,0.5,4.6,2020-11,Pompeu Sobrinho,Eutrófica,,,iet_2020_11_nov.pdf,16
+prazeres,2020-11-11,7.04,410599.0,0.51,0.022,1.7,49.9,2020-11,Prazeres,Eutrófica,,,iet_2020_11_nov.pdf,16
+premuoca,2020-11-25,36.6,647734.0,1.34,0.06,0.6,73.5,2020-11,Premuoca,Eutrófica,,,iet_2020_11_nov.pdf,16
+quandu,2020-12-10,66.97,950365.0,1.0,0.068,0.58,45.2,2020-11,Quandú,Hipereutrófica,,,iet_2020_11_nov.pdf,16
+quincoe,2020-10-21,11.44,17698.0,1.188,0.044,1.0,73.2,2020-11,Quincoé,Oligotrófica,,,iet_2020_11_nov.pdf,16
+quixabinha,2020-11-10,8.73,178746.0,1.04,0.051,1.7,19.1,2020-11,Quixabinha,Eutrófica,,,iet_2020_11_nov.pdf,16
+quixeramobim,2020-11-17,11.76,114681.0,1.44,0.141,1.85,36.4,2020-11,Quixeramobim,Eutrófica,,,iet_2020_11_nov.pdf,16
+realejo,2020-12-08,14.48,126833.0,1.09,0.047,1.6,17.6,2020-11,Realejo,Eutrófica,,,iet_2020_11_nov.pdf,16
+riachao,2020-11-25,38.41,792856.0,1.075,0.049,0.9,64.5,2020-11,Riachão,Eutrófica,,,iet_2020_11_nov.pdf,16
+riacho da serra,2020-12-02,22.68,405631.0,1.38,0.069,0.65,6.3,2020-11,Riacho da Serra,Eutrófica,,,iet_2020_11_nov.pdf,16
+riacho do sangue,2020-11-12,5.28,91143.0,1.24,0.025,1.9,32.5,2020-11,Riacho do Sangue,Eutrófica,,,iet_2020_11_nov.pdf,16
+rivaldo de carvalho,2020-12-14,21.0,273429.0,1.275,0.049,0.7,36.5,2020-11,Rivaldo de Carvalho,Eutrófica,,,iet_2020_11_nov.pdf,16
+rosario,2020-11-25,,97337.0,0.338,0.013,1.5,76.2,2020-11,Rosário,Eutrófica,,cyano value repeated in another reservoir,iet_2020_11_nov.pdf,16
+s pedro timbauba,2020-11-25,18.11,4380.0,1.31,0.145,0.21,73.0,2020-11,S. Pedro Timbaúba,Oligotrófica,,,iet_2020_11_nov.pdf,16
+santa maria,2020-11-17,12.37,254846.0,1.6,0.058,1.1,16.0,2020-11,Santa Maria,Eutrófica,,,iet_2020_11_nov.pdf,16
+santa maria de aracatiacu,2020-11-19,21.53,164473.0,1.225,0.058,0.89,71.9,2020-11,Sta Mª de Aracatiaçu,Eutrófica,,,iet_2020_11_nov.pdf,16
+santo antonio,2020-11-11,24.05,87161.0,1.425,0.047,1.0,23.2,2020-11,Sto Antônio,Eutrófica,,,iet_2020_11_nov.pdf,16
+santo antonio de aracatiacu,2020-11-19,29.89,328291.0,1.35,0.042,0.99,79.1,2020-11,Sto Antº de Aracatiaçu,Eutrófica,,,iet_2020_11_nov.pdf,16
+santo antonio de russas,2020-11-24,30.13,138927.0,1.76,0.064,0.5,43.5,2020-11,Sto Antº de Russas,Eutrófica,,cyano value repeated in another reservoir,iet_2020_11_nov.pdf,16
+sao domingos,2020-11-10,207.15,484916.0,2.925,0.15,0.36,3.4,2020-11,São Domingos,Eutrófica,,,iet_2020_11_nov.pdf,16
+sao domingos ii,2020-12-16,3.0,25060.0,0.36,0.013,3.0,26.1,2020-11,São Domingos II,Oligotrófica,,,iet_2020_11_nov.pdf,16
+sao jose i,2020-11-12,15.15,26665.0,0.89,0.051,1.1,78.8,2020-11,São José I,Eutrófica,,,iet_2020_11_nov.pdf,16
+sao jose ii,2020-11-18,7.91,30263.0,1.05,0.04,1.45,81.8,2020-11,São José II,Mesotrófica,,,iet_2020_11_nov.pdf,16
+sao jose iii,2020-12-08,34.06,366342.0,1.11,0.069,0.8,56.1,2020-11,São José III,Eutrófica,,,iet_2020_11_nov.pdf,16
+sao mateus,2020-11-05,24.33,149545.0,1.175,0.058,0.8,73.2,2020-11,São Mateus,Eutrófica,,,iet_2020_11_nov.pdf,16
+sao vicente,2020-11-11,5.47,5015.0,0.68,0.024,2.3,82.5,2020-11,São Vicente,Oligotrófica,,,iet_2020_11_nov.pdf,16
+serafim dias,2020-11-18,33.64,105301.0,1.688,0.079,1.0,3.8,2020-11,Serafim Dias,Eutrófica,,,iet_2020_11_nov.pdf,16
+sitios novos,2020-11-04,19.59,170782.0,0.875,0.033,0.8,55.7,2020-11,Sitios Novos,Eutrófica,,,iet_2020_11_nov.pdf,16
+sobral,2020-12-17,48.32,575174.0,1.24,0.066,0.4,77.7,2020-11,Sobral,Eutrófica,,,iet_2020_11_nov.pdf,16
+sousa,2020-11-04,24.08,648885.0,1.275,0.066,0.59,2.0,2020-11,Sousa,Eutrófica,,,iet_2020_11_nov.pdf,16
+sucesso,2020-12-10,28.81,2673219.0,1.32,0.06,0.9,61.0,2020-11,Sucesso,Hipereutrófica,,,iet_2020_11_nov.pdf,16
+taquara,2020-11-05,17.74,957644.0,0.738,0.016,1.1,67.6,2020-11,Taquara,Eutrófica,,,iet_2020_11_nov.pdf,16
+tatajuba,2020-11-24,3.0,693748.0,0.425,0.02,3.0,17.0,2020-11,Tatajuba,Eutrófica,,,iet_2020_11_nov.pdf,16
+tejucuoca,2020-12-17,11.17,108545.0,0.71,0.029,1.7,52.7,2020-11,Tejuçuoca,Eutrófica,,,iet_2020_11_nov.pdf,16
+thomas osterne,2020-12-02,6.27,146891.0,0.42,0.02,1.5,34.1,2020-11,Thomás Osterne,Eutrófica,,,iet_2020_11_nov.pdf,16
+tigre,2020-11-04,4.48,50616.0,0.775,0.018,3.4,18.7,2020-11,Tigre,Mesotrófica,,,iet_2020_11_nov.pdf,16
+tijuquinha,2020-11-10,30.21,99107.0,0.938,0.037,0.5,53.4,2020-11,Tijuquinha,Eutrófica,,,iet_2020_11_nov.pdf,16
+trapia ii,2020-11-11,55.94,118928.0,2.181,0.099,0.6,2.1,2020-11,Trapiá II,Eutrófica,,,iet_2020_11_nov.pdf,17
+trapia iii,2020-11-04,3.1,640656.0,0.85,0.025,0.9,71.3,2020-11,Trapiá III,Eutrófica,,,iet_2020_11_nov.pdf,17
+trici,2020-11-17,18.43,460847.0,1.01,0.042,0.9,63.0,2020-11,Trici,Eutrófica,,,iet_2020_11_nov.pdf,17
+trussu,2020-11-05,27.22,392181.0,1.213,0.049,0.7,20.6,2020-11,Trussu,Eutrófica,,,iet_2020_11_nov.pdf,17
+tucunduba,2020-11-18,,198214.0,0.5,0.027,1.4,77.0,2020-11,Tucunduba,Eutrófica,,,iet_2020_11_nov.pdf,17
+ubaldinho,2020-11-03,8.06,552167.0,0.55,0.04,1.6,76.7,2020-11,Ubaldinho,Eutrófica,,,iet_2020_11_nov.pdf,17
+umari,2020-12-02,197.42,1109997.0,3.71,0.121,0.3,18.7,2020-11,Umari,Hipereutrófica,,,iet_2020_11_nov.pdf,17
+valerio,2020-10-19,3.0,1392.0,0.288,0.01,5.3,82.4,2020-11,Valério,Oligotrófica,,,iet_2020_11_nov.pdf,17
+varzea da volta,2020-11-04,,336255.0,0.6,0.042,1.1,69.6,2020-11,Várzea da Volta,Eutrófica,,,iet_2020_11_nov.pdf,17
+vieirao,2020-11-12,40.61,632161.0,1.49,0.058,0.9,15.6,2020-11,Vieirão,Eutrófica,,,iet_2020_11_nov.pdf,17
+acarape do meio,2021-08-04,56.3,143941.0,0.74,0.051,1.5,95.5,2021-08,Acarape do Meio,Eutrófica,,,iet_2021_08_ago.pdf,14
+acarau mirim,2021-07-20,4.46,47194.0,0.55,0.024,3.2,95.6,2021-08,Acaraú Mirim,Mesotrófica,,,iet_2021_08_ago.pdf,14
+adauto bezerra,2021-07-22,22.96,25013.0,1.14,0.049,0.75,11.5,2021-08,Adauto Bezerra,Mesotrófica,,,iet_2021_08_ago.pdf,14
+amanary,2021-08-17,153.69,1461827.0,2.82,0.1,0.5,48.4,2021-08,Amanary,Hipereutrófica,,,iet_2021_08_ago.pdf,14
+angicos,2021-07-21,5.39,128308.0,0.84,0.019,2.1,95.7,2021-08,Angicos,Eutrófica,,,iet_2021_08_ago.pdf,14
+aracoiaba,2021-08-04,27.29,402622.0,0.81,0.055,0.8,79.0,2021-08,Aracoiaba,Eutrófica,,,iet_2021_08_ago.pdf,14
+araras,2021-07-08,11.03,173437.0,0.79,0.037,2.0,81.0,2021-08,Araras,Eutrófica,,,iet_2021_08_ago.pdf,14
+arneiroz ii,2021-07-19,35.83,1557395.0,2.2,0.067,0.3,79.5,2021-08,Arneiroz II,Hipereutrófica,,,iet_2021_08_ago.pdf,14
+arrebita,2021-08-12,13.32,319974.0,0.82,0.015,3.5,81.1,2021-08,Arrebita,Eutrófica,,,iet_2021_08_ago.pdf,14
+atalho,2021-08-03,8.52,100523.0,0.64,0.073,1.2,29.8,2021-08,Atalho,Eutrófica,,,iet_2021_08_ago.pdf,14
+ayres de sousa,2021-07-06,15.84,190251.0,1.18,0.064,1.7,95.0,2021-08,Ayres de Sousa,Eutrófica,,,iet_2021_08_ago.pdf,14
+banabuiu,2021-07-13,44.08,309709.0,1.61,0.148,1.0,9.7,2021-08,Banabuiú,Eutrófica,,cyano value repeated in another reservoir,iet_2021_08_ago.pdf,14
+batente,2021-09-23,45.74,867186.0,1.91,0.065,1.0,82.1,2021-08,Batente,Eutrófica,,,iet_2021_08_ago.pdf,14
+bengue,2021-09-13,10.93,350414.0,1.09,0.029,0.8,33.8,2021-08,Benguê,Eutrófica,,,iet_2021_08_ago.pdf,14
+bonito,2021-08-10,3.71,122114.0,1.16,0.028,2.5,24.7,2021-08,Bonito,Eutrófica,,,iet_2021_08_ago.pdf,14
+broco,2021-08-10,,20175.0,0.72,0.031,1.7,63.5,2021-08,Broco,Mesotrófica,,,iet_2021_08_ago.pdf,14
+caldeiroes,2021-08-09,15.16,487570.0,1.01,0.053,0.5,78.2,2021-08,Caldeirões,Eutrófica,,,iet_2021_08_ago.pdf,14
+canafistula,2021-08-04,9.37,89078.0,0.72,0.073,1.5,28.5,2021-08,Canafístula,Mesotrófica,,,iet_2021_08_ago.pdf,14
+canoas,2021-07-05,12.26,62532.0,0.84,0.049,1.7,54.4,2021-08,Canoas,Mesotrófica,,,iet_2021_08_ago.pdf,14
+capitao mor,2021-07-20,28.16,507923.0,2.04,0.058,0.9,25.9,2021-08,Capitão Mor,Eutrófica,,,iet_2021_08_ago.pdf,14
+carao,2021-08-05,60.38,323513.0,2.0,0.307,0.6,28.8,2021-08,Carão,Eutrófica,,,iet_2021_08_ago.pdf,14
+carmina,2021-08-05,19.62,474298.0,1.09,0.064,1.0,28.0,2021-08,Carmina,Eutrófica,,,iet_2021_08_ago.pdf,14
+castanhao,2021-09-14,25.2,90848.0,0.89,0.064,1.3,10.6,2021-08,Castanhão,Eutrófica,,,iet_2021_08_ago.pdf,14
+castro,2021-09-16,25.4,46014.0,2.09,0.082,0.6,7.1,2021-08,Castro,Mesotrófica,,,iet_2021_08_ago.pdf,14
+catucinzenta,2021-07-27,60.75,527390.0,1.99,0.037,0.5,74.7,2021-08,Catucinzenta,Eutrófica,,,iet_2021_08_ago.pdf,14
+cauhipe,2021-07-20,13.55,895502.0,1.24,0.029,1.0,58.3,2021-08,Cauhipe,Eutrófica,,,iet_2021_08_ago.pdf,14
+caxitore,2021-08-18,19.05,106439.0,1.16,0.035,1.2,30.6,2021-08,Caxitoré,Eutrófica,,,iet_2021_08_ago.pdf,14
+cipoada,2021-08-03,89.58,1496965.0,1.58,0.042,0.4,3.3,2021-08,Cipoada,Hipereutrófica,,,iet_2021_08_ago.pdf,14
+coco,2021-08-03,241.6,1229988.0,2.88,0.308,0.3,23.7,2021-08,Cocó,Hipereutrófica,,,iet_2021_08_ago.pdf,14
+colina,2021-08-13,37.66,230954.0,1.74,0.073,0.4,44.9,2021-08,Colina,Eutrófica,,,iet_2021_08_ago.pdf,14
+cupim,2021-08-12,22.36,598181.0,2.31,0.139,0.4,17.4,2021-08,Cupim,Eutrófica,,,iet_2021_08_ago.pdf,14
+curral velho,2021-07-08,53.47,757460.0,1.35,0.109,1.08,75.0,2021-08,Curral Velho,Eutrófica,,cyano value repeated in another reservoir,iet_2021_08_ago.pdf,14
+desterro,2021-07-08,42.39,256616.0,1.8,0.067,0.6,31.6,2021-08,Desterro,Eutrófica,,,iet_2021_08_ago.pdf,14
+diamante,2021-07-21,,38640.0,0.7,0.017,3.5,74.3,2021-08,Diamante,Oligotrófica,chla<1.00,,iet_2021_08_ago.pdf,14
+diamantino ii,2021-07-27,6.77,757460.0,0.8,0.019,1.4,95.2,2021-08,Diamantino II,Eutrófica,,cyano value repeated in another reservoir,iet_2021_08_ago.pdf,14
+do coronel,2021-08-09,17.25,957444.0,1.46,0.056,0.6,81.7,2021-08,Do Coronel,Hipereutrófica,,,iet_2021_08_ago.pdf,14
+edson queiroz,2021-08-23,22.78,412355.0,1.35,0.071,1.3,54.1,2021-08,Edson Queiroz,Eutrófica,,,iet_2021_08_ago.pdf,14
+ema,2021-07-21,18.44,575174.0,1.04,0.065,0.9,40.8,2021-08,Ema,Eutrófica,,,iet_2021_08_ago.pdf,14
+escuridao,2021-07-08,55.58,1529078.0,2.61,0.078,0.31,16.9,2021-08,Escuridão,Hipereutrófica,,,iet_2021_08_ago.pdf,14
+facundo,2021-08-17,24.21,1265384.0,1.01,0.038,0.6,22.9,2021-08,Facundo,Hipereutrófica,,,iet_2021_08_ago.pdf,14
+fae,2021-07-07,3.99,13077.0,0.85,0.044,2.0,100.0,2021-08,Faé,Mesotrófica,,,iet_2021_08_ago.pdf,14
+farias de sousa,2021-08-11,9.03,695518.0,0.99,0.037,1.2,33.7,2021-08,Farias de Sousa,Eutrófica,,,iet_2021_08_ago.pdf,14
+figueiredo,2021-07-21,,80229.0,1.45,0.046,10.17,8.6,2021-08,Figueiredo,Mesotrófica,chla<3.00,,iet_2021_08_ago.pdf,15
+flor do campo,2021-08-13,8.47,421205.0,1.32,0.049,0.9,34.6,2021-08,Flor do Campo,Eutrófica,,,iet_2021_08_ago.pdf,15
+fogareiro,2021-08-04,56.24,238918.0,2.06,0.105,0.6,5.3,2021-08,Fogareiro,Eutrófica,,,iet_2021_08_ago.pdf,15
+forquilha,2021-08-12,3.32,18937.0,1.22,0.047,1.2,73.3,2021-08,Forquilha,Oligotrófica,,,iet_2021_08_ago.pdf,15
+frios,2021-09-09,12.22,301568.0,1.09,0.037,1.47,52.8,2021-08,Frios,Eutrófica,,,iet_2021_08_ago.pdf,15
+gameleira,2021-08-05,11.61,447751.0,0.95,0.055,1.2,91.9,2021-08,Gameleira,Eutrófica,,,iet_2021_08_ago.pdf,15
+gangorra,2021-08-03,5.9,438902.0,0.86,0.042,1.6,86.5,2021-08,Gangorra,Eutrófica,,,iet_2021_08_ago.pdf,15
+gaviao,2021-08-03,37.07,252191.0,0.82,0.055,0.8,87.3,2021-08,Gavião,Eutrófica,,,iet_2021_08_ago.pdf,15
+general sampaio,2021-08-17,59.59,454830.0,1.9,0.076,1.71,10.7,2021-08,General Sampaio,Eutrófica,,,iet_2021_08_ago.pdf,15
+gerardo atimbone,2021-08-04,16.45,116804.0,1.19,0.035,1.27,56.3,2021-08,Gerardo Atimbone,Eutrófica,,,iet_2021_08_ago.pdf,15
+germinal,2021-08-12,3.37,553051.0,0.49,0.028,1.5,99.9,2021-08,Gerninal,Eutrófica,,,iet_2021_08_ago.pdf,15
+itapaje,2021-09-02,24.35,6870686.0,7.88,0.04,1.1,82.9,2021-08,Itapajé,Hipereutrófica,,,iet_2021_08_ago.pdf,15
+itapebussu,2021-09-21,4.99,7197.0,0.69,0.103,1.0,81.1,2021-08,Itapebussu,Mesotrófica,,,iet_2021_08_ago.pdf,15
+itauna,2021-08-03,,123294.0,0.12,0.037,3.6,93.4,2021-08,Itaúna,Eutrófica,chla<3.00,,iet_2021_08_ago.pdf,15
+jaburu i,2021-08-10,4.04,177861.0,0.56,0.011,2.6,64.3,2021-08,Jaburu I,Eutrófica,,,iet_2021_08_ago.pdf,15
+jaburu ii,2021-08-12,34.19,991069.0,2.11,0.179,0.5,11.3,2021-08,Jaburu II,Hipereutrófica,,,iet_2021_08_ago.pdf,15
+jatoba,2021-08-17,24.85,8424.0,1.31,0.058,1.6,50.1,2021-08,Jatobá,Oligotrófica,,,iet_2021_08_ago.pdf,15
+jatoba ii,2021-08-10,4.18,184056.0,0.59,0.022,1.9,64.2,2021-08,Jatobá II,Eutrófica,,,iet_2021_08_ago.pdf,15
+jenipapeiro,2021-07-07,5.71,30823.0,0.8,0.035,1.9,53.1,2021-08,Jenipapeiro,Mesotrófica,,,iet_2021_08_ago.pdf,15
+jenipapeiro ii,2021-07-29,6.65,91320.0,0.78,0.058,2.0,22.1,2021-08,Jenipapeiro II,Mesotrófica,,,iet_2021_08_ago.pdf,15
+jenipapo,2021-08-24,4.33,290242.0,0.4,0.015,2.6,93.5,2021-08,Jenipapo,Eutrófica,,,iet_2021_08_ago.pdf,15
+jerimum,2021-09-02,48.2,309709.0,2.69,0.119,0.54,3.1,2021-08,Jerimum,Eutrófica,,cyano value repeated in another reservoir,iet_2021_08_ago.pdf,15
+joao luis,2021-08-02,11.13,580483.0,1.48,0.033,0.6,8.6,2021-08,João Luís,Eutrófica,,,iet_2021_08_ago.pdf,15
+joaquim tavora,2021-08-03,46.2,286525.0,2.76,0.393,0.7,5.4,2021-08,Joaquim Távora,Eutrófica,,,iet_2021_08_ago.pdf,15
+junco,2021-08-10,7.79,1235297.0,0.94,0.04,1.2,27.1,2021-08,Junco,Hipereutrófica,,,iet_2021_08_ago.pdf,15
+lima campos,2021-07-14,18.27,217682.0,1.06,0.055,1.1,40.2,2021-08,Lima Campos,Eutrófica,,,iet_2021_08_ago.pdf,15
+macacos,2021-09-23,48.71,937977.0,1.66,0.055,0.5,34.9,2021-08,Macacos,Hipereutrófica,,,iet_2021_08_ago.pdf,15
+malcozinhado,2021-09-15,33.55,90258.0,1.1,0.042,0.8,77.8,2021-08,Malcozinhado,Eutrófica,,,iet_2021_08_ago.pdf,15
+mamoeiro,2021-08-11,3.38,272544.0,0.59,0.019,1.7,44.8,2021-08,Mamoeiro,Eutrófica,,,iet_2021_08_ago.pdf,15
+manoel balbino,2021-08-05,3.21,19350.0,0.62,0.029,1.4,10.2,2021-08,Manoel Balbino,Oligotrófica,,,iet_2021_08_ago.pdf,15
+maranguapinho,2021-09-21,198.81,1320246.0,3.25,0.271,0.3,38.0,2021-08,Maranguapinho,Hipereutrófica,,,iet_2021_08_ago.pdf,15
+martinopole,2021-08-04,20.97,1168045.0,1.31,0.047,0.7,55.7,2021-08,Martinópole,Hipereutrófica,,,iet_2021_08_ago.pdf,15
+missi,2021-08-05,49.81,1367675.0,2.19,0.067,0.39,67.5,2021-08,Missi,Hipereutrófica,,,iet_2021_08_ago.pdf,15
+monte belo,2021-08-03,10.64,1203441.0,1.46,0.067,0.4,33.9,2021-08,Monte Belo,Hipereutrófica,,,iet_2021_08_ago.pdf,15
+mundau,2021-09-01,4.91,84918.0,0.58,0.064,1.67,92.1,2021-08,Mundaú,Mesotrófica,,,iet_2021_08_ago.pdf,15
+nova floresta,2021-08-03,35.93,61588.0,2.1,0.105,0.6,16.5,2021-08,Nova Floresta,Mesotrófica,,,iet_2021_08_ago.pdf,15
+olho d agua,2021-07-06,3.98,13672.0,1.06,0.024,2.1,44.0,2021-08,Olho d'Água,Oligotrófica,,,iet_2021_08_ago.pdf,15
+oros,2021-08-18,27.05,192905.0,1.29,0.065,0.6,27.1,2021-08,Orós,Eutrófica,,,iet_2021_08_ago.pdf,15
+pacajus,2021-08-05,5.44,68313.0,0.48,0.074,1.0,75.6,2021-08,Pacajus,Mesotrófica,,,iet_2021_08_ago.pdf,15
+pacoti,2021-08-10,48.5,197329.0,1.28,0.056,0.8,55.0,2021-08,Pacoti,Eutrófica,,,iet_2021_08_ago.pdf,15
+parambu,2021-08-16,17.58,525620.0,1.09,0.1,0.5,36.9,2021-08,Parambu,Eutrófica,,,iet_2021_08_ago.pdf,15
+patos,2021-08-04,10.07,107956.0,1.24,0.035,1.36,57.1,2021-08,Patos,Eutrófica,,,iet_2021_08_ago.pdf,15
+patu,2021-08-17,10.59,113265.0,1.31,,1.2,19.8,2021-08,Patu,Eutrófica,p_total<0.010,,iet_2021_08_ago.pdf,15
+pau preto,2021-08-03,4.76,6961.0,0.72,0.028,1.9,90.6,2021-08,Pau Preto,Oligotrófica,,,iet_2021_08_ago.pdf,16
+pedras brancas,2021-07-13,34.76,445982.0,2.39,0.047,0.7,4.8,2021-08,Pedras Brancas,Eutrófica,,,iet_2021_08_ago.pdf,16
+penedo,2021-08-17,22.76,157510.0,1.25,0.055,0.8,46.9,2021-08,Penedo,Eutrófica,,,iet_2021_08_ago.pdf,16
+pentecoste,2021-08-19,285.96,250126.0,1.58,0.058,0.92,12.0,2021-08,Pentecoste,Eutrófica,,,iet_2021_08_ago.pdf,16
+pesqueiro,2021-08-26,64.61,1999836.0,1.94,0.069,0.5,54.0,2021-08,Pesqueiro,Hipereutrófica,,,iet_2021_08_ago.pdf,16
+poco da pedra,2021-07-06,27.98,753920.0,1.84,0.082,0.4,5.9,2021-08,Poço da Pedra,Eutrófica,,,iet_2021_08_ago.pdf,16
+poco do barro,2021-08-03,10.15,408816.0,3.91,0.094,1.3,16.3,2021-08,Poço do Barro,Eutrófica,,,iet_2021_08_ago.pdf,16
+poco verde,2021-07-22,147.69,2438739.0,3.15,0.103,0.25,73.9,2021-08,Poço Verde,Hipereutrófica,,,iet_2021_08_ago.pdf,16
+pompeu sobrinho,2021-07-28,107.05,309710.0,4.25,0.152,0.3,3.5,2021-08,Pompeu Sobrinho,Eutrófica,,,iet_2021_08_ago.pdf,16
+potiretama,2021-08-24,65.04,463679.0,2.71,0.182,0.5,7.7,2021-08,Potiretama,Eutrófica,,,iet_2021_08_ago.pdf,16
+prazeres,2021-07-28,6.15,143351.0,0.9,0.022,1.2,42.0,2021-08,Prazeres,Eutrófica,,,iet_2021_08_ago.pdf,16
+premuoca,2021-08-04,8.84,1207976.0,0.48,0.042,1.0,60.9,2021-08,Premuoca,Hipereutrófica,,,iet_2021_08_ago.pdf,16
+quandu,2021-09-01,30.9,353068.0,1.02,0.064,0.74,90.5,2021-08,Quandú,Eutrófica,,,iet_2021_08_ago.pdf,16
+quincoe,2021-07-07,24.82,136272.0,1.18,0.062,0.7,94.2,2021-08,Quincoé,Eutrófica,,,iet_2021_08_ago.pdf,16
+quixabinha,2021-07-13,9.51,394658.0,1.31,0.056,1.2,16.7,2021-08,Quixabinha,Eutrófica,,,iet_2021_08_ago.pdf,16
+quixeramobim,2021-07-22,18.33,111495.0,1.74,0.152,1.0,56.5,2021-08,Quixeramobim,Eutrófica,,,iet_2021_08_ago.pdf,16
+realejo,2021-08-11,12.25,437133.0,1.04,0.047,1.4,31.9,2021-08,Realejo,Eutrófica,,,iet_2021_08_ago.pdf,16
+riachao,2021-08-10,40.29,369881.0,1.25,0.053,0.9,61.8,2021-08,Riachão,Eutrófica,,,iet_2021_08_ago.pdf,16
+riacho da serra,2021-08-24,15.06,585792.0,0.8,0.067,0.8,5.8,2021-08,Riacho da Serra,Eutrófica,,,iet_2021_08_ago.pdf,16
+riacho do sangue,2021-08-25,9.06,54863.0,1.14,0.038,1.5,73.8,2021-08,Riacho do Sangue,Mesotrófica,,,iet_2021_08_ago.pdf,16
+rivaldo de carvalho,2021-09-09,11.97,467219.0,1.29,0.044,0.9,44.5,2021-08,Rivaldo de Carvalho,Eutrófica,,,iet_2021_08_ago.pdf,16
+s pedro timbauba,2021-07-22,7.01,13716.0,0.81,0.046,1.24,94.6,2021-08,S. Pedro Timbaúba,Mesotrófica,,,iet_2021_08_ago.pdf,16
+santa maria,2021-08-10,10.59,145121.0,1.16,0.046,1.2,23.7,2021-08,Santa Maria,Eutrófica,,,iet_2021_08_ago.pdf,16
+santa maria de aracatiacu,2021-08-03,16.66,522081.0,1.58,0.06,0.69,72.9,2021-08,Sta Mª de Aracatiaçu,Eutrófica,,,iet_2021_08_ago.pdf,16
+santo antonio,2021-07-20,16.32,94977.0,1.49,0.046,0.85,39.1,2021-08,Sto Antônio,Eutrófica,,,iet_2021_08_ago.pdf,16
+santo antonio de aracatiacu,2021-08-03,33.46,1201670.0,1.4,0.037,0.69,75.4,2021-08,Sto Antº de Aracatiaçu,Hipereutrófica,,,iet_2021_08_ago.pdf,16
+santo antonio de russas,2021-07-08,13.69,382270.0,1.81,0.047,0.3,29.8,2021-08,Sto Antº de Russas,Eutrófica,,,iet_2021_08_ago.pdf,16
+sao domingos,2021-07-07,149.68,371651.0,2.7,0.121,0.28,2.3,2021-08,São Domingos,Eutrófica,,,iet_2021_08_ago.pdf,16
+sao domingos ii,2021-08-10,,55748.0,0.58,0.017,3.9,44.7,2021-08,São Domingos II,Mesotrófica,chla<3.00,,iet_2021_08_ago.pdf,16
+sao jose i,2021-07-21,34.11,562786.0,1.42,0.065,0.7,64.8,2021-08,São José I,Eutrófica,,,iet_2021_08_ago.pdf,16
+sao jose ii,2021-07-27,4.29,34510.0,0.86,0.024,2.2,82.8,2021-08,São José II,Oligotrófica,,,iet_2021_08_ago.pdf,16
+sao jose iii,2021-08-11,23.83,591102.0,1.51,0.078,0.6,53.8,2021-08,São José III,Eutrófica,,,iet_2021_08_ago.pdf,16
+sao mateus,2021-07-07,25.61,865337.0,1.35,0.058,0.5,45.9,2021-08,São Mateus,Eutrófica,,,iet_2021_08_ago.pdf,16
+sao vicente,2021-07-20,10.86,516772.0,0.9,0.04,1.5,97.8,2021-08,São Vicente,Eutrófica,,,iet_2021_08_ago.pdf,16
+serafim dias,2021-07-27,24.62,282101.0,1.54,0.064,0.8,2.6,2021-08,Serafim Dias,Eutrófica,,,iet_2021_08_ago.pdf,16
+sitios novos,2021-07-01,21.71,329177.0,1.26,0.042,0.8,44.8,2021-08,Sitios Novos,Eutrófica,,,iet_2021_08_ago.pdf,16
+sobral,2021-08-24,132.68,890194.0,2.35,0.121,0.4,93.9,2021-08,Sobral,Eutrófica,,,iet_2021_08_ago.pdf,16
+sousa,2021-07-06,27.49,1969750.0,2.11,0.114,0.4,1.1,2021-08,Sousa,Hipereutrófica,,,iet_2021_08_ago.pdf,16
+sucesso,2021-08-11,13.58,759230.0,1.39,0.047,1.0,64.3,2021-08,Sucesso,Eutrófica,,,iet_2021_08_ago.pdf,16
+taquara,2021-07-06,7.64,718526.0,1.15,0.028,1.9,77.7,2021-08,Taquara,Eutrófica,,,iet_2021_08_ago.pdf,16
+tatajuba,2021-07-14,7.49,27372.0,0.71,0.065,1.3,38.5,2021-08,Tatajuba,Mesotrófica,,,iet_2021_08_ago.pdf,16
+tejucuoca,2021-09-09,36.28,551459.0,1.54,0.038,0.99,39.6,2021-08,Tejuçuoca,Eutrófica,,,iet_2021_08_ago.pdf,16
+thomas osterne,2021-08-05,,22859.0,0.68,0.029,2.8,42.9,2021-08,Thomás Osterne,Oligotrófica,chla<3.00,,iet_2021_08_ago.pdf,16
+tigre,2021-07-06,,12472.0,0.76,0.026,1.7,23.8,2021-08,Tigre,Oligotrófica,chla<3.00,,iet_2021_08_ago.pdf,16
+tijuquinha,2021-08-25,4.7,37165.0,0.46,0.024,0.5,79.4,2021-08,Tijuquinha,Mesotrófica,,,iet_2021_08_ago.pdf,16
+trapia ii,2021-07-20,48.32,513232.0,2.82,0.114,0.3,0.6,2021-08,Trapiá II,Eutrófica,,,iet_2021_08_ago.pdf,17
+trapia iii,2021-07-07,7.38,102646.0,0.74,0.053,1.6,94.0,2021-08,Trapiá III,Eutrófica,,,iet_2021_08_ago.pdf,17
+trici,2021-08-10,49.86,1196363.0,1.84,0.065,0.4,41.0,2021-08,Trici,Hipereutrófica,,,iet_2021_08_ago.pdf,17
+trussu,2021-07-21,26.1,807722.0,1.85,0.074,0.5,28.7,2021-08,Trussu,Eutrófica,,,iet_2021_08_ago.pdf,17
+tucunduba,2021-07-27,3.24,26325.0,0.61,0.029,2.2,95.8,2021-08,Tucunduba,Mesotrófica,,,iet_2021_08_ago.pdf,17
+ubaldinho,2021-07-06,4.23,26913.0,0.76,0.033,3.0,98.1,2021-08,Ubaldinho,Mesotrófica,,,iet_2021_08_ago.pdf,17
+umari,2021-08-04,265.69,1681278.0,5.41,0.195,0.3,8.5,2021-08,Umari,Hipereutrófica,,,iet_2021_08_ago.pdf,17
+valerio,2021-07-20,,4056.0,0.31,0.015,3.0,92.3,2021-08,Valério,Oligotrófica,chla<1.00,,iet_2021_08_ago.pdf,17
+varzea da volta,2021-07-07,4.6,419080.0,0.8,0.04,1.3,95.4,2021-08,Várzea da Volta,Eutrófica,,,iet_2021_08_ago.pdf,17
+varzea do boi,2021-09-08,25.56,782236.0,2.36,0.5,0.3,4.5,2021-08,Várzea do Boi,Eutrófica,,,iet_2021_08_ago.pdf,17
+vieirao,2021-07-21,20.02,209717.0,1.85,0.056,1.0,14.4,2021-08,Vieirão,Eutrófica,,,iet_2021_08_ago.pdf,17
