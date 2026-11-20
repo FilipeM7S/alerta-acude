@@ -129,6 +129,56 @@ ol.rank .bs { font-size: 13px; color: var(--muted); }
 .intro ul { padding-left: 20px; }
 kbd { border: 1px solid var(--line); border-bottom-width: 2px; border-radius: 4px; padding: 0 6px; font: 14px/1.4 ui-monospace, Consolas, monospace; background: var(--sand); }
 
+/* Content pages */
+.page { overflow-y: auto; }
+.wrap { max-width: 1240px; margin: 0 auto; padding: 8px 4px 24px; }
+.ptitle { font-size: 28px; margin: 4px 0 6px; color: var(--water); }
+.lead { font-size: 18px; color: var(--ink-2); max-width: 1000px; margin: 0 0 18px; }
+.lead.big { font-size: 22px; color: var(--ink); }
+.k { display: block; font-size: 13px; text-transform: uppercase; letter-spacing: .05em; color: var(--earth); font-weight: 600; }
+.steps { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; counter-reset: s; }
+.steps li { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px; position: relative; }
+.steps li:not(:last-child)::after { content: "→"; position: absolute; right: -15px; top: 40px; font-size: 20px; color: var(--muted); }
+.steps svg { width: 52px; height: 52px; fill: none; stroke: var(--water); stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; background: var(--water-soft); border-radius: 12px; padding: 6px; margin-bottom: 10px; }
+.steps svg text { fill: var(--water); font-weight: 700; font-family: inherit; }
+.steps h3 { margin: 4px 0 6px; font-size: 20px; }
+.steps p { margin: 0; font-size: 16px; color: var(--ink-2); }
+.src { font-size: 14px; color: var(--muted); margin-top: 18px; }
+.cards { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px 18px; }
+.card:last-child { grid-column: 1 / -1; }
+.card p { font-size: 16px; margin: 10px 0 0; }
+.card .note { font-size: 14px; color: var(--muted); }
+.t { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 16px; font-variant-numeric: tabular-nums; }
+.t th { text-align: right; font-size: 13px; color: var(--muted); font-weight: 600; border-bottom: 1px solid var(--line); padding: 4px 8px; }
+.t td { text-align: right; padding: 6px 8px; border-bottom: 1px solid #efebe3; }
+.t th:first-child, .t td:first-child { text-align: left; }
+.t tr.hl td { background: var(--water-soft); font-weight: 700; }
+.ch { font-size: 18px; margin: 8px 0 10px; }
+.ch span { font-weight: 400; color: var(--muted); font-size: 15px; }
+.bars { display: grid; gap: 8px; max-width: 900px; }
+.bar { display: grid; grid-template-columns: 170px 1fr 44px; align-items: center; gap: 12px; font-size: 16px; }
+.bar .bt { height: 22px; }
+.bar i { display: block; height: 100%; background: #b9b2a5; border-radius: 0 4px 4px 0; }
+.bar.hl i { background: var(--water); }
+.bar:hover i { filter: brightness(0.9); }
+.bar b { font-variant-numeric: tabular-nums; font-size: 18px; }
+.limits { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.limits li { background: var(--surface); border: 1px solid var(--line); border-left: 5px solid var(--earth); border-radius: var(--radius); padding: 14px 18px; }
+.limits li:last-child { grid-column: 1 / -1; border-left-color: var(--alert); }
+.limits h3 { margin: 0 0 6px; font-size: 19px; }
+.limits p { margin: 0; font-size: 16px; color: var(--ink-2); }
+@media (max-width: 1500px) {
+  .ptitle { font-size: 24px; }
+  .lead { font-size: 16px; margin-bottom: 12px; }
+  .lead.big { font-size: 19px; }
+  .steps { gap: 12px; }
+  .steps li { padding: 14px; }
+  .steps h3 { font-size: 18px; }
+  .card { padding: 12px 14px; }
+  .t, .card p, .steps p, .limits p { font-size: 15px; }
+}
+
 @media (max-width: 1500px) {
   :root { --left: 300px; --right: 350px; }
   header { padding: 10px 16px; gap: 16px; }
@@ -151,6 +201,9 @@ kbd { border: 1px solid var(--line); border-bottom-width: 2px; border-radius: 4p
   </div>
   <nav class="tabs" role="tablist" aria-label="Sections">
     <button role="tab" data-view="map" aria-selected="true">Priority map</button>
+    <button role="tab" data-view="how" aria-selected="false">How it works</button>
+    <button role="tab" data-view="evidence" aria-selected="false">Evidence</button>
+    <button role="tab" data-view="limits" aria-selected="false">Limits</button>
   </nav>
   <a class="fallback" href="risk_map.html">Original map ↗</a>
 </header>
@@ -168,6 +221,97 @@ kbd { border: 1px solid var(--line); border-bottom-width: 2px; border-radius: 4p
     <aside class="panel" id="list-panel"></aside>
     <div id="map" role="region" aria-label="Map of reservoirs"></div>
     <aside class="panel" id="detail-panel"></aside>
+  </div>
+
+  <div class="view page" id="view-how" hidden>
+    <div class="wrap">
+      <h2 class="ptitle">How it works</h2>
+      <p class="lead">Above <b>20,000 cyanobacteria cells/mL</b>, Brazil's drinking-water rule (Portaria GM/MS nº 888/2021) requires cyanotoxin tests at least weekly. COGERH samples each reservoir only <b>once per quarter</b>. Alerta Açude uses a satellite image from the last few days to decide which reservoirs to sample first.</p>
+      <ol class="steps">
+        <li>
+          <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="10" y="6" width="28" height="36" rx="3"/><path d="M16 16h16M16 23h16M16 30h10"/></svg>
+          <span class="k">1 · Ground truth</span>
+          <h3>COGERH lab reports</h3>
+          <p>28 quarterly reports (Feb/2016 to Feb/2025) parsed into <b>3,679 lab samples</b> from 156 reservoirs, cross-checked against COGERH's online database (99.6% of counts agree).</p>
+        </li>
+        <li>
+          <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="18" y="18" width="12" height="12" rx="2"/><path d="M6 14l10 4M42 14l-10 4M6 34l10-4M42 34l-10-4"/><path d="M14 40c6 4 14 4 20 0" /></svg>
+          <span class="k">2 · Satellite</span>
+          <h3>Sentinel-2 water colour</h3>
+          <p>Only clean water pixels within 1 km of the sampling point. <b>NDCI</b> (chlorophyll), NDTI (turbidity), MNDWI (water signal), open-water share. <b>614 lab samples</b> matched to a clear image within ±5 days.</p>
+        </li>
+        <li>
+          <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M6 40h36M8 36c10 0 12-26 32-28"/><circle cx="16" cy="30" r="2"/><circle cx="24" cy="18" r="2"/><circle cx="34" cy="11" r="2"/></svg>
+          <span class="k">3 · Model</span>
+          <h3>Logistic regression</h3>
+          <p>6 inputs: the 4 satellite indices plus stored volume and its change. Trained on 2016–2020 campaigns; the Alert threshold is set on 2020–2021 to catch at least 80% of blooms. Its coefficients are the explanation: <b>NDCI dominates (+1.39)</b>.</p>
+        </li>
+        <li>
+          <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M18 12h22M18 24h22M18 36h22"/><text x="6" y="16" font-size="11" stroke="none">1</text><text x="6" y="28" font-size="11" stroke="none">2</text><text x="6" y="40" font-size="11" stroke="none">3</text></svg>
+          <span class="k">4 · Every week</span>
+          <h3>Priority ranking</h3>
+          <p>Latest clear image (last 30 days) + today's volume → <b>priority 1 … <span data-n></span></b>, an Alert / Lower risk band, the top 3 reasons in plain language, and the last lab result alongside.</p>
+        </li>
+      </ol>
+      <p class="src">Data: COGERH / Portal Hidrológico do Ceará, Copernicus Sentinel-2 L2A (Microsoft Planetary Computer), OpenStreetMap. Code and full method: <a href="https://github.com/FilipeM7S/alerta-acude">github.com/FilipeM7S/alerta-acude</a>.</p>
+    </div>
+  </div>
+
+  <div class="view page" id="view-evidence" hidden>
+    <div class="wrap">
+      <h2 class="ptitle">Evidence</h2>
+      <p class="lead big">Using only satellite data, it <b>ties</b> the lab-based baseline (the last lab result, up to three months old). It does not beat it.</p>
+      <div class="cards">
+        <section class="card">
+          <span class="k">Test 1 · future campaigns Nov/2021 – Feb/2025 · 184 samples</span>
+          <table class="t">
+            <thead><tr><th>Method</th><th>PR-AUC</th><th>Missed blooms</th><th>False alarms</th></tr></thead>
+            <tbody>
+              <tr><td>Last lab result (persistence)</td><td>0.931</td><td>16</td><td>18</td></tr>
+              <tr><td>Satellite model A</td><td>0.944</td><td>17</td><td>18</td></tr>
+            </tbody>
+          </table>
+          <p>Difference in PR-AUC, 95% bootstrap interval: <b>−0.030 to +0.056</b>, which includes zero: a tie.</p>
+          <p class="note">A random guess already scores 0.870 here, because 87% of samples are blooms.</p>
+        </section>
+        <section class="card">
+          <span class="k">Test 2 · pre-registered · May/2025 – Aug/2026 · 238 samples</span>
+          <p>Before touching six campaigns no model had seen, we committed a fix and a decision rule (<a href="https://github.com/FilipeM7S/alerta-acude/commit/50b694b">commit 50b694b</a>), then scored them once.</p>
+          <table class="t">
+            <thead><tr><th>Method</th><th>PR-AUC</th><th>Missed blooms</th><th>False alarms</th></tr></thead>
+            <tbody>
+              <tr><td>Last lab result (persistence)</td><td>0.975</td><td>16</td><td>13</td></tr>
+              <tr class="hl"><td>Model B, used in this map</td><td>0.972</td><td>29</td><td>10</td></tr>
+              <tr><td>Model A</td><td>0.958</td><td>37</td><td>11</td></tr>
+            </tbody>
+          </table>
+          <p>Model B − persistence, 95% bootstrap interval: <b>−0.026 to +0.020</b>: a tie. A random guess scores 0.895.</p>
+        </section>
+        <section class="card">
+          <span class="k">The pre-registered hypothesis · dry-season campaigns (Aug, Nov), Test 2</span>
+          <h3 class="ch">Missed blooms in the dry season <span>(fewer is better)</span></h3>
+          <div class="bars" role="img" aria-label="Missed dry-season blooms: last lab result 10, model B 22, model A 30">
+            <div class="bar" title="Last lab result: 10 missed dry-season blooms"><span class="bl">Last lab result</span><span class="bt"><i style="width:calc(10/30*100%)"></i></span><b>10</b></div>
+            <div class="bar hl" title="Model B (map): 22 missed dry-season blooms"><span class="bl">Model B (map)</span><span class="bt"><i style="width:calc(22/30*100%)"></i></span><b>22</b></div>
+            <div class="bar" title="Model A: 30 missed dry-season blooms"><span class="bl">Model A</span><span class="bt"><i style="width:100%"></i></span><b>30</b></div>
+          </div>
+          <p><b>The hypothesis held:</b> dropping the season and weather inputs (model B) missed fewer dry-season blooms than model A, so the map uses B. The last lab result still missed fewer.</p>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <div class="view page" id="view-limits" hidden>
+    <div class="wrap">
+      <h2 class="ptitle">Limits</h2>
+      <ul class="limits">
+        <li><h3>Scores are priorities, not probabilities</h3><p>Balanced class weights pull the scores down: on validation and test data, reservoirs scored 0.30 or less were blooms 77% of the time. The 12 clean validation samples are too few to calibrate them. Use the rank and the band.</p></li>
+        <li><h3>The satellite sees chlorophyll, not cells</h3><p>NDCI follows lab chlorophyll-a closely (Spearman 0.81) but cyanobacteria counts less so (0.41). Riacho do Sangue had 191,134 cells/mL with only 12.85 µg/L of chlorophyll-a. Green water from other algae can also raise a false alarm.</p></li>
+        <li><h3>It under-warns in the dry season</h3><p>In Test 2 it missed 22 dry-season blooms, against 10 for the last lab result. This map is for November, so treat "Lower risk" with extra caution.</p></li>
+        <li><h3>Clouds and geometry</h3><p><span data-noimg></span> of <span data-sys></span> reservoirs had no clear image in the last 30 days. The open-water share partly measures the sampling area's shape; affected reservoirs are flagged <b>low confidence</b>.</p></li>
+        <li><h3>It does not replace lab tests</h3><p>It is a prototype that ranks reservoirs for sampling. Only a laboratory can confirm cyanobacteria counts and toxins in drinking water.</p></li>
+      </ul>
+    </div>
   </div>
 </main>
 
@@ -381,6 +525,19 @@ document.addEventListener("keydown", e => {
   else if (e.key === "Escape") { if (typing) document.activeElement.blur(); closeDetails(); }
 });
 window.selectReservoir = selectReservoir;
+
+// ---------- Stage (c): tabs ----------
+showView = function (name) {
+  document.querySelectorAll("main .view").forEach(v => { v.hidden = v.id !== "view-" + name; });
+  document.querySelectorAll("nav.tabs button").forEach(b => b.setAttribute("aria-selected", b.dataset.view === name));
+  if (name === "map" && map) setTimeout(() => map.invalidateSize(), 0);
+};
+document.querySelectorAll("nav.tabs button").forEach(b => b.addEventListener("click", () => showView(b.dataset.view)));
+window.addEventListener("data-ready", () => {
+  document.querySelectorAll("[data-n]").forEach(e => e.textContent = DATA.counts.imaged);
+  document.querySelectorAll("[data-noimg]").forEach(e => e.textContent = DATA.no_image.length);
+  document.querySelectorAll("[data-sys]").forEach(e => e.textContent = DATA.n_reservoirs_system);
+});
 
 fetch("demo_data.json").then(r => r.json()).then(d => {
   DATA = d;
