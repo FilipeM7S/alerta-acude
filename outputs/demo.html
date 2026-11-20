@@ -74,8 +74,60 @@ main { min-height: 0; padding: 0 24px 16px; }
 #map { border-radius: var(--radius); border: 1px solid var(--line); min-height: 0; }
 .leaflet-container { font: inherit; }
 .leaflet-tooltip { font-size: 14px; }
+.leaflet-control-layers { font-size: 14px; line-height: 1.5; }
 .legend { background: rgba(255,255,255,.95); padding: 8px 12px; border-radius: 8px; border: 1px solid var(--line); font-size: 14px; line-height: 1.6; }
 .legend .ring { display: inline-block; width: 12px; height: 12px; border-radius: 50%; margin-right: 6px; vertical-align: -1px; }
+
+/* Ranked list */
+.list-head { padding: 12px 14px 10px; border-bottom: 1px solid var(--line); display: grid; gap: 8px; }
+.list-head h2 { margin: 0; font-size: 17px; }
+.list-head h2 span { font-weight: 400; color: var(--muted); font-size: 14px; }
+.search { width: 100%; padding: 8px 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--sand); font-size: 16px; }
+.search:focus { outline: 2px solid var(--water); outline-offset: 0; background: var(--surface); }
+.seg { display: flex; gap: 4px; }
+.seg button { flex: 1; border: 1px solid var(--line); background: var(--surface); border-radius: 8px; padding: 5px 6px; cursor: pointer; font-size: 14px; color: var(--ink-2); }
+.seg button[aria-pressed="true"] { background: var(--water-soft); border-color: var(--water); color: var(--water); font-weight: 600; }
+ol.rank { list-style: none; margin: 0; padding: 4px 0; overflow-y: auto; flex: 1; }
+ol.rank li { display: grid; grid-template-columns: 38px 1fr auto; align-items: center; gap: 8px; padding: 8px 14px; cursor: pointer; border-left: 4px solid transparent; }
+ol.rank li:hover { background: var(--sand); }
+ol.rank li[aria-selected="true"] { background: var(--water-soft); border-left-color: var(--water); }
+ol.rank .n { font-size: 20px; font-weight: 700; color: var(--ink-2); text-align: right; font-variant-numeric: tabular-nums; }
+ol.rank .nm { font-size: 16px; font-weight: 600; line-height: 1.2; }
+ol.rank .bs { font-size: 13px; color: var(--muted); }
+.chip { display: inline-block; font-size: 13px; font-weight: 600; padding: 2px 9px; border-radius: 999px; white-space: nowrap; }
+.chip.alert { background: var(--alert-soft); color: var(--alert); }
+.chip.lower { background: var(--lower-soft); color: #1d6a9e; }
+.lc { font-size: 12px; color: var(--lowconf); white-space: nowrap; }
+.list-foot { padding: 8px 14px; font-size: 13px; color: var(--muted); border-top: 1px solid var(--line); }
+.empty { padding: 16px; color: var(--muted); }
+
+/* Detail panel */
+.detail { padding: 16px 18px; overflow-y: auto; flex: 1; }
+.detail .top { display: flex; align-items: flex-start; gap: 12px; }
+.detail .prio { font-size: 14px; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
+.detail .prio b { display: block; font-size: 40px; line-height: 1.05; color: var(--ink); text-transform: none; letter-spacing: 0; font-variant-numeric: tabular-nums; }
+.detail .prio b small { font-size: 18px; color: var(--muted); font-weight: 400; }
+.detail .close { margin-left: auto; border: 1px solid var(--line); background: var(--surface); border-radius: 8px; width: 34px; height: 34px; cursor: pointer; font-size: 18px; line-height: 1; color: var(--ink-2); }
+.detail h2 { margin: 10px 0 0; font-size: 24px; line-height: 1.2; }
+.detail .basin { color: var(--muted); font-size: 15px; margin-bottom: 8px; }
+.detail h3 { font-size: 14px; text-transform: uppercase; letter-spacing: .04em; color: var(--earth); margin: 18px 0 8px; }
+.reasons { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.reasons li { display: grid; grid-template-columns: 30px 1fr; gap: 10px; align-items: start; font-size: 16px; }
+.arrow { width: 30px; height: 30px; border-radius: 8px; display: grid; place-items: center; font-weight: 700; font-size: 18px; }
+.arrow.up { background: var(--alert-soft); color: var(--alert); }
+.arrow.down { background: var(--lower-soft); color: #1d6a9e; }
+.reasons .eff { display: block; font-size: 13px; color: var(--muted); }
+.facts { display: grid; grid-template-columns: auto 1fr; gap: 4px 14px; margin: 0; font-size: 16px; }
+.facts dt { color: var(--muted); }
+.facts dd { margin: 0; font-weight: 600; }
+.box { border-radius: 8px; padding: 10px 12px; font-size: 15px; margin-top: 12px; }
+.box.warn { border: 2px dashed var(--lowconf); background: #f6f6f4; }
+.box.ctx { background: var(--water-soft); }
+.score { margin-top: 16px; font-size: 13px; color: var(--muted); }
+.intro h2 { font-size: 20px; margin: 0 0 8px; }
+.intro p, .intro li { font-size: 16px; color: var(--ink-2); }
+.intro ul { padding-left: 20px; }
+kbd { border: 1px solid var(--line); border-bottom-width: 2px; border-radius: 4px; padding: 0 6px; font: 14px/1.4 ui-monospace, Consolas, monospace; background: var(--sand); }
 
 @media (max-width: 1500px) {
   :root { --left: 300px; --right: 350px; }
@@ -188,6 +240,147 @@ function fillHeader() {
   document.getElementById("k-lower").textContent = lower;
   document.getElementById("k-lowconf").textContent = lowc;
 }
+
+// ---------- Stage (b): ranked list, details, hash and keyboard ----------
+let selectedId = null, bandFilter = "all";
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const chip = band => `<span class="chip ${band === "Alert" ? "alert" : "lower"}">${band}</span>`;
+const norm = s => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
+let showView = () => {};
+
+function buildList() {
+  const p = document.getElementById("list-panel");
+  p.innerHTML = `<div class="list-head">
+      <h2>Sampling priority <span>(1 = sample first)</span></h2>
+      <input class="search" id="search" type="search" placeholder="Search reservoir   ( / )" aria-label="Search reservoir" autocomplete="off">
+      <div class="seg" role="group" aria-label="Filter by band">
+        <button data-band="all" aria-pressed="true">All ${DATA.reservoirs.length}</button>
+        <button data-band="Alert" aria-pressed="false">Alert ${DATA.counts.alert}</button>
+        <button data-band="Lower risk" aria-pressed="false">Lower ${DATA.counts.lower}</button>
+      </div></div>
+    <ol class="rank" id="rank" aria-label="Reservoirs ranked by priority"></ol>
+    <div class="list-foot">${DATA.no_image.length} more reservoirs had no clear image in the last 30 days (grey on the map).</div>`;
+  document.getElementById("search").addEventListener("input", renderList);
+  p.querySelectorAll(".seg button").forEach(b => b.addEventListener("click", () => {
+    bandFilter = b.dataset.band;
+    p.querySelectorAll(".seg button").forEach(x => x.setAttribute("aria-pressed", x === b));
+    renderList();
+  }));
+  renderList();
+}
+
+function renderList() {
+  const q = norm(document.getElementById("search").value.trim());
+  const rows = DATA.reservoirs.filter(r => (bandFilter === "all" || r.band === bandFilter) && (!q || norm(r.name).includes(q)));
+  const ol = document.getElementById("rank");
+  ol.innerHTML = rows.length ? rows.map(r => `
+    <li data-id="${r.id}" aria-selected="${r.id === selectedId}" tabindex="0">
+      <span class="n">${r.rank}</span>
+      <span><span class="nm">${esc(r.name)}</span><br><span class="bs">${esc(r.basin)}</span></span>
+      <span style="text-align:right">${chip(r.band)}${r.low_confidence ? '<br><span class="lc">◌ low confidence</span>' : ""}</span>
+    </li>`).join("") : `<li class="empty">No reservoir matches.</li>`;
+  ol.querySelectorAll("li[data-id]").forEach(li => {
+    li.addEventListener("click", () => selectReservoir(li.dataset.id, true));
+    li.addEventListener("keydown", e => { if (e.key === "Enter") selectReservoir(li.dataset.id, true); });
+  });
+}
+
+function intro() {
+  return `<div class="detail intro">
+    <h2>How to read this map</h2>
+    <p>Each dot is a reservoir of the Jaguaribe system. Its priority comes from the latest clear Sentinel-2 image and today's stored volume.</p>
+    <ul>
+      <li><b style="color:var(--alert)">Alert</b>: sample this week and start toxin testing.</li>
+      <li><b style="color:#1d6a9e">Lower risk</b>: can wait for the regular campaign if capacity is short. Not "safe".</li>
+      <li>A dashed outline means <b>low confidence</b>: check it against the last lab result.</li>
+    </ul>
+    <p>Click a reservoir in the list or on the map to see why it has its priority.</p>
+    <p style="font-size:14px;color:var(--muted)">Shortcuts: <kbd>/</kbd> search · <kbd>Esc</kbd> close details</p>
+  </div>`;
+}
+
+function details(r) {
+  const n = DATA.counts.imaged;
+  const reasons = r.reasons.map(t => {
+    const up = t.startsWith("↑");
+    return `<li><span class="arrow ${up ? "up" : "down"}" aria-hidden="true">${up ? "↑" : "↓"}</span>
+      <span>${esc(t.slice(2))}<span class="eff">${up ? "raises" : "lowers"} the priority</span></span></li>`;
+  }).join("");
+  const lab = r.last_lab_cyano == null ? "none"
+    : `${Math.round(r.last_lab_cyano).toLocaleString("en-US")} cells/mL <span style="font-weight:400;color:var(--muted)">on ${fmtDate(r.last_lab_date)}</span>`;
+  return `<div class="detail" aria-live="polite">
+    <div class="top">
+      <div class="prio">Priority<b>${r.rank} <small>of ${n}</small></b></div>
+      <button class="close" id="close" aria-label="Close details (Esc)" title="Close (Esc)">×</button>
+    </div>
+    <h2>${esc(r.name)}</h2>
+    <div class="basin">${esc(r.basin)} · ${chip(r.band)}</div>
+    ${r.context ? `<div class="box ctx">${esc(r.context)}</div>` : ""}
+    ${r.low_confidence ? `<div class="box warn"><b>◌ Low confidence:</b> ${esc(r.confidence_note)}. Check with the last lab result.</div>` : ""}
+    <h3>Why this priority</h3>
+    <ul class="reasons">${reasons}</ul>
+    <h3>Inputs used</h3>
+    <dl class="facts">
+      <dt>Satellite image</dt><dd>${fmtDate(r.img_date)}</dd>
+      <dt>Stored volume</dt><dd>${r.volume_pct.toLocaleString("en-US", { maximumFractionDigits: r.volume_pct < 5 ? 2 : 0 })}% of capacity</dd>
+    </dl>
+    <h3>Last lab result (COGERH)</h3>
+    <dl class="facts">
+      <dt>Cyanobacteria</dt><dd>${lab}</dd>
+      <dt>Versus 20,000</dt><dd>${r.last_lab_class}${r.last_lab_note ? ` <span style="font-weight:400;color:var(--muted)">(${esc(r.last_lab_note)})</span>` : ""}</dd>
+    </dl>
+    <div class="score">Model score ${r.score.toFixed(2)} (a priority, not a probability) · Alert from ${DATA.threshold.toFixed(2)}</div>
+  </div>`;
+}
+
+function restyle(id, selected) {
+  const r = DATA.reservoirs.find(x => x.id === id);
+  const st = styleFor(r, selected);
+  markers[id].setStyle(st).setRadius(st.radius);
+  if (selected) markers[id].bringToFront();
+}
+
+function selectReservoir(id, fly) {
+  const r = DATA.reservoirs.find(x => x.id === id);
+  if (!r) return;
+  showView("map");
+  if (selectedId) restyle(selectedId, false);
+  selectedId = id;
+  restyle(id, true);
+  if (fly) map.flyTo([r.lat, r.lon], Math.max(map.getZoom(), 11), { duration: 0.6 });
+  document.getElementById("detail-panel").innerHTML = details(r);
+  document.getElementById("close").addEventListener("click", closeDetails);
+  document.querySelectorAll("#rank li[data-id]").forEach(li => li.setAttribute("aria-selected", li.dataset.id === id));
+  const li = document.querySelector(`#rank li[data-id="${id}"]`);
+  if (li) li.scrollIntoView({ block: "nearest" });
+  if (location.hash !== "#" + id) history.replaceState(null, "", "#" + id);
+}
+
+function closeDetails() {
+  if (selectedId) restyle(selectedId, false);
+  selectedId = null;
+  document.getElementById("detail-panel").innerHTML = intro();
+  document.querySelectorAll("#rank li[data-id]").forEach(li => li.setAttribute("aria-selected", "false"));
+  if (location.hash) history.replaceState(null, "", location.pathname + location.search);
+}
+
+function fromHash() {
+  const id = decodeURIComponent(location.hash.slice(1));
+  if (id && DATA.reservoirs.some(r => r.id === id)) selectReservoir(id, true);
+}
+
+window.addEventListener("data-ready", () => {
+  buildList();
+  document.getElementById("detail-panel").innerHTML = intro();
+  fromHash();
+});
+window.addEventListener("hashchange", fromHash);
+document.addEventListener("keydown", e => {
+  const typing = /INPUT|TEXTAREA/.test(document.activeElement.tagName);
+  if (e.key === "/" && !typing) { e.preventDefault(); showView("map"); document.getElementById("search").focus(); }
+  else if (e.key === "Escape") { if (typing) document.activeElement.blur(); closeDetails(); }
+});
+window.selectReservoir = selectReservoir;
 
 fetch("demo_data.json").then(r => r.json()).then(d => {
   DATA = d;
