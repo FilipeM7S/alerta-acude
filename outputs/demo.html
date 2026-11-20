@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alerta Açude</title>
+<meta name="description" content="Weekly priority ranking of Jaguaribe-system reservoirs (Ceará, Brazil) for cyanobacteria sampling, from Sentinel-2 images and stored volume.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 16 16%22%3E%3Ccircle cx=%228%22 cy=%228%22 r=%227%22 fill=%22%231f5f7a%22/%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<style>
+:root {
+  --sand: #f4f1ea;
+  --surface: #ffffff;
+  --line: #e1dbcf;
+  --ink: #1b2a33;
+  --ink-2: #44535c;
+  --muted: #6b767c;
+  --water: #1f5f7a;
+  --water-soft: #e6f0f3;
+  --earth: #8a6a46;
+  --alert: #c0392b;
+  --alert-soft: #fbecea;
+  --lower: #2e86c1;
+  --lower-soft: #e8f2fa;
+  --lowconf: #555555;
+  --radius: 10px;
+  --left: 340px;
+  --right: 400px;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; }
+body {
+  background: var(--sand); color: var(--ink);
+  font: 16px/1.45 "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  display: grid; grid-template-rows: auto auto 1fr; overflow: hidden;
+}
+button, input, select { font: inherit; color: inherit; }
+a { color: var(--water); }
+
+/* Header */
+header {
+  display: flex; align-items: center; gap: 24px; padding: 14px 24px;
+  background: var(--surface); border-bottom: 1px solid var(--line);
+}
+.brand h1 { margin: 0; font-size: 26px; line-height: 1.1; color: var(--water); letter-spacing: -0.01em; }
+.brand p { margin: 4px 0 0; font-size: 17px; color: var(--ink); }
+.brand .meta { margin-top: 2px; font-size: 14px; color: var(--muted); }
+nav.tabs { margin-left: auto; display: flex; gap: 4px; background: var(--sand); padding: 4px; border-radius: 999px; }
+nav.tabs button {
+  border: 0; background: transparent; padding: 8px 16px; border-radius: 999px; cursor: pointer;
+  font-size: 16px; color: var(--ink-2); white-space: nowrap;
+}
+nav.tabs button[aria-selected="true"] { background: var(--surface); color: var(--water); font-weight: 600; box-shadow: 0 1px 2px rgba(0,0,0,.12); }
+nav.tabs button:focus-visible { outline: 2px solid var(--water); outline-offset: 2px; }
+.fallback { font-size: 14px; color: var(--muted); white-space: nowrap; }
+
+/* KPI strip */
+.kpis { display: grid; grid-template-columns: repeat(4, 1fr) 1.4fr; gap: 12px; padding: 12px 24px; }
+.kpi { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 10px 16px; }
+.kpi .num { font-size: 34px; font-weight: 700; line-height: 1.1; font-variant-numeric: tabular-nums; }
+.kpi .lbl { font-size: 15px; color: var(--ink-2); }
+.kpi .sub { font-size: 13px; color: var(--muted); }
+.kpi.alert .num { color: var(--alert); }
+.kpi.lower .num { color: var(--lower); }
+.kpi.note { background: transparent; border-style: dashed; font-size: 14px; color: var(--ink-2); display: flex; align-items: center; }
+.dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 6px; vertical-align: 1px; }
+
+/* Main */
+main { min-height: 0; padding: 0 24px 16px; }
+.view { height: 100%; min-height: 0; }
+.view[hidden] { display: none !important; }
+#view-map { display: grid; grid-template-columns: var(--left) 1fr var(--right); gap: 12px; }
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); min-height: 0; display: flex; flex-direction: column; overflow: hidden; }
+#map { border-radius: var(--radius); border: 1px solid var(--line); min-height: 0; }
+.leaflet-container { font: inherit; }
+.leaflet-tooltip { font-size: 14px; }
+.legend { background: rgba(255,255,255,.95); padding: 8px 12px; border-radius: 8px; border: 1px solid var(--line); font-size: 14px; line-height: 1.6; }
+.legend .ring { display: inline-block; width: 12px; height: 12px; border-radius: 50%; margin-right: 6px; vertical-align: -1px; }
+
+@media (max-width: 1500px) {
+  :root { --left: 300px; --right: 350px; }
+  header { padding: 10px 16px; gap: 16px; }
+  .brand h1 { font-size: 22px; }
+  .brand p { font-size: 16px; }
+  .kpis { padding: 10px 16px; gap: 10px; }
+  .kpi { padding: 8px 12px; }
+  .kpi .num { font-size: 28px; }
+  main { padding: 0 16px 12px; }
+  nav.tabs button { padding: 7px 12px; }
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <h1>Alerta Açude</h1>
+    <p>Which of Ceará's reservoirs should be sampled first for cyanobacteria this week?</p>
+    <div class="meta" id="meta">Loading…</div>
+  </div>
+  <nav class="tabs" role="tablist" aria-label="Sections">
+    <button role="tab" data-view="map" aria-selected="true">Priority map</button>
+  </nav>
+  <a class="fallback" href="risk_map.html">Original map ↗</a>
+</header>
+
+<section class="kpis" aria-label="This week in numbers">
+  <div class="kpi"><div class="num" id="k-imaged">–</div><div class="lbl">Reservoirs monitored</div><div class="sub" id="k-imaged-sub"></div></div>
+  <div class="kpi alert"><div class="num" id="k-alert">–</div><div class="lbl"><span class="dot" style="background:var(--alert)"></span>Alert</div><div class="sub">sample this week, start toxin testing</div></div>
+  <div class="kpi lower"><div class="num" id="k-lower">–</div><div class="lbl"><span class="dot" style="background:var(--lower)"></span>Lower risk</div><div class="sub">can wait if capacity is short, not "safe"</div></div>
+  <div class="kpi"><div class="num" id="k-lowconf">–</div><div class="lbl">Low confidence</div><div class="sub">check against the last lab result</div></div>
+  <div class="kpi note">Prototype. It ranks reservoirs for sampling; it does not replace laboratory testing of drinking water.</div>
+</section>
+
+<main>
+  <div class="view" id="view-map">
+    <aside class="panel" id="list-panel"></aside>
+    <div id="map" role="region" aria-label="Map of reservoirs"></div>
+    <aside class="panel" id="detail-panel"></aside>
+  </div>
+</main>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+const COLORS = { "Alert": "#c0392b", "Lower risk": "#2e86c1" };
+const fmtDate = s => new Date(s + "T12:00:00").toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" });
+let DATA, map, markers = {};
+
+function styleFor(r, selected) {
+  const castanhao = r.key === "castanhao";
+  return {
+    radius: (castanhao ? 11 : 7) + (selected ? 3 : 0),
+    color: selected ? "#111" : castanhao ? "black" : r.low_confidence ? "#555" : COLORS[r.band],
+    weight: selected ? 4 : castanhao ? 3 : r.low_confidence ? 2 : 1,
+    dashArray: r.low_confidence && !selected ? "3 3" : null,
+    fill: true, fillColor: COLORS[r.band], fillOpacity: 0.85
+  };
+}
+
+function buildMap() {
+  map = L.map("map", { zoomControl: true });
+  const pts = [...DATA.reservoirs, ...DATA.no_image];
+  map.fitBounds([[Math.min(...pts.map(p => p.lat)), Math.min(...pts.map(p => p.lon))],
+                 [Math.max(...pts.map(p => p.lat)), Math.max(...pts.map(p => p.lon))]], { padding: [20, 20] });
+  const osm = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    maxZoom: 19, attribution: "© OpenStreetMap contributors" }).addTo(map);
+  const esri = L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}", {
+    maxZoom: 19, attribution: "Tiles © Esri — Source: Esri, Maxar, Earthstar Geographics, and the GIS User Community" });
+  const areas = L.geoJSON(DATA.areas, { style: { color: "#333", weight: 1, fill: false }, interactive: false }).addTo(map);
+  L.control.layers({ "OpenStreetMap": osm, "Satellite (Esri World Imagery)": esri }, { "Sampling areas": areas }, { collapsed: false }).addTo(map);
+
+  for (const r of DATA.no_image) {
+    L.circleMarker([r.lat, r.lon], { radius: 5, color: "gray", weight: 1, fill: true, fillOpacity: 0.4 })
+      .bindTooltip(`${r.name}: no clear image in the last 30 days`).addTo(map);
+  }
+  for (const r of DATA.reservoirs) {
+    const m = L.circleMarker([r.lat, r.lon], styleFor(r, false))
+      .bindTooltip(`${r.name}: priority ${r.rank} of ${DATA.counts.imaged} (${r.band})`).addTo(map);
+    m.on("click", () => window.selectReservoir && window.selectReservoir(r.id, true));
+    markers[r.id] = m;
+  }
+
+  const legend = L.control({ position: "bottomleft" });
+  legend.onAdd = () => {
+    const d = L.DomUtil.create("div", "legend");
+    d.innerHTML = `<span class="ring" style="background:${COLORS["Alert"]}"></span>Alert<br>
+      <span class="ring" style="background:${COLORS["Lower risk"]}"></span>Lower risk<br>
+      <span class="ring" style="border:2px dashed #555"></span>Low confidence<br>
+      <span class="ring" style="background:gray;opacity:.5"></span>No clear image`;
+    return d;
+  };
+  legend.addTo(map);
+}
+
+function fillHeader() {
+  const c = DATA.counts;
+  document.getElementById("meta").textContent =
+    `Jaguaribe system · map of ${fmtDate(DATA.date)} · Sentinel-2 images ${fmtDate(DATA.image_dates.min)} – ${fmtDate(DATA.image_dates.max)}`;
+  // KPIs are counted from the reservoir list itself, then cross-checked against the exported counts.
+  const n = DATA.reservoirs.length;
+  const alert = DATA.reservoirs.filter(r => r.band === "Alert").length;
+  const lower = DATA.reservoirs.filter(r => r.band === "Lower risk").length;
+  const lowc = DATA.reservoirs.filter(r => r.low_confidence).length;
+  if (n !== c.imaged || alert !== c.alert || lower !== c.lower || lowc !== c.low_confidence)
+    console.error("KPI counts disagree with demo_data.json counts", { n, alert, lower, lowc, c });
+  document.getElementById("k-imaged").textContent = n;
+  document.getElementById("k-imaged-sub").textContent = `clear image in the last 30 days, of ${DATA.n_reservoirs_system} in the system`;
+  document.getElementById("k-alert").textContent = alert;
+  document.getElementById("k-lower").textContent = lower;
+  document.getElementById("k-lowconf").textContent = lowc;
+}
+
+fetch("demo_data.json").then(r => r.json()).then(d => {
+  DATA = d;
+  fillHeader();
+  buildMap();
+  window.dispatchEvent(new Event("data-ready"));
+  window.__ready = true;
+}).catch(e => {
+  document.getElementById("meta").textContent = "Could not load demo_data.json: " + e;
+  console.error(e);
+});
+</script>
+</body>
+</html>
