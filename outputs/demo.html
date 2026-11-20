@@ -130,6 +130,8 @@ ol.rank .bs { font-size: 13px; color: var(--muted); }
 kbd { border: 1px solid var(--line); border-bottom-width: 2px; border-radius: 4px; padding: 0 6px; font: 14px/1.4 ui-monospace, Consolas, monospace; background: var(--sand); }
 
 /* Content pages */
+body.content .kpis { display: none; }
+body.content main { padding-top: 12px; }
 .page { overflow-y: auto; }
 .wrap { max-width: 1240px; margin: 0 auto; padding: 8px 4px 24px; }
 .ptitle { font-size: 28px; margin: 4px 0 6px; color: var(--water); }
@@ -157,9 +159,9 @@ kbd { border: 1px solid var(--line); border-bottom-width: 2px; border-radius: 4p
 .ch { font-size: 18px; margin: 8px 0 10px; }
 .ch span { font-weight: 400; color: var(--muted); font-size: 15px; }
 .bars { display: grid; gap: 8px; max-width: 900px; }
-.bar { display: grid; grid-template-columns: 170px 1fr 44px; align-items: center; gap: 12px; font-size: 16px; }
-.bar .bt { height: 22px; }
-.bar i { display: block; height: 100%; background: #b9b2a5; border-radius: 0 4px 4px 0; }
+.bar { display: grid; grid-template-columns: 170px minmax(0, 620px); align-items: center; gap: 12px; font-size: 16px; }
+.bar .bt { height: 22px; display: flex; align-items: center; gap: 10px; }
+.bar i { display: block; height: 100%; flex: none; max-width: calc(100% - 40px); background: #b9b2a5; border-radius: 0 4px 4px 0; }
 .bar.hl i { background: var(--water); }
 .bar:hover i { filter: brightness(0.9); }
 .bar b { font-variant-numeric: tabular-nums; font-size: 18px; }
@@ -235,7 +237,7 @@ kbd { border: 1px solid var(--line); border-bottom-width: 2px; border-radius: 4p
           <p>28 quarterly reports (Feb/2016 to Feb/2025) parsed into <b>3,679 lab samples</b> from 156 reservoirs, cross-checked against COGERH's online database (99.6% of counts agree).</p>
         </li>
         <li>
-          <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="18" y="18" width="12" height="12" rx="2"/><path d="M6 14l10 4M42 14l-10 4M6 34l10-4M42 34l-10-4"/><path d="M14 40c6 4 14 4 20 0" /></svg>
+          <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="19" y="15" width="10" height="10" rx="2"/><rect x="5" y="16" width="11" height="8" rx="1"/><rect x="32" y="16" width="11" height="8" rx="1"/><path d="M16 20h3M29 20h3M24 25v5"/><path d="M14 38c6-5 14-5 20 0"/></svg>
           <span class="k">2 · Satellite</span>
           <h3>Sentinel-2 water colour</h3>
           <p>Only clean water pixels within 1 km of the sampling point. <b>NDCI</b> (chlorophyll), NDTI (turbidity), MNDWI (water signal), open-water share. <b>614 lab samples</b> matched to a clear image within ±5 days.</p>
@@ -291,9 +293,9 @@ kbd { border: 1px solid var(--line); border-bottom-width: 2px; border-radius: 4p
           <span class="k">The pre-registered hypothesis · dry-season campaigns (Aug, Nov), Test 2</span>
           <h3 class="ch">Missed blooms in the dry season <span>(fewer is better)</span></h3>
           <div class="bars" role="img" aria-label="Missed dry-season blooms: last lab result 10, model B 22, model A 30">
-            <div class="bar" title="Last lab result: 10 missed dry-season blooms"><span class="bl">Last lab result</span><span class="bt"><i style="width:calc(10/30*100%)"></i></span><b>10</b></div>
-            <div class="bar hl" title="Model B (map): 22 missed dry-season blooms"><span class="bl">Model B (map)</span><span class="bt"><i style="width:calc(22/30*100%)"></i></span><b>22</b></div>
-            <div class="bar" title="Model A: 30 missed dry-season blooms"><span class="bl">Model A</span><span class="bt"><i style="width:100%"></i></span><b>30</b></div>
+            <div class="bar" title="Last lab result: 10 missed dry-season blooms"><span class="bl">Last lab result</span><span class="bt"><i style="width:calc(10/30*100%)"></i><b>10</b></span></div>
+            <div class="bar hl" title="Model B (map): 22 missed dry-season blooms"><span class="bl">Model B (map)</span><span class="bt"><i style="width:calc(22/30*100%)"></i><b>22</b></span></div>
+            <div class="bar" title="Model A: 30 missed dry-season blooms"><span class="bl">Model A</span><span class="bt"><i style="width:100%"></i><b>30</b></span></div>
           </div>
           <p><b>The hypothesis held:</b> dropping the season and weather inputs (model B) missed fewer dry-season blooms than model A, so the map uses B. The last lab result still missed fewer.</p>
         </section>
@@ -529,6 +531,7 @@ window.selectReservoir = selectReservoir;
 // ---------- Stage (c): tabs ----------
 showView = function (name) {
   document.querySelectorAll("main .view").forEach(v => { v.hidden = v.id !== "view-" + name; });
+  document.body.classList.toggle("content", name !== "map");
   document.querySelectorAll("nav.tabs button").forEach(b => b.setAttribute("aria-selected", b.dataset.view === name));
   if (name === "map" && map) setTimeout(() => map.invalidateSize(), 0);
 };
