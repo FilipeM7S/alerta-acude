@@ -6,7 +6,7 @@
 
 **TL;DR**
 1. **Problem:** reservoirs in Ceará get a lab check only once per quarter. Above 20,000 cyanobacteria cells/mL the law requires weekly toxin tests, and 78% of the 1,479 Jaguaribe-system lab samples (2016–2025) were above it.
-2. **In and out:** the latest Sentinel-2 image plus today's stored volume give, for each reservoir, a bloom probability, a ranking, 3 plain-language reasons and the last lab result, on a map.
+2. **In and out:** the latest Sentinel-2 image plus today's stored volume give, for each reservoir, a priority rank, an Alert / Lower risk band, 3 plain-language reasons and the last lab result, on a map.
 3. **Result:** on future campaigns it ties the last lab result without a lab visit, from an image a few days old. In the pre-registered Test 2 it has the best balanced accuracy (0.732) and the fewest false alarms (10).
 4. **Main weakness:** it under-warns in the dry season (Test 2: 22 missed dry-season blooms vs 10 for the last lab result), and it is weak at finding the few clean reservoirs.
 5. **Demo:** [interactive risk map](https://filipem7s.github.io/alerta-acude/outputs/risk_map.html) (source: `outputs/risk_map.html`) (14 Nov 2026: 49 of 65 reservoirs imaged, 38 on Alert).
@@ -23,7 +23,7 @@ Today their best guess is the **last lab result**, up to three months old.
 
 ## What we built
 
-A weekly risk map ([interactive risk map](https://filipem7s.github.io/alerta-acude/outputs/risk_map.html); source: `outputs/risk_map.html`, notebook 05). For each reservoir of the Jaguaribe system, the most recent clear **Sentinel-2** image and today's **stored volume** go in. Out come the **probability that cyanobacteria exceed 20,000 cells/mL**, an **Alert / Lower risk** band (threshold fixed on validation data), a ranked list, the **top three reasons in plain language**, the **last lab result** for comparison, and a **low-confidence** flag where the satellite measurement is unreliable.
+A weekly risk map ([interactive risk map](https://filipem7s.github.io/alerta-acude/outputs/risk_map.html); source: `outputs/risk_map.html`, notebook 05). For each reservoir of the Jaguaribe system, the most recent clear **Sentinel-2** image and today's **stored volume** go in. Out come a **priority rank** (1 = sample first) for exceeding 20,000 cyanobacteria cells/mL, an **Alert / Lower risk** band (threshold fixed on validation data), the **top three reasons in plain language**, the **last lab result** for comparison, and a **low-confidence** flag where the satellite measurement is unreliable.
 
 ## What we added
 
@@ -38,7 +38,7 @@ A weekly risk map ([interactive risk map](https://filipem7s.github.io/alerta-acu
 
 **Inputs:** NDCI (chlorophyll), NDTI (turbidity), MNDWI (water signal), the share of the area near the sampling point that is water, stored volume % and its change since the last campaign. Model A also used weather (temperature, rain, wind, sunlight) and the season (15 inputs). There is no location or reservoir ID, so the models cannot memorise reservoirs. NDCI follows lab chlorophyll-a closely (Spearman 0.81), and cyanobacteria counts less so (0.41).
 
-**Model:** logistic regression on standardized features; its coefficients are the explanation. On validation it beat a small LightGBM (PR-AUC 0.951 vs 0.928), so we kept the simpler model (A). After Test 1, a pre-registered rule replaced it in the map with model B, which uses only the 6 satellite and stored-water inputs (see Test 2).
+**Model:** logistic regression on standardized features; its coefficients are the explanation. On validation it beat a small LightGBM (PR-AUC 0.951 vs 0.928), so we kept the simpler model (A). After Test 1, a pre-registered rule replaced it in the map with model B, which uses only the 6 satellite and stored-water inputs (see Test 2). **Scores rank reservoirs; they are not calibrated probabilities**: balanced class weights pull them down (on validation + test, reservoirs scored ≤ 0.30 were blooms 77% of the time), and the 12 clean validation samples are too few to calibrate them. So the map shows the rank and the band, not a percentage.
 
 ![Model B coefficients](outputs/lr_coefficients_modelB.png)
 
@@ -69,6 +69,7 @@ A weekly risk map ([interactive risk map](https://filipem7s.github.io/alerta-acu
 ¹ Balanced accuracy is a secondary metric, not pre-registered; the pre-registered metric is PR-AUC.
 
 - **The model ties persistence; it does not beat it.** The bootstrap 95% interval for the PR-AUC difference (model − persistence) is −0.030 to +0.056. The satellite gives the technician about what a three-month-old lab result gives, with no lab visit.
+- **Limit of these intervals:** the bootstrap resamples individual samples, not campaigns, although samples of one campaign share weather, season and image dates, so all our bootstrap intervals (Test 1 and Test 2) are likely too narrow. Wider intervals would not change the conclusion: a tie with persistence.
 - **Combining the satellite with the last lab result did not reduce missed blooms** (20, vs 17 for the satellite model and 16 for persistence).
 - **The PR-AUC values above 0.95 are not leakage.** 87% of test samples are blooms, so a random guess already scores 0.87. A model trained on shuffled labels scores 0.868, and no lab value is among the inputs.
 - **The hard part is finding the clean reservoirs** (chance = 0.13). The single index NDCI does best (0.455); our chosen model is worse than persistence here.
@@ -96,9 +97,9 @@ A weekly risk map ([interactive risk map](https://filipem7s.github.io/alerta-acu
 - **The hypothesis held.** In the dry-season campaigns, B missed 22 blooms and A missed 30. B also scored higher overall, so **the map uses B**.
 - **The last lab result is still not beaten.** The bootstrap 95% intervals for the difference with persistence include zero (B: −0.026 to +0.020; NDCI: −0.012 to +0.025). In the dry season, persistence missed only 10 blooms.
 
-**Why not just use NDCI?** In both tests the single-index rule NDCI > t has the highest PR-AUC (Test 1: 0.962; Test 2: 0.980). The chlorophyll seen from space is the core signal: one index alone already ties the last lab result. The model adds stored volume, a calibrated probability, a ranking and plain-language reasons, and raises fewer false alarms (Test 2: B 10 vs NDCI 17), at the cost of more missed blooms (29 vs 15). In Test 1 the NDCI rule missed fewer blooms than the model (1 vs 17) with about the same false alarms (19 vs 18).
+**Why not just use NDCI?** In both tests the single-index rule NDCI > t has the highest PR-AUC (Test 1: 0.962; Test 2: 0.980). The chlorophyll seen from space is the core signal: one index alone already ties the last lab result. The model adds stored volume, a ranking that combines several inputs and plain-language reasons, and raises fewer false alarms (Test 2: B 10 vs NDCI 17), at the cost of more missed blooms (29 vs 15). In Test 1 the NDCI rule missed fewer blooms than the model (1 vs 17) with about the same false alarms (19 vs 18).
 
-**Live map (14 Nov 2026, model B):** 49 of the 65 Jaguaribe-system reservoirs had a clear image between 24 Oct and 13 Nov. **38 are on Alert and 11 are Lower risk**; Castanhão is on Alert, at 0.50. Several "Lower risk" reservoirs had counts well above 20,000 at their last lab visit (the Aug/2026 campaign, sampled 9 Jul to 26 Aug), so the band means "can wait if capacity is short", not "safe", and the map says this is the season where the model under-warns.
+**Live map (14 Nov 2026, model B):** 49 of the 65 Jaguaribe-system reservoirs had a clear image between 24 Oct and 13 Nov. **38 are on Alert and 11 are Lower risk**; Castanhão is on Alert, priority 19 of 49. Several "Lower risk" reservoirs had counts well above 20,000 at their last lab visit (the Aug/2026 campaign, sampled 9 Jul to 26 Aug), so the band means "can wait if capacity is short", not "safe", and the map says this is the season where the model under-warns.
 
 ## What we'd do next
 
