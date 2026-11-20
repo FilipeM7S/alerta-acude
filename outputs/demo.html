@@ -1,7 +1,8 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="utf-8">
+<script>try { const t = localStorage.getItem("aa-theme"); if (t === "light" || t === "dark") document.documentElement.dataset.theme = t; } catch (e) {}</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Alerta Açude</title>
 <meta name="description" content="Weekly priority ranking of Jaguaribe-system reservoirs (Ceará, Brazil) for cyanobacteria sampling, from Sentinel-2 images and stored volume.">
@@ -24,10 +25,63 @@
   --lower: #2e86c1;
   --lower-soft: #e8f2fa;
   --lowconf: #555555;
+  --lower-ink: #1d6a9e;
+  --warn-bg: #f6f6f4;
+  --row-line: #efebe3;
+  --bar: #b9b2a5;
+  --legend-bg: rgba(255,255,255,.95);
+  --mk-alert: #c0392b;
+  --mk-lower: #2e86c1;
+  --mk-select: #111111;
+  --mk-castanhao: #000000;
+  --mk-lowconf: #555555;
+  --mk-area: #333333;
+  --mk-noimg: #808080;
   --radius: 10px;
   --left: 340px;
   --right: 400px;
 }
+:root[data-theme="dark"] {
+  --sand: #0e171c;
+  --surface: #16232b;
+  --line: #2a3a43;
+  --ink: #e7eef1;
+  --ink-2: #c0cdd3;
+  --muted: #92a3ab;
+  --water: #6cc0dd;
+  --water-soft: #183746;
+  --earth: #d4b088;
+  --alert: #f07c6c;
+  --alert-soft: #3d2321;
+  --lower: #62b2ea;
+  --lower-soft: #16314a;
+  --lower-ink: #8fcaf3;
+  --lowconf: #c8c8c8;
+  --warn-bg: #1c2a31;
+  --row-line: #22323b;
+  --bar: #5f6c72;
+  --legend-bg: rgba(22,35,43,.95);
+  --mk-select: #ffffff;
+  --mk-castanhao: #ffffff;
+  --mk-lowconf: #d0d0d0;
+  --mk-area: #a9bcc5;
+  --mk-noimg: #9aa4a8;
+  color-scheme: dark;
+}
+:root[data-theme="dark"] .osm-tiles { filter: invert(1) hue-rotate(180deg) brightness(0.88) contrast(0.88) saturate(0.55); }
+:root[data-theme="dark"] .leaflet-container { background: #0b1418; }
+:root[data-theme="dark"] .leaflet-bar a, :root[data-theme="dark"] .leaflet-control-layers,
+:root[data-theme="dark"] .leaflet-tooltip { background: var(--surface); color: var(--ink); border-color: var(--line); }
+:root[data-theme="dark"] .leaflet-bar a:hover { background: var(--water-soft); }
+:root[data-theme="dark"] .leaflet-control-attribution { background: rgba(22,35,43,.85); color: var(--muted); }
+:root[data-theme="dark"] .leaflet-control-attribution a { color: var(--water); }
+:root[data-theme="dark"] .leaflet-tooltip-top:before { border-top-color: var(--surface); }
+:root[data-theme="dark"] .leaflet-tooltip-bottom:before { border-bottom-color: var(--surface); }
+:root[data-theme="dark"] .leaflet-tooltip-left:before { border-left-color: var(--surface); }
+:root[data-theme="dark"] .leaflet-tooltip-right:before { border-right-color: var(--surface); }
+:root[data-theme="dark"] nav.tabs button[aria-selected="true"] { box-shadow: 0 0 0 1px var(--line); }
+.theme-btn { border: 1px solid var(--line); background: var(--surface); color: var(--ink-2); border-radius: 999px; padding: 6px 12px; cursor: pointer; font-size: 14px; white-space: nowrap; }
+.theme-btn:hover { border-color: var(--water); color: var(--water); }
 * { box-sizing: border-box; }
 html, body { margin: 0; height: 100%; }
 body {
@@ -76,7 +130,7 @@ main { min-height: 0; padding: 0 24px 16px; }
 .leaflet-container { font: inherit; }
 .leaflet-tooltip { font-size: 14px; }
 .leaflet-control-layers { font-size: 14px; line-height: 1.5; }
-.legend { background: rgba(255,255,255,.95); padding: 8px 12px; border-radius: 8px; border: 1px solid var(--line); font-size: 14px; line-height: 1.6; }
+.legend { background: var(--legend-bg); color: var(--ink); padding: 8px 12px; border-radius: 8px; border: 1px solid var(--line); font-size: 14px; line-height: 1.6; }
 .legend .ring { display: inline-block; width: 12px; height: 12px; border-radius: 50%; margin-right: 6px; vertical-align: -1px; }
 
 /* Ranked list */
@@ -97,7 +151,7 @@ ol.rank .nm { font-size: 16px; font-weight: 600; line-height: 1.2; }
 ol.rank .bs { font-size: 13px; color: var(--muted); }
 .chip { display: inline-block; font-size: 13px; font-weight: 600; padding: 2px 9px; border-radius: 999px; white-space: nowrap; }
 .chip.alert { background: var(--alert-soft); color: var(--alert); }
-.chip.lower { background: var(--lower-soft); color: #1d6a9e; }
+.chip.lower { background: var(--lower-soft); color: var(--lower-ink); }
 .lc { font-size: 12px; color: var(--lowconf); white-space: nowrap; }
 .list-foot { padding: 8px 14px; font-size: 13px; color: var(--muted); border-top: 1px solid var(--line); }
 .empty { padding: 16px; color: var(--muted); }
@@ -116,13 +170,13 @@ ol.rank .bs { font-size: 13px; color: var(--muted); }
 .reasons li { display: grid; grid-template-columns: 30px 1fr; gap: 10px; align-items: start; font-size: 16px; }
 .arrow { width: 30px; height: 30px; border-radius: 8px; display: grid; place-items: center; font-weight: 700; font-size: 18px; }
 .arrow.up { background: var(--alert-soft); color: var(--alert); }
-.arrow.down { background: var(--lower-soft); color: #1d6a9e; }
+.arrow.down { background: var(--lower-soft); color: var(--lower-ink); }
 .reasons .eff { display: block; font-size: 13px; color: var(--muted); }
 .facts { display: grid; grid-template-columns: auto 1fr; gap: 4px 14px; margin: 0; font-size: 16px; }
 .facts dt { color: var(--muted); }
 .facts dd { margin: 0; font-weight: 600; }
 .box { border-radius: 8px; padding: 10px 12px; font-size: 15px; margin-top: 12px; }
-.box.warn { border: 2px dashed var(--lowconf); background: #f6f6f4; }
+.box.warn { border: 2px dashed var(--lowconf); background: var(--warn-bg); }
 .box.ctx { background: var(--water-soft); }
 .score { margin-top: 16px; font-size: 13px; color: var(--muted); }
 .intro h2 { font-size: 20px; margin: 0 0 8px; }
@@ -154,7 +208,7 @@ body.content main { padding-top: 12px; }
 .card .note { font-size: 14px; color: var(--muted); }
 .t { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 16px; font-variant-numeric: tabular-nums; }
 .t th { text-align: right; font-size: 13px; color: var(--muted); font-weight: 600; border-bottom: 1px solid var(--line); padding: 4px 8px; }
-.t td { text-align: right; padding: 6px 8px; border-bottom: 1px solid #efebe3; }
+.t td { text-align: right; padding: 6px 8px; border-bottom: 1px solid var(--row-line); }
 .t th:first-child, .t td:first-child { text-align: left; }
 .t tr.hl td { background: var(--water-soft); font-weight: 700; }
 .ch { font-size: 18px; margin: 8px 0 10px; }
@@ -162,7 +216,7 @@ body.content main { padding-top: 12px; }
 .bars { display: grid; gap: 8px; max-width: 900px; }
 .bar { display: grid; grid-template-columns: 170px minmax(0, 620px); align-items: center; gap: 12px; font-size: 16px; }
 .bar .bt { height: 22px; display: flex; align-items: center; gap: 10px; }
-.bar i { display: block; height: 100%; flex: none; max-width: calc(100% - 40px); background: #b9b2a5; border-radius: 0 4px 4px 0; }
+.bar i { display: block; height: 100%; flex: none; max-width: calc(100% - 40px); background: var(--bar); border-radius: 0 4px 4px 0; }
 .bar.hl i { background: var(--water); }
 .bar:hover i { filter: brightness(0.9); }
 .bar b { font-variant-numeric: tabular-nums; font-size: 18px; }
@@ -208,13 +262,14 @@ body.content main { padding-top: 12px; }
     <button role="tab" data-view="evidence" aria-selected="false">Evidence</button>
     <button role="tab" data-view="limits" aria-selected="false">Limits</button>
   </nav>
+  <button class="theme-btn" id="theme-btn" type="button"></button>
   <a class="fallback" href="risk_map.html">Original map ↗</a>
 </header>
 
 <section class="kpis" aria-label="This week in numbers">
   <div class="kpi"><div class="num" id="k-imaged">–</div><div class="lbl">Reservoirs monitored</div><div class="sub" id="k-imaged-sub"></div></div>
-  <div class="kpi alert"><div class="num" id="k-alert">–</div><div class="lbl"><span class="dot" style="background:var(--alert)"></span>Alert</div><div class="sub">sample this week, start toxin testing</div></div>
-  <div class="kpi lower"><div class="num" id="k-lower">–</div><div class="lbl"><span class="dot" style="background:var(--lower)"></span>Lower risk</div><div class="sub">can wait if capacity is short, not "safe"</div></div>
+  <div class="kpi alert"><div class="num" id="k-alert">–</div><div class="lbl"><span class="dot" style="background:var(--mk-alert)"></span>Alert</div><div class="sub">sample this week, start toxin testing</div></div>
+  <div class="kpi lower"><div class="num" id="k-lower">–</div><div class="lbl"><span class="dot" style="background:var(--mk-lower)"></span>Lower risk</div><div class="sub">can wait if capacity is short, not "safe"</div></div>
   <div class="kpi"><div class="num" id="k-lowconf">–</div><div class="lbl">Low confidence</div><div class="sub">check against the last lab result</div></div>
   <div class="kpi note">Prototype. It ranks reservoirs for sampling; it does not replace laboratory testing of drinking water.</div>
 </section>
@@ -320,7 +375,9 @@ body.content main { padding-top: 12px; }
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <script>
-const COLORS = { "Alert": "#c0392b", "Lower risk": "#2e86c1" };
+const COLORS = { "Alert": "#c0392b", "Lower risk": "#2e86c1" };  // same fills as risk_map.html, both themes
+const cssv = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+let areasLayer, noImageMarkers = [];
 const fmtDate = s => new Date(s + "T12:00:00").toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" });
 let DATA, map, markers = {};
 
@@ -328,7 +385,7 @@ function styleFor(r, selected) {
   const castanhao = r.key === "castanhao";
   return {
     radius: (castanhao ? 11 : 7) + (selected ? 3 : 0),
-    color: selected ? "#111" : castanhao ? "black" : r.low_confidence ? "#555" : COLORS[r.band],
+    color: selected ? cssv("--mk-select") : castanhao ? cssv("--mk-castanhao") : r.low_confidence ? cssv("--mk-lowconf") : COLORS[r.band],
     weight: selected ? 4 : castanhao ? 3 : r.low_confidence ? 2 : 1,
     dashArray: r.low_confidence && !selected ? "3 3" : null,
     fill: true, fillColor: COLORS[r.band], fillOpacity: 0.85
@@ -340,16 +397,16 @@ function buildMap() {
   const pts = [...DATA.reservoirs, ...DATA.no_image];
   map.fitBounds([[Math.min(...pts.map(p => p.lat)), Math.min(...pts.map(p => p.lon))],
                  [Math.max(...pts.map(p => p.lat)), Math.max(...pts.map(p => p.lon))]], { padding: [20, 20] });
-  const osm = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  const osm = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", { className: "osm-tiles",
     maxZoom: 19, attribution: "© OpenStreetMap contributors" }).addTo(map);
   const esri = L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}", {
     maxZoom: 19, attribution: "Tiles © Esri — Source: Esri, Maxar, Earthstar Geographics, and the GIS User Community" });
-  const areas = L.geoJSON(DATA.areas, { style: { color: "#333", weight: 1, fill: false }, interactive: false }).addTo(map);
+  const areas = areasLayer = L.geoJSON(DATA.areas, { style: () => ({ color: cssv("--mk-area"), weight: 1, fill: false }), interactive: false }).addTo(map);
   L.control.layers({ "OpenStreetMap": osm, "Satellite (Esri World Imagery)": esri }, { "Sampling areas": areas }, { collapsed: false }).addTo(map);
 
   for (const r of DATA.no_image) {
-    L.circleMarker([r.lat, r.lon], { radius: 5, color: "gray", weight: 1, fill: true, fillOpacity: 0.4 })
-      .bindTooltip(`${r.name}: no clear image in the last 30 days`).addTo(map);
+    noImageMarkers.push(L.circleMarker([r.lat, r.lon], { radius: 5, color: cssv("--mk-noimg"), fillColor: cssv("--mk-noimg"), weight: 1, fill: true, fillOpacity: 0.4 })
+      .bindTooltip(`${r.name}: no clear image in the last 30 days`).addTo(map));
   }
   for (const r of DATA.reservoirs) {
     const m = L.circleMarker([r.lat, r.lon], styleFor(r, false))
@@ -363,8 +420,8 @@ function buildMap() {
     const d = L.DomUtil.create("div", "legend");
     d.innerHTML = `<span class="ring" style="background:${COLORS["Alert"]}"></span>Alert<br>
       <span class="ring" style="background:${COLORS["Lower risk"]}"></span>Lower risk<br>
-      <span class="ring" style="border:2px dashed #555"></span>Low confidence<br>
-      <span class="ring" style="background:gray;opacity:.5"></span>No clear image`;
+      <span class="ring" style="border:2px dashed var(--mk-lowconf)"></span>Low confidence<br>
+      <span class="ring" style="background:var(--mk-noimg);opacity:.6"></span>No clear image`;
     return d;
   };
   legend.addTo(map);
@@ -438,7 +495,7 @@ function intro() {
     <p>Each dot is a reservoir of the Jaguaribe system. Its priority comes from the latest clear Sentinel-2 image and today's stored volume.</p>
     <ul>
       <li><b style="color:var(--alert)">Alert</b>: sample this week and start toxin testing.</li>
-      <li><b style="color:#1d6a9e">Lower risk</b>: can wait for the regular campaign if capacity is short. Not "safe".</li>
+      <li><b style="color:var(--lower-ink)">Lower risk</b>: can wait for the regular campaign if capacity is short. Not "safe".</li>
       <li>A dashed outline means <b>low confidence</b>: check it against the last lab result.</li>
     </ul>
     <p>Click a reservoir in the list or on the map to see why it has its priority.</p>
@@ -542,6 +599,26 @@ window.addEventListener("data-ready", () => {
   document.querySelectorAll("[data-noimg]").forEach(e => e.textContent = DATA.no_image.length);
   document.querySelectorAll("[data-sys]").forEach(e => e.textContent = DATA.n_reservoirs_system);
 });
+
+// ---------- Theme ----------
+function themeLabel() {
+  const dark = document.documentElement.dataset.theme === "dark";
+  const b = document.getElementById("theme-btn");
+  b.textContent = dark ? "☀ Light" : "☾ Dark";
+  b.setAttribute("aria-label", dark ? "Switch to light theme" : "Switch to dark theme");
+}
+function setTheme(t) {
+  document.documentElement.dataset.theme = t;
+  try { localStorage.setItem("aa-theme", t); } catch (e) {}
+  themeLabel();
+  if (!map) return;
+  for (const r of DATA.reservoirs) restyle(r.id, r.id === selectedId);
+  if (areasLayer) areasLayer.setStyle({ color: cssv("--mk-area") });
+  noImageMarkers.forEach(m => m.setStyle({ color: cssv("--mk-noimg"), fillColor: cssv("--mk-noimg") }));
+}
+themeLabel();
+document.getElementById("theme-btn").addEventListener("click", () =>
+  setTheme(document.documentElement.dataset.theme === "dark" ? "light" : "dark"));
 
 fetch("demo_data.json").then(r => r.json()).then(d => {
   DATA = d;
